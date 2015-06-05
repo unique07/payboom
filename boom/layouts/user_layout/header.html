@@ -28,7 +28,7 @@
 	<div class="wrapper visible-md visible-lg visible-sm hidden-xs">
 		<div class="globalNavi clearfix">
 			<ul class="navi list-unstyled clearfix pull-left">
-				<li class="pull-left<?if($_GET[mid] == "tboom" || $_GET[mid] == "fashion" || $_GET[mid] == "wantboom") echo " selected"?>"><a href="/boom/tboom"><b>페이붐</b></a></li>
+				<li class="pull-left<?if($_GET[mid] == "tboom" || $_GET[mid] == "fashion" || $_GET[mid] == "wantboom"  || $_GET[mid] == "agent") echo " selected"?>"><a href="/boom/agent"><b>페이붐</b></a></li>
 			</ul>
 			<ul class="navi list-unstyled clearfix pull-left">
 				<li class="pull-left<?if($_GET[mid] == "review" || $_GET[mid] == "news" || $_GET["mid"] == 'useful') echo " selected"?>""><a href="/boom/review"><b>정보</b></a></li>
@@ -42,12 +42,8 @@
 			<ul class="navi list-unstyled clearfix pull-left">
 				<li class="pull-left<?if($_GET[mid] =="notice" || $_GET[mid] == "faq") echo " selected"?>""><a href="/boom/notice"><b>이용안내</b></a></li>
 			</ul>
-			<!-- 
-			<ul class="navi list-unstyled clearfix pull-left">
-				<li class="pull-left<?if($_GET[mid] == "agent") echo " selected"?>"><a href="/boom/agent"><b>방판신청</b></a></li>
-			</ul>
-			 -->
-			<?if(Context::get('is_logged')) { //로그인 사용자?>			
+			
+			<?if(Context::get('is_logged')) { //로그인 사용자?>
 			<ul class="navi list-unstyled clearfix pull-left">
 				<li class="pull-left<?if($_GET[mid] == "charged") echo " selected"?>"><a href="/boom/charged"><b>유료서비스신청</b></a></li>
 			</ul>
@@ -55,8 +51,9 @@
 		</div>
 		<img class="zbxe_widget_output" widget="login_sunoo" skin="payboom" line_type="ro" search_use="Y" keep_signed="Y" level_use="Y" point_use="Y" latest_login="Y" />
 					<div class="gnb-depth clearfix">
-			<?if($_GET[mid] == "tboom" || $_GET[mid] == "fashion" || $_GET[mid] == "wantboom") {?>
+			<?if($_GET[mid] == "tboom" || $_GET[mid] == "fashion" || $_GET[mid] == "wantboom" || $_GET[mid] == "agent") {?>
 			<ul class="list-unstyled clearfix pull-left">
+				<li class="pull-left m1"><a href="/boom/tboom"<?if($_GET[mid] == "agent") echo " class=\"selected\""?>><B>밤페이</B></a></li>
 				<li class="pull-left m1"><a href="/boom/tboom"<?if($_GET[mid] == "tboom") echo " class=\"selected\""?>><B>티붐</B></a></li>
 				<li class="pull-left m1"><a href="/boom/fashion"<?if($_GET[mid] == "fashion") echo " class=\"selected\""?>><B>패션붐</B></a></li>
 				<li class="pull-left m1"><a href="/boom/wantboom"<?if($_GET[mid] == "wantboom") echo " class=\"selected\""?>><B>워너붐</B></a></li>
@@ -102,7 +99,9 @@
 	<img class="zbxe_widget_output" widget="login_sunoo" skin="payboom_mobile" line_type="ro" search_use="Y" keep_signed="Y" level_use="Y" point_use="Y" latest_login="Y" />
 	<div class="globalNavi">
 		<ul class="list-unstyled">
-
+			<li>
+			  <a href="/boom/tboom">밤페이</a>
+			</li>
 			<li class="c01">
 				<a href="/boom/tboom">티붐</a>
 				<ul class="list-unstyled clearfix gnb-depth">
@@ -115,38 +114,29 @@
 					<li class="pull-left">
 						<a href="index.php?mid=tboom&category=162">LGU+</a>
 					</li>
-					<li class="pull-left">
-						<a href="index.php?mid=tboom&category=177">MVNO</a>
-					</li>
-					<li class="pull-left">
-						<a href="index.php?mid=tboom&category=253">지역</a>
-					</li>
-		</ul>
+				</ul>
+			</li>
 
-					<li>
+			<li>
 			  <a href="/boom/fashion">패션붐</a>
-			 <ul class="list-unstyled gnb-depth">
-			  <li>
+				<ul class="list-unstyled gnb-depth">
+					<li>
 						<a href="/boom/index.php?mid=fashion&category=266">IT악세사리</a>
-					  </li>
-					   <li>
+					</li>
+					<li>
 						<a href="/boom/index.php?mid=fashion&category=267">의류잡화</a>
-					   </li>
-					  </ul>
-					  </li>
+					</li>
+				</ul>
+			</li>
 
-			  <li>
+			<li>
 			  <a href="/boom/wantboom">워너붐</a>
-					  </li>
-			<!-- 
-			  <li>
-			  <a href="/boom/agent">방판신청</a>
-			 </li>
-			 -->
-			 <?if(Context::get('is_logged')) { //로그인 사용자?>
-			  <li>
+			</li>
+			
+			<?if(Context::get('is_logged')) { //로그인 사용자?>
+			<li>
 			  <a href="/boom/charged">유료서비스 신청</a>
-					  </li>
+			</li>
 			<?}?>
 		  <li>
 			<a href="/boom/review">정보</a>
