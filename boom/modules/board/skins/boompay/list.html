@@ -1,0 +1,107 @@
+<include target="_header.html" />
+<include cond="$oDocument->isExists()" target="_read.html" />
+<ul class="cTab" cond="$module_info->use_category=='Y'">
+	<li class="on"|cond="!$category"><a href="{getUrl('category','','page','')}">{$lang->total}</a></li>
+	<li loop="$cate_list=>$key,$val" class="on"|cond="$category==$val->category_srl"><a href="{getUrl(category,$val->category_srl,'document_srl','', 'page', '')}">{$val->title}<!--<em cond="$val->document_count">[{$val->document_count}]</em>--></a>
+		<ul cond="count($val->children)">
+			<li loop="$val->children=>$idx,$item" class="on_"|cond="$category==$item->category_srl"><a href="{getUrl(category,$item->category_srl,'document_srl','', 'page', '')}">{$item->title}<!--<em cond="$val->document_count">[{$item->document_count}]</em>--></a></li>
+		</ul>
+	</li>
+</ul>
+
+<section class="board_xm">
+<table class="table table-striped table-hover" border="0" cellpadding="0" cellspacing="0">
+	<colgroup>
+		<col class="number hidden-xs" />
+		<col class="title" />
+		<col class="writer" />
+		<col class="hidden-xs date" />
+		<col class="hidden-sm count" />
+		<col scope="col" cond="$grant->manager" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th class="number hidden-xs text-center">번호</th>
+			<th class="title text-center">제목</th>
+			<th class="writer text-center"><div class="header_left_bar"> 글쓴이 </div></th>
+			<th class="hidden-xs date text-center"><div class="header_left_bar">날짜</div></th>
+			<th class="hidden-sm count text-center"><div class="header_left_bar">조회수</div></th>
+			<th scope="col" cond="$grant->manager" style="width:44px"><span><input type="checkbox" onclick="XE.checkboxToggleAll({ doClick:true });" class="iCheck" title="Check All" /></span></th>
+		</tr>
+	</thead>
+	<tbody cond="!$document_list && !$notice_list">
+		<tr>
+			<td colspan="{count($list_config)}"|cond="!$grant->manager" colspan="{count($list_config)+1}"|cond="$grant->manager">
+				<p style="text-align:center">{$lang->no_documents}</p>
+			</td>
+		</tr>
+	</tbody>
+    <tbody>
+	<tbody>
+		<tr class="listview" loop="$document_list=>$no,$document" style="text-align:middle">
+			<td class="text-center hidden-xs number">{$no}</td>
+			<td class="title">
+				<a href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}">{$document->getTitle()} 
+				{$document->printExtraImages(60*60*$module_info->duration_new)}</a>
+				<a cond="$document->getCommentCount()" href="{getUrl('document_srl', $document->document_srl)}#comment" class="replyNum" title="Replies">[{$document->getCommentCount()}]</a>
+				<a cond="$document->getTrackbackCount()" href="{getUrl('document_srl', $document->document_srl)}#trackback" class="trackbackNum" title="Trackbacks">[{$document->getTrackbackCount()}]</a>
+			</td>
+			<td class="text-center writer" style="color:#2a2a2a"><a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a></td>
+			<td class="hidden-xs text-center date" style="font-size: 7pt;">{$document->getRegdate('Y.m.d')}</td>
+			<td class="hidden-sm text-center count" style="font-size: 7pt;">{$document->get('readed_count')>0?$document->get('readed_count'):'0'}</td>
+			<td cond="$grant->manager" class="check"><input type="checkbox" name="cart" value="{$document->document_srl}" class="iCheck" title="Check This Article" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" /></td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="list_footer">
+	<!--@if(!Mobile::isMobileCheckByAgent())-->
+	<div class="pagination" cond="$document_list || $notice_list">
+		<a href="{getUrl('page','','document_srl','','division',$division,'last_division',$last_division)}" class="direction prev"><span></span><span></span> {$lang->first_page}</a> 
+		<block loop="$page_no=$page_navigation->getNextPage()">
+			<strong cond="$page==$page_no">{$page_no}</strong> 
+			<a cond="$page!=$page_no" href="{getUrl('page',$page_no,'document_srl','','division',$division,'last_division',$last_division)}">{$page_no}</a>
+		</block>
+		<a href="{getUrl('page',$page_navigation->last_page,'document_srl','','division',$division,'last_division',$last_division)}" class="direction next">{$lang->last_page} <span></span><span></span></a>
+	</div>
+	<!--@end-->
+	<!--@if(Mobile::isMobileCheckByAgent())-->
+	<nav>
+	  <ul class="pager">
+		<!--@if($page != 1)-->
+		<li><a href="{getUrl('page',$page-1,'document_srl','','division',$division,'last_division',$last_division,'entry','')}">이전</a></li>
+		<!--@else-->
+		<li><a href="#none">이전</a><li>
+		<!--@end-->
+		<li><span>{$page}</span> / {$page_navigation->last_page}</li>
+		<!--@if($page != $page_navigation->last_page)-->
+		<li><a href="{getUrl('page',$page+1,'document_srl','','division',$division,'last_division',$last_division,'entry','')}">다음</a></li>
+		<!--@else-->
+		<li><a href="#none">다음</a><li>
+		<!--@end-->
+	  </ul>
+	</nav>
+	<!--@end-->
+	
+	<div class="btnArea">
+		<a href="{getUrl('act','dispBoardWrite','document_srl','')}" class="btn">{$lang->cmd_write}</a>
+		<a cond="$grant->manager" href="{getUrl('','module','document','act','dispDocumentManageDocument')}" class="btn" onclick="popopen(this.href,'manageDocument'); return false;">{$lang->cmd_manage_document}</a>
+	</div>
+	<!--<button type="button" class="bsToggle" title="{$lang->cmd_search}">{$lang->cmd_search}</button>-->
+	<form cond="$grant->view" action="{getUrl()}" method="get" onsubmit="return procFilter(this, search)" id="board_search" class="board_search" no-error-return-url="true">
+		<input type="hidden" name="vid" value="{$vid}" />
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="category" value="{$category}" />
+		<input type="text" name="search_keyword" value="{htmlspecialchars($search_keyword)}" title="{$lang->cmd_search}" class="iText" />
+		<select name="search_target">
+			<option loop="$search_option=>$key,$val" value="{$key}" selected="selected"|cond="$search_target==$key">{$val}</option>
+		</select>
+		<button type="submit" class="btn" onclick="xGetElementById('board_search').submit();return false;">{$lang->cmd_search}</button>
+        <a cond="$last_division" href="{getUrl('page',1,'document_srl','','division',$last_division,'last_division','')}" class="btn">{$lang->cmd_search_next}</a>
+	</form>
+	<!--
+	<a href="{getUrl('act','dispBoardTagList')}" class="tagSearch" title="{$lang->tag}">{$lang->tag}</a>
+	-->
+</div>
+</section>
+<include target="_footer.html" />

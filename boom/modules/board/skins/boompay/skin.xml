@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">boompay</title>
+    <version>1.0</version>
+    <date>2015-05-07</date>
+    <author email_address="" link="">
+        <name xml:lang="ko">histar</name>
+    </author>
+    <license>LGPL v2</license>
+    <extra_vars>
+    </extra_vars>
+</skin>
+
