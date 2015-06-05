@@ -1,0 +1,50 @@
+<div class="smbHeader">
+	<ul class="smbTools">
+		<li class="smbCategoryBtn"><a href="#" cond="$module_info->use_category =='Y'"><i class="xe-tag-left"></i><span>{$lang->category}</span></a></li>
+		<li class="active"|cond="$act == 'dispBoardWrite'"><a href="{getUrl('act','dispBoardWrite','document_srl','')}"><i class="xe-pencil"></i><span>{$lang->cmd_write}</span></a></li>
+	</ul>
+	<!--타이틀 출력-->
+	<h2 class="smbTitle"><a href="{getUrl('','vid',$vid,'mid',$mid)}">{$module_info->browser_title}</a></h2>
+	<!--레이아웃을 변경합니다. 사용자가 리스트뷰, 겔러리뷰 등을 선택할 수 있습니다.-->
+	<ul class="smbTools right" cond="!$document_srl">
+		<li class="active"|cond="$listStyle == 'list' || ( $module_info->list_style == 'list' && !$listStyle )">
+			<a href="{getUrl('','vid',$vid,'mid',$mid,'listStyle','list')}">
+				<i class="xe-align-justify"></i><span>List</span>
+			</a>
+		</li>
+		<li class="active"|cond="$listStyle == 'card' || ( $module_info->list_style == 'card' && !$listStyle )">
+			<a href="{getUrl('','vid',$vid,'mid',$mid,'listStyle','card')}">
+				<i class="xe-layout-full"></i><span>Blog</span>
+			</a>
+		</li>
+		<!--<li><a href="#"><i class="xe-layout-left-two"></i><span>Card</span></a></li>
+		<li><a href="#"><i class="xe-layout-grid"></i><span>Gallery</span></a></li>-->
+	</ul>
+	<!--카테고리를 출력합니다.-->
+	<ul class="smbCategory">
+		<li class="on"|cond="!$category">
+			<a href="{getUrl('category','','page','')}">{$lang->total}</a>
+		</li>
+		{@$_idx = 1;}
+		<!--@foreach($category_list as $key=>$val)-->
+		<li class="on"|cond="$category==$val->category_srl">
+			<a href="{getUrl(category,$val->category_srl,'document_srl','', 'page', '')}">{$val->title}</a>
+		</li>
+		{@$_idx++;}
+		<!--@end-->
+		<!--********* 카테고리 리스트를 나열한 후, 2배수가 아닐때 2배수가 되도록 메뉴 항목을 임의로 추가합니다. **********-->
+		<!--@if($_idx % 2 != 0)-->
+			{@$dis = $_idx % 2}
+			<!--@for($i = 0; $i < $dis; $i++, $_idx++)-->
+			<li><a href="#"></a></li>
+			<!--@end-->
+		<!--@end-->
+		<!--********* 카테고리 리스트를 나열한 후, 4배수가 아닐때 4배수가 되도록 메뉴 항목을 임의로 추가합니다. **********-->
+		<!--@if($_idx % 4 != 0)-->
+			{@$dis = $_idx % 4}
+			<!--@for($i = 0; $i < $dis; $i++)-->
+			<li class="fourdump"><a href="#"></a></li>
+			<!--@end-->
+		<!--@end-->
+	</ul>
+</div>

@@ -1,0 +1,189 @@
+	<load target="../../tpl/js/signup_check.js" />
+	<load target="/boom/modules/member/skins/payboom/js/member.js" />
+	<div id="join-own" class="contents join">
+		<div class="join-own-info">
+			<ul class="nav nav-tabs">
+			<li class="active" onClick="self.location='/boom/index.php?act=dispMemberInfo&amp;mid=login'"><a href="#home" data-toggle="tab" aria-expanded="true">회원정보 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispMemberScrappedDocument&amp;mid=login'"><a href="#profile" data-toggle="tab" aria-expanded="false">스크랩 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispMemberSavedDocument&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">저장함 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispMemberOwnDocument&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">작성 글 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispCommunicationFriend&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">친구 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispCommunicationMessages&amp;mid=login'"><a href="#settings" data-toggle="tab" aria-expanded="false">쪽지함보기</a>
+			</li>
+		</ul>
+			<div class="wrapper join-own-identify">
+				<h5><span class="glyphicon glyphicon-circle-arrow-right"></span>회원정보 입력</h5>
+				<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skins/default/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+					<p>{$XE_VALIDATOR_MESSAGE}</p>
+				</div>
+				<script>
+					xe.lang.deleteProfileImage = '{$lang->msg_delete_extend_form}';
+					xe.lang.deleteImageMark = '{$lang->msg_delete_extend_form}';
+					xe.lang.deleteImageName = '{$lang->msg_delete_extend_form}';
+				</script>
+				<form ruleset="@insertMember" id="fo_insert_member" action="./" method="post" enctype="multipart/form-data" role="form"  class="form-horizontal">
+				<input type="hidden" name="act" value="procMemberModifyInfo" />
+				<input type="hidden" name="module" value="member" />
+				<input type="hidden" name="member_srl" value="{$member_info->member_srl}" />
+				<input type="hidden" name="signature" value="{htmlspecialchars($member_info->signature, ENT_COMPAT | ENT_HTML401, 'UTF-8', false)}" />
+				<input type="hidden" name="page" value="{$page}" />
+				<input type="hidden" name="xe_validator_id" value="modules/member/skins/default/1" />
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="form-group">
+								<label for="user_name" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 이름</label>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input type="text" class="form-control input-sm" id="user_name" name="user_name" required value="{$member_info->user_name}" readonly/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="user_id" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 아이디</label>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input type="text" name="user_id" class="form-control input-sm" id="user_id" value="{$member_info->user_id}" placeholder="아이디" required readonly>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="nick_name" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 닉네임</label>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input type="text" class="form-control input-sm" id="nick_name" name="nick_name" required placeholder="닉네임" value="{$member_info->nick_name}"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="email_address" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 메일주소</label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<input type="email" class="form-control input-sm" id="email_address" name="email_address" required placeholder="이메일" value="{$member_info->email_address}" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="find_account_question" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 비밀번호 찾기 질문/답변</label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<select name="find_account_question" id="find_account_question" class="form-control" style="display:block;margin:0 0 8px 0" required>
+									<option value="1" <!--@if($member_info->find_account_question == 1)-->selected<!--@end-->>다른 이메일 주소는?</option>
+									<option value="2" <!--@if($member_info->find_account_question == 2)-->selected<!--@end-->>나의 보물 1호는?</option>
+									<option value="3" <!--@if($member_info->find_account_question == 3)-->selected<!--@end-->>나의 출신 초등학교는?</option>
+									<option value="4" <!--@if($member_info->find_account_question == 4)-->selected<!--@end-->>나의 출신 고향은?</option>
+									<option value="5" <!--@if($member_info->find_account_question == 5)-->selected<!--@end-->>나의 이상형은?</option>
+									<option value="6" <!--@if($member_info->find_account_question == 6)-->selected<!--@end-->>어머니 성함은?</option>
+									<option value="7" <!--@if($member_info->find_account_question == 7)-->selected<!--@end-->>아버지 성함은?</option>
+									<option value="8" <!--@if($member_info->find_account_question == 8)-->selected<!--@end-->>가장 좋아하는 색깔은?</option>
+									<option value="9" <!--@if($member_info->find_account_question == 9)-->selected<!--@end-->>가장 좋아하는 음식은?</option>
+								</select>
+								<input type="text" name="find_account_answer" id="find_account_answer" class="form-control input-sm" placeholder="비밀번호 찾기 답변" value="{$member_info->find_account_question}">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="phone" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 전화번호</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="form-control input-sm" id="phone" name="phone" placeholder="02-1234-5678" required value="{$member_info->phone}" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="cellphone" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 핸드폰번호</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="form-control input-sm" id="cellphone" name="cellphone" placeholder="010-1234-5678" required value="{$member_info->cellphone}" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="address_sub" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 주소</label>
+								<div class="col-xs-3">
+									<input type="text" class="form-control input-sm" id="post" name="post" placeholder="우편번호" readonly required value="{$member_info->post}" />
+									<span id="result"></span>
+								</div>
+								<div>
+									<a class="btn btn-default" role="button" onclick='DaumPostcode();return false;'>검색</a>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputID" class="col-lg-4 col-md-4 col-sm-2 control-label"></label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<input type="text" class="form-control input-sm" id="address" name="address" value="{$member_info->address}" placeholder="주소" readonly required/>
+									<span id="result"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputID" class="col-lg-4 col-md-4 col-sm-2 control-label"></label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<input type="text" class="form-control input-sm" id="address_sub" name="address_sub" placeholder="상세주소" required value="{$member_info->address_sub}" />
+									<span id="result"></span>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="profile_image" class="col-lg-4 col-md-4 col-sm-2 control-label"> 프로필사진</label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<input type="hidden" name="__profile_image_exist" value="true">
+								<span id="profile_imagetag"><img src="{$member_info->profile_image->src}" alt="프로필 사진">
+								 <button type="button" onclick="doDeleteProfileImage({$member_info->member_srl});return false;">삭제</button></span>
+								
+									<input type="file" name="profile_image" id="profile_image" value="" accept="image/*">
+									<p class="help-block">가로 제한 길이: 90px, 세로 제한 길이: 90px</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					<div class="text-center">
+					<button type="submit" class="btn btn-default">회원정보수정</button>&nbsp;&nbsp;
+					<button type="button" onclick="/index.php" class="btn btn-default">수정취소</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<script>
+		jQuery(function(){
+			document.title = '회원정보수정';		
+		});
+		</script>
+		
+		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+		<script>
+			function DaumPostcode() {
+				new daum.Postcode({
+					oncomplete: function(data) {
+						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+						// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+						var fullAddr = ''; // 최종 주소 변수
+						var extraAddr = ''; // 조합형 주소 변수
+
+						// 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+						if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+							fullAddr = data.roadAddress;
+
+						} else { // 사용자가 지번 주소를 선택했을 경우(J)
+							fullAddr = data.jibunAddress;
+						}
+
+						// 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+						if(data.userSelectedType === 'R'){
+							//법정동명이 있을 경우 추가한다.
+							if(data.bname !== ''){
+								extraAddr += data.bname;
+							}
+							// 건물명이 있을 경우 추가한다.
+							if(data.buildingName !== ''){
+								extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+							}
+							// 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+							fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+						}
+
+						// 우편번호와 주소 정보를 해당 필드에 넣는다.
+						document.getElementById("post").value = data.postcode1 + data.postcode2;
+						document.getElementById("address").value = fullAddr;
+
+						// 커서를 상세주소 필드로 이동한다.
+						document.getElementById("address_sub").focus();
+					}
+				}).open();
+			}
+		</script>

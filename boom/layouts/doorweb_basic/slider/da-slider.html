@@ -1,0 +1,71 @@
+<!--@if(!$layout_info->slide_speed)-->{@$layout_info->slide_speed = "5000"}<!--@end-->
+<load target="../css/slide.css" />
+<load target="../js/modernizr.custom.js" type="body" />
+<load target="../js/jquery.cslider.js" type="body" />
+<style>
+<block cond="$layout_info->slide_title_color">
+.da-slide h2{color:{$layout_info->slide_title_color};margin-top:0;padding-top:80px;width:40%;font-family:"Helvetica Neue", "Apple SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔고딕", "Nanum Gothic", "돋움", "Dotum", Helvetica, Arial, sans-serif;}
+</block>
+<block cond="$layout_info->slide_text_color">
+.da-slide p{color:{$layout_info->slide_text_color};font-family:"Helvetica Neue", "Apple SD 산돌고딕 Neo", "Apple SD Gothic Neo", "나눔고딕", "Nanum Gothic", "돋움", "Dotum", Helvetica, Arial, sans-serif;font-style:normal}
+</block>
+<block cond="$layout_info->slide_bg">
+.da-slider{background:url({$layout_info->slide_bg}) repeat;}
+</block>
+.da-slide{}
+.da-slide .da-img{top:80px;position:absolute}
+.da-arrows span{width:57px;height:57px;margin-top:-28px;}
+.da-arrows span:after {display:none;}
+.da-arrows i.fa{font-size:45px;-webkit-text-shadow:0 0 6px rgba(0,0,0,0.5);-moz-text-shadow:0 0 6px rgba(0,0,0,0.5);text-shadow:0 0 6px rgba(0,0,0,0.5);opacity: 0.7;filter: alpha(opacity=70);}
+</style>
+
+	<div id="da-slider" class="da-slider">
+			<div class="da-slide" cond="$layout_info->slide_img1">
+			
+					<h2>{$layout_info->slide_title1}</h2>
+					<p>{$layout_info->slide_text1}</p>
+					<a cond="$layout_info->slide_url1" href="{$layout_info->slide_url1}" class="da-link">Read more</a>
+					<div class="da-img"><img src="{$layout_info->slide_img1}" alt="{$layout_info->slide_title1}" /></div>
+			
+			</div>
+			
+			<div class="da-slide" cond="$layout_info->slide_img2">
+
+					<h2>{$layout_info->slide_title2}</h2>
+					<p>{$layout_info->slide_text2}</p>
+					<a cond="$layout_info->slide_url2" href="{$layout_info->slide_url2}" class="da-link">Read more</a>
+					<div class="da-img"><img src="{$layout_info->slide_img2}" alt="{$layout_info->slide_title2}" /></div>
+
+			</div>
+			<div class="da-slide" cond="$layout_info->slide_img3">
+
+					<h2>{$layout_info->slide_title3}</h2>
+					<p>{$layout_info->slide_text3}</p>
+					<a cond="$layout_info->slide_url3" href="{$layout_info->slide_url3}" class="da-link">Read more</a>
+					<div class="da-img"><img src="{$layout_info->slide_img3}" alt="{$layout_info->slide_title3}" /></div>
+			
+			</div>
+			<div class="da-slide" cond="$layout_info->slide_img4">
+		
+					<h2>{$layout_info->slide_title4}</h2>
+					<p>{$layout_info->slide_text4}</p>
+					<a cond="$layout_info->slide_url4" href="{$layout_info->slide_url4}" class="da-link">Read more</a>
+					<div class="da-img"><img src="{$layout_info->slide_img4}" alt="{$layout_info->slide_title4}" /></div>
+
+			</div>
+		<nav class="da-arrows">
+			<span class="da-arrows-prev"><i class="fa fa-arrow-circle-left"></i></span>
+			<span class="da-arrows-next"><i class="fa fa-arrow-circle-right"></i></span>
+		</nav>
+		<script type="text/javascript">
+			jQuery(function($){
+			
+				$('#da-slider').cslider({
+					autoplay	: true,
+					bgincrement	: 450,
+					interval	: {$layout_info->slide_speed}
+				});
+			
+		});
+		</script>	
+	</div>

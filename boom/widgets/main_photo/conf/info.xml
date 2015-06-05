@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+    <title xml:lang="ko">메인포토추출</title>
+    <title xml:lang="en">main_photo</title>
+    <description xml:lang="ko">사용자가 선택한 게시판에 이미지와 글을 출력합니다.</description>
+    <version>0.1</version>
+    <date>2015-05-07</date>
+    <author email_address="" link="">
+        <name xml:lang="ko">main_photo</name>
+    </author>
+    <extra_vars>
+        <var id="order_target">
+            <type>select</type>
+            <name xml:lang="ko">정렬 대상</name>
+            <description xml:lang="ko">등록된 순서 또는 변경된 순서로 정렬을 할 수 있습니다.</description>
+            <options>
+                <value>regdate</value>
+                <name xml:lang="ko">최신글</name>
+            </options>
+            <options>
+                <value>readed_count</value>
+                <name xml:lang="ko">조회수</name>
+            </options>
+            <options>
+                <value>comment_count</value>
+                <name xml:lang="ko">댓글 수</name>
+            </options>
+        </var>
+        <var id="notice_list">
+            <type>select</type>
+            <name xml:lang="ko">공지사항</name>
+            <description xml:lang="ko">등록된 순서 또는 변경된 순서로 정렬을 할 수 있습니다.</description>
+            <options>
+                <value>y,n</value>
+                <name xml:lang="ko">둘다</name>
+            </options>
+            <options>
+                <value>y</value>
+                <name xml:lang="ko">공지사항 만</name>
+            </options>
+            <options>
+                <value>n</value>
+                <name xml:lang="ko">공지사항 제외</name>
+            </options>
+        </var>
+        <var id="image_isset">
+            <type>select</type>
+            <name xml:lang="ko">이미지 여부</name>
+            <description xml:lang="ko">이미지가 없는 게시판도 가져올지 결정한다.</description>
+            <options>
+                <value>image_able</value>
+                <name xml:lang="ko">이미지만 있는 게시판</name>
+            </options>
+            <options>
+                <value>image_unable</value>
+                <name xml:lang="ko">이미지가 없는 게시판도</name>
+            </options>
+        </var>
+        <var id="title_view">
+            <type>select</type>
+            <name xml:lang="ko">타이틀 출력</name>
+            <description xml:lang="ko">이미지가 없는 게시판도 가져올지 결정한다.</description>
+            <options>
+                <value>view</value>
+                <name xml:lang="ko">출력</name>
+            </options>
+            <options>
+                <value>unview</value>
+                <name xml:lang="ko">출력 안함</name>
+            </options>
+        </var>
+        <var id="title_name">
+            <type>text</type>
+            <name xml:lang="ko">위젯 제목</name>
+            <description xml:lang="ko">위젯이 출력될때 임의적인 제목입니다. </description>
+        </var>
+        <var id="module_srls">
+            <type>module_srl_list</type>
+            <name xml:lang="ko">대상 모듈</name>
+            <description xml:lang="ko">선택하신 모듈에 등록된 글을 대상으로 합니다.</description>
+        </var>
+        <var id="limit_num">
+            <type>text</type>
+            <name xml:lang="ko">출력하는 게시판 수</name>
+            <description xml:lang="ko">빈칸으로 남겨두면 기본 값이 들어간다.(기본 값은 5)</description>
+        </var>
+        <var id="widget_title_length">
+            <type>text</type>
+            <name xml:lang="ko">출력하는 위젯 타이틀 글자 수</name>
+            <description xml:lang="ko">빈칸으로 남겨두면 최대 값이 들어간다.</description>
+        </var>
+        <var id="list_title_length">
+            <type>text</type>
+            <name xml:lang="ko">출력하는 게시판 타이틀 글자 수</name>
+            <description xml:lang="ko">빈칸으로 남겨두면 최대 값이 들어간다.</description>
+        </var>
+        <var id="list_content_length">
+            <type>text</type>
+            <name xml:lang="ko">출력하는 게시판 내용 글자 수</name>
+            <description xml:lang="ko">빈칸으로 남겨두면 최대 값이 들어간다.</description>
+        </var>
+    </extra_vars>
+</widget>

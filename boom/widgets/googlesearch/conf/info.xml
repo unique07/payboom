@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="1.0.1">
+  <title xml:lang="ko">구글 검색 위젯</title>
+  <description xml:lang="ko">구글 검색 위젯입니다. </description>
+  <version>1.0.1</version>
+  <date>2010-12-20</date>
+  <author email_address="brz7942@nate.com" link="http://sozar.net">
+    <name xml:lang="ko">소자네</name>
+  </author>	 
+</widget>

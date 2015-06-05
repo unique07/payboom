@@ -1,0 +1,64 @@
+<!--@if(!$_loaded)-->
+    {@ $_loaded = true; }
+    <!--// 컬러셋 체크 -->
+    <!--@if($module_info->colorset != "white")-->
+        {@$module_info->colorset = "white"}
+    <!--@end-->
+
+    <!--// CSS 파일 로드 (컬러셋에 따라서) -->
+    <!--@if($module_info->colorset == "white")-->
+        <!--%import("white.css")-->
+    <!--@end-->
+	
+    <div id="spot" style="text-align:center;">
+        <form action="{getUrl()}" method="post" class="search" id="fo_is" no-error-return-url="true" onsubmit="checkMenuItemSrls();" >
+            <input type="hidden" name="mid" value="{$mid}" />
+            <input type="hidden" name="act" value="DS" />
+            <input type="hidden" name="where" value="{$where}" />
+			<input type="hidden" name="search_target" value="title_content" />
+            <input name="is_keyword" type="text" class="iText" value="{$is_keyword}"/>
+            <span class="button large strong black"><input type="submit" value="{$lang->cmd_search}" /></span>
+			
+			<block  cond="$config->show_detail_box != 'N'">
+			<input type="hidden" name="menu_item_srls" value="{$menu_item_srls}" />
+			<load target="detailbox.css" />
+			<load target="detailbox.js" />
+			<span class="button large strong black showDetail"><input type="button" value="{$lang->search_target}" /></span>
+			<div class="detailWrap">
+				<div cond="$config->show_detail_box != 'N'" class="detailBox">
+					<span style="float:right; cursor:pointer;" class="showDetail"> X </span>
+				{@$idx=1}
+				<ul class="first">
+				<!--@foreach($menu_list as $key => $val)-->
+					<li class="firstMenu">
+						<!--@if($val->list)-->
+						{$val->name}
+						<!--@else-->
+						<input type="checkbox" parent="true" id="chk_{$val->menu_item_srl}" class="menu_item_srls" value="{$val->menu_item_srl}" checked="checked"|cond="!$menu_item_srls || ($menu_item_srls && in_array($val->menu_item_srl,$menu_srls))" />
+						<label for="chk_{$val->menu_item_srl}">{$val->name}</label>
+						<!--@end-->
+					</li>
+					
+					<li loop="$val->list =>$k,$v" cond="$val->list"> <input parent="false" type="checkbox" id="chk_{$v->menu_item_srl}" class="menu_item_srls" value="{$v->menu_item_srl}" checked="checked"|cond="!$menu_item_srls || ($menu_item_srls && in_array($v->menu_item_srl,$menu_srls))" />
+					<label for="chk_{$v->menu_item_srl}">{$v->name}</label> </li>
+					
+				{@$idx++}
+					<!--@if($menu_list[$key+1]->list || (!$menu_list[$key+1]->list && $val->list))--></ul><ul><!--@end-->
+				<!--@end-->
+				</ul>
+				<div style="clear:both;"></div>
+				</div>
+			</div>
+			</block>
+        </form>
+    </div>
+	
+    <ul class="localNavigation">
+        <li class="on"|cond="!$where" ><a href="{getAutoEncodedUrl('where','','page','','division','')}">{$lang->integration_search}</a></li>
+        <li cond="$config->view_result['document'] != 'N'"	class="on"|cond="$where=='document'" ><a href="{getAutoEncodedUrl('where','document','page',1,'division','')}">{$lang->document}</a></li>
+        <li cond="$config->view_result['comment'] != 'N'" 	class="on"|cond="$where=='comment'" ><a href="{getAutoEncodedUrl('where','comment','page',1,'division','')}">{$lang->comment}</a></li>
+        <li cond="$config->view_result['trackback'] != 'N'" 	class="on"|cond="$where=='trackback'" ><a href="{getAutoEncodedUrl('where','trackback','page',1,'division','')}">{$lang->trackback}</a></li>
+        <li cond="$config->view_result['multimedia'] != 'N'" class="on"|cond="$where=='multimedia'" ><a href="{getAutoEncodedUrl('where','multimedia','page',1,'division','')}">{$lang->multimedia}</a></li>
+        <li cond="$config->view_result['file'] != 'N'" 			class="on"|cond="$where=='file'" ><a href="{getAutoEncodedUrl('where','file','page',1,'division','')}">{$lang->file}</a></li>
+    </ul>
+<!--@end-->

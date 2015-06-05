@@ -1,0 +1,132 @@
+@charset "utf-8"; 
+
+#NS_leftcontent { clear:both;width:132px;float:left; margin-top:11px;}
+/*#NS_maincontent { float:left;border-left:1px dotted #000;border-bottom:1px dotted #000; padding:0px 0px 0px 9px;margin:11px 0px 0px 0px; }*/
+/*#NS_maincontent { float:left; padding:0px 0px 0px 9px;margin:11px 0px 0px 0px; }*/
+/*#NS_maincontent { float:left; padding:0px 0px 0px 9px;margin:11px 0px 0px 0px; width: 860px }*/
+#NS_maincontent { float:left; padding:0px 0px 0px 9px;margin:11px 0px 0px 0px; }
+/*#NS_maincontent .notice { background: #ececec url('http://img.syoff.com/images/minyong/notice.gif') no-repeat top left; width:608px;height:19px;padding:7px 0px 0px 70px; margin-top: 0px; font-family:Dotum; font-size:8pt; color:#000000;}*/
+#NS_maincontent .notice { background: url('http://img.syoff.com/images/minyong/notice.gif') no-repeat top left; width:608px;height:19px;padding:7px 0px 0px 70px; margin-top: 0px; font-family:Dotum; font-size:8pt; color:#000000;}
+/*#NS_maincontent .NS_write { width:638px; padding-left:20px; padding-right:20px; }*/
+/*#NS_maincontent .NS_write { padding-left:20px; padding-right:20px; }*/
+
+.selectMyArticle { float:right; margin-top:10px; margin-bottom:5px;}
+
+
+.NS_write .menu_section { font-weight:bold; color:#000000; margin-top:15px; margin-left:20px; margin-bottom:0px; }
+.NS_write .menu_section span { margin-right:20px; font-family:Dotum;}
+
+.NS_write .NS_textarea { border:4px solid #000000; width:614px; height:80px; overflow:hidden; margin:0px 0px; font-family: Gulim;}
+
+.NS_write .btnArea { clear:both; background: #ececec; width:638px; height:19px;padding:3px 3px 3px 0px; margin-top: 5px; font-family:Dotum; font-size:8pt; color:#000000; text-align:right;}
+
+.NS_write .commentbox h4 { font-family: 'Georgia'; font-size: 11px; color: #000; font-style:italic; font-weight:normal; }
+.NS_write .commentbox .commentcount { font-size:24px; margin-right:5px; color: #0585ff; }
+
+/*.NS_write .commentbox .commententry { clear:both; border-top: 1px dotted #e5e5e5; padding:25px 0px 30px 3px; }*/
+.NS_write .commentbox .commententry { clear:both; padding:25px 0px 30px 3px; }
+.NS_write .commentbox .commententry .icon { border:1px solid black; float:left; width:50px; height:50px; }
+/*.NS_write .commentbox .commententry .databox { float:left;margin-left:13px;padding:0px 0px; width:570px; }*/
+/*.NS_write .commentbox .commententry .databox { float:left;margin-left:13px;padding:0px 0px; width:790px; }*/
+.NS_write .commentbox .commententry .databox { float:left;margin-left:23px;padding:0px 0px; width:760px; }
+.NS_write .commentbox .commententry .databox .commentusername { margin:0px 0px;padding:0px 0px;color: #0684fd; font-family: 'Gulim'; font-size: 12px; font-weight:bold; float:left; }
+.NS_write .commentbox .commententry .databox .commentuserid { margin:0px 0px 0px 5px;padding:0px 0px;color: #000000; font-family: 'Gulim'; font-size: 12px; float:left; } 
+.NS_write .commentbox .commententry .databox .commentdate { margin:0px 0px;padding:0px 0px;margin: 0px 0px 0px 10px; color: #909090; font-family: 'Georgia'; font-size: 11px; font-style:italic; float:left; } 
+.NS_write .commentbox .commententry .databox .commentmodify { margin:0px 0px;padding:0px 0px;float:right;font-family:Dotum; font-size:11px; color: #b8b8b8; }
+.NS_write .commentbox .commententry .databox .commentcontent { clear:both;padding:15px 0px 0px 0px;margin:0px 0px;font-family:Gulim; color: #000;line-height:150%; }
+.NS_write .commentbox .commentwrite { border-top:1px dotted #e5e5e5; }
+
+.NS_write .commentbox .commentwrite .commentwritetitle { margin: 17px 0px 11px 0px; }
+.NS_write .commentbox .commentwrite .commentwritetitle h4 { float:left; font-family: 'Georgia'; font-size: 11px; color: #000; font-style:italic; font-weight:normal; margin:0px 0px; padding:0px 0px; color: #333; }
+.NS_write .commentbox .commentwrite .commentwritetitle .login { float:right; padding:0px 0px; overflow: hidden; display: block; width: 26px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/login.gif') no-repeat; margin-right:28px; margin-top: 2px; }
+.NS_write .commentbox .commentwrite .commentwritetitle .join { float:right; padding:0px 0px; overflow: hidden; display: block; width: 35px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/join.gif') no-repeat; margin-right:10px; margin-top: 2px; }
+
+.NS_write .commentbox .commentwrite .icon { float:left; border:1px solid black; float:left; width:50px; height:50px; }
+.NS_write .commentbox .commentwrite textarea { float:left; margin-left: 13px; width:628px; height:81px;border:1px solid #000; }
+.NS_write .commentbox .commentwrite .write { overflow: hidden; display: block; width: 53px; height: 21px; text-indent: -10000em; background: url('http://img.syoff.com/images/btn/write.gif') no-repeat; margin: 7px 0px 0px 760px;}
+.NS_write .commentbox .prev { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/prev.gif') no-repeat; float:left; margin: 12px 15px 0px 4px; }
+.NS_write .commentbox .next { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/next.gif') no-repeat; float:left; margin: 12px 0px 0px 0px; }
+.NS_write .commentbox .modify { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/modify.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+.NS_write .commentbox .delete { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/delete.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+.NS_write .commentbox .list { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/list.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+
+
+
+
+
+
+.NS_write2 .menu_section { font-weight:bold; color:#000000; margin-top:15px; margin-left:20px; margin-bottom:0px; }
+.NS_write2 .menu_section span { margin-right:20px; font-family:Dotum;}
+
+.NS_write2 .NS_textarea { border:4px solid #000000; width:614px; height:80px; overflow:hidden; margin:0px 0px; font-family: Gulim;}
+
+.NS_write2 .btnArea { clear:both; background: #ececec; width:638px; height:19px;padding:3px 3px 3px 0px; margin-top: 5px; font-family:Dotum; font-size:8pt; color:#000000; text-align:right;}
+
+.NS_write2 .commentbox h4 { font-family: 'Georgia'; font-size: 11px; color: #000; font-style:italic; font-weight:normal; }
+.NS_write2 .commentbox .commentcount { font-size:24px; margin-right:5px; color: #0585ff; }
+
+.NS_write2 .commentbox .commententry { clear:both; padding:25px 0px 30px 3px; }
+.NS_write2 .commentbox .commententry .icon { border:1px solid black; float:left; width:50px; height:50px; }
+.NS_write2 .commentbox .commententry .databox { float:left;margin-left:13px;padding:0px 0px; width:770px; }
+.NS_write2 .commentbox .commententry .databox .commentusername { margin:0px 0px;padding:0px 0px;color: #0684fd; font-family: 'Gulim'; font-size: 12px; font-weight:bold; float:left; }
+.NS_write2 .commentbox .commententry .databox .commentuserid { margin:0px 0px 0px 5px;padding:0px 0px;color: #000000; font-family: 'Gulim'; font-size: 12px; float:left; }
+.NS_write2 .commentbox .commententry .databox .commentdate { margin:0px 0px;padding:0px 0px;margin: 0px 0px 0px 10px; color: #909090; font-family: 'Georgia'; font-size: 11px; font-style:italic; float:left; }
+.NS_write2 .commentbox .commententry .databox .commentmodify { margin:0px 0px;padding:0px 0px;float:right;font-family:Dotum; font-size:11px; color: #b8b8b8; }
+.NS_write2 .commentbox .commententry .databox .commentcontent { clear:both;padding:15px 0px 0px 0px;margin:0px 0px;font-family:Gulim; color: #000;line-height:150%; }
+.NS_write2 .commentbox .commentwrite { border-top:1px dotted #e5e5e5; }
+
+.NS_write2 .commentbox .commentwrite .commentwritetitle { margin: 17px 0px 11px 0px; }
+.NS_write2 .commentbox .commentwrite .commentwritetitle h4 { float:left; font-family: 'Georgia'; font-size: 11px; color: #000; font-style:italic; font-weight:normal; margin:0px 0px; padding:0px 0px; color: #333; }
+.NS_write2 .commentbox .commentwrite .commentwritetitle .login { float:right; padding:0px 0px; overflow: hidden; display: block; width: 26px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/login.gif') no-repeat; margin-right:28px; margin-top: 2px; }
+.NS_write2 .commentbox .commentwrite .commentwritetitle .join { float:right; padding:0px 0px; overflow: hidden; display: block; width: 35px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/join.gif') no-repeat; margin-right:10px; margin-top: 2px; }
+
+.NS_write2 .commentbox .commentwrite .icon { float:left; border:1px solid black; float:left; width:50px; height:50px; }
+.NS_write2 .commentbox .commentwrite textarea { float:left; margin-left: 13px; width:628px; height:81px;border:1px solid #000; }
+.NS_write2 .commentbox .commentwrite .write { overflow: hidden; display: block; width: 53px; height: 21px; text-indent: -10000em; background: url('http://img.syoff.com/images/btn/write.gif') no-repeat; margin: 7px 0px 0px 760px;}
+.NS_write2 .commentbox .prev { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/prev.gif') no-repeat; float:left; margin: 12px 15px 0px 4px; }
+.NS_write2 .commentbox .next { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/next.gif') no-repeat; float:left; margin: 12px 0px 0px 0px; }
+.NS_write2 .commentbox .modify { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/modify.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+.NS_write2 .commentbox .delete { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/delete.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+.NS_write2 .commentbox .list { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/list.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+
+
+
+
+/**
+신규
+*/
+
+#NS_maincontent .contentlist { width: 100%; border:1px solid #dddfda }
+#NS_maincontent .contentlist a:link { color: #2a2a2a }
+#NS_maincontent .contentlist a:visited { color: #2a2a2a }
+
+#NS_maincontent .contentlist thead { background: url('/images/community/table_header_bg.gif'); height:23px; }
+#NS_maincontent .contentlist thead th { font-weight: normal; text-align: center;border-bottom: 1px solid #ededeb  }
+#NS_maincontent .contentlist tbody td { border-bottom: 1px solid #ededed; height:28px}
+
+
+.leftmenulist li a.normal {font-size:12px; color:#999999; background:url("/images/community/leftmenu_icon.gif") no-repeat left; padding-left:10px;}
+.leftmenulist li a.selected {font-size:12px; color:#333333; font-weight:bold; background:url("/images/community/leftmenu_icon.gif") no-repeat left; padding-left:10px;}
+
+
+
+
+
+
+
+
+
+.header_left_bar {background: url('../images/community/table_header_bg2.gif') no-repeat left top}
+
+.community_h_area {background-color: white; height:28px; border: 1px solid #dddfda}
+.community_h_title {width:100px;height:22px;background: url('/images/community/table_header_bg2.gif') no-repeat right bottom   ; text-align: center; padding-top:6px;}
+.community_comment_write {margin-top:5px;border:4px solid #cccccc;height:22px;color:#646464;padding:10px 10px;font-size:11px;font-family:Dotum;width:745px}
+.re_cnt { display: inline-block; height: 12px; background: url('../images/community/icons_01.png') no-repeat -135px -45px; overflow: hidden; vertical-align: middle; padding-left: 15px; color: #0684fd; font-weight: bold; font-size: 10px; }
+td .blank { display: inline-block; width: 12px; height: 10px; overflow: hidden; vertical-align: middle; background: url('../images/community/icons_01.png') no-repeat -90px -45px; }
+td .blank span { cursor: pointer; }
+
+.NS_write2 .commentbox { border:1px solid #cacaca}
+
+
+
+

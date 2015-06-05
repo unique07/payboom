@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+    <title xml:lang="ko">딩 고정 배너</title>
+    <description xml:lang="ko">
+        지정 모듈에 고정 배너를 위, 아래에 출력합니다.
+    </description>
+    <version>1.5.0</version>
+    <date>2015-05-01</date>
+
+    <extra_vars>
+        <var name="direction" type="select">
+            <title xml:lang="ko">배너 표시 방향</title>
+            <description xml:lang="ko">배너를 표시할 방향을 설정합니다.</description>
+            <options value="up">
+                <title xml:lang="ko">위</title>
+            </options>
+            <options value="down">
+                <title xml:lang="ko">아래</title>
+            </options>
+        </var>
+        <var name="button_multi_position">
+            <type>text</type>
+            <title xml:lang="ko">닫기 버튼 위치</title>
+            <description xml:lang="ko">버튼의 위치를 설정할 수 있도록 돕습니다. (예시: 50px, 20px, 10px 0| 기본 값은 13px, 10px 입니다.) </description>
+        </var>
+
+        <!-- 제거 대기 옵션 ([!] Remove expected) -->
+        <var name="bottom_position">
+            <type>text</type>
+            <title xml:lang="ko">배너 하단 여백 (margin-bottom) ([!] Remove expected)</title>
+            <description xml:lang="ko">배너의 하단 여백을 주는 기능입니다. (예시: 50px, 기본 값은 0px 입니다.) </description>
+        </var>
+        <!--// 제거 대기 옵션 -->
+
+
+        <!-- 1.4.0 Version -->
+        <var name="target_css">
+            <type>text</type>
+            <title xml:lang="ko">내비게이션 대상 (draft)</title>
+            <description xml:lang="ko">top을 적용할 대상을 적어주세요. (예시: .header, #nav-header, h1 | 기본 값은 공백입니다.)</description>
+        </var>
+        <var name="target_css_top">
+            <type>text</type>
+            <title xml:lang="ko">내비게이션 top 값 (draft)</title>
+            <description xml:lang="ko">대상의 css top 값을 적어주세요. (예시: 20px)</description>
+        </var>
+        <!--// 1.4.0 Version -->
+
+
+        <!-- 1.4.1 Version-->
+        <var name="inner_html">
+            <type>text</type>
+            <title xml:lang="ko">배너를 끼워넣을 태그</title>
+            <description xml:lang="ko">fixed된 네비게이션 문제를 해결할 수 있도록 사용가자 지정한 태그에 배너를 끼울 수 있는 기능입니다. (예시: .header, #nav-header, h1 | 기본 값은 공백입니다.)</description>
+        </var>
+        <!--// 1.4.1 Version -->
+
+
+        <var name="colors">
+            <type>text</type>
+            <title xml:lang="ko">배너 색</title>
+            <description xml:lang="ko">배너의 배경색입니다. ( #을 포함한 16진수, rgba(r,g,b,a), rgb(r,g,b)를 입력해주세요.)</description>
+        </var>
+        <var name="context" type="textarea">
+            <title xml:lang="ko">HTML</title>
+            <description xml:lang="ko">배너의 내용을 HTML코드 또는 평문으로 적어주세요. (엔터 쓰지 마시고 한 줄로 입력해주세요.)</description>
+        </var>
+        <var name="css" type="textarea">
+            <title xml:lang="ko">CSS</title>
+            <description xml:lang="ko">배너의 내용을 CSS로 변경할 수 있습니다. (해당 애드온의 최상위 부모 태그 클래스는 'ding-fixed-container'입니다.)</description>
+        </var>
+        <var name="h" type="text">
+            <title xml:lang="ko">height</title>
+            <description xml:lang="ko">배너의 높이를 입력해주세요. (60px과 같이 단위를 입력해주세요.)</description>
+        </var>
+        <var name="z_index" type="text">
+            <title xml:lang="ko">z-index</title>
+            <description xml:lang="ko">z-index 값을 입력해주세요. (기본 값 9999입니다.)</description>
+        </var>
+
+        <var name="animation_decision" type="select">
+            <title xml:lang="ko">닫기 애니메이션 활성화 여부</title>
+            <description xml:lang="ko">배너를 닫았을 때 애니메이션을 실행 여부를 결정할 수 있습니다.</description>
+            <options value="enable">
+                <title xml:lang="ko">사용</title>
+            </options>
+            <options value="disable">
+                <title xml:lang="ko">사용 안함</title>
+            </options>
+        </var>
+
+        <var name="animation_speed">
+            <type>text</type>
+            <title xml:lang="ko">애니메이션 시간</title>
+            <description xml:lang="ko">배너가 서서히 사라지는 시간 ('1000'이 '1'초입니다. 아무것도 입력하지 않으면 기본 값 '1000'이 들어갑니다.)</description>
+        </var>
+        <var name="delete_class_name">
+            <type>text</type>
+            <title xml:lang="ko">배너를 끄기 위한 태그</title>
+            <description xml:lang="ko">html에 입력한 클래스를 선택하여 배너를 꺼줄 수 있습니다. (.ding이라고 입력하면 ding 클래스를 찾아 누르면 해당 배너를 사라지게 만듭니다.)</description>
+        </var>
+        <var name="default" type="select">
+            <title xml:lang="ko">기본 배너 닫기 버튼 활성화</title>
+            <description xml:lang="ko">DING에서 제공하는 기본 닫기 버튼을 사용하고 싶으시면 사용으로 체크해주시면 됩니다. (SVG로 그려냅니다.)</description>
+            <options value="disabled">
+                <title xml:lang="ko">사용 안 함</title>4
+            </options>
+            <options value="enable">
+                <title xml:lang="ko">사용</title>
+            </options>
+        </var>
+        <var name="default_color">
+            <type>text</type>
+            <title xml:lang="ko">기본 배너 닫기 버튼 색상</title>
+            <description xml:lang="ko">이 값을 입력하지 않으면 자동으로 흰색(rgb(255,255,255)이 됩니다.</description>
+        </var>
+        <var name="cookie_time">
+            <type>text</type>
+            <title xml:lang="ko">배너 쿠키</title>
+            <title xml:lang="en">Banner Cookie</title>
+            <description xml:lang="ko">배너를 닫았을 때 며칠 뒤에 다시 노출시킬지 결정합니다. (입력하지 않으면 닫아도 페이지가 리로드 될 때 다시 나타납니다. / 쿠키의 이름은 ding_fixed_banner의 이름으로 저장됩니다.)</description>
+        </var>
+    </extra_vars>
+
+    <author email_address="pro_bi@naver.com" link="http://goo.gl/V1hfBy">
+        <name xml:lang="ko">DING</name>
+        <name xml:lang="jp">DING</name>
+        <name xml:lang="en">DING</name>
+        <name xml:lang="vi">DING</name>
+        <name xml:lang="zh-CN">DING</name>
+        <name xml:lang="es">DING</name>
+        <name xml:lang="ru">DING</name>
+        <name xml:lang="ge">DING</name>
+        <name xml:lang="zh-TW">DING</name>
+    </author>
+</addon>

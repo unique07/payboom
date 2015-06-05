@@ -1,0 +1,124 @@
+<script>
+function checkJoin()
+{
+	var f = document.input_form;
+
+	if (!f.user_name.value)
+	{
+		alert('이름을 입력하세요');
+		f.user_name.focus();
+		return;
+	}
+
+	if (f.year.selectedIndex <= 0)
+	{
+		alert('년도를 선택하세요');
+		f.year.focus();
+		return;
+	}
+
+	if (f.month.selectedIndex <= 0)
+	{
+		alert('월을 선택하세요');
+		f.month.focus();
+		return;
+	}
+
+	if (f.day.selectedIndex <= 0)
+	{
+		alert('일자를 선택하세요');
+		f.day.focus();
+		return;
+	}
+
+	if (f.sex[0].checked == false && f.sex[1].checked == false)
+	{
+		alert('성별을 선택하세요');
+		f.sex[0].focus();
+		return;
+	}
+
+	f.submit();
+}
+
+function openWin()
+{
+  window.open("https://check.namecheck.co.kr/checkplus_new_model4/checkplus.cb?m=checkplusSerivce&EncodeData={enc_data}", "", "width=500, height=465,resizable=yes");
+}
+
+</script>
+	<div id="identify" class="contents join">
+		<div class="text-center">
+			<h3><span>NEW REGISTER</span></h3>
+			<ul class="list-group clearfix join-process">
+				<li class="list-group-item c01 pull-left col-lg-3 col-md-3 col-sm-3 text-center"><span>01</span> 약관동의</li>
+				<li class="list-group-item c02 pull-left col-lg-3 col-md-3 col-sm-4 text-center active"><span>02</span> 가입방법 선택 및 인증</li>
+				<li class="list-group-item c03 pull-left col-lg-3 col-md-3 col-sm-3 text-center"><span>03</span> 회원정보입력</li>
+				<li class="list-group-item c04 pull-left col-lg-3 col-md-3 col-sm-2 text-center"><span>04</span> 가입완료</li>
+			</ul>
+			<div class="wrapper join-own-identify">
+				<h4><span class="glyphicon glyphicon-circle-arrow-right"></span>본인인증 회원가입</h4>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<form name="input_form" class="form-horizontal text-left" action="/boom/index.php" role="form">
+						<input type="hidden" name="mid" value="{$mid}"/>
+						<input type="hidden" name="act" value="{$act}"/>
+						<input type="hidden" name="agree" value="{$agree}"/>
+						<input type="hidden" name="grp" value="{$grp}"/>
+						<input type="hidden" name="certify" value="Y"/>
+							<div class="form-group">
+								<label for="inputName1" class="col-lg-4 col-md-4 col-sm-3 control-label name">이름</label>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<input type="text" class="form-control input-sm" name="user_name" id="user_name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputName1" class="col-lg-4 col-md-4 col-sm-3 control-label birth">생년월일</label>
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 clearfix">
+									<div class="selectbox col-lg-2 col-md-2 col-xs-4">
+										<select class="form-control input-sm" name="year" value="">
+											<option>년도</option>
+											<!--@for($i = 1930; $i <= date('Y'); $i++)-->
+											<option value="{$i}" <!--@if($i == 1980)-->selected<!--@end-->>{$i}</option>
+											<!--@end-->
+										</select>
+									</div>
+									<div class="selectbox col-lg-2 col-md-2 col-xs-4">
+									<select class="form-control input-sm" name="month">
+										<option value="">월</option>
+										<!--@for($i = 1; $i <= 12; $i++)-->
+										<option value="{$i}">{$i}</option>
+										<!--@end-->
+									</select>
+									</div>
+									<div class="selectbox col-lg-2 col-md-2 col-xs-4">
+									<select class="form-control input-sm" name="day">
+										<option value="">일</option>
+										<!--@for($i = 1; $i <= 31; $i++)-->
+										<option value="{$i}">{$i}</option>
+										<!--@end-->
+									</select>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputName1" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 control-label sex">성별</label>
+								<div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
+									<label class="checkbox-inline radio">
+										<input type="radio" id="inlineRadio1" name="sex" value="1" checked="checked"><span>남</span>
+									</label>
+									<label class="checkbox-inline radio">
+										<input type="radio" id="inlineRadio2" name="sex" value="2"><span>여</span>
+									</label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<a href="javascript:checkJoin()" class="btn btn-default" role="button">확인</a>
+				<ul class="noticeBox list-unstyled text-left col-md-offset-3">
+					<li>* 주민등록번호 없이 이메일 인증 또는 안심본인 인증으로 회원가입이 가능합니다.</li>
+					<li>* 기업회원의 경우, 대표자 실명으로 나이스평가정보의 휴대폰 본인인증 사용원칙을 따르고 있습니다. </li>
+					
+				</ul>
+			</div>

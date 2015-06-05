@@ -1,0 +1,69 @@
+<form action="./" method="get" class="boardListForm">
+<fieldset>
+<table cond="$document_list || $notice_list" class="table table-hover restlist">
+	<include cond="$mi->display_listheadset_button== 'Y'" target="_style.table_head.html" />
+	<tbody>
+	<include target="_style.table_notice.html" />
+	</tbody>	
+</table>
+
+<!--// Normal -->
+<ul class="restwebzine media-list">
+	<li class="media relative <!--@if($mi->display_webzineborder=='N')-->webzineborder<!--@else-->thumbnail<!--@end-->" loop="$document_list=>$no,$document">
+		<!--@if($val->idx!=-1 && $val->eid=='video' && $document->getExtraValueHTML($val->idx) && $mi->display_videoplaylist=='Y')-->
+			<div loop="$list_config=>$key,$val" cond="$val->idx!=-1 && $val->eid=='video' && $document->getExtraValueHTML($val->idx)" class="pull-left rthumb">
+				<div  class="imgwh" style="width:{$mi->thumbnail_width}px;height:{$mi->thumbnail_height}px;">
+					<div class="wrap" style="background-color:#000;">
+						<include target="_rest.viewlistvideo.html" />
+					</div>
+				</div>	
+			</div>	
+		<!--@else-->
+			<a cond="$list_config['thumbnail']" href="{getUrl('document_srl',$document->document_srl,'listStyle',$listStyle, 'cpage','')}" class="pull-left rthumb" title="{$document->getTitle()}">
+				<include target="_rest.thumbnaillink.html" />
+				<!--@if($thumbnaillink!='0' && ($document->variables[status]!='SECRET' || $logged_info->is_admin=='Y' || $logged_info->member_srl==$document->variables[member_srl]))-->
+					<div class="imgwh" style="width:{$mi->thumbnail_width}px;height:{$mi->thumbnail_height}px;">
+						<div id="rthumbnail" class="wrap">
+							<img <!--@if(preg_match('/vimeo/', $thumbnaillink))-->id="{$vimeothumbnail}"<!--@else-->src="{$thumbnaillink}"<!--@end--> class="rthumbnailimg thumbnailgrow" alt="" />
+						</div>
+					</div>
+				<!--@else-->
+					<div class="imgwh" style="width:{$mi->thumbnail_width}px;height:{$mi->thumbnail_height}px;"><div class="wrap thumbnailfocus"></div></div>
+				<!--@end-->
+			</a>
+		<!--@end-->
+		<div class="media-body">
+			<h5 cond="$list_config['title']" class="media-heading">
+				<a href="{getUrl('document_srl',$document->document_srl,'listStyle',$listStyle, 'cpage','')}" title="{$document->getTitle()}">{$document->getTitle($mi->subject_cut_size)}</a>
+				<!--@if((int)($document->getRegdate('YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+				<span class="label label-primary marginlabel">new</span>
+				<!--@elseif((int)(zdate($document->get('last_update'),'YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+				<span class="label label-success marginlabel">update</span>
+				<!--@end-->
+				<block cond="$document->hasUploadedFiles()"><span class="label label-info font9 marginlabel">file</span></block>
+				<block cond="$document->variables[status]=='SECRET'"><span class="label label-warning font9 marginlabel">secret</span></block>
+				<input cond="$grant->manager" class="pull-right checkbox" type="checkbox" name="cart" value="{$document->document_srl}" title="Check" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" />
+			</h5>
+			<ul class="list-inline viewinfo nocolor">
+				<li cond="$mi->use_category=='Y'"><i class="fa fa-bookmark"></i> {$category_list[$document->get('category_srl')]->title}</li>
+				<li cond="$list_config['nick_name']"><i class="fa fa-pencil"></i> <a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a></li>
+				<li cond="$list_config['user_id']"><i class="fa fa-pencil"></i> {$document->getUserID()}</li>
+				<li cond="$list_config['user_name']"><i class="fa fa-pencil-square"></i> {$document->getUserName()}</li>
+				<li cond="$list_config['regdate']"><i class="fa fa-calendar"></i> {$document->getRegdate("M d, Y")}</li>							
+				<li cond="$list_config['last_update']"><i class="fa fa-calendar-o"></i> {zdate($document->get('last_update'),'M d, Y')} <block cond="$document->getLastUpdater()">by {$document->getLastUpdater()}</block></li>
+				<li cond="$list_config['comment_status'] && $document->getCommentCount()"><i class="fa fa-comment"></i> <a href="{getUrl('document_srl', $document->document_srl)}#comment">{$document->getCommentCount()}</a></li>
+				<li cond="$document->getTrackbackCount()"><i class="fa fa-comments"></i> <a href="{getUrl('document_srl', $document->document_srl)}#trackback">{$document->getTrackbackCount()}</a></li>
+				<li cond="$list_config['readed_count']"><i class="fa fa-coffee"></i> {$document->get('readed_count')>0?$document->get('readed_count'):'0'}</li>
+				<li cond="$list_config['voted_count']"><i class="fa fa-thumbs-up"></i> {$document->get('voted_count')!=0?$document->get('voted_count'):'0'}</li>
+				<li cond="$list_config['blamed_count']"><i class="fa fa-thumbs-down"></i> {$document->get('blamed_count')!=0?$document->get('blamed_count'):'0'}</li>
+				<li loop="$list_config=>$key,$val" cond="$val->eid!='video' && $val->idx!=-1 && $document->getExtraValueHTML($val->idx)">
+					{$val->name} : {$document->getExtraValueHTML($val->idx)}
+				</li>
+			</ul>							
+			<p cond="$list_config['summary']">{$document->getSummary($mi->content_cut_size)}</p>
+			<a loop="$list_config=>$key,$val" cond="$val->idx!=-1 && $val->eid=='video' && $document->getExtraValueHTML($val->idx)" href="#" onclick="window.open('{getUrl('document_srl',$document->document_srl,'listStyle','video','page','')}','video','width={$mi->display_videoplaywidth},height={$mi->display_videoplayheight},resizable=yes');return false" class="videobtn btn btn-primary btn-xs pull-right"><i class="fa fa-video-camera"></i> 보기</a>
+		</div>
+	</li>
+</ul>	
+</fieldset>
+</form>

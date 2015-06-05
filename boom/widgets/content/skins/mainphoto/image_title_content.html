@@ -1,0 +1,125 @@
+<!-- contents -->
+		<div class="clearfix">
+			<div class="mediaList-wrapper pull-left col-xs-9">
+				<!-- start-thumbnail-banner -->
+				<!--상단 롤링
+				<div class="start-thumbnail-banner clearfix">
+					<div class="start-billboard">
+						<div class="billboardNest">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="thumbnail">
+										<a href="/board/view.php?id={id}" target="{target}">
+											<img src="../webdata/maintool/{image}" class="img-responsive" alt="magazine">
+											<div class="caption">
+												<strong>{title}</strong>
+												<p>{content}</p>
+												<div class="overflow hidden-lg hidden-md visible-sm visible-xs"></div>
+											</div>
+										</a>
+										<em>comments<a href="#" class="badge comment"></a></em>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				-->
+				<!-- start-mediaList -->
+				<div class="mediaList">
+					<div class="media clearfix">
+						<!--@if($widget_info->title)-->
+						<h5>{$widget_info->title}</h5>
+						<!--@end-->
+						<div class="box-body no-padding">
+						  <table class="table table-hover">
+							<tbody>
+							<!-- LIST -->
+							{@$_idx=0}
+							<!--@foreach($widget_info->content_items as $key => $item)-->
+							<tr class="listview" style="text-align:middle">
+							  <td style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px">
+							    <a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">
+								<!--@if($item->getThumbnail())-->
+									<img src="{$item->getThumbnail()}" style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px" class="img-thumbnail"/>
+								<!--@else-->
+									<img src="/images/list_noimage.jpg" style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px" class="img-thumbnail"/>
+								<!--@end-->
+								</a>
+								<!--
+								<img src="/images/list_noimage.jpg" style="max-width:100px" class="img-thumbnail"/>
+								-->
+							  </td>
+							  <td>
+							  <a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+							  </td>
+							  <td class="text-center;" style=" width:50px">{$item->getRegdate("m-d")}</td>
+							</tr>
+							{@$_idx++}
+							<!--@end-->
+							 </tbody>
+						  </table>
+						</div>
+						
+						
+					
+				</div>
+				<!-- start-mediaList//end -->
+			</div>
+			<!--<div class="catalog-banner pull-right col-xs-3">-->
+				<!-- 왼쪽 상단 -
+				<div class="monthly-issue clearfix">
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="" alt="" />
+							</a>
+							<div class="fb-like" data-href="" data-layout="button_count" data-send="false" data-width="200" data-show-faces="false">facebook</div>
+						</div>
+					</div>
+				</div>
+				-->
+				<!-- 왼쪽 중간 배너 
+				<div class="banner">
+					<img src="" alt="" />
+				</div>
+				<div class="daily-snap clearfix">
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="\" alt=""/>
+							</a>
+							<div class="caption">
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="magazine-post clearfix">
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="" alt=""/>
+							</a>
+							<div class="caption">
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="banner">
+					<img src="" alt="" />
+				</div>
+				-->
+			<!--</div>-->
+		</div>
+		<!-- 하단 배너
+		<div class="promotion-banner clearfix">
+			<div class="">
+				<a href="">
+					<img src="" alt="" class="img-responsive" >
+				</a>
+			</div>
+		</div>
+		-->

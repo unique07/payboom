@@ -1,0 +1,409 @@
+{@
+Context::addHtmlHeader('<meta http-equiv="X-UA-Compatible" content="IE=edge" />');
+Context::set("admin_bar","false");
+if(!$_COOKIE['fakeM']) Context::addHtmlHeader('<meta name="viewport" content="width=device-width, initial-scale=1" />');
+}
+<load target="css/font-awesome.min.css" index="-1"  />
+<load target="css/layout.css" />
+<load target="css/default.layout.webfont.css" cond="$layout_info->WEB_FONT == 'YES'" />
+<block cond="Mobile::isMobileCheckByAgent()">
+   <!--@if(file_exists('./common/js/jquery.min.js'))-->
+   {@ Context::addJsFile("./common/js/jquery.min.js", true, '', -10000011) }
+   <!--@elseif(file_exists('./common/js/jquery.js'))-->
+   {@ Context::addJsFile("./common/js/jquery.js", true, '', -10000011) }
+   <!--@end-->
+</block>
+<load target="../../common/js/respond.min.js" targetie="lt IE 9" />
+<load target="js/layout.js" type="body" />
+<load target="js/scroll.js" type="body" />
+<load target="js/jquery.scrollUp.min.js" type="body" />
+<block cond="$layout_info->main_slide||$layout_info->gallery_widget">
+<load target="js/jquery.masonry.min.js" type="body" />
+<load target="js/box-maker.js" type="body" />
+<load target="js/masonry_act.js" type="body" />
+</block>
+<!--@if(!$layout_info->basic_color)-->{@$layout_info->basic_color = "#526bbe"}<!--@end-->
+<block cond="$layout_info->layout_color">
+<block cond="$layout_info->layout_color=='Red'">
+{@$layout_info->basic_color = "#C62828"}
+{@$layout_info->basic_border = "#EF5350"}
+{@$layout_info->basic_breadclumb = "#E7E1E2"}
+</block>
+<block cond="$layout_info->layout_color=='Pink'">
+{@$layout_info->basic_color = "#E91E63"}
+{@$layout_info->basic_border = "#F48FB1"}
+{@$layout_info->basic_breadclumb = "#EFE3E6"}
+</block>
+<block cond="$layout_info->layout_color=='Purple'">
+{@$layout_info->basic_color = "#9C27B0"}
+{@$layout_info->basic_border = "#BA68C8"}
+{@$layout_info->basic_breadclumb = "#ECE6EC"}
+</block>
+<block cond="$layout_info->layout_color=='DeepPurple'">
+{@$layout_info->basic_color = "#673AB7"}
+{@$layout_info->basic_border = "#9575CD"}
+{@$layout_info->basic_breadclumb = "#E4E0EC"}
+</block>
+<block cond="$layout_info->layout_color=='Indigo'">
+{@$layout_info->basic_color = "#3F51B5"}
+{@$layout_info->basic_border = "#7986CB"}
+{@$layout_info->basic_breadclumb = "#E3E5ED"}
+</block>
+<block cond="$layout_info->layout_color=='Blue'">
+{@$layout_info->basic_color = "#1E88E5"}
+{@$layout_info->basic_border = "#64B5F6"}
+{@$layout_info->basic_breadclumb = "#DAE2E8"}
+</block>
+<block cond="$layout_info->layout_color=='LightBlue'">
+{@$layout_info->basic_color = "#039BE5"}
+{@$layout_info->basic_border = "#81D4FA"}
+{@$layout_info->basic_breadclumb = "#D1E2EA"}
+</block>
+<block cond="$layout_info->layout_color=='Cyan'">
+{@$layout_info->basic_color = "#00ACC1"}
+{@$layout_info->basic_border = "#80DEEA"}
+{@$layout_info->basic_breadclumb = "#DDE9EA"}
+</block>
+<block cond="$layout_info->layout_color=='Teal'">
+{@$layout_info->basic_color = "#009688"}
+{@$layout_info->basic_border = "#80CBC4"}
+{@$layout_info->basic_breadclumb = "#D1E8E8"}
+</block>
+<block cond="$layout_info->layout_color=='Green'">
+{@$layout_info->basic_color = "#4CAF50"}
+{@$layout_info->basic_border = "#A5D6A7"}
+{@$layout_info->basic_breadclumb = "#D2E2D2;"}
+</block>
+<block cond="$layout_info->layout_color=='LightGreen'">
+{@$layout_info->basic_color = "#7CB342"}
+{@$layout_info->basic_border = "#C5E1A5"}
+{@$layout_info->basic_breadclumb = "#D6DBD0"}
+</block>
+<block cond="$layout_info->layout_color=='Amber'">
+{@$layout_info->basic_color = "#FFA000"}
+{@$layout_info->basic_border = "#FFE082"}
+{@$layout_info->basic_breadclumb = "#DFDACE"}
+</block>
+<block cond="$layout_info->layout_color=='Orange'">
+{@$layout_info->basic_color = "#FB8C00"}
+{@$layout_info->basic_border = "#FFCC80"}
+{@$layout_info->basic_breadclumb = "#E8E1D5"}
+</block>
+<block cond="$layout_info->layout_color=='DeepOrange'">
+{@$layout_info->basic_color = "#F4511E"}
+{@$layout_info->basic_border = "#FF8A65"}
+{@$layout_info->basic_breadclumb = "#DFD4D2"}
+</block>
+<block cond="$layout_info->layout_color=='Brown'">
+{@$layout_info->basic_color = "#795548"}
+{@$layout_info->basic_border = "#A1887F"}
+{@$layout_info->basic_breadclumb = "#DAD2CC"}
+</block>
+<block cond="$layout_info->layout_color=='BlueGrey'">
+{@$layout_info->basic_color = "#607D8B"}
+{@$layout_info->basic_border = "#90A4AE"}
+{@$layout_info->basic_breadclumb = "#D1DAE0"}
+</block>
+</block>
+<style>
+<block cond="$layout_info->HtmlFont">
+body, table, input, textarea, select, button {font-family:{$layout_info->HtmlFont}}
+</block>
+<block cond="$layout_info->basic_bg">
+.xe,
+.h2_widget_gallery a{background-color:{$layout_info->basic_bg}}
+</block>
+<block cond="$layout_info->basic_bgimg">
+.xe{background-image:url({$layout_info->basic_bgimg});background-repeat:repeat;}
+</block>
+<block cond="$layout_info->basic_color">
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span,
+.in_header,
+#scrollUp:hover,
+.camera_wrap .camera_pag .camera_pag_ul li:hover > span,
+.camera_wrap .camera_pag .camera_pag_ul li > span,
+.da-dots span,
+.owl-theme:hover .owl-controls .owl-buttons div:hover{background-color:{$layout_info->basic_color};}
+.body a:hover,
+.body a:focus,
+.fa42,
+.doorweb-popular .replyNum,
+.title_breadclumb .fa18,
+.breadclumb .last_breadclumb a,
+.da-slide .da-link:hover,
+.da-arrows i.fa{color:{$layout_info->basic_color};}
+.footer{border-top-color:{$layout_info->basic_color};}
+.owl-theme .owl-controls .owl-page span{border-color:{$layout_info->basic_color};}
+</block>
+<block cond="$layout_info->header_color">
+.top_header{background-color:{$layout_info->header_color};}
+</block>
+
+<block cond="$layout_info->basic_border">
+.main_menu ul{border-color:{$layout_info->basic_border};}
+.gnb .hover_arrow{border-bottom-color:{$layout_info->basic_border};}
+</block>
+<block cond="$layout_info->basic_breadclumb">
+.wrap_breadclumb{background-color:{$layout_info->basic_breadclumb};}
+</block>
+<block cond="$layout_info->menu_padding">
+.header a.first_a{padding:0 {$layout_info->menu_padding}px;}
+</block>
+<block cond="$layout_info->dropmenu_width">
+.main_menu ul{width:{$layout_info->dropmenu_width}px;}
+.main_menu ul ul{left:{$layout_info->dropmenu_width+3}px;}
+</block>
+<block cond="$layout_info->footer_bg">
+.footer,
+body{background-color:{$layout_info->footer_bg} !important;}
+</block>
+
+</style>
+{@ $layout_info->so_widget = $layout_info->layout_srl*100; }
+<div class="xe {$layout_info->LAYOUT_TYPE}"|cond="!Mobile::isMobileCheckByAgent()" class="xe {$layout_info->LAYOUT_TYPE}  mobile_xe"|cond="Mobile::isMobileCheckByAgent()">
+	<p class="skip"><a href="#before_body">{$lang->skip_to_content}</a></p>
+<!-- 헤더 시작 -->
+	<header class="header">
+		<div class="in_header"|cond="!$layout_info->header_color" class="in_header top_color"|cond="$layout_info->header_color">
+			<div class="top_header">
+				<!-- 우상단 로그인 -->
+				<div class="wrap_account">
+					<div class="account xe_width clearBoth">
+						<ul class="clearBoth"  cond="!Mobile::isMobileCheckByAgent()">
+							<block cond="$is_logged">
+							<li cond="$logged_info->is_admin=='Y' && !$site_module_info->site_srl"><a class="Acolor" href="{getUrl('','module','admin')}">{$lang->cmd_management}</a></li>
+							<li><a class="Acolor" href="{getUrl('act','dispMemberLogout')}">{$lang->cmd_logout}</a></li>
+							<li><a class="Acolor" href="{getUrl('act','dispMemberInfo','mid', $layout_info->DWmember_info)}">{$lang->cmd_view_member_info}</a></li>
+							</block>
+							<block cond="!$is_logged">
+							<li><a class="act_login Acolor" href="{getUrl('act','dispMemberLoginForm','mid', $layout_info->DWmember_info)}">{$lang->cmd_login}</a></li>
+							<li><a class="Acolor" href="{getUrl('act','dispMemberSignUpForm','mid', $layout_info->DWmember_info)}">{$lang->cmd_signup}</a></li>
+							<li><a class="Acolor" href="{getUrl('act','dispMemberFindAccount','mid', $layout_info->DWmember_info)}">{$lang->cmd_find_member_account}</a></li>
+							</block>	
+						</ul>
+					</div>
+					<div class="xe_width wrap_logo">
+						<h1 class="logo {$layout_info->logo_align}">
+						<block cond="!$layout_info->logo_url">
+							<a href="{geturl('')}" cond="$layout_info->logo_image"><img src="{$layout_info->logo_image}" alt="{$layout_info->logo_image_alt}" /></a>
+							<a href="{geturl('')}" cond="!$layout_info->logo_image" class="text_logo">{$layout_info->logo_image_alt}</a>
+						</block>
+						<block cond="$layout_info->logo_url">
+							<a href="{$layout_info->logo_url}" cond="$layout_info->logo_image"><img src="{$layout_info->logo_image}" alt="{$layout_info->logo_image_alt}" /></a>
+							<a href="{$layout_info->logo_url}" cond="!$layout_info->logo_image" class="text_logo">{$layout_info->logo_image_alt}</a>
+						</block>
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="middle_menu">
+				<div class="wrap_menu clearBoth">
+					<!-- 우상단 로그인 끝 -->
+					<div class="xe_width">
+					<!-- 메인메뉴 -->
+						<div class="gnb">
+							<ul id="menu" class="main_menu">
+								<li loop="$main_menu->list=>$key1,$val1" cond="$val1['link']" class="active highlight first_li"|cond="$val1['selected']"  class="first_li"|cond="!$val1['selected']">
+									<a class="first_a Acolor" href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'"><span class="first_span">{$val1['link']}<span cond="$val1['list']" class="hover_arrow"></span></span><i cond="$val1['list']" class="fa fa11 fa-chevron-down"></i></a>
+									<div cond="$val1['list']"  class="sub1 sub_div">
+										<ul class="first_ul">
+											<li loop="$val1['list']=>$key2,$val2" cond="$val2['link']" class="second_li">
+												<a href="{$val2['href']}" class="active_a Acolor"|cond="$val2['selected']" class="Acolor"|cond="!$val2['selected']" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}<i cond="$val2['list']" class="fa fa11 fa-chevron-right"></i>
+												</a>
+												<ul class="second_ul sub2" cond="$val2['list']">
+													<li loop="$val2['list']=>$key3,$val3" class="second_li"|cond="!$val3['selected']" cond="$val3['link']"><a href="{$val3['href']}" class="active_a Acolor"|cond="$val3['selected']" class="Acolor"|cond="!$val3['selected']" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</li>		
+							</ul>
+							
+						</div>
+						<!-- 메인메뉴 끝 -->
+						<ul class="Act_Total_menu">
+							<li class="search_li"><a href="#" class="first_a  Acolor act_search" title="search button"><i class="fa18 fa fa-search"></i></a></li>
+							<li><a href="#" class="first_a Acolor act_menu"><i class="fa18 fa fa-reorder open_navi"> </i><span class="round2 open_span">OPEN NAVIGATION</span><span class="round2 close_span">CLOSE NAVIGATION</span></a></li>
+							<li class="user_li">
+								<a href="#" class="first_a Acolor act_user" title="search button"><block cond="$is_logged"><i class="fa fa18 fa-sign-out"></i></block><block cond="!$is_logged"><i class="fa fa18 fa-sign-in"></i></block></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="total_menu none_total_menu total_menu{$layout_info->total_menu_list}">	
+			<div class="xe_width">
+				<ul class="clearBoth">
+					<li loop="$main_menu->list=>$key1,$val1" cond="$val1['link']" class="active highlight H_first_li"|cond="$val1['selected']"  class="H_first_li"|cond="!$val1['selected']">
+						<a class="total_first_a active_a"|cond="$val1['selected']" class="total_first_a"|cond="!$val1['selected']" href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a><button class="Nav_i" cond="$val1['list']"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></button>
+						<ul cond="$val1['list']" class="total_sub1">
+							<li loop="$val1['list']=>$key2,$val2" cond="$val2['link']" class="H_second_li">
+								<a href="{$val2['href']}" class="active_a"|cond="$val2['selected']"  target="_blank"|cond="$val2['open_window']=='Y'"><i class="fa icon-caret-right"></i>{$val2['link']}</a>
+								<ul cond="$val2['list']" class="total_sub2">
+									<li loop="$val2['list']=>$key3,$val3" class="second_li"|cond="!$val3['selected']" cond="$val3['link']"><a href="{$val3['href']}" class="active_a"|cond="$val3['selected']" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>		
+				</ul>
+			</div>
+		</div>
+		<div class="total_search none_search">
+			<div class="xe_width">
+			<!-- 검색창 -->
+				<div class="wrap_search">
+					<form action="{getUrl()}" method="post" class="iSearch dw_iSearch">
+						<input type="hidden" name="vid" value="{$vid}" cond="$vid" />
+						<input type="hidden" name="mid" value="{$layout_info->DWmember_info}" />
+						<input type="hidden" name="act" value="IS" />
+						<input type="hidden" name="search_target" value="title_content" />
+						<input name="is_keyword" type="text" class="iText dw_iText"  value="{$is_keyword}" required placeholder="{$lang->cmd_search}" title="{$lang->cmd_search}" />
+						<button type="submit" class="submit Acolor"><i class="fa18 fa fa-search"> </i></button>
+						<a class="close_search act_search Acolor" href="#"><i class="fa18 fa fa-times"></i></a>
+					</form>
+				</div>
+			<!-- 검색창 끝 -->
+			</div>
+		</div>
+		<div class="total_login none_login">
+			<div class="xe_width">
+				<ul class="clearBoth">
+					<block cond="$is_logged">
+					<li class="H_first_li" cond="$logged_info->is_admin=='Y' && !$site_module_info->site_srl"><a class="Acolor" href="{getUrl('','module','admin')}">{$lang->cmd_management}</a></li>
+					<li class="H_first_li"><a class="Acolor" href="{getUrl('act','dispMemberLogout')}">{$lang->cmd_logout}</a></li>
+					<li class="H_first_li"><a class="Acolor" href="{getUrl('act','dispMemberInfo','mid', $layout_info->DWmember_info)}">{$lang->cmd_view_member_info}</a></li>
+					</block>
+					<block cond="!$is_logged">
+					<li class="H_first_li"><a class="Acolor" href="{getUrl('act','dispMemberLoginForm','mid', $layout_info->DWmember_info)}">{$lang->cmd_login}</a></li>
+					<li class="H_first_li"><a class="Acolor" href="{getUrl('act','dispMemberSignUpForm','mid', $layout_info->DWmember_info)}">{$lang->cmd_signup}</a></li>
+					<li class="H_first_li"><a class="Acolor" href="{getUrl('act','dispMemberFindAccount','mid', $layout_info->DWmember_info)}">{$lang->cmd_find_member_account}</a></li>
+					</block>	
+				</ul>
+			</div>
+		</div>
+	</header>
+<!-- 헤더 끝 -->
+
+	<block cond="!Mobile::isMobileCheckByAgent()||!$layout_info->slide_mobile">
+	<include target="slider/da-slider.html" cond="$layout_info->top_slide=='A'" />
+	<include target="slider/camera.html" cond="$layout_info->top_slide=='B'" />
+	<include target="slider/swiper.html" cond="$layout_info->top_slide=='C'" />
+	</block>
+	<block cond="$layout_info->breadclumb=='Y'">
+	<!-- depth 1 -->
+	<block loop="$breadclumb_menu->list=>$key, $val" cond="$val['selected']">{@$menu_depth1 = $val}</block>
+	<!-- depth 2 -->
+	<block loop="$menu_depth1['list']=>$key, $val" cond="$val['selected'] && $menu_depth1">{@$menu_depth2 = $val}</block>
+	<!-- depth 3 -->
+	<block loop="$menu_depth2['list']=>$key, $val" cond="$val['selected'] && $menu_depth2">{@$menu_depth3 = $val}</block>
+	<div class="wrap_breadclumb">
+		<div class="xe_width">
+			<div class="title_breadclumb QuotationMark{$layout_info->QuotationMark}">
+				<i class="fa fa18 fa-quote-left"></i>
+				<h1>
+				<block cond="$menu_depth1&&!$menu_depth2&&!$menu_depth3">
+						{$menu_depth1['link']}
+				</block>
+				<block cond="$menu_depth2&&!$menu_depth3">
+						{$menu_depth2['link']}
+				</block>
+				<block cond="$menu_depth3">
+						{$menu_depth3['link']}
+				</block>
+				</h1>
+			</div>
+		</div>
+		<div class="breadclumb_bottom"></div>
+	</div>
+	</block>
+	<p class="skip"><a id="before_body" href="#">본문시작</a></p>
+	<div id="body" class="body has_breadclumb"|cond="$layout_info->breadclumb=='Y'" class="body"|cond="$layout_info->breadclumb!=='Y'">
+		<div class="xe_width clearBoth" cond="$layout_info->breadclumb=='Y'">
+			<ul class="breadclumb">												
+				<li class="first_breadclumb png_bg">
+					<a href="{getSiteUrl()}">HOME</a>
+				</li>
+				<li class="png_bg" cond="$menu_depth1">
+					<a class="Ccolor" href="{$menu_depth1['href']}">{$menu_depth1['text']}</a>
+				</li>
+				<li class="png_bg" cond="$menu_depth2">
+					<a class="Ccolor" href="{$menu_depth2['href']}">{$menu_depth2['text']}</a>
+				</li>
+			</ul>			
+		</div>
+		<div class="clearBoth xe_width">
+			<div class="in_body clearBoth {$layout_info->main_slide}">
+			<!-- LNB -->
+				<div class="wrap_lnb" cond="!Mobile::isMobileCheckByAgent()&&$layout_info->LAYOUT_TYPE!=='c'" >
+					<nav class="lnb"|cond="$layout_info->breadclumb=='Y'" class="lnb normal_lnb"|cond="$layout_info->breadclumb!='Y'" loop="$sub_menu->list=>$key1,$val1" cond="$val1['selected'] && $val1['list'] && $layout_info->local_menu!='N'">
+						<div class="local_menu">
+							<div class="wrap_Nav" loop="$sub_menu->list=>$key1,$val1" cond="$val1['selected'] && $val1['list']">
+								<h2 loop="$sub_menu->list=>$key1,$val1" cond="$val1['selected']" class="TitleFont"><a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'"><span>{$val1['link']}</span></a></h2>
+								<ul class="locNav clearBoth" loop="$sub_menu->list=>$key1,$val1" cond="$val1['selected'] && $val1['list']">
+									<li loop="$val1['list']=>$key2,$val2" class="active_li"|cond="$val2['selected']" cond="$val2['link']" ><a href="{$val2['href']}"  class="active_a"|cond="$val2['selected']" target="_blank"|cond="$val2['open_window']=='Y'"><span>{$val2['link']}</span></a><button class="Nav_i"|cond="!$val2['selected']" class="Nav_i hover"|cond="$val2['selected']" cond="$val2['list']"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></button>
+										<ul class="lnbUl clearBoth" cond="$val2['list']">
+											<li loop="$val2['list']=>$key3,$val3" class="seconLi" cond="$val3['link']">
+												<a class="Ccolor"|cond="!$val3['selected']" class="active_a"|cond="$val3['selected']" href="{$val3['href']}" target="_blank"|cond="$val3['open_window']=='Y'"><span>{$val3['link']}</span></a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<a class="lnb_All none_act_lnb" href="#">more</a>
+						</div>
+						
+					</nav>
+					<div class="wrap_ec_widget" cond="$layout_info->ec_widget">
+						<include target="slider/sub.html" />
+					</div>
+				</div>
+				<div class="wrap_content">
+					<div id="in_content" class="in_content {$layout_info->content_style}">
+						<include target="slider/main.html" cond="$layout_info->main_slide" />
+						<include target="slider/gallery_main.html" cond="$layout_info->gallery_widget" />
+						<div class="content" id="content">
+							<div class="wrap_section clearBoth">{$content}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="xe_width clearBoth">
+			<h2 class="foot_left">
+				<block cond="!$layout_info->logo_url">
+				<a href="{geturl('')}" cond="$layout_info->foot_logo_image"><img src="{$layout_info->foot_logo_image}" alt="{$layout_info->logo_image_alt}" /></a>
+				<a href="{geturl('')}" cond="!$layout_info->foot_logo_image" class="text_logo"><img src="img/foot_logo.png" alt="{$layout_info->logo_image_alt}"></a>
+				</block>
+				<block cond="$layout_info->logo_url">
+				<a href="{$layout_info->logo_url}" cond="$layout_info->foot_logo_image"><img src="{$layout_info->foot_logo_image}" alt="{$layout_info->logo_image_alt}" /></a>
+				<a href="{$layout_info->logo_url}" cond="!$layout_info->foot_logo_image" class="text_logo"><img src="img/foot_logo.png" alt="{$layout_info->logo_image_alt}"></a>
+				</block>
+			</h2>
+			<div class="foot_right">
+				<div class="copylight">
+					<p cond="!$layout_info->copyright">Copyright All rights revered by <strong class="point_foot">Door of Web</strong><br />
+					<span><strong class="point_foot">주소 :</strong> 서울시 관악구 **동 00-000</span><br /><span><strong class="point_foot">Tel :</strong> 00-000-0000</span>  <span><strong class="point_foot">Fax :</strong> 00-000-0001</span><br />
+					
+					</p>
+					<p cond="$layout_info->copyright">{$layout_info->copyright}</p>
+				</div>
+			</div>
+			
+		</div>
+	</footer>
+</div>
+<script>
+
+		/* scrollUp Minimum setup */
+	jQuery(function($){
+			$.scrollUp();
+		});
+
+	</script>

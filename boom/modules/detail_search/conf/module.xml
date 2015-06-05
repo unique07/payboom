@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions />
+    <actions>
+        <action name="DS" type="view" standalone="true" />
+        <action name="dispDetail_searchAdminContent" type="view" admin_index="true" />
+        <action name="dispDetail_searchAdminGrantInfo" type="view" />
+        <action name="dispDetail_searchAdminSkinInfo" type="view" />
+
+        <action name="procDetail_searchAdminInsertConfig" type="controller" ruleset="insertConfig" />
+        <action name="procDetail_searchAdminInsertSkin" type="controller" />
+    </actions>
+</module>

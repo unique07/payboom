@@ -1,0 +1,290 @@
+<!--@if($oDocument->get('is_notice')!='Y')-->
+{@$doc_count = count($document_list)}
+    {@$z=0}
+    <!--@foreach($document_list as $no => $document)-->
+        {@ $doc_srl[$z] = $document->document_srl}
+        <!--@if($document->document_srl == $oDocument->document_srl)-->
+            {@ $now_z = $z }
+        <!--@end-->
+        {@$z++;}
+    <!--@end-->
+ 
+    <!--@if($now_z == 0 && $page > 1)-->
+ 
+        {@
+            $oModuleModel = &getModel('module');
+            $module_srl_temp = $oModuleModel->getModuleSrlByMid($mid);
+ 
+            if(is_array($module_srl_temp)) $module_srl = $module_srl_temp[0];
+            else $module_srl = $module_srl_temp;
+ 
+            $args->module_srl = $module_srl;
+            $args->category_srl = $category_srl;
+            $args->list_count = $module_info->list_count;
+            $args->search_target = $search_target;
+            $args->search_keyword = $search_keyword;
+            $args->page = $page-1;
+            $args->sort_index = $module_info->sort_index;
+            $args->order_type = $module_info->order_type;
+ 
+            $docList_output = executeQueryArray('document.getDocumentList', $args);
+        }
+ 
+        {@$x=0}
+        <!--@foreach($docList_output->data as $doc)-->
+            <!--@if($x == count($docList_output->data) - 1)-->
+                {@ $beforeDoc = $doc->document_srl }
+            <!--@end-->
+            {@$x++;}
+        <!--@end-->
+ 
+        {@ $afterDoc = $doc_srl[$now_z+1] }
+ 
+    <!--@else if($now_z == $doc_count - 1 && $page < $total_page)-->
+ 
+        {@
+            $oModuleModel = &getModel('module');
+            $module_srl_temp = $oModuleModel->getModuleSrlByMid($mid);
+ 
+            if(is_array($module_srl_temp)) $module_srl = $module_srl_temp[0];
+            else $module_srl = $module_srl_temp;
+ 
+            $args->module_srl = $module_srl;
+            $args->category_srl = $category_srl;
+            $args->list_count = $module_info->list_count;
+            $args->search_target = $search_target;
+            $args->search_keyword = $search_keyword;
+            $args->page = $page+1;
+            $args->sort_index = $module_info->sort_index;
+            $args->order_type = $module_info->order_type;
+ 
+            $docList_output = executeQueryArray('document.getDocumentList', $args);
+        }
+ 
+        {@$x=0}
+        <!--@foreach($docList_output->data as $doc)-->
+            <!--@if($x == 0)-->
+                {@ $afterDoc = $doc->document_srl }
+            <!--@end-->
+            {@$x++;}
+        <!--@end-->
+ 
+        {@ $beforeDoc = $doc_srl[$now_z-1] }
+ 
+    <!--@else-->
+ 
+        {@ $beforeDoc = $doc_srl[$now_z-1]; $afterDoc = $doc_srl[$now_z+1]; }
+ 
+    <!--@end-->
+ 
+    <!--@if(!$beforeDoc)-->
+        {@ $beforeDoc = $oDocument->document_srl }
+    <!--@else if(!$afterDoc)-->
+        {@ $afterDoc = $oDocument->document_srl }
+    <!--@end-->
+	<!--@if($module_info->display_sign != 'N' && ($oDocument->getProfileImage() || $oDocument->getSignature()))-->	
+		{@
+		 $MemberModel = &getModel('member');
+		 $member_info = $MemberModel->getMemberInfoByMemberSrl($document->getMemberSrl());
+		}
+	<!--@end-->
+<!--@end-->		
+
+<div class="paddingb20 rd restview">
+	<h3 class="page-header">{$oDocument->getTitle()}{$aa_count}</h3>
+	<ul class="viewinfo list-inline text-muted nocolor">
+		<li cond="$module_info->use_category=='Y'"><i class="fa fa-bookmark fa-fw"></i> {$category_list[$oDocument->get('category_srl')]->title}</li>
+		<li cond="$list_config['nick_name']"><a href="#popup_menu_area" class="member_{$oDocument->get('member_srl')}" onclick="return false"><i class="fa fa-pencil fa-fw"></i> {$oDocument->getNickName()}</a></li>
+		<li cond="$list_config['user_id']"><i class="fa fa-pencil fa-fw"></i> {$oDocument->getUserID()}</li>
+		<li cond="$list_config['user_name']"><i class="fa fa-pencil fa-fw"></i> {$oDocument->getUserName()}</li>
+		<li cond="$list_config['regdate']"><i class="fa fa-calendar fa-fw"></i> {$oDocument->getRegdate("M d, Y")}</li>							
+		<li cond="$list_config['last_update']"><i class="fa fa-calendar-o fa-fw"></i> {zdate($oDocument->get('last_update'),'M d, Y')} <block cond="$oDocument->getLastUpdater()">by {$oDocument->getLastUpdater()}</block></li>
+		<li cond="$list_config['comment_status']&&$oDocument->getCommentCount()"><a href="{getUrl('document_srl', $oDocument->document_srl)}#comment"><i class="fa fa-comment fa-fw"></i> {$oDocument->getCommentCount()}</a></li>
+		<li cond="$oDocument->getTrackbackCount()"><i class="fa fa-comments fa-fw"></i> <a href="{getUrl('document_srl', $document->document_srl)}#trackback">{$oDocument->getTrackbackCount()}</a></li>
+		<li cond="$list_config['readed_count']"><i class="fa fa-coffee fa-fw"></i> {$oDocument->get('readed_count')>0?$oDocument->get('readed_count'):'0'}</li>
+		<li cond="$list_config['voted_count']"><i class="fa fa-thumbs-up fa-fw"></i> {$oDocument->get('voted_count')!=0?$oDocument->get('voted_count'):'0'}</li>
+		<li cond="$list_config['blamed_count']"><i class="fa fa-thumbs-down fa-fw"></i> {$oDocument->get('blamed_count')!=0?$oDocument->get('blamed_count'):'0'}</a></li>	
+		<li cond="$oDocument->getTrackbackCount()"><i class="fa fa-comments fa-fw"></i> <a href="#trackback">{$oDocument->getTrackbackCount()}</li>
+		<li cond="$oDocument->hasUploadedFiles()"><a href="#documentfile{$key}" data-toggle="collapse"><i class="fa fa-download fa-fw"></i> {$lang->uploaded_file} {$oDocument->get('uploaded_count')}개</a></li>
+	</ul>
+	<ul class="viewinfo list-inline nocolor collapse" id="documentfile{$key}" cond="$oDocument->hasUploadedFiles()">
+		{@ $uploaded_list = $oDocument->getUploadedFiles() }
+		<!--@foreach($uploaded_list as $key => $file)-->
+		<li><i class="fa fa-check"></i> <a href="{getUrl('')}{$file->download_url}">{$file->source_filename} [File Size:{FileHandler::filesize($file->file_size)}]</a></li>
+		<!--@end-->
+	</ul>
+	<block cond="$oDocument->isExtraVarsExists() && (!$oDocument->isSecret() || $oDocument->isGranted())">
+		<!--@foreach($oDocument->getExtraVars() as $key => $val)-->			
+			<!--@if($val->eid !='video')-->
+				<ul summary="Extra Form" class="viewinfo list-unstyled list-inline text-muted" cond="$oDocument->getExtraValueHTML($val->idx)">
+					<li> {$val->name} &nbsp;{$val->getValueHTML()}</li>
+				</ul>
+			<!--@elseif($module_info->display_videoplaydoc=='Y' && $oDocument->getExtraValueHTML($val->idx))-->
+				<ul cond="$module_info->display_videoplaydocname=='Y'" summary="Extra Form" class="viewinfo list-unstyled list-inline text-muted">
+					<li><i class="fa fa-video-camera fa-fw"></i> {$val->name} &nbsp;{$val->getValueHTML()}</li>
+				</ul>
+				<include target="_rest.viewdocvideo.html" />				
+			<!--@end-->				
+		<!--@end-->
+	</block>
+	<div class="clearfix"></div>
+	<div class="restdocument">
+	<!--@if($oDocument->isSecret() && !$oDocument->isGranted())-->
+		<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4">
+			<form action="./" method="get" onsubmit="return procFilter(this, input_password)">
+				<input type="hidden" name="mid" value="{$mid}" />
+				<input type="hidden" name="page" value="{$page}" />
+				<input type="hidden" name="document_srl" value="{$oDocument->document_srl}" />
+				<div class="input-group">
+					<span class="input-group-addon">비밀번호</span>
+					<input type="password" name="password" class="form-control">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">{$lang->cmd_input}</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	<!--@else-->
+		<include cond="$module_info->display_photogallery=='Y'" target="_rest.viewdocphoto.html" />	
+			{$oDocument->getContent()}
+	<!--@end-->
+	<div class="clearfix"></div>
+	</div>
+	
+	{@ $tag_list = $oDocument->get('tag_list') }
+	<div cond="count($tag_list)" class="viewtag">
+		<i class="fa fa-tag fa-fw"></i> 
+		<!--@for($i=0;$i<count($tag_list);$i++)-->{@ $tag = $tag_list[$i]; } <a href="{getUrl('search_target','tag','search_keyword',$tag,'document_srl','')}" rel="tag" class="label label-default">{htmlspecialchars($tag)}</a><!--@end-->
+	</div>	
+	<div class="clearfix"></div>
+	<div cond="$module_info->display_sign != 'N' && ($oDocument->getProfileImage() || $oDocument->getSignature())" class="signature panel panel-default">
+		<div class="panel-body">
+			<img cond="$oDocument->getProfileImage()" src="{$oDocument->getProfileImage()}" alt="profile" class="pull-left"/>
+			<block cond="$oDocument->getSignature()">{$oDocument->getSignature()}</block>
+		</div>
+	</div>
+	<div class="clearfix"></div>	
+	
+	<div class="pull-right">
+		<button cond="$oDocument->allowComment() && $grant->write_comment && $oDocument->isEnableComment()" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#commentwrite_{$oDocument->document_srl}" >{$lang->cmd_reply}</button>
+        <!--@if($oDocument->isEditable())-->
+		<a class="btn btn-default btn-sm"  href="{getUrl('act','dispBoardWrite','document_srl',$oDocument->document_srl,'comment_srl','')}">{$lang->cmd_modify}</a>
+		<a class="btn btn-default btn-sm"  href="{getUrl('act','dispBoardDelete','document_srl',$oDocument->document_srl,'comment_srl','')}">{$lang->cmd_delete}</a>
+        <!--@end-->
+		<!--@if($module_info->default_style != 'blog')-->
+		<a class="btn btn-default btn-sm" href="{getUrl('document_srl',$beforeDoc,'listStyle',$listStyle, 'cpage','', 'page', '')}">이전글</a>
+		<a class="btn btn-default btn-sm" href="{getUrl('document_srl',$afterDoc,'listStyle',$listStyle, 'cpage','', 'page', '')}">다음글</a>
+		<a class="btn btn-default btn-sm"  href="{getUrl('document_srl','')}">{$lang->cmd_list}</a>
+        <!--@end-->
+    </div>	
+	<div class="clearfix"></div>
+	
+	<include cond="$oDocument->allowTrackback" target="trackback.html" />	
+	<div id="{$oDocument->document_srl}_comment">
+		<a name="comment"></a>
+		<include cond="$oDocument->allowComment() && $mi->cmt_wrt_position=='cmt_wrt_top'" target="_comment_write.html" />
+		<!--#include("./comment.html")-->	
+		<include cond="$oDocument->allowComment() && $mi->cmt_wrt_position=='cmt_wrt_btm'" target="_comment_write.html" />
+	</div>
+</div>	
+<div class="clearfix"></div>
+
+<!--@if($module_info->default_style != 'blog')-->
+<script language="JavaScript">
+function checkHotkey(){
+	if ( (event.srcElement.tagName != 'INPUT') && (event.srcElement.tagName != 'TEXTAREA') ){
+    if (event.keyCode=='110') location.replace('{getUrl('document_srl',$beforeDoc,'listStyle',$listStyle, 'cpage','', 'page', '')}');
+	if (event.keyCode=='98') location.replace('{getUrl('document_srl',$afterDoc,'listStyle',$listStyle, 'cpage','', 'page', '')}');
+  }
+}
+document.onkeypress=checkHotkey;
+</script>	
+<!--@end-->
+
+<block cond="$mi->cmt_wrt=='simple' && $grant->write_comment && $oDocument->isEnableComment()">
+<!--// 댓글수정 -->
+<div cond="$rd_idx==0" id="mod_cmt" class="collapse">
+	<form action="./" method="post" onsubmit="return procFilter(this,insert_comment)" class="bd_wrt">
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="document_srl" value="{$oDocument->get('document_srl')}" />
+		<input type="hidden" name="comment_srl" value="" />
+		<input type="hidden" name="content" value="" />
+		<div class="simple_wrt paddingb10">
+			<input type="hidden" id="htm_3" value="n" />
+			<textarea id="editor_3" class="form-control" cols="50" rows="4"></textarea>
+		</div>
+		<block cond="!$is_logged">
+		<div class="form-inline paddingb10">
+			<input class="form-control" type="text" name="nick_name" value="{$lang->writer}"  title="{$lang->writer}" onfocus="if(this.value==this.title)this.value='';return false;" />
+			<input class="form-control" type="password" name="password" value="{$lang->password}" title="{$lang->password}" onfocus="if(this.value==this.title)this.value='';return false;" />
+			<input class="form-control" type="text" name="email_address" value="{$lang->email_address}" title="{$lang->email_address}" onfocus="if(this.value==this.title)this.value='';return false;" />
+			<input class="form-control" type="text" name="homepage" value="{$lang->homepage}" title="{$lang->homepage}" onfocus="if(this.value==this.title)this.value='';return false;" />
+		</div>	
+		<div class="clearfix"></div>	
+		</block>
+		<div>
+			<div class="pull-left">
+				<a class="btn btn-sm btn-default" href="{getUrl('act','dispBoardModifyComment','comment_srl',$comment->comment_srl)}">에디터모드</a>
+			</div>	
+			<div class="pull-right form-inline">			
+				<block cond="$is_logged">
+					<label class="checkbox-inline">
+					<input type="checkbox" name="notify_message" value="Y" id="notify_message" />
+					{$lang->notify} </label>
+				</block>
+					<block cond="$module_info->use_status!='PUBLIC'">
+					<label class="checkbox-inline">
+					<input type="checkbox" name="is_secret" value="Y" id="is_secret"/>
+					비밀글 </label>
+					</block>
+					<input class="btn btn-default btn-sm bd_btn fr"  type="submit" value="{$lang->cmd_modify}" onclick="setTimeout('location.reload()',700);"/>	
+					<a href="#" class="btn btn-default btn-sm" onclick="jQuery('#mod_cmt').fadeOut().parent().find('.mod_comment').focus();return false">{$lang->cmd_close}</a>
+			</div>
+		</div>
+		<div class="clearfix"></div>	
+	</form>
+</div>
+
+<!--// 대댓글 -->
+<div cond="$rd_idx==0" id="re_cmt" class="collapse">
+	<form action="./" method="post" onsubmit="return procFilter(this,insert_comment)" class="bd_wrt">
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="document_srl" value="{$oDocument->document_srl}" />
+		<input type="hidden" name="content" value="" />
+		<input type="hidden" name="parent_srl" value="" />
+		<div class="simple_wrt paddingb10">
+			<input type="hidden" id="htm_2" value="n" />
+			<textarea id="editor_2" class="form-control" cols="50" rows="4"></textarea>
+		</div>
+		<block cond="!$is_logged">
+		<div class="form-inline paddingb10">
+			<input class="form-control" type="text" name="nick_name" value="{$lang->writer}"  title="{$lang->writer}" onfocus="if(this.value==this.title)this.value='';return false;" />
+			<input class="form-control" type="password" name="password" value="{$lang->password}" title="{$lang->password}" onfocus="if(this.value==this.title)this.value='';return false;" />
+			<input class="form-control" type="text" name="email_address" value="{$lang->email_address}" title="{$lang->email_address}" onfocus="if(this.value==this.title)this.value='';return false;" />
+			<input class="form-control" type="text" name="homepage" value="{$lang->homepage}" title="{$lang->homepage}" onfocus="if(this.value==this.title)this.value='';return false;" />
+		</div>	
+		<div class="clearfix"></div>
+		</block>
+		<div>
+			<div class="pull-left">
+				<a class="wysiwyg m_no btn btn-sm btn-default" href="#">에디터모드</a>
+			</div>
+			<div class="pull-right form-inline">
+				<block cond="$is_logged">
+				<label class="checkbox-inline">
+				<input type="checkbox" name="notify_message" value="Y" id="notify_message"/>
+				{$lang->notify} </label>
+				</block>
+				<block cond="$module_info->use_status!='PUBLIC'">
+				<label class="checkbox-inline">
+				<input type="checkbox" name="is_secret" value="Y" id="is_secret"/>
+				비밀글 </label>
+				</block>
+				<input class="btn btn-default btn-sm"  type="submit" value="{$lang->cmd_submit}"/>	
+				<a href="#" class="btn btn-default btn-sm"  onclick="jQuery('#re_cmt').fadeOut().parent().find('.re_comment').focus();return false">{$lang->cmd_close}</a>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</form>
+</div>
+</block>

@@ -1,0 +1,53 @@
+<!--#include("_setting.html")-->
+<!--#include("_header.html")-->
+<!--@if($oSourceComment->isExists())-->
+<div>
+	<h6 class="media-heading">
+		<a href="#popup_menu_area" class="member_{$oSourceComment->getMemberSrl()}" onclick="return false">{$oSourceComment->getNickName()}</a>
+		| {$oSourceComment->getRegdate("Y.m.d H:i")}
+		<!--@if($grant->manager)-->
+		| {$oSourceComment->get('ipaddress')}
+		<!--@end-->
+	</h6>
+	<div style="padding:20px 0px;">
+		{$oSourceComment->getContent(false)}
+	</div>
+</div>
+<!--@end-->
+
+<form action="./" method="post" onsubmit="jQuery(this).find('input').each(function(){if(this.title==this.value)this.value='';});return procFilter(this, insert_comment)">
+<input type="hidden" name="mid" value="{$mid}" />
+<input type="hidden" name="document_srl" value="{$oComment->get('document_srl')}" />
+<input type="hidden" name="comment_srl" value="{$oComment->get('comment_srl')}" />
+<input type="hidden" name="content" value="{htmlspecialchars($oComment->get('content'))}" />
+<input type="hidden" name="parent_srl" value="{$oComment->get('parent_srl')}" />
+
+<div>
+	
+    <div>{$oComment->getEditor()}</div>
+	
+	<!--@if(!$is_logged)-->
+	<div class="pull-right form-inline">
+	   <input class="form-control" type="text" name="nick_name" value="{$oComment->getNickName()}"  title="{$lang->writer}" onfocus="if(this.value==this.title)this.value='';return false;" />
+	   <input class="form-control" type="password" name="password" value="" title="{$lang->password}" onfocus="if(this.value==this.title)this.value='';return false;" />
+	   <input class="form-control" type="text" name="email_address" value="{htmlspecialchars($oComment->get('email_address'))}" title="{$lang->email_address}" onfocus="if(this.value==this.title)this.value='';return false;" />
+	   <input class="form-control" type="text" name="homepage" value="{htmlspecialchars($oComment->get('homepage'))}" title="{$lang->homepage}" onfocus="if(this.value==this.title)this.value='';return false;" />
+	</div>   
+	<!--@end-->
+	
+	<div class="pull-right form-inline paddingt10">
+	<!--@if($is_logged)-->
+		<label class="checkbox-inline"  for="notify_message">
+		<input type="checkbox" name="notify_message" value="Y" <!--@if($oComment->get('notify_message')=='Y')-->checked="checked"<!--@end--> id="notify_message"/>
+		{$lang->notify}</label>
+	<!--@end-->
+		<label class="checkbox-inline" for="is_secret">
+		<input type="checkbox" name="is_secret" value="Y" id="is_secret" <!--@if($oComment->get('is_secret')=='Y')-->checked="checked"<!--@end-->/>
+		{$lang->secret}</label>
+		<input class="btn btn-default" type="submit" value="{$lang->cmd_comment_registration}" />
+	</div>
+</div>
+
+
+</form>
+<!--#include("_footer.html")-->

@@ -1,0 +1,267 @@
+<div id="viewport">
+<div class="container">
+    <div class="tamper">
+	  <!--배너 -->
+        <span class="remove"><img src="/img/icon-close-blk.png" class="img-responsive"></span>
+    </div>
+	<header>
+		<div class="logo; text-center">
+			<a href="/"><img src="/images/img/payboom_logo.png" title="payboom"></a>
+		</div>
+        <div class="search-form hidden-xs">
+            <form action="/search/search.php" onSubmit='return CheckSearchForm(this)' class="form-inline" role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="txt_search" name="search" value="" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+            </form>
+        </div>
+		<div class="wrapper visible-md visible-lg visible-sm hidden-xs">
+			<div class="globalNavi clearfix">
+             	<ul class="navi list-unstyled clearfix pull-left">
+					<li class="pull-left<?php if($category == 101 || $category == 103 || $category == 104 || $category == 105 || $category == 109){?> selected<?php }?>"><a href="/boom/sktel"><b>티붐</b></a></li>
+					<li class="pull-left<?php if($category == 202){?> selected<?php }?>"><a href="/board/list.php?category=202"><b>정보</b></a></li>
+					<li class="pull-left<?php if($category == 501){?> selected<?php }?>"><a href="/community/community.php"><b>커뮤니티</b></a></li>
+					<li class="pull-left<?php if($category == 204){?> selected<?php }?>"><a href="/board/list.php?category=204"><b>이벤트</b></a></li>
+                    <li class="pull-left<?php if($category == 300){?> selected<?php }?>"><a href="/board/list.php?category=300"><b>서비스신청</b></a></li>
+				</ul>
+			</div>
+				<div class="utility">
+					<ul class="list-unstyled clearfix">
+						<li class="pull-left"><a href="/user/login.php"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>로그인</span></a></li>
+						<li class="pull-left"><a href="/user/agree.php"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>회원가입</span></a></li>
+						<li class="pull-left facebook" onclick="facebooklogin()">
+							<span>	<img src="/images/img/icon-facebook.png"></span>
+						</li>
+					</ul>
+				</div>
+			<!-- 로그아웃
+			<div class="utility-login clearfix">
+				<div class="alarm-info pull-right clearfix">
+					<div id="memocount" class="pull-left">
+						<a href="javascript:viewAlarm('message')" class="badge">00</a>
+						<a href="javascript:viewAlarm('message')"><span class="glyphicon glyphicon-envelope"></span></a>
+					</div>
+					<div id="commentcount" class="pull-left">
+						<a href="javascript:viewAlarm('alarm')" class="badge">00</a>
+						<a href="javascript:viewAlarm('alarm')"><span class="glyphicon glyphicon-comment"></span></a>
+					</div>
+				</div>
+				<div class="btn-group pull-right myinfo">
+					<div class="dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-cog"></span>
+					</div>
+					<ul class="list-unstyled dropdown-menu" role="menu">
+						<li><a href="/mypage/info.php">나의 정보보기</a></li>
+						<li><a href="/mypage/modify.php">나의 정보수정</a></li>
+						<li><a href="/user/logout_process.php">로그 아웃</a></li>
+					</ul>
+				</div>
+				<div class="login-id pull-right"><span>아디이</span></div>
+			</div>
+			-->
+			<div class="gnb-depth clearfix">
+				<ul class="<?php echo $category_name; ?> list-unstyled clearfix pull-left">
+				<?php
+				    /**
+				     * // 600 : 브랜드 업체정보도 community 서브메뉴 하위로.
+				     * // 900 : 이벤트도 커뮤니티 밑으로
+				     * // 2000 : 공지사항도 커뮤니티 밑으로
+				     */
+				    //if ($topcategory == 500 || $topcategory == 600 || $topcategory == 900 || $topcategory == 2000){
+					//	echo '		<li class="pull-left m1"><a href="/community/community.php" class="selected">커뮤니티</a></li>'."\n";
+					//	echo '		<li class="pull-left m2"><a href="/board/list.php?category=700">중고장터</a></li>'."\n";
+					//} else if($topcategory == 700 || $topcategory == 800){
+                        /**
+                         * // 700 : 구 프리마켓은 중고 장토 ( buy & sell ) 로
+                         */
+                       // echo '		<li class="pull-left m1"><a href="/community/community.php">커뮤니티</a></li>'."\n";
+                        //echo '		<li class="pull-left m2"><a href="/board/list.php?category=700"  class="selected">중고장터//</a></li>'."\n";
+                    //}else{
+						/*
+						if($category != 100){
+                            for($i = 0; $i < count($category_array[$topcategory]); $i++){
+                                if($category_array[$topcategory][$i] == ""){
+                                    continue;
+                                }
+
+                                $current_category = $topcategory + $i;
+
+                                if($category != 106){
+                                    if($current_category == $category){
+                                        $classon = ' class="selected"';
+                                    }else{
+                                        $classon = '';
+                                    }
+
+                                    if($topcategory == 100 && ($current_category == 101 || $current_category == 103 || $current_category == 104 || $current_category == 105 || $current_category == 109)){
+                                        echo '<li class="pull-left m'.($i + 1).'"><a href="/board/list.php?category='.$current_category.'"'.$classon.'>'.$category_array[$topcategory][$i].'</a></li>'."\n";
+                                    }
+                                }
+                            }
+                        }
+                    }
+				*/
+				?>
+			</ul>
+			</div>
+		</div>
+	</header>
+	<div class="modal-fade"></div>
+	<nav class="mobile hidden-lg hidden-md hidden-sm visible-xs">
+		<!-- <div class="modal-fade"></div> -->
+		<span class="toggleButton">
+			<span class="inner"></span>
+		</span>
+		
+			<div class="utility">
+				<ul class="list-unstyled clearfix">
+					<li class="pull-left"><a href="/user/login.php"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>로그인</span></a></li>
+					<li class="pull-left"><a href="/user/agree.php"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>회원가입</span></a></li>
+					<li class="pull-right facebook" onclick="facebooklogin()">
+						<span>	<img src="/images/img/icon-facebook.png"></span>
+					</li>
+				</ul>
+			</div>
+		<!-- 로그아웃
+		<div class="utility utility-login">
+			<div class="login-id"><span><?php echo $userinfo->loginid; ?></span></div>
+			<div class="myinfo">
+				<ul class="list-unstyled clearfix">
+					<li class="pull-left"><a href="/mypage/info.php">나의 정보보기</a></li>
+					<li class="pull-left"><a href="/mypage/modify.php">나의 정보수정</a></li>
+					<li class="pull-left"><a href="/user/logout_process.php">로그 아웃</a></li>
+				</ul>
+			</div>
+		</div>
+		-->
+		<div class="globalNavi">
+            <ul class="list-unstyled">
+
+                <li class="c01">
+                    <a href="/board/list.php?category=101">티붐</a>
+                    <ul class="list-unstyled clearfix gnb-depth">
+                        <li class="pull-left">
+                            <a href="/board/list.php?category=101">SK텔레콤</a>
+                        </li>
+                        <li class="pull-left">
+                            <a href="/board/list.php?category=103">KT</a>
+                        </li>
+                        <li class="pull-left">
+                            <a href="/board/list.php?category=104">LGU+</a>
+                        </li>
+					 </ul>
+				 </li>
+					    <li>
+							 <a href="/board/list.php?category=202">정보</a>
+						</li>
+						<li>
+							 <a href="/community/community.php">커뮤니티</a>
+						<ul class="list-unstyled gnb-depth">
+						<li>
+                            <a href="/board/list.php?category=600">브랜드,업체정보</a>
+                        </li>
+                        <li>
+                            <a href="/board/list.php?category=700">중고장터</a>
+                        </li>
+                    </ul>
+                </li>
+				<li>
+                    <a href="/board/list.php?category=204">이벤트</a>
+                </li>
+				<li>
+                    <a href="/board/list.php?category=300">서비스신청</a>
+                </li>
+
+                    </ul>
+                </li>
+            </ul>
+		</div>
+		<div class="search-form">
+			<form action="/search/search.php" onSubmit='return CheckSearchForm(this)' class="form-inline" role="form">
+				<div class="form-group col-xs-8">
+					<input type="text" class="form-control input-sm" name="search" id="txt_search" value="" />
+				</div>
+				<div class="form-group col-xs-3">
+					<button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+			</form>
+		</div>
+	</nav>
+	<!-- 내용 -->
+	{$content}
+	<!-- contents//end -->
+<!-- floating banner -->
+            <div class="floating-banner text-left hidden-sm hidden-xs">
+                <!-- banner-feature -->
+                <div class="banner-feature">
+                    <div class="billboardNest">
+                        
+                    </div>
+                </div>
+                <!-- banner-feature//end -->
+            </div>
+            <!-- floating banner//end -->
+            <div class="floating-banner right text-left hidden-sm hidden-xs">
+                <!-- banner-feature -->
+                <div class="banner-feature">
+                    <div class="billboardNest">
+                       
+                    </div>
+                </div>
+                <!-- banner-feature//end -->
+            </div>
+            <!-- floating banner//end -->
+
+        <!-- footer -->
+        <footer>
+
+            <strong>MORE INFORMATION</strong>
+            <ul class="secondNav list-unstyled clearfix">
+             <!--   <li><a href="/company/syoff.php">페이붐소개</a></li> -->
+                <li><a href="/company/company.php">회사소개</a></li>
+                <li><a href="/company/clause.php">이용약관,개인정보 취급방침</a></li>
+                <li><a href="/company/marketing.php">제휴,광고 문의</a></li>
+            </ul>
+            <p>페이붐 &#124; 대표자 : 소상용 &#124; 정보관리책임자 : 김명화 &#124; 사업자번호 :   &#124;  신고기관명 : 서울시 서대문구 &#124; 주소 : 서울시 서대문구 북가좌동 294-17 3층<br />
+            페이붐 webmaster@payboom.co.kr  </p>
+
+
+            <strong>PAYBOOM</strong>
+            <p>ADD &#124; #294-17 3F, BUKGAJWA-DONG, SEODAEMUN-GU SEOUL, REPUBLIC OF KOREA TEL &#124; 02-6082-1418 FAX &#124; 02-6339-1418 E.MAIL &#124; webmaster@payboom.co.kr <br />COMPANY LICENSE  - </p>
+            <p>COPYRIGHT(C) 2015 PAYBOOM ALL RIGHTS RESERVED.</p>
+
+            <strong>PARTNERSHIP</strong>
+            <ul class="partnership list-unstyled clearfix">
+            
+            </ul>
+
+        </footer>
+        <!-- footer//end -->
+    </div>
+    <!-- container//end -->
+</div>
+<!-- viewport//end -->
+
+
+
+<!-- sample modal content -->
+          
+
+<div id="divAlarmfriend" class="layer-alarmInfo" style="display:none;position:absolute;"></div>
+<div id="divAlarmmessage" class="layer-alarmInfo" style="display:none;position:absolute;"></div>
+<div id="divAlarmalarm" class="layer-alarmInfo" style="display:none;position:absolute;"></div>
+<div id="dark" style="display:none;background:#000;position:absolute;z-index:20000;"></div>
+<div id="photoview" style="display:none;position:absolute;z-index:20001;left:0px;top:0px;"></div>
+<script src="/boom/layouts/user_layout/js/vendor/jquery-1.11.1.min.js"></script>
+<script src="/boom/layouts/user_layout/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="/boom/layouts/user_layout/js/plugins.js"></script>
+<script type="text/javascript" src="/boom/layouts/user_layout/js/main.js"></script>
+    
+   
+
+<script src="/boom/layouts/user_layout/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="/boom/layouts/user_layout/js/plugins.js"></script>
+<script type="text/javascript" src="/boom/layouts/user_layout/js/main.js"></script>

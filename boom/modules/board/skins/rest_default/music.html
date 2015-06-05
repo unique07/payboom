@@ -1,0 +1,38 @@
+{Context::set('layout','none')}
+{Context::set('admin_bar','false')}
+<style type="text/css">
+body {
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	width:100%;
+	height:100%;
+}
+</style>
+<script>
+function WindowReset( win /* Window Object */ ){ // 새창의 크기와 위치 재설정
+  // 
+  // 새창의 진행상황 체크 완료되면 코드실행 
+  // 
+  //while(win.document.readyState != 'complete'){}
+  var winBody = win.document.body; 
+  // 
+  // 새창의 사이즈에 더해줄 marginWidth와 marginHeight 
+  // 
+  var marginHeight = parseInt(winBody.topMargin)+parseInt(winBody.bottomMargin); 
+  var marginWidth = parseInt(winBody.leftMargin)+parseInt(winBody.rightMargin); 
+  // 
+  // 새창의 사이즈 설정 
+  // 
+  var wid = winBody.scrollWidth + (winBody.offsetWidth - winBody.clientWidth) + marginWidth-4; 
+  var hei = winBody.scrollHeight + (winBody.offsetHeight - winBody.clientHeight) + marginHeight+33; 
+  // 
+  // 사이즈 재조정 
+  // 
+  win.resizeTo(wid, hei); 
+ } 
+</script>
+<load target="js/jwplayer.js" />
+<body OnLoad="WindowReset(this)">
+<include target="view_document.html" />
+</body>

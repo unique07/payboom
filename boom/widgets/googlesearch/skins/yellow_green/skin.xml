@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="1.0">
+<title xml:lang="ko">구글 검색 위젯 연두색 스킨</title>
+<description xml:lang="ko">구글 검색 위젯 연두색 스킨입니다.</description>
+<version>1.0</version>
+<date>2010-12-20</date>
+<author email_address="brz7942@nate.com" link="http://sozar.net">
+<name xml:lang="ko">소자네</name>
+</author>
+<colorset>
+    <color name="">
+      <title xml:lang="ko">기본</title>     
+    </color>
+  </colorset>
+</skin>

@@ -1,0 +1,27 @@
+<div class="utility-login clearfix">
+	<div class="alarm-info pull-right clearfix">
+		<div id="memocount" class="pull-left">
+			<a href="javascript:viewAlarm('message')" class="badge">0</a>
+			<a href="javascript:viewAlarm('message')"><span class="glyphicon glyphicon-envelope"></span></a>
+		</div>
+		<div id="commentcount" class="pull-left">
+			<a href="javascript:viewAlarm('alarm')" class="badge">0</a>
+			<a href="javascript:viewAlarm('alarm')"><span class="glyphicon glyphicon-comment"></span></a>
+		</div>
+	</div>
+	<div class="btn-group pull-right myinfo">
+		<div class="dropdown-toggle" data-toggle="dropdown">
+			<span class="glyphicon glyphicon-cog"></span>
+		</div>
+		<ul class="list-unstyled dropdown-menu" role="menu">
+			<li><a href="/boom/index.php?mid=login&act=dispMemberInfo">나의 정보보기</a></li>
+			<li><a href="/boom/index.php?mid=login&act=dispMemberInfo">나의 정보수정</a></li>
+			<li><a href="{getUrl('act','dispMemberLogout')}">로그 아웃</a></li>
+			
+			<!--@if($logged_info->is_admin == 'Y')-->
+			<li><a href="{getUrl('','module','admin')}" onclick="window.open(this.href);return false;">{$lang->cmd_management}</a></li>
+			<!--@end-->						
+		</ul>
+	</div>
+	<div class="login-id pull-right"><span>{$logged_info->nick_name}</span></div>
+</div>

@@ -1,0 +1,19 @@
+<!--%import("./filter/logout.xml")-->
+{@ $oPointModel = &getModel('point'); $point = $oPointModel->getPoint($logged_info->member_srl); $oModuleModel = &getModel('module');  $config = $oModuleModel->getModuleConfig('point'); $level = $oPointModel->getLevel($point, $config->level_step); }
+<div class="utility-login clearfix">
+	<div class="btn-group pull-right myinfo">
+		<div class="dropdown-toggle" data-toggle="dropdown">
+			<span class="glyphicon glyphicon-cog"></span>
+		</div>
+		<ul class="list-unstyled dropdown-menu" role="menu">
+			<li><a href="/boom/index.php?mid=login&act=dispMemberInfo">나의 정보보기</a></li>
+			<li><a href="/boom/index.php?mid=login&act=dispMemberInfo">나의 정보수정</a></li>
+			<li><a href="{getUrl('act','dispMemberLogout')}">로그 아웃</a></li>
+			
+			<!--@if($logged_info->is_admin == 'Y')-->
+			<li><a href="{getUrl('','module','admin')}" onclick="window.open(this.href);return false;">{$lang->cmd_management}</a></li>
+			<!--@end-->						
+		</ul>
+	</div>
+	<div class="login-id pull-right"><span>{$logged_info->nick_name}</span>(- 포인트 : {$point})<!--@if(count($newMessage) > 0 )--><a href="/boom/index.php?act=dispCommunicationMessages&mid=login" style="color:#337ab7"><i class="glyphicon glyphicon-envelope"></i></a><!--@end--> </div>
+</div>

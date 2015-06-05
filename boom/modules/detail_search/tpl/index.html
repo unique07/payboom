@@ -1,0 +1,91 @@
+<!--#include("header.html")-->
+<load target="../../widget/tpl/js/widget_admin.js" usecdn="true" />
+<div cond="$XE_VALIDATOR_MESSAGE" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+<form ruleset="insertConfig" action="./" method="post" class="form">
+	<input type="hidden" name="act" value="procDetail_searchAdminInsertConfig" />
+	<input type="hidden" name="module" value="admin" />
+	<input type="hidden" name="target_module_srl" id="target_module_srl" value="{$config->target_module_srl}" />
+	<div class="table">
+		<table width="100%" border="1" cellspacing="0">
+		<tr>
+			<th scope="row">{$lang->view_result}</th>
+			<td>
+				<input type="checkbox" name="view_result_document" value="Y" id="document_view" checked="checked"|cond="$config->view_result['document'] != 'N'"/>
+				<label for="document_view">{$lang->document}</label>
+				<input type="checkbox" name="view_result_comment" value="Y" id="comment_view" checked="checked"|cond="$config->view_result['comment'] != 'N'" />
+				<label for="comment_view">{$lang->comment}</label>
+				<input type="checkbox" name="view_result_trackback" value="Y" id="trackback_view" checked="checked"|cond="$config->view_result['trackback'] != 'N'" />
+				<label for="trackback_view">{$lang->trackback}</label>
+				<input type="checkbox" name="view_result_multimedia" value="Y" id="multimedia_view" checked="checked"|cond="$config->view_result['multimedia'] != 'N'" />
+				<label for="multimedia_view">{$lang->multimedia}</label>
+				<input type="checkbox" name="view_result_file" value="Y" id="file_view" checked="checked"|cond="$config->view_result['file'] != 'N'" />
+				<label for="file_view">{$lang->file}</label>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">{$lang->show_detail_box}</th>
+			<td>
+				<input type="checkbox" name="show_detail_box" value="Y" checked="checked"|cond="$config->show_detail_box != 'N'" id="show_detail_box" />
+				<label for="show_detail_box">{$lang->detailbox_view}</label>
+				<p>{$lang->show_detail_box_desc}</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">{$lang->sample_code}</th>
+			<td >
+				<textarea readonly="readonly" rows="8" cols="42">{$sample_code}</textarea>
+				<p>{$lang->about_sample_code}</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">{$lang->skin}</th>
+			<td>
+				<select name="skin">
+					<!--@foreach($skin_list as $key=>$val)-->
+					<option value="{$key}" <!--@if($config->skin==$key)-->selected="selected"<!--@end-->>{$val->title}</option>
+					<!--@end-->
+				</select>
+				<p>{$lang->about_skin}</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">{$lang->menu}</th>
+			<td>
+				<p class="q">{$lang->search_target_menu}</p>
+				<p class="a">
+				<select name="search_target_menu">
+					<option value="0">{$lang->cmd_select}</option>
+					<option loop="$menu_list => $key, $val" value="{$val->menu_srl}" selected="selected"|cond="$val->menu_srl == $config->search_target_menu">{$val->title}</option>
+				</select>
+				<a href="{getUrl('module','admin','act','dispMenuAdminSiteMap')}">{$lang->cmd_management}</a>
+			</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">{$lang->target}</th>
+			<td>
+				<select name="target">
+					<option value="include">{$lang->include_search_target}</option>
+					<option value="exclude" <!--@if($config->target=='exclude')-->selected="selected"<!--@end-->>{$lang->exclude_search_target}</option>
+				</select>
+	
+				<select name="_target_module_srl" id="_target_module_srl" size="5" style="display:block;margin:10px 0;"></select>
+				
+				<p>{$lang->search_target_option_description}</p>
+				
+				<a href="{getUrl('','module','module','act','dispModuleSelectList','id','target_module_srl')}" onclick="popopen(this.href, 'ModuleSelect');return false;" class="button blue"><span>{$lang->cmd_insert}</span></a>
+				<a href="#" onclick="midRemove('target_module_srl');return false;" class="button red"><span>{$lang->cmd_delete}</span></a>
+	
+				<script type="text/javascript">
+					jQuery( function() { getModuleSrlList('target_module_srl'); } );
+				</script>
+			</td>
+		</tr>
+		</table>
+	</div>
+	<div class="btnArea">
+		<span class="btn"><input type="submit" value="{$lang->cmd_registration}" /></span>
+	</div>
+</form>

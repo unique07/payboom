@@ -1,0 +1,47 @@
+<div class="cmt_editor" cond="$grant->write_comment && $oDocument->isEnableComment()">
+<a name="commentwriteed_{$oDocument->document_srl}"></a>
+	<div id="commentwrite_{$oDocument->document_srl}" class="collapse paddingtb10 form-inline <!--@if($module_info->display_commentwrite == 'Y')-->in<!--@end-->">
+		<form action="./" method="post" onsubmit="return procFilter(this, insert_comment)" class="bd_wrt cmt_wrt">
+			<input type="hidden" name="mid" value="{$mid}" />
+			<input type="hidden" name="document_srl" value="{$oDocument->document_srl}" />
+			<input type="hidden" name="comment_srl" value="" />
+			<input type="hidden" name="content" value="" />
+			<block cond="$mi->cmt_wrt=='editor'"><div class="cmt_editor">{$oDocument->getCommentEditor()}</div></block>
+			<div cond="$mi->cmt_wrt=='simple'" class="simple_wrt paddingb10">
+				<div>
+					<input type="hidden"  id="htm_{$oDocument->document_srl}"  value="n" />
+					<textarea id="editor_{$oDocument->document_srl}" class="form-control" cols="50" rows="4"></textarea>
+				</div>
+			</div>	
+			<div style="display:none"|cond="$mi->cmt_wrt!='editor'">
+				<!--@if(!$is_logged)-->
+				<div class="paddingb10">
+					<input class="form-control" type="text" name="nick_name" value="{$lang->writer}"  title="{$lang->writer}" onfocus="if(this.value==this.title)this.value='';return false;" />
+					<input class="form-control" type="password" name="password" value="{$lang->password}" title="{$lang->password}" onfocus="if(this.value==this.title)this.value='';return false;" />
+					<input class="form-control" type="text" name="email_address" value="{$lang->email_address}" title="{$lang->email_address}" onfocus="if(this.value==this.title)this.value='';return false;" />
+					<input class="form-control" type="text" name="homepage" value="{$lang->homepage}" title="{$lang->homepage}" onfocus="if(this.value==this.title)this.value='';return false;" />
+				</div>
+				<div class="clearfix"></div>
+				<!--@end-->
+				<div class="pull-left">
+					<a class="btn btn-default btn-sm" href="#" onclick="jQuery.cookie('bd_editor','simple');location.reload();return false">텍스트모드</a>
+					<a class="btn btn-default btn-sm" href="#" onclick="jQuery.cookie('bd_editor','editor');location.reload();return false">에디터모드</a>
+				</div>			
+				<div class="pull-right">
+				<block cond="$is_logged">
+					<label class="checkbox-inline" for="notify_message_{$oDocument->document_srl}">
+					<input type="checkbox" name="notify_message" value="Y" id="notify_message_{$oDocument->document_srl}"/>
+					{$lang->notify} </label>
+					</block>
+					<block cond="$module_info->use_status!='PUBLIC'">
+					<label class="checkbox-inline" for="is_secret_{$oDocument->document_srl}">
+					<input type="checkbox" name="is_secret" value="Y" id="is_secret_{$oDocument->document_srl}"/>
+					비밀글 </label>
+					</block>
+					<input class="btn btn-default btn-sm" type="submit" value="{$lang->cmd_submit}"/>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</form>
+	</div>
+</div>

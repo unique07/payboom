@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">상세검색 위젯 기본 스킨</title>
+    <title xml:lang="en">DetailSearch Widget Default Skin.</title>
+    <description xml:lang="ko">상세검색 기본스킨입니다.</description>
+    <description xml:lang="en">This skin is DetailSearch Default skin.</description>
+    <version>0.1</version>
+    <date>2012-06-30</date>
+    <link>http://xiso.co.kr</link>
+
+    <author email_address="jeokcho@naver.com" link="http://xiso.co.kr/">
+        <name xml:lang="ko">Xiso</name>
+        <name xml:lang="en">Xiso</name>
+    </author>
+
+    <colorset>
+        <color name="white">
+            <title xml:lang="ko">하얀색</title>
+            <title xml:lang="en">White</title>
+        </color>
+        <color name="black">
+            <title xml:lang="ko">검정색</title>
+            <title xml:lang="en">Dark </title>
+        </color>
+    </colorset>
+</skin>

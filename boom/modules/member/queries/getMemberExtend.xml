@@ -1,0 +1,14 @@
+<query id="getMemberExtend" action="select">
+    <tables>
+        <table name="member_extend" />
+    </tables>
+    <columns>
+        <column name="member_srl" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="authno" var="authno" pipe="and" />
+        <condition operation="equal" column="bizno" var="bizno" pipe="and" />
+        <condition operation="equal" column="user_id" var="user_id" pipe="and" />
+        <condition operation="equal" column="member_srl" var="member_srl" pipe="and" />
+    </conditions>
+</query>

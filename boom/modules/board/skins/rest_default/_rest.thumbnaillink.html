@@ -1,0 +1,46 @@
+<!--@if($document->thumbnailExists($mi->thumbnail_width, $mi->thumbnail_height, $mi->thumbnail_type))-->
+	{@ $thumbnaillink = $document->getThumbnail($mi->thumbnail_width, $mi->thumbnail_height, $mi->thumbnail_type)}
+<!--@else-->
+	<!--@if($document->getExtraEidValue('video') || $mi->display_list_cthumbnail=='Y')-->
+		<!--@if($document->getExtraEidValue('video'))-->
+		{@	$thumbnaillink = $document->getExtraEidValue('video');}
+		<!--@elseif($mi->display_list_cthumbnail=='Y')-->
+		{@ $documentcontent = $document->getContent();
+			preg_match_all("`href=\"(http|https)://(www.youtube|youtu|vimeo|www.vimeo)(.com|.be)/(.+?)\"`",$documentcontent,$out, PREG_PATTERN_ORDER); 
+			 $out = str_replace('href=','',$out[0][0]);
+			 $thumbnaillink = str_replace('"','',$out);
+		}	
+		<!--@end-->		
+		<!--@if(preg_match('/youtu/', $thumbnaillink))-->
+			<!--@if(preg_match('/v=/', $thumbnaillink))-->
+			{@	$thumbnaillink = explode('v=',$thumbnaillink);
+				$thumbnaillink = $thumbnaillink[1];}	
+			<!--@else-->
+			{@	$thumbnaillink = str_replace('https://','http://',$thumbnaillink);
+				$thumbnaillink = str_replace('http://youtu.be/','',$thumbnaillink);
+				$thumbnaillink = str_replace('http://www.youtube.com/embed/','',$thumbnaillink);}
+			<!--@end-->
+			{@	$thumbnaillink = substr($thumbnaillink,0,11);
+				$thumbnaillink = 'http://img.youtube.com/vi/'.$thumbnaillink.'/0.jpg';}
+		<!--@elseif(preg_match('/vimeo/', $thumbnaillink))-->
+		{@	$vimeothumbnail = substr($thumbnaillink,-8);}
+			<script>	
+			//<!--<![CDATA[ 
+			jQuery(function(){ 
+				jQuery("#rthumbnail .rthumbnailimg").each(function(index){ 
+				var vimeoVideoID = jQuery(this).attr("id"); 
+				jQuery.getJSON('http://www.vimeo.com/api/v2/video/' + vimeoVideoID + '.json?callback=?', {format: "json"}, function(data) { 
+					jQuery("#"+vimeoVideoID).attr('src', data[0].thumbnail_medium); 
+					}); 
+			  
+				}); 
+			}); 
+			//]]>--> 
+			</script>
+		<!--@else-->
+		{@ $thumbnaillink = '0';}
+		<!--@end-->
+	<!--@else-->
+	{@ $thumbnaillink = '0';}
+	<!--@end-->
+<!--@end-->	

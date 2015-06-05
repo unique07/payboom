@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <title xml:lang="ko">상세검색</title>
+    <title xml:lang="en">Detail Search</title>
+    <description xml:lang="ko">
+        통합검색 모듈에 사용자가 검색조건을 선택할 수 있도록 하는 기능이 추가된 모듈입니다.
+    </description>
+    <description xml:lang="en">
+        It supports the integrated search for chosen modules by user.
+    </description>
+    <version>0.1</version>
+    <date>2012-06-30</date>
+    <category>service</category>
+
+    <author email_address="jeokcho@naver.com" link="http://xiso.co.kr/">
+        <name xml:lang="ko">Xiso</name>
+        <name xml:lang="en">Xiso</name>
+    </author>
+</module>

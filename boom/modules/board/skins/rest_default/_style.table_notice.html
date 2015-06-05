@@ -1,0 +1,46 @@
+<!--// Notice -->
+<tr loop="$notice_list=>$no,$document" class="<!--@if($document->getExtraEidValue('video'))-->info<!--@else-->active<!--@end-->">
+	<block loop="$list_config=>$key,$val">
+		<td cond="$val->type=='no' && $val->idx==-1" class="hidden-xs width70 text-center">
+			<block cond="$document_srl==$document->document_srl">&raquo;</block>
+			<strong cond="$document_srl!=$document->document_srl">{$lang->notice}</strong>
+		</td>
+		<block cond="$val->type=='title' && $val->idx==-1">
+		<td cond="$mi->use_category=='Y'" class="hidden-xs tablecate"><strong>{$category_list[$document->get('category_srl')]->title}</strong></td>
+		<td>
+			<a href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}"><strong>{$document->getTitle($mi->subject_cut_size)}</strong></a>
+			 <small cond="$document->getCommentCount()"><a href="{getUrl('document_srl', $document->document_srl)}#comment">{$document->getCommentCount()}</a></small>
+			 <small cond="$document->getTrackbackCount()"><a href="{getUrl('document_srl', $document->document_srl)}#trackback">{$document->getTrackbackCount()}</a></small>
+			<!--@if((int)($document->getRegdate('YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+			<span class="label label-primary marginlabel">new</span>
+			<!--@elseif((int)(zdate($document->get('last_update'),'YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+			<span class="label label-success marginlabel">update</span>
+			<!--@end-->
+			<span cond="$document->hasUploadedFiles()" class="label label-info marginlabel">File</span>
+			<span cond="$document->variables[status]=='SECRET'" class="label label-warning marginlabel">Secret</span>
+		</td>
+		</block>
+		<td cond="$val->type=='nick_name' && $val->idx==-1" class="hidden-xs tableuser"><a href="#popup_menu_area" class="member_{$document->get('member_srl')} nocolorlist" onclick="return false" title="{$document->getNickName()}">{$document->getNickName()}</a></td>
+		<td cond="$val->type=='user_id' && $val->idx==-1" class="hidden-xs tableuser">{$document->getUserID()}</td>
+		<td cond="$val->type=='user_name' && $val->idx==-1" class="hidden-xs tableuser">{$document->getUserName()}</td>
+		<td cond="$val->type=='regdate' && $val->idx==-1" class="tabledate" title="{getTimeGap($document->get('regdate'), "H:i")}">{$document->getRegdate('Y.m.d')}</td>
+		<td cond="$val->type=='last_update' && $val->idx==-1" class="hidden-xs tabledate">{zdate($document->get('last_update'),'Y.m.d')}</td>
+		<td cond="$val->type=='last_post' && $val->idx==-1" class="hidden-xs tabledate">
+			<a cond="(int)($document->get('comment_count'))>0" href="{getUrl('document_srl',$document->document_srl)}#{$document->document_srl}_comment" title="{getTimeGap($document->get('last_update'), "H:i")}">{zdate($document->get('last_update'),'Y.m.d')}<small cond="$document->getLastUpdater()">(by {$document->getLastUpdater()})</small></a>
+			<block cond="(int)($document->get('comment_count'))==0">&nbsp;</block>
+		</td>
+		<td cond="$val->type=='readed_count' && $val->idx==-1" class="hidden-xs width70">{$document->get('readed_count')>0?$document->get('readed_count'):'0'}</td>
+		<td cond="$val->type=='voted_count' && $val->idx==-1" class="hidden-xs width70">{$document->get('voted_count')!=0?$document->get('voted_count'):'0'}</td>
+		<td cond="$val->type=='blamed_count' && $val->idx==-1" class="hidden-xs width70">{$document->get('blamed_count')!=0?$document->get('blamed_count'):'0'}</td>
+		<!--@if($val->eid=='video')-->
+		<td cond="$val->idx!=-1" class="width50 hidden-xs">
+			<a cond="$document->getExtraValueHTML($val->idx)" href="#" onclick="window.open('{getUrl('document_srl',$document->document_srl,'listStyle','video','page','')}','video','width={$mi->display_videoplaywidth},height={$mi->display_videoplayheight},resizable=yes');return false">보기</a>
+		</td>
+		<!--@else-->
+		<td cond="$val->idx!=-1" class="width70 hidden-xs">
+			{$document->getExtraValueHTML($val->idx)}
+		</td>			
+		<!--@end-->
+	</block>
+	<td cond="$grant->manager" class="width30"><input class="checkbox" type="checkbox" name="cart" value="{$document->document_srl}" title="Check This Article" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" /></td>
+</tr>

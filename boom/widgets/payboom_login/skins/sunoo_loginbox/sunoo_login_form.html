@@ -1,0 +1,65 @@
+<!--%import("./filter/login.xml")-->
+<!--%import("./js/login.js")-->
+<div id="login" class="contents membership">
+	<div class="membership-login">
+		<form action="./" method="post" onsubmit="return procFilter(this, widget_login)" id="fo_login_widget">
+			<div class="panel panel-default text-center">
+				<h3>LOGIN</h3>
+				<p>PLEASE ENTER YOUR ID AND PASSWORD BELOW</p>
+				<div class="panel-body">
+					<div class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="inputId" class="col-lg-4 col-md-4 col-sm-4 control-label">ID</label>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input type="text" class="form-control" id="user_id" name="user_id">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPwd" class="col-lg-4 col-md-4 col-sm-4 control-label">PASSWORD</label>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input type="password" class="form-control" id="password" name="password">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-12">
+								<div class="checkbox">
+									<label for="keepid" class="checkbox-inline">
+										<input type="checkbox" name="keep_sSigned" id="keepid" value="Y" title="로그인 유지">
+										<span>로그인유지</span>
+									</label>
+									<p id="warning" style="display: none;">브라우저를 닫더라도 로그인이 계속 유지될 수 있습니다. 로그인 유지 기능을 사용할 경우 다음 접속부터는 로그인할 필요가 없습니다. 단, 게임방, 학교 등 공공장소에서 이용 시 개인정보가 유출될 수 있으니 꼭 로그아웃을 해주세요.</p>
+								</div>
+							</div>
+						</div>
+						<!--
+						    <span class="swaccess"><ul>
+       <li class="mail"><a href="{getUrl('act','dispMemberResendAuthMail')}">{$lang->login->sw_resend_auth_mail}</a></li>
+			 <li class="find"><a href="{getUrl('act','dispMemberFindAccount')}">{$lang->login->sw_find_member_account}</a></li>
+       <li class="sign"><a href="{getUrl('act','dispMemberSignUpForm')}"><strong>{$lang->login->sw_signup}</strong></a></li>
+      </ul></span>
+      -->
+						<div class="form-group">
+							<div class="col-xs-12">
+								<input type="submit" name="submit" class="btn btn-default btn-login" role="button" value="LOGIN">
+								<a href="/boom/index.php?mid=login&act=dispMemberSignUpForm" class="btn btn-default btn-join">JOIN</a>
+								<a href="{getUrl('act','dispMemberFindAccount')}"" class="btn btn-default btn-find">FIND</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="col-md-offset-3 noticeBox list-unstyled">
+				<li></li>
+				<li></li>
+			</ul>
+		</form>
+	</div>
+	<script>
+	jQuery('#keepid').click(function() {
+        if (jQuery(this).is(':checked')) {
+            jQuery('#warning').show();
+        } else {
+        	jQuery('#warning').hide();
+        }
+    });
+	</script>

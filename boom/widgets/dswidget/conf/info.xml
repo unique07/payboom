@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+    <title xml:lang="ko">상세검색 위젯</title>
+    <title xml:lang="en">DetailSearch Widget</title>
+    <description xml:lang="ko">상세검색 박스를 출력하는 위젯입니다.</description>
+    <description xml:lang="en">This widget displays Detail Search Box.</description>
+    <version>0.1</version>
+    <date>2012-06-30</date>
+
+    <author email_address="jeokcho@naver.com" link="http://xiso.co.kr/">
+        <name xml:lang="ko">Xiso</name>
+        <name xml:lang="en">Xiso</name>
+    </author>
+
+    <extra_vars />
+</widget>

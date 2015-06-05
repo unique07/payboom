@@ -1,0 +1,78 @@
+/* xe sunoo box type login widget (http://www.goodpr.me/) */
+
+.sunooLogbox { position:relative; margin:0; padding:0; border:0; display:block; text-align:left; }
+.sunooLogbox .wtbox{ position:relative; margin:0; padding:0; }
+.sunooLogbox .wtbox .tda{ width:5px; height:5px; background:url(../images/bgtd1.png) no-repeat 0px 0px; _background:url(../images/bgtd1.gif) no-repeat 0px 0px; }
+.sunooLogbox .wtbox .tdb{ width:auto; height:5px; background:url(../images/bgtd2.gif) repeat-x 0px 0px; }
+.sunooLogbox .wtbox .tdc{ width:5px; height:5px; background:url(../images/bgtd3.png) no-repeat 0px 0px; _background:url(../images/bgtd3.gif) no-repeat 0px 0px; }
+.sunooLogbox .wtbox .tdd{ width:5px; height:auto; background:url(../images/bgtd4.gif) repeat-y 0px 0px; }
+.sunooLogbox .wtbox .tde{ width:auto; height:auto; }
+.sunooLogbox .wtbox .tdf{ width:5px; height:auto; background:url(../images/bgtd6.gif) repeat-y 0px 0px; }
+.sunooLogbox .wtbox .tdg{ width:5px; height:5px; background:url(../images/bgtd7.png) no-repeat 0px 0px; _background:url(../images/bgtd7.gif) no-repeat 0px 0px; }
+.sunooLogbox .wtbox .tdh{ width:auto; height:5px; background:url(../images/bgtd8.gif) repeat-x 0px 0px; }
+.sunooLogbox .wtbox .tdi{ width:5px; height:5px; background:url(../images/bgtd9.png) no-repeat 0px 0px; _background:url(../images/bgtd9.gif) no-repeat 0px 0px; }
+
+.sunooLogbox form { position:relative; margin:0px; border:0px solid #d9d9d9; padding:5px; *padding:5px 5px 3px 5px; background:#f9fafc; overflow:hidden; }
+.sunooLogbox form .swidpwWrap { overflow:hidden; clear:both; }
+.sunooLogbox form .swidpwWrap .swidpw { float:left; margin:0; padding:0; }
+.sunooLogbox form .swidpwWrap .swidpw input { border:1px solid #c9c9c9; color:#282828; background:#fbfbfb; padding:1px 5px; margin:0px 0px 4px 0px; *margin:0px 0px 2px 0px; font:.9em Tahoma;}
+.sunooLogbox form .swidpwWrap .swidpw input.swidIn { background:#fff;  }
+.sunooLogbox form .swidpwWrap .swidpw input.swidOut { background:#fdfdfc url(../images/bgidOut.gif) no-repeat 10px 3px; }
+.sunooLogbox form .swidpwWrap .swidpw input.swpwIn { background:#fff;  }
+.sunooLogbox form .swidpwWrap .swidpw input.swpwOut { background:#fdfdfc url(../images/bgpwOut.gif) no-repeat 10px 3px;}
+.sunooLogbox form .swidpwWrap input.swbuttonLogin { float:right; padding-top:0px; *padding-top:1px;}
+.sunooLogbox form p.securitySignIn { clear:both; padding:0 0 0 18px; margin:4px 0 0 0; }
+.sunooLogbox form p.noneSSL { background:url("../images/none_ssl.png") no-repeat left top; }
+.sunooLogbox form p.SSL { background:url("../images/ssl.png") no-repeat left top; }
+.sunooLogbox form p.noneSSL a { color:#BF6801; text-decoration:none; }
+.sunooLogbox form p.SSL a { color:#9CAC74; text-decoration:none; }
+.sunooLogbox form ul.swsave { list-style:none; margin:0; clear:both; padding:.3em 0; border-bottom:1px solid #e4e4e4; }
+.sunooLogbox form ul.swsave li input { vertical-align:middle; _margin:-3px;}
+.sunooLogbox form ul.swsave li label { font:.9em; color:#999999;}
+.sunooLogbox form ul.swhelp { margin:0; overflow:hidden; padding:.5em 0 0 0; white-space:nowrap; list-style:none; }
+.sunooLogbox form ul.swhelp li { display:block; padding:0px 3px 1px 7px; *padding:0px 3px 0px 7px; background:url(../images/bulletA.gif) no-repeat 1px 5px; *background-position:1px 6px; }
+.sunooLogbox form ul.swhelp li a { color:#54564b; font:.9em; white-space:nowrap; text-decoration:none; }
+.sunooLogbox form ul.swhelp li a:hover { color:#e61005; text-decoration:underline; }
+.sunooLogbox form .swuserName { position:relative; overflow:hidden; border-bottom:1px solid #e4e4e4; padding:0 0 6px 0; margin-top:-5px; *margin-top:-4px; }
+.sunooLogbox form .swuserName .fl { color:#282828; padding:1px 0px 0px 1px; }
+.sunooLogbox form .swuserName .fl strong { color:#282828; padding:1px; font:bold 1em Tahoma; }
+.sunooLogbox form .swuserName .fr { position:relative; right:0px; width="47" height="18" }
+.sunooLogbox form .swuserName .fr a { }
+.sunooLogbox form ul.swuserAcquire { position:relative; height:20px; *height:22px; padding:0px; margin:0px; }
+.sunooLogbox form ul.swuserAcquire li { list-style:none; color:#54564b; padding:6px 0px 2px 7px; margin:0px; background:url(../images/bulletA.gif) no-repeat 1px 12px; }
+.sunooLogbox form ul.swuserAcquire li.swlevel { width:60px; }
+.sunooLogbox form ul.swuserAcquire li.swpoint { width:100px; }
+.sunooLogbox form ul.swuserMenu { position:relative; padding:3px 0px 4px 0px; *padding:3px 0px 3px 0px; margin:0px; }
+.sunooLogbox form ul.swuserMenu li { list-style:none; color:#54564b; font:.9em; margin:0px; background:url(../images/bulletA.gif) no-repeat 1px 7px; }
+.sunooLogbox form ul.swuserMenu li.swleft { width:60px; padding:3px 0px 2px 7px; }
+.sunooLogbox form ul.swuserMenu li.swright { width:100px; padding:3px 0px 4px 7px; }
+.sunooLogbox form ul.swuserMenu li.swisadmin { padding:3px 0px 2px 7px; }
+.sunooLogbox form ul.swuserMenu li.swisadmin a{ color:#5054fa; }
+.sunooLogbox form ul.swuserMenu li a { color:#54564b; text-decoration:none; }
+.sunooLogbox form ul.swuserMenu li a:hover { color:#ee0f04; text-decoration:underline;}
+.sunooLogbox form p.swlatestLogin { position:relative; float:left; padding:6px 0px 0px 0px; margin:0px; color:#999999; font:1em Tahoma; border-top:1px solid #e4e4e4; }
+.sunooLogbox form p.swlatestLogin span { font:.9em; letter-spacing:-1px; }
+
+.openid_sunooLogbox .wtbox{ position:relative; margin:0; padding:0; }
+.openid_sunooLogbox .wtbox .tda{ width:5px; height:5px; background:url(../images/bgtd1.png) no-repeat 0px 0px; _background:url(../images/bgtd1.gif) no-repeat 0px 0px; }
+.openid_sunooLogbox .wtbox .tdb{ width:auto; height:5px; background:url(../images/bgtd2.gif) repeat-x 0px 0px; }
+.openid_sunooLogbox .wtbox .tdc{ width:5px; height:5px; background:url(../images/bgtd3.png) no-repeat 0px 0px; _background:url(../images/bgtd3.gif) no-repeat 0px 0px; }
+.openid_sunooLogbox .wtbox .tdd{ width:5px; height:auto; background:url(../images/bgtd4.gif) repeat-y 0px 0px; }
+.openid_sunooLogbox .wtbox .tde{ width:auto; height:auto; }
+.openid_sunooLogbox .wtbox .tdf{ width:5px; height:auto; background:url(../images/bgtd6.gif) repeat-y 0px 0px; }
+.openid_sunooLogbox .wtbox .tdg{ width:5px; height:5px; background:url(../images/bgtd7.png) no-repeat 0px 0px; _background:url(../images/bgtd7.gif) no-repeat 0px 0px; }
+.openid_sunooLogbox .wtbox .tdh{ width:auto; height:5px; background:url(../images/bgtd8.gif) repeat-x 0px 0px; }
+.openid_sunooLogbox .wtbox .tdi{ width:5px; height:5px; background:url(../images/bgtd9.png) no-repeat 0px 0px; _background:url(../images/bgtd9.gif) no-repeat 0px 0px; }
+.openid_sunooLogbox { position:relative; margin:0; padding:0; border:0; _padding-top:2px; display:block; }
+.openid_sunooLogbox form { position:relative; border:0px solid #d9d9d9; padding:6px 5px 4px 5px; margin:0px; background:#f9fafc; overflow:hidden; }
+.openid_sunooLogbox form .swidpwWrap { overflow:hidden; clear:both; width:172px; }
+.openid_sunooLogbox form .swidpwWrap .swidpw { float:left; width:110px;}
+.openid_sunooLogbox form .swidpwWrap .swidpw p { margin:0; padding:0; margin-bottom:5px; background: url(../images/openid_login_bg.gif) left no-repeat; padding-left:18px; font-size:.9em Tahoma;color:#999999}
+.openid_sunooLogbox form .swidpwWrap .swidpw input { border:1px solid #c9c9c9; color:#282828; width:105px; background:#fbfbfb; padding:1px 5px; margin-bottom:2px; font:.9em Tahoma; }
+.openid_sunooLogbox form .swidpwWrap .swidpw input.swopidIn { background:#fff;  }
+.openid_sunooLogbox form .swidpwWrap .swidpw input.swopidOut { background:#fdfdfc url(../images/bgidOut.gif) no-repeat 10px 3px; }
+.openid_sunooLogbox form .swidpwWrap .swlogin { float:right;}
+.openid_sunooLogbox form p.swsave { margin:0; padding:0; clear:both; padding:.3em 0;}
+.openid_sunooLogbox form p.swsave input { vertical-align:middle; _margin:-3px;}
+.openid_sunooLogbox form p.swsave label { font:.9em; color:#999999;}
+

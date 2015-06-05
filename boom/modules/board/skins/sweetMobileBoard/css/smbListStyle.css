@@ -1,0 +1,32 @@
+
+.smbWrap { padding:5px; background:#f4f4f4; overflow:hidden; }
+
+.smbListWrap { padding:5px 0; overflow:hidden; }
+.smbList { padding:0; margin:0; list-style:none; border:1px solid #ececec; border-radius:3px; background:#fff; }
+.smbList > li { border-bottom:1px solid #f2f2f2; position:relative; }
+.smbList > li a { padding:10px; color:#222; display:block; overflow:hidden; }
+.smbList > li .smbThumbnail { background-size:100%; float:left; }
+.smbList > li .smbContent { word-wrap: break-word; word-break: break-all; }
+.smbList > li .title { -webkit-text-size-adjust: none; display: -webkit-box; overflow: hidden; font-size:1.215em; line-height: 1.4em;  white-space: normal; word-wrap: break-word; -o-ellipsis-lastline:2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; }
+.smbList > li .title .category { padding-right:5px; color:#4e88cf; }
+.smbList > li .title .notice { box-sizing:border-box; margin-right:5px; color:#fff; background:#f22937; display:inline-block; height:16px; line-height:16px; position:relative; top:-1px; padding:0px 5px; font-size:0.7em; }
+.smbList > li ul { list-style:none; overflow:hidden; margin:3px 0 0 0; }
+.smbList > li ul li { float:left; margin:0 8px 0 0; color:#aaa; }
+.smbList > li ul li:last-child { margin:0; }
+.smbList > li ul li i { margin:0 2px 0 0; position:relative; top:1px; }
+.smbList > li ul li span.author { color:#777; }
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+/* Chrome CSS Hack */
+.smbList > li .title .notice { box-sizing:border-box; margin-right:5px; color:#fff; background:#f22937; display:inline-block; height:16px; line-height:16px; position:relative; top:-1px; padding:1.5px 5px 0px 5px; font-size:0.7em; }
+}
+@media screen and (max-width:639px){
+	.smbSection { padding:0 5px; }
+	.smbSection:nth-child(1) > ul { border-bottom:0; border-radius:3px 3px 0 0; }
+	.smbSection:nth-child(2) > ul { border-top:0; border-radius:0 0 3px 3px; }
+	.smbSection:nth-child(2) > ul > li:last-child { border-bottom:0; }
+}
+@media screen and (min-width: 640px){
+	.smbSection { padding:0 5px; width:50%; float:left; box-sizing:border-box; }
+	.smbList > li:last-child { border-bottom:0; }
+}

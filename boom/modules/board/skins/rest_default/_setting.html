@@ -1,0 +1,115 @@
+<script type="text/javascript">
+ jQuery("link[rel=stylesheet][href*='common/css/xe.min.css']").remove();
+</script>
+{Context::set("admin_bar", "false");}
+{@
+	$mi = $module_info;
+	$mi->write_option = unserialize($mi->write_option);
+	if($_COOKIE['bd_editor']) $mi->cmt_wrt = $_COOKIE['bd_editor'];	
+	if(!$mi->display_mediadocument) $mi->display_mediadocument = 'N';	
+	if(!$mi->cmt_wrt) $mi->cmt_wrt = 'simple';
+	if(!$mi->content_cut_size) $mi->content_cut_size = 800;
+	if(!$mi->duration_new) $mi->duration_new = 24;	
+	if(!$mi->fontsize12) $mi->fontsize12 = 'Y';
+	if(!$mi->default_style) $mi->default_style = 'list';
+	if(!$mi->display_setup_button) $mi->display_setup_button = 'Y';
+	if(!$mi->display_listset_button) $mi->display_listset_button = 'Y';
+	if(!$mi->display_categoryset_button) $mi->display_categoryset_button = 'pills';
+	if(!$mi->display_categoryset_badge) $mi->display_categoryset_badge = 'N';
+	if(!$mi->display_listheadset_button) $mi->display_listheadset_button = 'Y';
+	if(!$mi->display_listtable) $mi->display_listtable = 'Y';	
+	if(!$mi->display_thumbnailborder) $mi->display_thumbnailborder = 'Y';
+	if(!$mi->display_thumbnailcover) $mi->display_thumbnailcover = 'button';
+	if(!$mi->display_thumbnaileffect) $mi->display_thumbnaileffect = 'Y';
+	if(!$mi->display_thumbnailnum) $mi->display_thumbnailnum = 'three';
+	if(!$mi->display_thumbnail_col) $mi->display_thumbnail_col = '';	
+	if(!$mi->display_webzineborder) $mi->display_webzineborder = 'Y';
+	if(!$mi->thumbnail_width) $mi->thumbnail_width = 280;
+	if(!$mi->thumbnail_height) $mi->thumbnail_height = 210;
+	if(!$mi->thumbnail_type) $mi->thumbnail_type = 'crop';
+	if(!$mi->display_marketing) $mi->display_marketing = 'N';
+	if(!$mi->display_cardthumb) $mi->display_cardthumb = 'Y';
+	if(!$mi->display_videoplay) $mi->display_videoplay = 'N';
+	if(!$mi->display_videoplaylistuse) $mi->display_videoplaylistuse = 'Y';
+	if(!$mi->display_videoplaylist) $mi->display_videoplaylist = 'N';	
+	if(!$mi->display_videoplaydoc) $mi->display_videoplaydoc = 'Y';
+	if(!$mi->display_videoplaydocname) $mi->display_videoplaydocname = 'Y';
+	if(!$mi->display_videoplaywidth) $mi->display_videoplaywidth = '800';
+	$videolistwidth	= $mi->display_videoplaywidth+280 ;
+	if(!$mi->display_videoplayheight) $mi->display_videoplayheight = '500';
+	if(!$mi->display_youtubelink) $mi->display_youtubelink = '';	
+	if(!$mi->display_viewdocumentlist) $mi->display_viewdocumentlist = 'Y';
+	if(!$mi->display_commentwrite) $mi->display_commentwrite = 'N';
+	if(!$mi->cmt_wrt_position) $mi->cmt_wrt_position = 'cmt_wrt_btm';	
+	if(!$mi->display_photogallery) $mi->display_photogallery = 'N';
+	if(!$mi->display_photogalleryheight) $mi->display_photogalleryheight = '';
+	if(!$mi->display_list_cthumbnail) $mi->display_list_cthumbnail = 'N';
+	if(!$mi->display_ip_address) $mi->display_ip_address = 'N';	
+	if(!$mi->display_sign) $mi->display_sign = 'Y';	
+	if(!$mi->display_profileimg_width) $mi->display_profileimg_width = 100;	
+	if(!$mi->display_profileimg_height) $mi->display_profileimg_height = 75;	
+	if(!$mi->thumbnail_heightp) $mi->thumbnail_heightp = 75;
+}
+
+<!--@if($module_info->bootstrap_js=='Y')-->
+<!--@else-->
+<load target="css/bootstrap.min.css" />
+<load target="js/bootstrap.min.js" />
+<!--@end-->
+<load target="css/board.css" />
+<load target="js/board.js" />
+<load target="css/font-awesome.min.css" />
+
+<!--@if($order_type == "desc")-->
+    {@ $order_type = "asc"; }
+<!--@else-->
+    {@ $order_type = "desc"; }
+<!--@end-->
+
+<!--@if($listStyle=='gallery')-->
+    {@ $mi->default_style = 'gallery'}
+<!--@elseif($listStyle=='webzine')-->
+    {@ $mi->default_style = 'webzine'}
+<!--@elseif($listStyle=='list')-->
+    {@ $mi->default_style = 'list'}
+<!--@elseif($listStyle=='card')-->
+    {@ $mi->default_style = 'card'}	
+<!--@elseif($listStyle=='video')-->
+    {@ $mi->default_style = 'video'}	
+<!--@elseif($listStyle=='videolist')-->
+    {@ $mi->default_style = 'videolist'}
+<!--@elseif($listStyle=='blog')-->
+	{@ $mi->default_style = 'blog'}
+<!--@elseif(!in_array($mi->default_style,array('list','webzine','gallery','card','blog','video','videolist')))-->
+    {@ $mi->default_style = 'list'}
+<!--@end-->
+
+
+{@ $cate_list = array(); $current_key = null; }
+<!--@foreach($category_list as $key=>$val)-->
+	<!--@if(!$val->depth)-->
+		{@
+			$cate_list[$key] = $val;
+			$cate_list[$key]->children = array();
+			$current_key = $key;
+		}
+	<!--@elseif($current_key)-->
+		{@ $cate_list[$current_key]->children[] = $val }
+	<!--@end-->
+<!--@end-->
+
+<!--@if($mi->fontsize12=='Y')-->
+<style type="text/css"> 
+.restboard p {font-size:12px;}
+.restboard table {font-size:12px;}
+.restboard td {vertical-align:middle;}
+.restboard div {font-size:12px;}
+.restboard li {font-size:12px;}
+.restboard .label {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+ </style>
+<!--@end-->
+<!--@if($mi->thumbnail_heightp)-->
+<style type="text/css">
+.restboard .imgwh {padding-bottom:{$mi->thumbnail_heightp}%;}
+ </style>
+ <!--@end-->

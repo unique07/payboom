@@ -1,0 +1,7 @@
+<!--#include("_header.html")-->
+<h3>{$message}</h3>
+<!--@if(!$is_logged)-->
+<a class="btn btn-default btn-small" href="{getUrl('act','dispMemberLoginForm')}">{$lang->cmd_login}</a>
+<!--@end-->
+<button class="btn btn-default btn-small" type="button" onclick="history.back()">{$lang->cmd_back}</button>
+<!--#include("_footer.html")-->

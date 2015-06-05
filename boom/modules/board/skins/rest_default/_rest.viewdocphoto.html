@@ -1,0 +1,45 @@
+{@
+	$ext=substr($file->source_filename, -4);
+	$ext=strtolower($ext);
+	$extImg=in_array($ext,array('.jpg','jpeg','.gif','.png'));
+}	
+ <block cond="$module_info->display_photogalleryheight">
+ <style type="text/css"> 
+#restphoto .carousel {height:{$module_info->display_photogalleryheight}px !important;}
+#restphoto .carousel-inner .item {height:{$module_info->display_photogalleryheight}px !important;}
+</style>
+</block>
+<div id="restphoto" class="thumbnail" style="padding:10px;" cond="$extImg">
+	<div id="rest_view_carousel" class="carousel slide" data-ride="carousel"  style="background-color:#000;">
+		<ol class="carousel-indicators">
+		{@$o_item = 0}
+		<block loop="$oDocument->getUploadedFiles()=>$key,$file">
+		<li data-target="#rest_view_carousel" data-slide-to="{$o_item}" class="active"|cond="$o_item==0"></li>
+		{@$o_item++}
+		</block>
+		</ol>
+	  <div class="carousel-inner">
+		{@$c_item = 0}
+		<block loop="$oDocument->getUploadedFiles()=>$key,$file">
+		<div class="item<!--@if($c_item==0)--> active<!--@end-->">
+			<center><a href='{$file->uploaded_filename}' target="_blank" onclick="window.open(this.href,'viewphoto','width=800px,height=600px,resizable=yes'); return false;"><img src="{$file->uploaded_filename}" style="height:{$module_info->display_photogalleryheight}px !important"|cond="$module_info->display_photogalleryheight"></a></center>
+		</div>
+		{@$c_item++}
+		</block>
+	  </div>
+	  <a class="left carousel-control" href="#rest_view_carousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#rest_view_carousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
+	<div style="margin-top:10px;">{@$t_item = 0}
+	<block loop="$oDocument->getUploadedFiles()=>$key,$file">
+		<div data-target="#rest_view_carousel" data-slide-to="{$t_item}" class="pull-left<!--@if($t_item==0)--> active<!--@end-->" style="width:40px;height:30px;"|cond="Mobile::isMobileCheckByAgent()" style="width:100px !important;height:75px !important;"|cond="!Mobile::isMobileCheckByAgent()">
+		<img src="{$file->uploaded_filename}" style="width:40px !important;height:30px !important;"|cond="Mobile::isMobileCheckByAgent()" style="width:100px !important;height:75px !important;"|cond="!Mobile::isMobileCheckByAgent()">
+		</div>
+	{@$t_item++}
+	</block><div class="clearfix"></div>
+	</div>
+</div>

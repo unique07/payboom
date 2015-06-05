@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.1">
+    <title xml:lang="ko">파도 미니 심플배너</title>
+    <title xml:lang="en">pado_mini_banner</title>
+    <description xml:lang="ko">작고 이미지와 글을 적을 수 있는 배너입니다.</description>
+    <version>0.4</version>
+    <date>2015-03-07</date>
+    <author email_address="pro_bi@naver.com" link="https://www.facebook.com/pages/%EB%94%A9-Ding/554701971272023?ref=hl">
+        <name xml:lang="ko">DING</name>
+    </author>
+    <extra_vars>
+        <var id="title">
+            <type>text</type>
+            <name xml:lang="ko">제목</name>
+            <description xml:lang="ko">배너에 제목입니다.</description>
+        </var>
+        <var id="content">
+            <type>text</type>
+            <name xml:lang="ko">내용</name>
+            <description xml:lang="ko">배너의 내용입니다.</description>
+        </var>
+        <var id="button">
+            <type>text</type>
+            <name xml:lang="ko">버튼 이름</name>
+            <description xml:lang="ko">버튼의 이름입니다. 기본 값은 자세히 보기입니다.</description>
+        </var>
+        <var id="image">
+            <type>text</type>
+            <name xml:lang="ko">이미지 주소</name>
+            <description xml:lang="ko">이미지 주소입니다. 입력하지 않으면 기본 값으로 처리됩니다.</description>
+        </var>
+        <var id="urls">
+            <type>text</type>
+            <name xml:lang="ko">자세히 보기 링크</name>
+            <description xml:lang="ko">자세히 보기를 누르면 이동할 웹페이지 주소입니다.</description>
+        </var>
+        <var id="margin">
+            <type>text</type>
+            <name xml:lang="ko">이미지 위 여백 (margin-top)</name>
+            <description xml:lang="ko">배너 이미지의 위 여백입니다. 이미지를 수직으로 중앙을 맞추기 위해서는 수동적인 값이 필요합니다.</description>
+        </var>
+    </extra_vars>
+</widget>

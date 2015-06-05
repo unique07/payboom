@@ -1,0 +1,2334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">doorweb basic 레이아웃</title>
+    <title xml:lang="en">doorweb basic Layout</title>
+    <description xml:lang="ko">doorweb_basic 레이아웃.</description>
+    <description xml:lang="en">doorweb_basic layout.</description>
+    <version>1.7.7</version>
+    <date>2015-01-27</date>
+    <author email_address="doorweb1@gmail.com" link="http://doorweb.net/xe">
+        <name xml:lang="ko">DoorWeb</name>
+        <name xml:lang="en">DoorWeb</name>
+    </author>
+    <menus>
+        <menu name="main_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">메인메뉴</title>
+            <title xml:lang="en">Main Menu</title>
+        </menu>
+        <menu name="sub_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">로컬메뉴</title>
+        </menu>
+		 <menu name="breadclumb_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">빵조각메뉴</title>
+        </menu>
+    </menus>
+	<extra_vars>
+		<group>
+			<title xml:lang="ko">기본 설정</title>
+			<var name="LAYOUT_TYPE" type="select">
+				<title xml:lang="ko">레이아웃 유형</title>
+				<title xml:lang="en">Layout Type</title>
+				<options value="ce">
+					<title xml:lang="ko">본문+서브</title>
+				</options>
+				<options value="ec">
+					<title xml:lang="ko">서브+본문</title>
+				</options>
+				<options value="c">
+					<title xml:lang="ko">본문</title>
+				</options>
+				<options value="ce wide_xe">
+					<title xml:lang="ko">본문+서브(게시판용)</title>
+				</options>
+				<options value="ec wide_xe">
+					<title xml:lang="ko">서브+본문(게시판용)</title>
+				</options>
+				<options value="c wide_xe">
+					<title xml:lang="ko">본문(게시판용)</title>
+				</options>
+			</var>
+			<var name="HtmlFont" type="textarea">
+				<title xml:lang="ko">폰트 설정</title>
+				<description xml:alng="ko">폰트 설정을 해 주십시오. 달리 설정이 없으면 기본값이 사용됩니다.</description>
+			</var>
+			<var name="WEB_FONT" type="select">
+				<title xml:lang="ko">웹 폰트</title>
+				<title xml:lang="en">Web Font</title>
+				<options value="NO">
+					<title xml:lang="ko">'나눔고딕' 웹 폰트 사용 안함</title>
+					<title xml:lang="en">Do not use 'NanumGothic' web font</title>
+				</options>
+				<options value="YES">
+					<title xml:lang="ko">'나눔고딕' 웹 폰트 사용</title>
+					<title xml:lang="en">Use 'NanumGothic' web font</title>
+				</options>
+			</var>
+			<var name="DWmember_info" type="text">
+				<title xml:lang="ko">회원정보용 페이지 SRL</title>
+				<description xml:alng="ko">회원 정보용 페이지로 넘어갈 페이지 SRL 값을 입력합니다.(이해 안가면 사용 안하셔도 됩니다.)</description>
+			</var>
+			<var name="layout_color" type="select">
+				<title xml:lang="ko">레이아웃 컬러셋</title>
+				<title xml:lang="en">Layout Colorset</title>
+				<options value="">
+					<title xml:lang="ko">사용자 설정</title>
+				</options>
+				<options value="Red">
+					<title xml:lang="ko">Red</title>
+				</options>
+				<options value="Pink">
+					<title xml:lang="ko">Pink</title>
+				</options>
+				<options value="Purple">
+					<title xml:lang="ko">Purple</title>
+				</options>
+				<options value="DeepPurple">
+					<title xml:lang="ko">Deep Purple</title>
+				</options>
+				<options value="Indigo">
+					<title xml:lang="ko">Indigo</title>
+				</options>
+				<options value="Blue">
+					<title xml:lang="ko">Blue</title>
+				</options>
+				<options value="LightBlue">
+					<title xml:lang="ko">Light Blue</title>
+				</options>
+				<options value="Cyan">
+					<title xml:lang="ko">Cyan</title>
+				</options>
+				<options value="Teal">
+					<title xml:lang="ko">Teal</title>
+				</options>
+				<options value="Green">
+					<title xml:lang="ko">Green</title>
+				</options>
+				<options value="LightGreen">
+					<title xml:lang="ko">Light Green</title>
+				</options>
+				<options value="Amber">
+					<title xml:lang="ko">Amber</title>
+				</options>
+				<options value="Orange">
+					<title xml:lang="ko">Orange</title>
+				</options>
+				<options value="DeepOrange">
+					<title xml:lang="ko">Deep Orange</title>
+				</options>
+				<options value="Brown">
+					<title xml:lang="ko">Brown</title>
+				</options>
+				<options value="BlueGrey">
+					<title xml:lang="ko">Blue Grey</title>
+				</options>
+			</var>
+
+
+			<var name="basic_bg" type="text">
+				<title xml:lang="ko">전체 배경색</title>
+				<description xml:alng="ko">배경색을 입력해 주십시오.(예 : #e9eaed) </description>
+			</var>
+			<var name="basic_bgimg" type="image">
+				<title xml:lang="ko">전체 배경 이미지</title>
+				<title xml:lang="en">background image</title>
+				<description xml:alng="ko">배경이미지를 등록해 주십시오. repeat 됩니다.</description>
+			</var>
+			<var name="basic_color" type="text">
+				<title xml:lang="ko">Header 배경색</title>
+				<description xml:alng="ko">Header 배경색을 입력해 주십시오.(예 : #526bbe)- 색감이 없으신 분들은 https://www.google.com/design/spec/style/color.html#color-color-palette 에서 색을 골라보시길 권해 드립니다.</description>
+			</var>
+			<var name="header_color" type="text">
+				<title xml:lang="ko">Header상단 배경색</title>
+				<description xml:alng="ko">Header상단 배경색을 입력해 주십시오.(예 : #526bbe)</description>
+			</var>
+			<var name="basic_border" type="text">
+				<title xml:lang="ko">2차메뉴 보더 색</title>
+				<description xml:alng="ko">하위메뉴 보더 색을 설정해 주십시오.(예 : #5d7ad8)</description>
+			</var>
+			<var name="basic_breadclumb" type="text">
+				<title xml:lang="ko">빵조각 배경색</title>
+				<description xml:alng="ko">메뉴와 본문 사이의 배경색을 입력해 주십시오.(예 : #dde1f1)</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">HEADER 설정</title>
+			<var name="logo_image" type="image">
+				<title xml:lang="ko">사이트 로고 이미지</title>
+				<title xml:lang="en">Site logo image</title>
+				<description xml:alng="ko">높이 60이하로 잡힙니다.</description>
+			</var>
+			<var name="logo_image_alt" type="text">
+				<title xml:lang="ko">사이트 로고 문자</title>
+				<title xml:lang="en">Site logo text</title>
+			</var>
+			<var name="logo_url" type="text">
+				<title xml:lang="ko">사이트 로고 URL</title>
+				<title xml:lang="en">Site logo url</title>
+				<description xml:alng="ko">로고를 클릭했을때 이동할 주소(달리 값이 없으면 메인으로 주소가 잡힙니다.)</description>
+			</var>
+			<var name="logo_align" type="select">
+				<title xml:lang="ko">로고의 배열</title>
+				<options value="">
+					<title xml:lang="ko">좌측 배열</title>
+				</options>
+				<options value="logo_center">
+					<title xml:lang="ko">중앙배열</title>
+				</options>
+			</var>
+			
+			<var name="menu_padding" type="text">
+				<title xml:lang="ko">1차메뉴 좌우여백</title>
+				<description xml:alng="ko">차메뉴 좌우여백을 입력해 주십시오(예 : 20)</description>
+			</var>
+			<var name="dropmenu_width" type="text">
+				<title xml:lang="ko">2차메뉴 넓이</title>
+				<description xml:alng="ko">2차메뉴 넓이를 입력해 주십시오(예 : 160)</description>
+			</var>
+			<var name="total_menu_list" type="text">
+				<title xml:lang="ko">전체메뉴 가로배열 갯수</title>
+				<description xml:alng="ko">전체메뉴 가로배열 갯수를 입력해 주십시오(예 : 6 - 최대 9개)</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">메인 슬라이드</title>
+			<var name="top_slide" type="select">
+				<title xml:lang="ko">슬라이드 사용 유무</title>
+				<description xml:lang="ko">슬라이드 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">ParallaxContentSlider - png 처리를 잘하면 이쁨니다.</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">camera - 가변형 (이미지 처리가 약한 분들이 사용하기 무난)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">swiper - 터치형</title>
+				</options>
+			</var>
+			<var name="slide_mobile" type="select">
+				<title xml:lang="ko">슬라이드 모바일 노출유무</title>
+				<description xml:lang="ko">슬라이드의 모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+			<var name="slide_speed" type="text">
+				<title xml:lang="ko">슬라이드 속도</title>
+				<title xml:lang="en">slide speed</title>
+				<description xml:lang="ko">슬라이드 속도(예:5000 - 1000이 1초임)</description>
+			</var>
+			<var name="slide_height" type="text">
+				<title xml:lang="ko">슬라이드 높이</title>
+				<title xml:lang="en">slide height</title>
+				<description xml:lang="ko">슬라이드 높이(camera 슬라이드용)</description>
+			</var>
+			<var name="slide_bg" type="image">
+				<title xml:lang="ko">슬라이드 배경 이미지</title>
+				<title xml:lang="en">slide background image</title>
+				<description xml:alng="ko">ParallaxContentSlider 배경패턴(반복됩니다.)</description>
+			</var>
+			<var name="slide_title_color" type="text">
+				<title xml:lang="ko">슬라이드 타이틀 컬러</title>
+				<description xml:alng="ko">슬라이드 타이틀 컬러를 입력해 주십시오.(#fff)</description>
+			</var>
+			<var name="slide_text_color" type="text">
+				<title xml:lang="ko">슬라이드 텍스트 컬러</title>
+				<description xml:alng="ko">슬라이드 텍스트 컬러를 입력해 주십시오.(#888)</description>
+			</var>
+			<var name="slide_img1" type="image">
+				<title xml:lang="ko">슬라이드 이미지1</title>
+				<description xml:lang="ko">슬라이드 이미지1을 등록하세요.(ParallaxContentSlider : 높이 256px이 무난함)</description>
+			</var>
+			<var name="slide_title1" type="text">
+				<title xml:lang="ko">슬라이드 타이틀1</title>
+				<description xml:alng="ko">슬라이드 타이틀1을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_text1" type="textarea">
+				<title xml:lang="ko">슬라이드 텍스트1</title>
+				<description xml:alng="ko">슬라이드 텍스트1을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url1" type="text">
+				<title xml:lang="ko">슬라이드 링크1</title>
+				<description xml:alng="ko">슬라이드 링크1을 입력해 주십시오.(달리 링크값이 없으면 #를 입력하십시오.)</description>
+			</var>
+
+			<var name="slide_img2" type="image">
+				<title xml:lang="ko">슬라이드 이미지2</title>
+				<description xml:lang="ko">슬라이드 이미지2을 등록하세요.(높이 256px이 무난함)</description>
+			</var>
+			<var name="slide_title2" type="text">
+				<title xml:lang="ko">슬라이드 타이틀2</title>
+				<description xml:alng="ko">슬라이드 타이틀2을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_text2" type="textarea">
+				<title xml:lang="ko">슬라이드 텍스트2</title>
+				<description xml:alng="ko">슬라이드 텍스트2을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url2" type="text">
+				<title xml:lang="ko">슬라이드 링크2</title>
+				<description xml:alng="ko">슬라이드 링크2을 입력해 주십시오.(달리 링크값이 없으면 #를 입력하십시오.)</description>
+			</var>
+			<var name="slide_img3" type="image">
+				<title xml:lang="ko">슬라이드 이미지3</title>
+				<description xml:lang="ko">슬라이드 이미지3을 등록하세요.(높이 256px이 무난함)</description>
+			</var>
+			<var name="slide_title3" type="text">
+				<title xml:lang="ko">슬라이드 타이틀3</title>
+				<description xml:alng="ko">슬라이드 타이틀3을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_text3" type="textarea">
+				<title xml:lang="ko">슬라이드 텍스트3</title>
+				<description xml:alng="ko">슬라이드 텍스트3을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url3" type="text">
+				<title xml:lang="ko">슬라이드 링크3</title>
+				<description xml:alng="ko">슬라이드 링크3을 입력해 주십시오.(달리 링크값이 없으면 #를 입력하십시오.)</description>
+			</var>
+
+			<var name="slide_img4" type="image">
+				<title xml:lang="ko">슬라이드 이미지4</title>
+				<description xml:lang="ko">슬라이드 이미지4을 등록하세요.(높이 256px이 무난함)</description>
+			</var>
+			<var name="slide_title4" type="text">
+				<title xml:lang="ko">슬라이드 타이틀4</title>
+				<description xml:alng="ko">슬라이드 타이틀4을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_text4" type="textarea">
+				<title xml:lang="ko">슬라이드 텍스트4</title>
+				<description xml:alng="ko">슬라이드 텍스트4을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url4" type="text">
+				<title xml:lang="ko">슬라이드 링크4</title>
+				<description xml:alng="ko">슬라이드 링크4을 입력해 주십시오.(달리 링크값이 없으면 #를 입력하십시오.)</description>
+			</var>
+		</group>
+	
+		<group>
+		<title xml:lang="ko">메인위젯</title>
+			<var name="main_slide" type="select">
+				<title xml:lang="ko">메인위젯 사용 유무</title>
+				<description xml:lang="ko">메인위젯 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="normal-wrapper">
+					<title xml:lang="ko">라운드 그림자형</title>
+				</options>
+				<options value="line-wrapper">
+					<title xml:lang="ko">라인형</title>
+				</options>
+			</var>
+			<var name="c_title1" type="text">
+				<title xml:lang="ko">위젯1 타이틀</title>
+				<description xml:lang="ko">위젯1 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url1" type="text">
+				<title xml:lang="ko">L 위젯1 타이틀 링크</title>
+				<description xml:lang="ko">위젯1 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid1" type="text">
+				<title xml:lang="ko">L 위젯1 SRL</title>
+				<description xml:lang="ko">위젯1의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box1" type="select">
+				<title xml:lang="ko">L 위젯1 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+				<options value="box_x2_y2">
+					<title xml:lang="ko">가로두배 세로두배</title>
+				</options>
+			</var>
+			<var name="c_style1" type="select">
+				<title xml:lang="ko">L 위젯1 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">대형 슬라이드(가로두배 세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile1" type="select">
+				<title xml:lang="ko">L 위젯1 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title2" type="text">
+				<title xml:lang="ko">위젯2 타이틀</title>
+				<description xml:lang="ko">위젯2 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url2" type="text">
+				<title xml:lang="ko">L 위젯2 타이틀 링크</title>
+				<description xml:lang="ko">위젯2 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid2" type="text">
+				<title xml:lang="ko">L 위젯2 SRL</title>
+				<description xml:lang="ko">위젯2의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box2" type="select">
+				<title xml:lang="ko">L 위젯2 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style2" type="select">
+				<title xml:lang="ko">L 위젯2 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile2" type="select">
+				<title xml:lang="ko">L 위젯2 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title3" type="text">
+				<title xml:lang="ko">위젯3 타이틀</title>
+				<description xml:lang="ko">위젯3 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url3" type="text">
+				<title xml:lang="ko">L 위젯3 타이틀 링크</title>
+				<description xml:lang="ko">위젯3 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid3" type="text">
+				<title xml:lang="ko">L 위젯3 SRL</title>
+				<description xml:lang="ko">위젯3의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box3" type="select">
+				<title xml:lang="ko">L 위젯3 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style3" type="select">
+				<title xml:lang="ko">L 위젯3 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile3" type="select">
+				<title xml:lang="ko">L 위젯3 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title4" type="text">
+				<title xml:lang="ko">위젯4 타이틀</title>
+				<description xml:lang="ko">위젯4 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url4" type="text">
+				<title xml:lang="ko">L 위젯4 타이틀 링크</title>
+				<description xml:lang="ko">위젯4 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid4" type="text">
+				<title xml:lang="ko">L 위젯4 SRL</title>
+				<description xml:lang="ko">위젯4의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box4" type="select">
+				<title xml:lang="ko">L 위젯4 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style4" type="select">
+				<title xml:lang="ko">L 위젯4 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile4" type="select">
+				<title xml:lang="ko">L 위젯4 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title5" type="text">
+				<title xml:lang="ko">위젯5 타이틀</title>
+				<description xml:lang="ko">위젯5 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url5" type="text">
+				<title xml:lang="ko">L 위젯5 타이틀 링크</title>
+				<description xml:lang="ko">위젯5 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid5" type="text">
+				<title xml:lang="ko">L 위젯5 SRL</title>
+				<description xml:lang="ko">위젯5의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box5" type="select">
+				<title xml:lang="ko">L 위젯5 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style5" type="select">
+				<title xml:lang="ko">L 위젯5 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile5" type="select">
+				<title xml:lang="ko">L 위젯5 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title6" type="text">
+				<title xml:lang="ko">위젯6 타이틀</title>
+				<description xml:lang="ko">위젯6 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url6" type="text">
+				<title xml:lang="ko">L 위젯6 타이틀 링크</title>
+				<description xml:lang="ko">위젯6 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid6" type="text">
+				<title xml:lang="ko">L 위젯6 SRL</title>
+				<description xml:lang="ko">위젯6의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box6" type="select">
+				<title xml:lang="ko">L 위젯6 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style6" type="select">
+				<title xml:lang="ko">L 위젯6 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile6" type="select">
+				<title xml:lang="ko">L 위젯6 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title7" type="text">
+				<title xml:lang="ko">위젯7 타이틀</title>
+				<description xml:lang="ko">위젯7 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url7" type="text">
+				<title xml:lang="ko">L 위젯7 타이틀 링크</title>
+				<description xml:lang="ko">위젯7 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid7" type="text">
+				<title xml:lang="ko">L 위젯7 SRL</title>
+				<description xml:lang="ko">위젯7의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box7" type="select">
+				<title xml:lang="ko">L 위젯7 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style7" type="select">
+				<title xml:lang="ko">L 위젯7 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile7" type="select">
+				<title xml:lang="ko">L 위젯7 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title8" type="text">
+				<title xml:lang="ko">위젯8 타이틀</title>
+				<description xml:lang="ko">위젯8 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url8" type="text">
+				<title xml:lang="ko">L 위젯8 타이틀 링크</title>
+				<description xml:lang="ko">위젯8 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid8" type="text">
+				<title xml:lang="ko">L 위젯8 SRL</title>
+				<description xml:lang="ko">위젯8의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box8" type="select">
+				<title xml:lang="ko">L 위젯8 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style8" type="select">
+				<title xml:lang="ko">L 위젯8 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile8" type="select">
+				<title xml:lang="ko">L 위젯8 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title9" type="text">
+				<title xml:lang="ko">위젯9 타이틀</title>
+				<description xml:lang="ko">위젯9 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url9" type="text">
+				<title xml:lang="ko">L 위젯9 타이틀 링크</title>
+				<description xml:lang="ko">위젯9 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid9" type="text">
+				<title xml:lang="ko">L 위젯9 SRL</title>
+				<description xml:lang="ko">위젯9의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box9" type="select">
+				<title xml:lang="ko">L 위젯9 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style9" type="select">
+				<title xml:lang="ko">L 위젯9 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile9" type="select">
+				<title xml:lang="ko">L 위젯9 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title10" type="text">
+				<title xml:lang="ko">위젯10 타이틀</title>
+				<description xml:lang="ko">위젯10 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url10" type="text">
+				<title xml:lang="ko">L 위젯10 타이틀 링크</title>
+				<description xml:lang="ko">위젯10 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid10" type="text">
+				<title xml:lang="ko">L 위젯10 SRL</title>
+				<description xml:lang="ko">위젯10의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box10" type="select">
+				<title xml:lang="ko">L 위젯10 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style10" type="select">
+				<title xml:lang="ko">L 위젯10 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile10" type="select">
+				<title xml:lang="ko">L 위젯10 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title11" type="text">
+				<title xml:lang="ko">위젯11 타이틀</title>
+				<description xml:lang="ko">위젯11 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url11" type="text">
+				<title xml:lang="ko">L 위젯11 타이틀 링크</title>
+				<description xml:lang="ko">위젯11 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid11" type="text">
+				<title xml:lang="ko">L 위젯11 SRL</title>
+				<description xml:lang="ko">위젯11의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box11" type="select">
+				<title xml:lang="ko">L 위젯11 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style11" type="select">
+				<title xml:lang="ko">L 위젯11 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile11" type="select">
+				<title xml:lang="ko">L 위젯11 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title12" type="text">
+				<title xml:lang="ko">위젯12 타이틀</title>
+				<description xml:lang="ko">위젯12 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url12" type="text">
+				<title xml:lang="ko">L 위젯12 타이틀 링크</title>
+				<description xml:lang="ko">위젯12 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid12" type="text">
+				<title xml:lang="ko">L 위젯12 SRL</title>
+				<description xml:lang="ko">위젯12의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box12" type="select">
+				<title xml:lang="ko">L 위젯12 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style12" type="select">
+				<title xml:lang="ko">L 위젯12 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile12" type="select">
+				<title xml:lang="ko">L 위젯12 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title13" type="text">
+				<title xml:lang="ko">위젯13 타이틀</title>
+				<description xml:lang="ko">위젯13 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url13" type="text">
+				<title xml:lang="ko">L 위젯13 타이틀 링크</title>
+				<description xml:lang="ko">위젯13 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid13" type="text">
+				<title xml:lang="ko">L 위젯13 SRL</title>
+				<description xml:lang="ko">위젯13의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box13" type="select">
+				<title xml:lang="ko">L 위젯13 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style13" type="select">
+				<title xml:lang="ko">L 위젯13 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile13" type="select">
+				<title xml:lang="ko">L 위젯13 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title14" type="text">
+				<title xml:lang="ko">위젯14 타이틀</title>
+				<description xml:lang="ko">위젯14 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url14" type="text">
+				<title xml:lang="ko">L 위젯14 타이틀 링크</title>
+				<description xml:lang="ko">위젯14 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid14" type="text">
+				<title xml:lang="ko">L 위젯14 SRL</title>
+				<description xml:lang="ko">위젯14의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box14" type="select">
+				<title xml:lang="ko">L 위젯14 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style14" type="select">
+				<title xml:lang="ko">L 위젯14 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile14" type="select">
+				<title xml:lang="ko">L 위젯14 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title15" type="text">
+				<title xml:lang="ko">위젯15 타이틀</title>
+				<description xml:lang="ko">위젯15 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url15" type="text">
+				<title xml:lang="ko">L 위젯15 타이틀 링크</title>
+				<description xml:lang="ko">위젯15 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid15" type="text">
+				<title xml:lang="ko">L 위젯15 SRL</title>
+				<description xml:lang="ko">위젯15의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box15" type="select">
+				<title xml:lang="ko">L 위젯15 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style15" type="select">
+				<title xml:lang="ko">L 위젯15 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile15" type="select">
+				<title xml:lang="ko">L 위젯15 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title16" type="text">
+				<title xml:lang="ko">위젯16 타이틀</title>
+				<description xml:lang="ko">위젯16 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url16" type="text">
+				<title xml:lang="ko">L 위젯16 타이틀 링크</title>
+				<description xml:lang="ko">위젯16 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid16" type="text">
+				<title xml:lang="ko">L 위젯16 SRL</title>
+				<description xml:lang="ko">위젯16의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box16" type="select">
+				<title xml:lang="ko">L 위젯16 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style16" type="select">
+				<title xml:lang="ko">L 위젯16 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile16" type="select">
+				<title xml:lang="ko">L 위젯16 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title17" type="text">
+				<title xml:lang="ko">위젯17 타이틀</title>
+				<description xml:lang="ko">위젯17 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url17" type="text">
+				<title xml:lang="ko">L 위젯17 타이틀 링크</title>
+				<description xml:lang="ko">위젯17 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid17" type="text">
+				<title xml:lang="ko">L 위젯17 SRL</title>
+				<description xml:lang="ko">위젯17의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box17" type="select">
+				<title xml:lang="ko">L 위젯17 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style17" type="select">
+				<title xml:lang="ko">L 위젯17 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile17" type="select">
+				<title xml:lang="ko">L 위젯17 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="c_title18" type="text">
+				<title xml:lang="ko">위젯18 타이틀</title>
+				<description xml:lang="ko">위젯18 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="c_url18" type="text">
+				<title xml:lang="ko">L 위젯18 타이틀 링크</title>
+				<description xml:lang="ko">위젯18 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="c_mid18" type="text">
+				<title xml:lang="ko">L 위젯18 SRL</title>
+				<description xml:lang="ko">위젯18의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="c_box18" type="select">
+				<title xml:lang="ko">L 위젯18 크기형태</title>
+				<description xml:lang="ko">크기형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">기본형</title>
+				</options>
+				<options value="box_x2">
+					<title xml:lang="ko">가로두배</title>
+				</options>
+				<options value="box_y2">
+					<title xml:lang="ko">세로두배</title>
+				</options>
+			</var>
+			<var name="c_style18" type="select">
+				<title xml:lang="ko">L 위젯18 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">제목(세로두배)</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="BB">
+					<title xml:lang="ko">갤러리(가로두배)</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목(세로두배)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="DD">
+					<title xml:lang="ko">이미지 + 제목 + 내용(세로두배)</title>
+				</options>
+				<options value="EE">
+					<title xml:lang="ko">소형 슬라이드(기본형)</title>
+				</options>
+			</var>
+			<var name="c_mobile18" type="select">
+				<title xml:lang="ko">L 위젯18 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+		</group>
+
+	
+		<group>
+		<title xml:lang="ko">메인 갤러리</title>
+			<var name="gallery_widget" type="select">
+				<title xml:lang="ko">메인 갤러리 사용 유무</title>
+				<description xml:lang="ko">메인 갤러리 사용 유무를 설정해 주십시오(라운드형입니다.)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+
+			<var name="gallery_title1" type="text">
+				<title xml:lang="ko">위젯1 타이틀</title>
+				<description xml:lang="ko">위젯1 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_title_bg1" type="select">
+				<title xml:lang="ko">타이틀 배경색</title>
+				<description xml:lang="ko">메인 갤러리 사용 유무를 설정해 주십시오(라운드형입니다.)</description>
+				<options value="title_bgA">
+					<title xml:lang="ko">투명 두줄라인</title>
+				</options>
+				<options value="title_bgB">
+					<title xml:lang="ko">굵은 사선라인</title>
+				</options>
+				<options value="title_bgC">
+					<title xml:lang="ko">한줄라인</title>
+				</options>
+				<options value="title_bgD">
+					<title xml:lang="ko">라운드 그림자형</title>
+				</options>
+			</var>
+			<var name="gallery_url1" type="text">
+				<title xml:lang="ko">L 위젯1 타이틀 링크</title>
+				<description xml:lang="ko">위젯1 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_mid1" type="text">
+				<title xml:lang="ko">L 위젯1 SRL</title>
+				<description xml:lang="ko">위젯1의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="gallery_style1" type="select">
+				<title xml:lang="ko">L 위젯1 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+			</var>
+			<var name="gallery_list1" type="text">
+				<title xml:lang="ko">L 위젯1의 목록수</title>
+				<description xml:lang="ko">위젯1의 목록수를 입력해 주십시오.(6의 배수로 입력하세요)</description>
+			</var>
+			<var name="gallery_mobile1" type="select">
+				<title xml:lang="ko">L 위젯1 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="gallery_title2" type="text">
+				<title xml:lang="ko">위젯2 타이틀</title>
+				<description xml:lang="ko">위젯2 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_title_bg2" type="select">
+				<title xml:lang="ko">타이틀 배경색</title>
+				<description xml:lang="ko">메인 갤러리 사용 유무를 설정해 주십시오(라운드형입니다.)</description>
+				<options value="title_bgA">
+					<title xml:lang="ko">투명 두줄라인</title>
+				</options>
+				<options value="title_bgB">
+					<title xml:lang="ko">굵은 사선라인</title>
+				</options>
+				<options value="title_bgC">
+					<title xml:lang="ko">한줄라인</title>
+				</options>
+				<options value="title_bgD">
+					<title xml:lang="ko">라운드 그림자형</title>
+				</options>
+			</var>
+			<var name="gallery_url2" type="text">
+				<title xml:lang="ko">L 위젯2 타이틀 링크</title>
+				<description xml:lang="ko">위젯2 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_mid2" type="text">
+				<title xml:lang="ko">L 위젯2 SRL</title>
+				<description xml:lang="ko">위젯2의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="gallery_style2" type="select">
+				<title xml:lang="ko">L 위젯2 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+			</var>
+			<var name="gallery_list2" type="text">
+				<title xml:lang="ko">L 위젯2의 목록수</title>
+				<description xml:lang="ko">위젯2의 목록수를 입력해 주십시오.(6의 배수로 입력하세요)</description>
+			</var>
+			<var name="gallery_mobile2" type="select">
+				<title xml:lang="ko">L 위젯2 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="gallery_title3" type="text">
+				<title xml:lang="ko">위젯3 타이틀</title>
+				<description xml:lang="ko">위젯3 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_title_bg3" type="select">
+				<title xml:lang="ko">타이틀 배경색</title>
+				<description xml:lang="ko">메인 갤러리 사용 유무를 설정해 주십시오(라운드형입니다.)</description>
+				<options value="title_bgA">
+					<title xml:lang="ko">투명 두줄라인</title>
+				</options>
+				<options value="title_bgB">
+					<title xml:lang="ko">굵은 사선라인</title>
+				</options>
+				<options value="title_bgC">
+					<title xml:lang="ko">한줄라인</title>
+				</options>
+				<options value="title_bgD">
+					<title xml:lang="ko">라운드 그림자형</title>
+				</options>
+			</var>
+			<var name="gallery_url3" type="text">
+				<title xml:lang="ko">L 위젯3 타이틀 링크</title>
+				<description xml:lang="ko">위젯3 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_mid3" type="text">
+				<title xml:lang="ko">L 위젯3 SRL</title>
+				<description xml:lang="ko">위젯3의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="gallery_style3" type="select">
+				<title xml:lang="ko">L 위젯3 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+			</var>
+			<var name="gallery_list3" type="text">
+				<title xml:lang="ko">L 위젯3의 목록수</title>
+				<description xml:lang="ko">위젯3의 목록수를 입력해 주십시오.(6의 배수로 입력하세요)</description>
+			</var>
+			<var name="gallery_mobile3" type="select">
+				<title xml:lang="ko">L 위젯3 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="gallery_title4" type="text">
+				<title xml:lang="ko">위젯4 타이틀</title>
+				<description xml:lang="ko">위젯4 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_title_bg4" type="select">
+				<title xml:lang="ko">타이틀 배경색</title>
+				<description xml:lang="ko">메인 갤러리 사용 유무를 설정해 주십시오(라운드형입니다.)</description>
+				<options value="title_bgA">
+					<title xml:lang="ko">투명 두줄라인</title>
+				</options>
+				<options value="title_bgB">
+					<title xml:lang="ko">굵은 사선라인</title>
+				</options>
+				<options value="title_bgC">
+					<title xml:lang="ko">한줄라인</title>
+				</options>
+				<options value="title_bgD">
+					<title xml:lang="ko">라운드 그림자형</title>
+				</options>
+			</var>
+			<var name="gallery_url4" type="text">
+				<title xml:lang="ko">L 위젯4 타이틀 링크</title>
+				<description xml:lang="ko">위젯4 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_mid4" type="text">
+				<title xml:lang="ko">L 위젯4 SRL</title>
+				<description xml:lang="ko">위젯4의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="gallery_style4" type="select">
+				<title xml:lang="ko">L 위젯4 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+			</var>
+			<var name="gallery_list4" type="text">
+				<title xml:lang="ko">L 위젯4의 목록수</title>
+				<description xml:lang="ko">위젯4의 목록수를 입력해 주십시오.(6의 배수로 입력하세요)</description>
+			</var>
+			<var name="gallery_mobile4" type="select">
+				<title xml:lang="ko">L 위젯4 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="gallery_title5" type="text">
+				<title xml:lang="ko">위젯5 타이틀</title>
+				<description xml:lang="ko">위젯5 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_title_bg5" type="select">
+				<title xml:lang="ko">타이틀 배경색</title>
+				<description xml:lang="ko">메인 갤러리 사용 유무를 설정해 주십시오(라운드형입니다.)</description>
+				<options value="title_bgA">
+					<title xml:lang="ko">투명 두줄라인</title>
+				</options>
+				<options value="title_bgB">
+					<title xml:lang="ko">굵은 사선라인</title>
+				</options>
+				<options value="title_bgC">
+					<title xml:lang="ko">한줄라인</title>
+				</options>
+				<options value="title_bgD">
+					<title xml:lang="ko">라운드 그림자형</title>
+				</options>
+			</var>
+			<var name="gallery_url5" type="text">
+				<title xml:lang="ko">L 위젯5 타이틀 링크</title>
+				<description xml:lang="ko">위젯5 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_mid5" type="text">
+				<title xml:lang="ko">L 위젯5 SRL</title>
+				<description xml:lang="ko">위젯5의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="gallery_style5" type="select">
+				<title xml:lang="ko">L 위젯5 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+			</var>
+			<var name="gallery_list5" type="text">
+				<title xml:lang="ko">L 위젯5의 목록수</title>
+				<description xml:lang="ko">위젯5의 목록수를 입력해 주십시오.(6의 배수로 입력하세요)</description>
+			</var>
+			<var name="gallery_mobile5" type="select">
+				<title xml:lang="ko">L 위젯5 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+
+			<var name="gallery_title6" type="text">
+				<title xml:lang="ko">위젯6 타이틀</title>
+				<description xml:lang="ko">위젯6 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_title_bg6" type="select">
+				<title xml:lang="ko">타이틀 배경색</title>
+				<description xml:lang="ko">메인 갤러리 사용 유무를 설정해 주십시오(라운드형입니다.)</description>
+				<options value="title_bgA">
+					<title xml:lang="ko">투명 두줄라인</title>
+				</options>
+				<options value="title_bgB">
+					<title xml:lang="ko">굵은 사선라인</title>
+				</options>
+				<options value="title_bgC">
+					<title xml:lang="ko">한줄라인</title>
+				</options>
+				<options value="title_bgD">
+					<title xml:lang="ko">라운드 그림자형</title>
+				</options>
+			</var>
+			<var name="gallery_url6" type="text">
+				<title xml:lang="ko">L 위젯6 타이틀 링크</title>
+				<description xml:lang="ko">위젯6 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="gallery_mid6" type="text">
+				<title xml:lang="ko">L 위젯6 SRL</title>
+				<description xml:lang="ko">위젯6의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="gallery_style6" type="select">
+				<title xml:lang="ko">L 위젯6 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+			</var>
+			<var name="gallery_list6" type="text">
+				<title xml:lang="ko">L 위젯6의 목록수</title>
+				<description xml:lang="ko">위젯6의 목록수를 입력해 주십시오.(6의 배수로 입력하세요)</description>
+			</var>
+			<var name="gallery_mobile6" type="select">
+				<title xml:lang="ko">L 위젯6 모바일 노출유무</title>
+				<description xml:lang="ko">모바일에서 노출유무 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">노출함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">노출안함</title>
+				</options>
+			</var>
+		</group>
+
+	
+		<group>
+		<title xml:lang="ko">서브위젯</title>
+			<var name="local_menu" type="select">
+				<title xml:lang="ko">로컬메뉴 사용 유무</title>
+				<description xml:lang="ko">서브위젯 사용 유무를 설정해 주십시오</description>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+			</var>
+			<var name="ec_widget" type="select">
+				<title xml:lang="ko">서브위젯 사용 유무</title>
+				<description xml:lang="ko">서브위젯 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+	
+			</var>
+			<var name="ec_title1" type="text">
+				<title xml:lang="ko">위젯1 타이틀</title>
+				<description xml:lang="ko">위젯1 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url1" type="text">
+				<title xml:lang="ko">L 위젯1 타이틀 링크</title>
+				<description xml:lang="ko">위젯1 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid1" type="text">
+				<title xml:lang="ko">L 위젯1 SRL</title>
+				<description xml:lang="ko">위젯1의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style1" type="select">
+				<title xml:lang="ko">L 위젯1 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list1" type="text">
+				<title xml:lang="ko">L 위젯1의 목록수</title>
+				<description xml:lang="ko">위젯1의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget1" type="textarea">
+				<title xml:lang="ko">L 위젯1 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+
+			<var name="ec_title2" type="text">
+				<title xml:lang="ko">위젯2 타이틀</title>
+				<description xml:lang="ko">위젯2 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url2" type="text">
+				<title xml:lang="ko">L 위젯2 타이틀 링크</title>
+				<description xml:lang="ko">위젯2 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid2" type="text">
+				<title xml:lang="ko">L 위젯2 SRL</title>
+				<description xml:lang="ko">위젯2의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style2" type="select">
+				<title xml:lang="ko">L 위젯2 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list2" type="text">
+				<title xml:lang="ko">L 위젯2의 목록수</title>
+				<description xml:lang="ko">위젯2의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget2" type="textarea">
+				<title xml:lang="ko">L 위젯2 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+
+			<var name="ec_title3" type="text">
+				<title xml:lang="ko">위젯3 타이틀</title>
+				<description xml:lang="ko">위젯3 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url3" type="text">
+				<title xml:lang="ko">L 위젯3 타이틀 링크</title>
+				<description xml:lang="ko">위젯3 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid3" type="text">
+				<title xml:lang="ko">L 위젯3 SRL</title>
+				<description xml:lang="ko">위젯3의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style3" type="select">
+				<title xml:lang="ko">L 위젯3 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list3" type="text">
+				<title xml:lang="ko">L 위젯3의 목록수</title>
+				<description xml:lang="ko">위젯3의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget3" type="textarea">
+				<title xml:lang="ko">L 위젯3 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+
+			<var name="ec_title4" type="text">
+				<title xml:lang="ko">위젯4 타이틀</title>
+				<description xml:lang="ko">위젯4 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url4" type="text">
+				<title xml:lang="ko">L 위젯4 타이틀 링크</title>
+				<description xml:lang="ko">위젯4 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid4" type="text">
+				<title xml:lang="ko">L 위젯4 SRL</title>
+				<description xml:lang="ko">위젯4의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style4" type="select">
+				<title xml:lang="ko">L 위젯4 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list4" type="text">
+				<title xml:lang="ko">L 위젯4의 목록수</title>
+				<description xml:lang="ko">위젯4의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget4" type="textarea">
+				<title xml:lang="ko">L 위젯4 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+
+			<var name="ec_title5" type="text">
+				<title xml:lang="ko">위젯5 타이틀</title>
+				<description xml:lang="ko">위젯5 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url5" type="text">
+				<title xml:lang="ko">L 위젯5 타이틀 링크</title>
+				<description xml:lang="ko">위젯5 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid5" type="text">
+				<title xml:lang="ko">L 위젯5 SRL</title>
+				<description xml:lang="ko">위젯5의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style5" type="select">
+				<title xml:lang="ko">L 위젯5 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list5" type="text">
+				<title xml:lang="ko">L 위젯5의 목록수</title>
+				<description xml:lang="ko">위젯5의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget5" type="textarea">
+				<title xml:lang="ko">L 위젯5 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+
+			<var name="ec_title6" type="text">
+				<title xml:lang="ko">위젯6 타이틀</title>
+				<description xml:lang="ko">위젯6 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url6" type="text">
+				<title xml:lang="ko">L 위젯6 타이틀 링크</title>
+				<description xml:lang="ko">위젯6 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid6" type="text">
+				<title xml:lang="ko">L 위젯6 SRL</title>
+				<description xml:lang="ko">위젯6의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style6" type="select">
+				<title xml:lang="ko">L 위젯6 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list6" type="text">
+				<title xml:lang="ko">L 위젯6의 목록수</title>
+				<description xml:lang="ko">위젯6의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget6" type="textarea">
+				<title xml:lang="ko">L 위젯6 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+
+			<var name="ec_title7" type="text">
+				<title xml:lang="ko">위젯7 타이틀</title>
+				<description xml:lang="ko">위젯7 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url7" type="text">
+				<title xml:lang="ko">L 위젯7 타이틀 링크</title>
+				<description xml:lang="ko">위젯7 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid7" type="text">
+				<title xml:lang="ko">L 위젯7 SRL</title>
+				<description xml:lang="ko">위젯7의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style7" type="select">
+				<title xml:lang="ko">L 위젯7 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list7" type="text">
+				<title xml:lang="ko">L 위젯7의 목록수</title>
+				<description xml:lang="ko">위젯7의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget7" type="textarea">
+				<title xml:lang="ko">L 위젯7 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+
+			<var name="ec_title8" type="text">
+				<title xml:lang="ko">위젯8 타이틀</title>
+				<description xml:lang="ko">위젯8 타이틀을 입력해 주십시오.</description>
+			</var>
+			<var name="ec_url8" type="text">
+				<title xml:lang="ko">L 위젯8 타이틀 링크</title>
+				<description xml:lang="ko">위젯8 타이틀의 링크를 입력해 주십시오.</description>
+			</var>
+			<var name="ec_mid8" type="text">
+				<title xml:lang="ko">L 위젯8 SRL</title>
+				<description xml:lang="ko">위젯8의 module_srl를 입력해 주십시오.(게시판 편집에 마우스를 올리시면 화면 좌하단에 module_srl=숫자가 보입니다. ex:112)</description>
+			</var>
+			<var name="ec_style8" type="select">
+				<title xml:lang="ko">L 위젯8 내용형태</title>
+				<description xml:lang="ko">내용형태를 설정해 주십시오.(주의 대형 슬라이드는 위젯 타이틀 사용 금지)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">제목</title>
+				</options>
+				<options value="AA">
+					<title xml:lang="ko">댓글</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">이미지+제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지 + 제목 + 내용</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">최신글 최신댓글 탭</title>
+				</options>
+			</var>
+			<var name="ec_list8" type="text">
+				<title xml:lang="ko">L 위젯8의 목록수</title>
+				<description xml:lang="ko">위젯8의 목록수를 입력해 주십시오.(입력값이 없으면 5개가 노출됩니다)</description>
+			</var>
+			<var name="ec_widget8" type="textarea">
+				<title xml:lang="ko">L 위젯8 코드</title>
+				<description xml:alng="ko">다른 형태의 위젯을 사용하시려면 이곳에 위젯코드를 입력하십시오.</description>
+			</var>
+		</group>
+		<group>
+			<title xml:lang="ko">Sub Page(본문)</title>
+			<var name="breadclumb" type="select">
+				<title xml:lang="ko">빵조각 사용 유무</title>
+				<description xml:lang="ko">빵조각 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="QuotationMark" type="select">
+				<title xml:lang="ko">빵조각 Quotation Mark 사용 유무</title>
+				<description xml:lang="ko">빵조각 Quotation Mark 사용 유무를 설정해 주십시오</description>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				
+			</var>
+			<var name="content_style" type="select">
+				<title xml:lang="ko">본문 흰색배경 사용 유무</title>
+				<description xml:lang="ko">본문 흰색배경 사용 유무를 설정해 주십시오</description>
+				<options value="content_white">
+					<title xml:lang="ko">사용함</title>
+				</options>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">풋터</title>
+			<var name="footer_bg" type="text">
+				<title xml:lang="ko">풋터 배경색</title>
+				<description xml:lang="ko">풋터의 배경색을 입력해 주십시오.(예:#5B6882)</description>
+			</var>
+			<var name="foot_logo_image" type="image">
+				<title xml:lang="ko">풋터 로고 이미지</title>
+				<title xml:lang="en">footer logo image</title>
+				<description xml:alng="ko">넓이 250이하로 올려 주세요.</description>
+			</var>
+			<var name="copyright" type="textarea">
+				<title xml:lang="ko">풋터 copyright</title>
+				<description xml:alng="ko">풋터 copyright를 입력하십시오. strong을 사용하면 조금더 밝고 굵은 색이 보여집니다.</description>
+			</var>
+		</group>
+
+	</extra_vars>
+</layout>

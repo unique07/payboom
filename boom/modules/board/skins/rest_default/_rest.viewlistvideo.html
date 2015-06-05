@@ -1,0 +1,47 @@
+{@	$extras = $document->getExtraEidValue('video');}
+<!--@if(preg_match('/youtu/', $extras))-->
+	<!--@if(preg_match('/v=/', $extras))-->
+		{@	$video_id = explode('v=',$extras);
+			$youtube_id = substr($video_id[1],0,11);}
+	<!--@else-->
+		{@	$youtube_id = str_replace('http://youtu.be/','',$extras);
+			$youtube_id = str_replace('http://www.youtube.com/embed/','',$youtube_id);}	
+	<!--@end-->	
+	<!--@if(preg_match('/list/', $extras))-->
+		{@	$list_id = explode('list=',$extras);
+			$youtubelist_id = substr($list_id[1],0,18);}
+	<!--@end-->
+	<div class="video-container">
+		<iframe src="//www.youtube.com/embed/{$youtube_id}<!--@if(preg_match('/list/', $extras))-->?list={$youtubelist_id}<!--@else-->?version=3&vq=small&rel=0<!--@end-->" frameborder="0" allowfullscreen="true"></iframe>
+	</div>
+<!--@elseif(preg_match('/ted/', $extras))-->
+	{@	$video_id = str_replace('http://www.ted.com','http://embed.ted.com',$extras);}
+	<div class="video-container"><iframe src="{$video_id}<!--@if(!preg_match('/.html/', $extras))-->.html<!--@end-->" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<!--@elseif(preg_match('/vimeo/', $extras))-->
+	{@	$video_id = str_replace('http://vimeo.com','//player.vimeo.com/video',$extras);}
+	<div class="video-container"><iframe src="{$video_id}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>	
+<!--@elseif(preg_match('/drive.google/', $extras))-->
+	{@	$video_id = str_replace('drive.google.com/file/d','www.googledrive.com/host',$extras);
+		$video_id = str_replace('/edit?usp=sharing','',$video_id);}
+	<div class="video-container" cond="!Mobile::isMobileCheckByAgent()"><embed src="/modules/board/skins/rest_default/js/player.swf" flashvars="file={$video_id}&type=video" wmode="opaque"></div>
+	<div class="video-container" cond="Mobile::isMobileCheckByAgent()"><iframe src="https://doc.google.com/uc?id={$video_id}&export=download"></iframe></div>
+<!--@elseif(preg_match('/mp3/', $extras) || preg_match('/m4a/', $extras)  || preg_match('/f4a/', $extras) || preg_match('/acc/', $extras))-->
+	<load target="js/jwplayer.js" />
+	<div id="myElement"></div>
+	<script>
+		jwplayer("myElement").setup({
+			file: "{$extras}",
+			height: 33
+		});
+	</script>	
+<!--@else-->
+	<load target="js/jwplayer.js" />
+	<div id="myElement"></div>
+	<script>
+		jwplayer("myElement").setup({
+			file: "{$extras}",
+			width: "100%",
+			aspectratio: "16:10"
+		});
+	</script>		
+<!--@end-->

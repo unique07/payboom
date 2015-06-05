@@ -1,0 +1,22 @@
+<query id="getKt" action="select">
+<tables>
+    <table name="documents"/>
+    <table name="modules"/>
+</tables>
+<columns>
+    <column name="modules.mid"/>
+    <column name="documents.document_srl" />
+    <column name="documents.title" />
+    <column name="documents.content" />
+    <column name="documents.regdate"/>
+</columns>
+<conditions>
+    <condition operation="notin" column="documents.module_srl" default="0"/>
+    <condition operation="in" column="documents.module_srl" var="module_srl" pipe="and" />
+    <condition operation="in" column="documents.is_notice" var="notice_list" pipe="and" />
+    <condition operation="equal" column="modules.module_srl" default="documents.module_srl" filter="number" pipe="and" />
+</conditions>
+<navigation>
+    <index var="order_target" default="regdate" order="desc"/>
+</navigation>
+</query>

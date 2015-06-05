@@ -1,0 +1,42 @@
+<section class="main-bbs-content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+                <div class="box-header">
+                  <!--@if($widget_info->title)-->
+				  <h5 class="box-title"><i class="glyphicon glyphicon-list"></i>{$widget_info->title}</h5>
+				  <!--@end-->
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table class="table table-bordered">
+                    <tbody>
+                    {@$_idx=0}
+                    <!--@foreach($widget_info->content_items as $key => $item)-->
+                    <tr>
+                      <td>
+						<a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">
+						<!--@if(!Mobile::isMobileCheckByAgent())-->
+						{cut_str($item->getTitle($widget_info->subject_cut_size), 80, '...')}
+						<!--@else-->
+						{cut_str($item->getTitle($widget_info->subject_cut_size), 35, '...')}
+						<!--@end-->
+						</a>
+					  </td>
+                      <td class="hidden-xs" style="width:80px">{$item->getNickname()}</td>
+                      <td class="hidden-xs" style="width:60px">{$item->getRegdate("m-d")}</td>
+                    </tr>
+                    {@$_idx++}
+					<!--@end-->
+					
+					<!--@if($_idx == 0)-->
+					<tr>
+                      <td class="text-center">등록된 글이 없습니다.
+                      </td>
+                    </tr>
+					<!--@end-->
+                  </tbody></table>
+                </div><!-- /.box-body -->
+              </div>
+		</div>
+	</div>
+</section>

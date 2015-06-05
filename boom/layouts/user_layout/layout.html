@@ -1,0 +1,252 @@
+<meta name="description" content="PAYBOOM">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="/boom/layouts/user_layout/css/vendor/bootstrap-theme.css">
+<link rel="stylesheet" href="/boom/layouts/user_layout/css/vendor/bootstrap.css">
+<link rel="stylesheet" href="/boom/layouts/user_layout/css/vendor/royalslider.css">
+<link rel="stylesheet" href="/boom/layouts/user_layout/css/bootstrap-override.css">
+<link rel="stylesheet" href="/boom/layouts/user_layout/css/main.css">
+<link href="/boom/layouts/user_layout/css/jquery.selectbox.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/boom/layouts/user_layout/js/facebook/fb.login.js"></script>
+<script src="/boom/layouts/user_layout/js/vendor/webfont.min.js"></script>
+<script src="/boom/layouts/user_layout/js/jquery.selectbox.js"></script>
+<script src="/boom/layouts/user_layout/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="/boom/layouts/user_layout/js/vendor/selector.min.js"></script>
+<script type="text/javascript" src="/boom/layouts/user_layout/js/common.js"></script>
+<div id="viewport">
+<div class="container">
+    <div class="tamper">
+	  <!--배너 -->
+        <span class="remove"><img src="/img/icon-close-blk.png" class="img-responsive"></span>
+    </div>
+	<header>
+		<div class="logo; text-center">
+			<a href="/"><img src="/images/img/payboom_logo.png" title="payboom"></a>
+		</div>
+        <div class="search-form hidden-xs">
+            <form action="/search/search.php" onSubmit='return CheckSearchForm(this)' class="form-inline" role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="txt_search" name="search" value="" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+            </form>
+        </div>
+      	<div class="wrapper visible-md visible-lg visible-sm hidden-xs">
+			<div class="globalNavi clearfix">
+             	<ul class="navi list-unstyled clearfix pull-left">
+					<li class="pull-left<?if($_GET[mid] == "payboom") echo " selected"?>"><a href="/boom/payboom"><b>페이붐</b></a></li>
+				</ul>
+				<ul class="navi list-unstyled clearfix pull-left">
+					<li class="pull-left<?if($_GET[mid] == "review") echo " selected"?>""><a href="/boom/review"><b>정보</b></a></li>
+				</ul>
+			</div>
+				<div class="utility">
+					<ul class="list-unstyled clearfix">
+						<li class="pull-left"><a href="/boom/login"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>로그인</span></a></li>
+						<li class="pull-left"><a href="/user/agree.php"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>회원가입</span></a></li>
+						<li class="pull-left facebook" onclick="facebooklogin()">
+							<span>	<img src="/images/img/icon-facebook.png"></span>
+						</li>
+					</ul>
+				</div>
+			<!-- 로그아웃
+			<div class="utility-login clearfix">
+				<div class="alarm-info pull-right clearfix">
+					<div id="memocount" class="pull-left">
+						<a href="javascript:viewAlarm('message')" class="badge">00</a>
+						<a href="javascript:viewAlarm('message')"><span class="glyphicon glyphicon-envelope"></span></a>
+					</div>
+					<div id="commentcount" class="pull-left">
+						<a href="javascript:viewAlarm('alarm')" class="badge">00</a>
+						<a href="javascript:viewAlarm('alarm')"><span class="glyphicon glyphicon-comment"></span></a>
+					</div>
+				</div>
+				<div class="btn-group pull-right myinfo">
+					<div class="dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-cog"></span>
+					</div>
+					<ul class="list-unstyled dropdown-menu" role="menu">
+						<li><a href="/mypage/info.php">나의 정보보기</a></li>
+						<li><a href="/mypage/modify.php">나의 정보수정</a></li>
+						<li><a href="/user/logout_process.php">로그 아웃</a></li>
+					</ul>
+				</div>
+				<div class="login-id pull-right"><span>아디이</span></div>
+			</div>
+			-->
+			<div class="gnb-depth clearfix">
+				<?if($_GET[mid] == "payboom") {?>
+				<ul class="list-unstyled clearfix pull-left">
+					<li class="pull-left m1"><a href="/boom/payboom"<?if($_GET[category] == "") echo " class=\"selected\""?>><B>전체</B></a></li>
+					<li class="pull-left m2"><a href="/boom/payboom?category=160"<?if($_GET[category] == "160") echo " class=\"selected\""?>>SKT</a></li>
+					<li class="pull-left m3"><a href="/boom/payboom?category=161"<?if($_GET[category] == "161") echo " class=\"selected\""?>>KT</a></li>
+					<li class="pull-left m4"><a href="/boom/payboom?category=256"<?if($_GET[category] == "256") echo " class=\"selected\""?>>LGU+</a></li>
+					<li class="pull-left m6"><a href="/boom/payboom?category=177"<?if($_GET[category] == "177") echo " class=\"selected\""?>>MVNO</a></li>
+					<li class="pull-left m5"><a href="/boom/payboom?category=253"<?if($_GET[category] == "253") echo " class=\"selected\""?>><B>지역</B?</a></li>
+				</ul>
+				<?}?>
+				
+				<?if($_GET[mid] == "review") {?>
+				<ul class="list-unstyled clearfix pull-left">
+					<li class="pull-left m1"><a href="/boom/review"<?if($_GET[category] == "") echo " class=\"selected\""?>>전체</a></li>
+					<li class="pull-left m2"><a href="/boom/review?category=250"<?if($_GET[category] == "250") echo " class=\"selected\""?>>휴대폰</a></li>
+				</ul>
+				<?}?>
+			</div>
+		</div>
+	</header>
+	<div class="modal-fade"></div>
+	<nav class="mobile hidden-lg hidden-md hidden-sm visible-xs">
+		<!-- <div class="modal-fade"></div> -->
+		<span class="toggleButton" id="toggleButton1">
+			<span class="inner"></span>
+		</span>
+		
+			<div class="utility">
+				<ul class="list-unstyled clearfix">
+					<li class="pull-left"><a href="/boom/login"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>로그인1</span></a></li>
+					<li class="pull-left"><a href="/user/agree.php"><span class="glyphicon glyphicon-circle-arrow-right"></span><span>회원가입</span></a></li>
+					<li class="pull-right facebook" onclick="facebooklogin()">
+						<span>	<img src="/images/img/icon-facebook.png"></span>
+					</li>
+				</ul>
+			</div>
+		<!-- 로그아웃
+		<div class="utility utility-login">
+			<div class="login-id"><span><?//php echo $userinfo->loginid; ?></span></div>
+			<div class="myinfo">
+				<ul class="list-unstyled clearfix">
+					<li class="pull-left"><a href="/mypage/info.php">나의 정보보기</a></li>
+					<li class="pull-left"><a href="/mypage/modify.php">나의 정보수정</a></li>
+					<li class="pull-left"><a href="/user/logout_process.php">로그 아웃</a></li>
+				</ul>
+			</div>
+		</div>
+		-->
+		<div class="globalNavi">
+            <ul class="list-unstyled">
+
+                <li class="c01">
+                    <a href="/boom/payboom">티붐</a>
+                    <ul class="list-unstyled clearfix gnb-depth">
+                        <li class="pull-left">
+                            <a href="/boom/index.php?mid=sktel&category=160">SK텔레콤</a>
+                        </li>
+                        <li class="pull-left">
+                            <a href="/boom/index.php?mid=sktel&category=161">KT</a>
+                        </li>
+                        <li class="pull-left">
+                            <a href="/boom/index.php?mid=sktel&category=162">LGU+</a>
+                        </li>
+					 </ul>
+				 </li>
+					    <li>
+							 <a href="/board/list.php?category=202">정보</a>
+						</li>
+						<li>
+							 <a href="/community/community.php">커뮤니티</a>
+						<ul class="list-unstyled gnb-depth">
+						<li>
+                            <a href="/board/list.php?category=600">브랜드,업체정보</a>
+                        </li>
+                        <li>
+                            <a href="/board/list.php?category=700">중고장터</a>
+                        </li>
+                    </ul>
+                </li>
+				<li>
+                    <a href="/board/list.php?category=204">이벤트</a>
+                </li>
+				<li>
+                    <a href="/board/list.php?category=300">서비스신청</a>
+                </li>
+
+                    </ul>
+                </li>
+            </ul>
+		</div>
+		<div class="search-form">
+			<form action="/search/search.php" onSubmit='return CheckSearchForm(this)' class="form-inline" role="form">
+				<div class="form-group col-xs-8">
+					<input type="text" class="form-control input-sm" name="search" id="txt_search" value="" />
+				</div>
+				<div class="form-group col-xs-3">
+					<button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+			</form>
+		</div>
+	</nav>
+	<!-- 내용 -->
+	{$content}
+	
+	<div id="fb-root"></div>
+	<!-- contents//end -->
+<!-- floating banner -->
+            <div class="floating-banner text-left hidden-sm hidden-xs">
+                <!-- banner-feature -->
+                <div class="banner-feature">
+                    <div class="billboardNest">
+                        
+                    </div>
+                </div>
+                <!-- banner-feature//end -->
+            </div>
+            <!-- floating banner//end -->
+            <div class="floating-banner right text-left hidden-sm hidden-xs">
+                <!-- banner-feature -->
+                <div class="banner-feature">
+                    <div class="billboardNest">
+                       
+                    </div>
+                </div>
+                <!-- banner-feature//end -->
+            </div>
+            <!-- floating banner//end -->
+
+        <!-- footer -->
+        <footer>
+
+            <strong>MORE INFORMATION</strong>
+            <ul class="secondNav list-unstyled clearfix">
+             <!--   <li><a href="/company/syoff.php">페이붐소개</a></li> -->
+                <li><a href="/company/company.php">회사소개</a></li>
+                <li><a href="/company/clause.php">이용약관,개인정보 취급방침</a></li>
+                <li><a href="/company/marketing.php">제휴,광고 문의</a></li>
+            </ul>
+            <p>페이붐 &#124; 대표자 : 소상용 &#124; 정보관리책임자 : 김명화 &#124; 사업자번호 :   &#124;  신고기관명 : 서울시 서대문구 &#124; 주소 : 서울시 서대문구 북가좌동 294-17 3층<br />
+            페이붐 webmaster@payboom.co.kr  </p>
+
+
+            <strong>PAYBOOM</strong>
+            <p>ADD &#124; #294-17 3F, BUKGAJWA-DONG, SEODAEMUN-GU SEOUL, REPUBLIC OF KOREA TEL &#124; 02-6082-1418 FAX &#124; 02-6339-1418 E.MAIL &#124; webmaster@payboom.co.kr <br />COMPANY LICENSE  - </p>
+            <p>COPYRIGHT(C) 2015 PAYBOOM ALL RIGHTS RESERVED.</p>
+
+            <strong>PARTNERSHIP</strong>
+            <ul class="partnership list-unstyled clearfix">
+            
+            </ul>
+
+        </footer>
+        <!-- footer//end -->
+    </div>
+    <!-- container//end -->
+</div>
+<!-- viewport//end -->
+
+
+
+<!-- sample modal content -->
+          
+
+<div id="divAlarmfriend" class="layer-alarmInfo" style="display:none;position:absolute;"></div>
+<div id="divAlarmmessage" class="layer-alarmInfo" style="display:none;position:absolute;"></div>
+<div id="divAlarmalarm" class="layer-alarmInfo" style="display:none;position:absolute;"></div>
+<div id="dark" style="display:none;background:#000;position:absolute;z-index:20000;"></div>
+<div id="photoview" style="display:none;position:absolute;z-index:20001;left:0px;top:0px;"></div>
+<!--<script src="/boom/layouts/user_layout/js/vendor/jquery-1.11.1.min.js"></script>-->
+
+
+<script src="/boom/layouts/user_layout/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="/boom/layouts/user_layout/js/plugins.js"></script>
+<script type="text/javascript" src="/boom/layouts/user_layout/js/main.js"></script>

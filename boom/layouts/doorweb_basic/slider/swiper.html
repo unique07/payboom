@@ -1,0 +1,66 @@
+<load target="../css/swiper.css" />
+<!--@if(!$layout_info->slide_speed)-->{@$layout_info->slide_speed = "5000"}<!--@end-->
+<style type="text/css">
+.wrap_swiper{overflow:hidden;/*padding:0 3%;*/}
+.swiper-container{width:100%;color:#fff;text-align:center;}
+.swiper-wrapper{position:relative;height:auto !important;width:200000px !important}
+.swiper-wrapper:after{content:"";display:block;clear:both;}
+.swiper-slide{height:auto !important;opacity:0.4;-webkit-transition:300ms;-moz-transition:300ms;-ms-transition:300ms;-o-transition:300ms;transition:300ms;}
+.swiper-slide img{width:100%;vertical-align:middle}
+.swiper-slide-active{opacity:1;}
+.swiper-slide .in-slide{padding:0;}
+.pagination{position:absolute;z-index:20;left:0px;bottom:25px;width:100%;text-align:center;}
+.swiper-pagination-switch{display:inline-block;width:14px;height:14px;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;background:#999;margin-right:10px;opacity:0.8;border:1px solid #fff;cursor:pointer;}
+.swiper-visible-switch{background:#aaa;}
+.swiper-active-switch{background:#3750f1;}
+@media screen and (max-width:1060px){
+.pagination{display:none;}
+
+}
+</style>
+<div class="wr_swiper">
+	<!-- 메인 슬라이드 -->
+	<div class="wrap_swiper">
+		<div class="swiper-container">
+			<div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px);">
+				
+				<div class="swiper-slide" cond="$layout_info->slide_img1">
+					<div class="in-slide"><a href="{$layout_info->slide_url1}"|cond="$layout_info->slide_url1" href="#"|cond="!$layout_info->slide_url1"><img src="{$layout_info->slide_img1}" alt="{$layout_info->slide_title1}" /></a></div>
+				</div>
+				
+				<div class="swiper-slide" cond="$layout_info->slide_img2">
+					<div class="in-slide"><a href="{$layout_info->slide_url2}"|cond="$layout_info->slide_url2" href="#"|cond="!$layout_info->slide_url2"><img src="{$layout_info->slide_img2}" alt="{$layout_info->slide_title2}" /></a></div>
+				</div>
+				
+				<div class="swiper-slide" cond="$layout_info->slide_img3">
+					<div class="in-slide"><a href="{$layout_info->slide_url3}"|cond="$layout_info->slide_url3" href="#"|cond="!$layout_info->slide_url3"><img src="{$layout_info->slide_img3}" alt="{$layout_info->slide_title3}" /></a></div>
+				</div>
+				
+				<div class="swiper-slide" cond="$layout_info->slide_img4">
+					<div class="in-slide"><a href="{$layout_info->slide_url4}"|cond="$layout_info->slide_url4" href="#"|cond="!$layout_info->slide_url4"><img src="{$layout_info->slide_img4}" alt="{$layout_info->slide_title4}" /></a></div>
+				</div>
+				
+				<div class="swiper-slide" cond="$layout_info->slide_img5">
+					<div class="in-slide"><a href="{$layout_info->slide_url5}"|cond="$layout_info->slide_url5" href="#"|cond="!$layout_info->slide_url5"><img src="{$layout_info->slide_img5}" alt="{$layout_info->slide_title5}" /></a></div>
+				</div>
+				
+			</div>
+			<div class="pagination"></div>
+		</div>
+	<load target="../js/idangerous.swiper.js" />
+	<script>
+	  var mySwiper = new Swiper('.swiper-container',{
+	    pagination: '.pagination',
+	    paginationClickable: true,
+	
+	        autoplay:{$layout_info->slide_speed},
+	        speed:1000,
+	        autoResize:true,
+	        paginationClickable: true,
+	       
+	    centeredSlides: true
+	  })
+	  </script>
+	 </div>	
+</div>	
+		

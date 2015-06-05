@@ -1,0 +1,37 @@
+<load target="./css/pado_image_news.css"/>
+
+<!--http://download.xpressengine.com/xedownload/app/22753582/thumbnails/md.png-->
+<div class="image-news-container">
+    <!--@if( $output_array['title_view'] == "view")-->
+        <div class="title"><span>{$output_array['title']}</span></div>
+    <!--@end-->
+    <ul class="context">
+        <!--@for($i=0; $i < $output_array['count']; $i++)-->
+        <!-- 리스트 아이템 -->
+        <li>
+            <!-- 미리보기 이미지 -->
+            <div class="img">
+                <img src="{$output_array[$i]['image']}" width="110px" height="110px"/>
+            </div>
+
+            <!-- 콘텐츠 -->
+            <div class="content">
+                <!-- 제목 -->
+                <h1>
+                    <a href="{getUrl()}?mid={$mid}&document_srl={$output_array[$i]['document_srl']}">
+                        <span>{$output_array[$i]['title']}</span>
+                    </a>
+                    <span class="notify">{$output_array[$i]['date']}일전</span>
+                </h1>
+                <!--// 제목 -->
+                <!-- 내용 -->
+                <p>{$output_array[$i]['content']}</p>
+                <!--// 내용 -->
+            </div>
+            <!--// 콘텐츠 -->
+
+        </li>
+        <!--@end-->
+        <!--// 리스트 아이템 -->
+    </ul>
+</div>

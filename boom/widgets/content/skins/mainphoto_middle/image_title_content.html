@@ -1,0 +1,33 @@
+<!--@if($widget_info->title)-->
+<h5>{$widget_info->title}</h5>
+<!--@end-->
+<!-- LIST -->
+{@$_idx=0}
+<!--@foreach($widget_info->content_items as $key => $item)-->
+<div class="clearfix">
+	  <table class="table table-hover">
+		<tbody>
+		<tr class="listview" style="text-align:middle">
+		  <td style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px">
+		    <a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">
+			<!--@if($item->getThumbnail())-->
+				<img src="{$item->getThumbnail()}" style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px" class="img-thumbnail"/>
+			<!--@else-->
+				<img src="/images/list_noimage.jpg" style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px" class="img-thumbnail"/>
+			<!--@end-->
+			</a>
+			<!--
+			<img src="/images/list_noimage.jpg" style="max-width:100px" class="img-thumbnail"/>
+			-->
+		  </td>
+		  <td>
+		  <a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+		  </td>
+		  <td class="text-center;" style=" width:50px">{$item->getRegdate("m-d")}</td>
+		</tr>
+		 </tbody>
+	  </table>
+</div>
+{@$_idx++}
+<!--@end-->
+	

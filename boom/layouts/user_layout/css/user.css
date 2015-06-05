@@ -1,0 +1,50 @@
+@charset "utf-8"; 
+
+
+#usercontent { text-align: center; background: url('/images/main/mainline.gif') no-repeat center top; padding: 4px 90px 100px 90px; margin: 0px 0px;}
+h2 { display:block; overflow: hidden; height: 26px; text-indent: -10000em; background: url('/images/user/jointitle.gif') no-repeat center top; margin: 0px 0px; }
+
+h3.agree { display:block; overflow: hidden; height: 183px; text-indent: -10000em; background: url('/images/user/agreetitle.gif') no-repeat; margin-top:25px; }
+h3.certification { display:block; overflow: hidden; height: 49px; text-indent: -10000em; background: url('/images/user/certificationtitle.gif') no-repeat; margin-top:25px; }
+h3.info { display:block; overflow: hidden; height: 175px; text-indent: -10000em; background: url('/images/user/infotitle.gif') no-repeat; margin-top:25px; }
+
+h4.legal { display:block; overflow: hidden; height: 57px; text-indent: -10000em; background: url('/images/user/legal.gif') no-repeat; margin: 15px 0px 20px 0px; }
+h4.privacypolicy { display:block; overflow: hidden; height: 59px; text-indent: -10000em; background: url('/images/user/privacypolicy.gif') no-repeat; margin: 50px 0px 20px 0px; }
+h4.own { display:block; overflow: hidden; height: 16px; text-indent: -10000em; background: url('/images/user/own.gif') no-repeat; margin: 34px 0px 16px 343px; }
+h4.realname { display:block; overflow: hidden; height: 16px; text-indent: -10000em; background: url('/images/user/realname.gif') no-repeat;  margin: 34px 0px 16px 343px; }
+h4.joincertification { display:block; overflow: hidden; height: 18px; text-indent: -10000em; background: url('/images/user/joincertification.gif') no-repeat;  margin: 34px 0px 16px 343px; }
+h4.infomation { display:block; overflow: hidden; height: 58px; text-indent: -10000em; background: url('/images/user/information.gif') no-repeat;  margin: 15px 0px 20px 0px; }
+
+h5.agree1 { display:block; overflow: hidden; height: 12px; text-indent: -10000em; background: url('/images/user/agree_text1.gif') no-repeat center top; margin: 0px 0px; }
+h5.agree2 { display:block; overflow: hidden; height: 30px; text-indent: -10000em; background: url('/images/user/agree_text2.gif') no-repeat center top; margin: 20px 0px 30px 0px; }
+h5.agree3 { display:block; overflow: hidden; height: 19px; text-indent: -10000em; background: url('/images/user/agree_text3.gif') no-repeat center top; margin: 5px 0px; }
+
+textarea { width: 740px; height: 260px; font-size: 12px; padding: 5px 5px; }
+
+.btn_agree { display:block; overflow: hidden; width:135px; height: 26px; text-indent: -10000em; background: url('/images/user/agree.gif') no-repeat; float: left; margin-left: 270px; }
+.btn_cancel { display:block; overflow: hidden; width:135px; height: 26px; text-indent: -10000em; background: url('/images/user/cancel.gif') no-repeat; float: left; margin-left:10px; }
+.btn_okey { display:block; overflow: hidden; width:135px; height: 26px; text-indent: -10000em; background: url('/images/user/okey.gif') no-repeat; margin: 2px 0px 0px 343px; }
+.btn_okeycertification { display:block; overflow: hidden; width:135px; height: 26px; text-indent: -10000em; background: url('/images/user/okey.gif') no-repeat; margin: 0px 0px 0px 40px; }
+
+.inputbox { claer:both; border: 7px solid #f2f2f2; text-align:left; margin: 0px 0px; }
+.inputbox .name { display:block; overflow: hidden; width:20px; height: 10px; text-indent: -10000em; background: url('/images/user/name.gif') no-repeat; padding: 0px 0px;}
+.inputbox .birth { display:block; overflow: hidden; width:39px; height: 11px; text-indent: -10000em; background: url('/images/user/birthday.gif') no-repeat; padding: 0px 0px;}
+.inputbox .sex { display:block; overflow: hidden; width:19px; height: 10px; text-indent: -10000em; background: url('/images/user/sex.gif') no-repeat; padding: 0px 0px;}
+.inputbox .mn { display:block; overflow: hidden; width:61px; height: 11px; text-indent: -10000em; background: url('/images/user/mn.gif') no-repeat; padding: 0px 0px 0px 0px;}
+
+ul {list-style: none; margin: 0px 0px; padding: 0px 0px; text-align: left; font-size: 12px; line-height:180%; color: #989898; margin: 20px 0px 0px 80px; }
+ul.joincertification { clear: both; font-size:11px; font-family:'dotum'; }
+
+#usercontent input { font-size: 12px; }
+#usercontent dl { padding: 0px 0px; margin: 20px 0px 20px 220px; width: 400px; border-left:1px solid #fff;border-top:1px solid #fff; }
+#usercontent dt { padding-top:2px ; margin: 0px 0px; float: left; width: 80px; height: 30px; border-right:1px solid #fff; border-bottom:1px solid #fff; }
+#usercontent dd { padding: 0px 0px; margin: 0px 0px; height: 32px; border-right:1px solid #fff; border-bottom:1px solid #fff; }
+
+.phonecertificationbox { float: left; margin: 30px 20px 20px 20px; border-right:1px solid #e2e2e2; width: 220px; padding: 120px 80px 20px 80px; font-size:11px; font-family:'dotum'; line-height:170%; text-align: left; background: url('/images/user/phonecertification.gif') no-repeat top center; }
+.emailcertificationbox { float: left; margin: 30px 20px 20px 0px; width: 200px; padding: 120px 80px 20px 80px; font-size:11px; font-family:'dotum'; line-height:170%; text-align: left; background: url('/images/user/emailcertification.gif') no-repeat top center; }
+
+.phone_text { width: 220px; margin-bottom: 20px; } 
+.email_text { width: 220px; margin-bottom: 20px; } 
+
+.input { font-size:12px; }
+

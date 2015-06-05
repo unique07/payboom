@@ -1,0 +1,225 @@
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(function () {
+    $("#searchtype").selectbox();
+});
+
+</script>
+	<!-- contents -->
+	<div id="start" class="contents start">
+		<script type="text/javascript">
+			function setCookie( name, value, expiredays ) {
+				var todayDate = new Date();
+				todayDate.setDate( todayDate.getDate() + expiredays );
+				document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+			}
+			function closeWin(div, chk, cookname) {
+				if ( document.getElementById(chk).checked ){
+					setCookie(cookname, "done", 1);
+				}
+				document.getElementById(div).style.visibility = "hidden";
+			}
+			window.onload = function() {
+				cookiedata = document.cookie;
+				/* popup */
+				if ( cookiedata.indexOf("maindiv=done") < 0 ){
+					//document.getElementById('notice-20150216').style.visibility = "visible";
+				} else {
+					//document.getElementById('notice-20150216').style.visibility = "hidden";
+				}
+			}
+		</script>
+		<div id="notice-20150216" class="popup">
+			<p>
+				<img src="../img/popup/mobile-payboom.png" alt="Mobile Payboom">
+			</p>
+			<form name="notice_form">
+				<div class="action">
+					<label><input type="checkbox" id="chkbox" value="checkbox" onclick="javascript:closeWin('notice-20150216', 'chkbox', 'maindiv');" ><span>오늘 하루 열지 않음</span></label>
+					<a href="javascript:closeWin('notice-20150216', 'chkbox', 'maindiv');" class="close">닫기</a>
+				</div>
+			</form>
+		</div>
+		<div class="clearfix">
+			<div class="mediaList-wrapper pull-left col-xs-9">
+				<!-- start-thumbnail-banner -->
+				<div class="start-thumbnail-banner clearfix">
+					<!-- start-billboard -->
+					<div class="start-billboard">
+						<div class="billboardNest">
+							<div class="row">
+								<!-- LOOP START headnews -->
+								<div class="col-xs-12">
+									<div class="thumbnail">
+										<a href="/board/view.php?id={id}" target="{target}">
+											<img src="../webdata/maintool/{image}" class="img-responsive" alt="magazine">
+											<div class="caption">
+												<strong>{title}</strong>
+												<p>{content}</p>
+												<div class="overflow hidden-lg hidden-md visible-sm visible-xs"></div>
+											</div>
+										</a>
+										<em>comments<a href="#" class="badge comment"></a></em>
+									</div>
+								</div>
+								<!-- LOOP END headnews -->
+							</div>
+						</div>
+					</div>
+					<!-- start-billboard//end -->
+				</div>
+				<!-- start-thumbnail-banner//end -->
+				<!-- start-mediaList -->
+				<div class="mediaList">
+					<h3>WHAT'S NEW</h3>
+					<!-- LOOP START row -->
+					<div class="media clearfix">
+						<a href="" class="media-img pull-left col-lg-5 col-md-5 col-sm-12 col-xs-12">
+							<!-- LOOP START newnew -->
+							<div class="sticker-new">
+								<img src="/images/img/icon_new.png" alt="new" />
+							</div>
+							<!-- LOOP END newnew -->
+							<img src="http://payboom.co.kr{image}" class="img-responsive" />
+						</a>
+						<div class="media-body col-lg-7 col-md-7 col-sm-12 col-xs-12">
+							<a href="">
+								<h4>title</h4>
+								<p class="media-content">content</p>
+								<div class="clearfix">
+									<div class="media-util pull-left">
+										<div class="sns clearfix">
+											<div class="tweet pull-left"><a href="http://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="" data-counturl="">twitter</a></div>
+											<div class="facebook pull-left"><div class="fb-like" data-href="" data-layout="button_count" data-send="false" data-width="200" data-show-faces="false">facebook</div></div>
+										</div>
+										<div class="clearfix">
+											<!-- LOOP START new -->
+											<div class="new pull-left">
+												<span class="label">new</span>
+											</div>
+											<!-- LOOP END new -->
+											<div class="date pull-left">date</div>
+											<div class="count pull-left">count views</div>
+										</div>
+									</div>
+									<div class="media-comment pull-right">
+										<em>comments<a href="" class="badge comment"></a></em>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<!-- LOOP END row -->
+
+					<div class="action">
+						<div class="clearfix">
+							<!-- LOOP START button -->
+							<!--<a class="btn-write btn btn-primary pull-left btn-xs" href="write.php?category={category}">WRITE</a>-->
+							<!-- LOOP END button -->
+							<a class="btn-top btn btn-primary pull-right btn-sm" href="#">TOP<span class="glyphicon glyphicon-chevron-up"></span></a>
+						</div>
+						<div class="paging text-center">
+							
+						</div>
+					</div>
+
+					<div class="list-search-form text-center">
+						<form class="form-inline" role="form">
+							<input type='hidden' name='category' value='{category}' />
+							<input type='hidden' name='subcategory' value='{subcategory}' />
+							<div class="form-group search-select">
+								<select class="form-control input-sm" name='board_searchtype'>
+									<option value='all'     {selected_bsearchtype_all}>제목+내용</option>
+									<option value='title'       {selected_bsearchtype_title}>제목</option>
+									<option value='content' {selected_bsearchtype_content}>내용</option>
+								</select>
+							</div>
+							<div class="form-group search-text">
+								<input type="text" class="form-control input-sm" name='board_searchword' value='{board_searchword}'>
+							</div>
+							<div class="form-group search-btn">
+								<input class="btn btn-default btn-sm" type="submit" value="SEARCH">
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- start-mediaList//end -->
+			</div>
+			<div class="catalog-banner pull-right col-xs-3">
+				<div class="monthly-issue clearfix">
+					<!-- LOOP START toprightbanner -->
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="" alt="" />
+							</a>
+							<div class="fb-like" data-href="" data-layout="button_count" data-send="false" data-width="200" data-show-faces="false">facebook</div>
+						</div>
+					</div>
+					<!-- LOOP END toprightbanner -->
+				</div>
+
+				<div class="banner">
+					<!-- LOOP START toprightspon -->
+					<img src="" alt="" />
+					<!-- LOOP END toprightspon -->
+				</div>
+
+				<div class="daily-snap clearfix">
+					<!-- LOOP START rightmiddlebanner -->
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="\" alt=""/>
+							</a>
+							<div class="caption">
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<!-- LOOP END rightmiddlebanner -->
+				</div>
+
+				<div class="magazine-post clearfix">
+					<!-- LOOP START rightbottombanner -->
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="" alt=""/>
+							</a>
+							<div class="caption">
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<!-- LOOP END rightbottombanner -->
+				</div>
+				<div class="banner">
+					<!-- LOOP START rightmiddlespon -->
+					<img src="" alt="" />
+					<!-- LOOP END rightmiddlespon -->
+				</div>
+			</div>
+		</div>
+		<div class="promotion-banner clearfix">
+			<!-- LOOP START bottomspon -->
+			<div class="">
+				<a href="">
+					<img src="" alt="" class="img-responsive" >
+				</a>
+			</div>
+			<!-- LOOP END bottomspon -->
+		</div>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+		
+
+		</script>

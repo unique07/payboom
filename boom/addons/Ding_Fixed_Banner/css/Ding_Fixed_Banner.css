@@ -1,0 +1,39 @@
+@charset "utf-8";
+.ding-fixed-container {
+    position: fixed;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(38, 42, 130, 0.9);
+    z-index: 9999;
+}
+.ding-fixed-container-rel {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(38, 42, 130, 0.9);
+    z-index: 9999;
+}
+.ding-fixed-container .close {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    right: 10px;
+    top: 13px;
+    cursor: pointer;
+}

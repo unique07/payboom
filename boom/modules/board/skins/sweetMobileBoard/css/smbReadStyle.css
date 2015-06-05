@@ -1,0 +1,140 @@
+
+.smbWrap { padding:10px; background:#f4f4f4; overflow:hidden; overflow:hidden; }
+.smbPadding { padding:10px; }
+.smbWhite { background:#fff; border-radius:3px; border:1px solid #ececec; }
+
+.smbArticleHeader { border-bottom:1px solid #ececec; }
+.smbArticleHeader p.smbArticleCategory { font-size:1.1em; color:#08c; margin:5px 0 10px 0; padding:0; }
+.smbArticleHeader h3.smbArticleTitle { color:#333; margin:0; padding:0; font-size:1.4em; }
+.smbArticleHeader ul.smbArticleInfo { overflow:hidden; list-style:none; padding:0; margin:0; }
+.smbArticleHeader ul.smbArticleInfo li { display:inline-block; padding:0 6px; margin:10px 0 0 0; border-left:1px solid #ddd; color:#aaa; }
+.smbArticleHeader ul.smbArticleInfo li:first-child { padding-left:0; border-left:0; }
+.smbArticleHeader ul.smbArticleInfo li i { position:relative; top:1px; margin:0 5px 0 0; }
+
+.smbArticleHeader.left p,
+.smbArticleHeader.left h3,
+.smbArticleHeader.left ul { text-align:left; }
+
+.smbArticleHeader.center p,
+.smbArticleHeader.center h3,
+.smbArticleHeader.center ul { text-align:center; }
+
+.smbArticleHeader.right p,
+.smbArticleHeader.right h3,
+.smbArticleHeader.right ul { text-align:right; }
+
+.smbArticle { border-bottom:1px solid #ececec; overflow:hidden; }
+.smbArticle .smbSecret { overflow:hidden; padding:50px 0; }
+.smbArticle .smbSecret h3 { text-align:center; margin:10px 0; }
+.smbArticle .smbSecret .smbSecretSubmit { float:right; width:80px; }
+.smbArticle .smbSecret .smbSecretSubmit button { width:100%; height:30px; background:#999; color:#fff; border:0; border-radius:3px; }
+.smbArticle .smbSecret .smbSecretText { padding:0 85px 0 0; }
+.smbArticle .smbSecret .smbSecretText input { width:100%; box-sizing:border-box; line-height:30px; border:1px solid #a9a9a9; border-radius:3px; height:30px; padding:3px 5px; }
+
+.smbArticle .smbExtravars { border-collapse:collapse; width:100%; border-bottom:1px solid #ddd; margin-bottom:10px; }
+.smbArticle .smbExtravars tr { border-top:1px solid #ddd; font-size:0.9em; color:#555; }
+.smbArticle .smbExtravars tr th { border-right:1px solid #ddd; padding:8px 5px; text-align:left; }
+.smbArticle .smbExtravars tr td { padding:8px 5px; }
+
+.smbArticle .smbDelete { padding:10px 0 0 0; text-align:right; }
+.smbArticle .smbDelete span { color:#ff6f6f; }
+.smbArticle .smbDelete i { margin:0 5px 0 0; color:#ff6f6f; }
+.smbArticle .ArticleWrap p { font-size:1.13em; line-height:1.6em; }
+
+.smbBottomInfo { overflow:hidden; margin:0; padding:0; list-style:none; }
+.smbBottomInfo li { float:left; border-left:1px solid #ececec; box-sizing:border-box; text-align:center; line-height:38px; height:38px; color:#777; }
+.smbBottomInfo li a { display:block; text-align:center; line-height:38px; height:38px; }
+.smbBottomInfo li:first-child { border-left:0; }
+.smbBottomInfo li.favorite { width:66.6%; }
+.smbBottomInfo li.favorite i { color:red; }
+.smbBottomInfo li.tag { width:16.65%; }
+.smbBottomInfo li.files { width:16.65%; }
+.smbBottomInfo li i { font-size:1.4em; margin-top:1px; display:inline-block; line-height:38px; }
+.smbBottomInfo li.favorite i,
+.smbBottomInfo li.comments i { margin-right:5px; }
+.smbBottomInfo li span { position:relative; top:-2px; }
+.smbBottomInfo li.files.active,
+.smbBottomInfo li.tag.active { color:#000; }
+
+.smbTags { margin-top:6px; display:none; }
+.smbTags .smbTagsTitle { font-size:1.1em; border-bottom:1px solid #ececec; padding:10px 10px 7px 10px; color:#444; }
+.smbTags .smbTagsTitle i { margin-right:5px; }
+.smbTags ul { list-style:none; margin:0; padding:0; }
+.smbTags ul li { border-top:1px solid #eee; padding:10px; color:#555; box-sizing:border-box; overflow:hidden; width:100%; white-space:nowrap; text-overflow: ellipsis; }
+.smbTags ul li:first-child { border-top:0; }
+.smbTags ul li i { margin-right:2px; }
+
+.smbFiles { margin-top:6px; display:none; }
+.smbFiles .smbFilesTitle { font-size:1.1em; border-bottom:1px solid #ececec; padding:10px 10px 7px 10px; color:#444; }
+.smbFiles .smbFilesTitle i { margin-right:5px; }
+.smbFiles ul { list-style:none; margin:0; padding:0; }
+.smbFiles ul li { border-top:1px solid #eee; padding:10px; color:#555; box-sizing:border-box; overflow:hidden; width:100%; white-space:nowrap; text-overflow: ellipsis; }
+.smbFiles ul li:first-child { border-top:0; }
+.smbFiles ul li i { margin-right:2px; }
+
+.smbProfile { margin-top:6px; position:relative; }
+.smbProfile .smbPadding { overflow:hidden; }
+.smbProfile .profile_image { float:left; width:46px; height:46px; background-size:cover; background:center center 0 0; border-radius:26px; box-shadow:0 0 2px rgba(0,0,0,0.4); }
+.smbProfile .profiles { height:46px; }
+.smbProfile .profiles.floatimg { padding-left:56px; }
+.smbProfile .profiles p.author { line-height:26px; height:26px; margin:0; padding:0; color:#333; font-size:1.3em; }
+.smbProfile .profiles p.signature { line-height:20px; height:20px; margin:0; padding:0 17.6% 0 0; box-sizing:border-box; color:#777; font-size:1.037em; overflow:hidden; width:100%; white-space:nowrap; text-overflow: ellipsis; }
+.smbProfile .mailto { position:absolute; width:16.6%; height:66px; border-left:1px solid #ececec; top:0; right:0; }
+.smbProfile .mailto a { display:block; color:#777; text-align:center; font-size:1.8em; }
+.smbProfile .mailto a i { position:relative; top:2px; height:66px; line-height:66px; }
+
+.smbComment { margin-top:6px; }
+.smbComment i { position:relative; top:1px; }
+.smbComment .smbCommentTitle span { display:block; height:16px; line-height:18px; }
+.smbComment .smbCommentTitle span em { font-size:0.9em; color:#aaa; }
+
+.smbCommentAdd { margin:5px 0 10px 0; }
+.smbCommentAdd .smbCommentAddTitle { border:1px solid #ececec; background:#fff; border-radius:3px 3px 0 0; }
+.smbCommentAdd .smbCommentAddTitle i { margin-right:2px; }
+.smbCommentAdd .smbCommentAddComment { border:1px solid #ececec; border-top:0; border-radius:0 0 3px 3px; overflow:hidden; background:#fff; }
+.smbCommentAdd .smbCommentAddComment textarea { outline:0; width:100%; box-sizing:border-box; padding:10px; border:0; margin:0; }
+.smbCommentAdd .smbElse { overflow:hidden; margin:5px 0; }
+.smbCommentAdd .smbElse input[type="submit"] { float:right; height:30px; width:80px; background:#1eb501; border:0; border-radius:3px; color:#fff; }
+.smbCommentAdd .smbElse input[type="submit"].big { height:58px; }
+.smbCommentAdd .elseInfo { padding:0 85px 0 0; margin:0; list-style:none; }
+.smbCommentAdd .elseInfo li { margin-top:3px; }
+.smbCommentAdd .elseInfo li:first-child { margin-top:0; }
+.smbCommentAdd .elseInfo li input { display:block; width:100%; box-sizing:border-box; padding:3px 7px; border:1px solid #ececec; border-radius:3px; line-height:20px; }
+
+.smbCommentList { padding:5px 0; }
+.smbCommentList ul { list-style:none; padding:0; margin:0; }
+.smbCommentList ul li { overflow:hidden; padding:5px 0; }
+.smbCommentList ul li .profile { float:left; width:70px; text-align:center; }
+.smbCommentList ul li .profile .image { display:inline-block; width:40px; height:40px; background-size:cover; background-position:0 0; border-radius:20px; box-shadow:0 0 2px rgba(0,0,0,0.4); }
+.smbCommentList ul li .profile .image.none { background-image:url(../img/img_profile.gif); background-size:cover; }
+.smbCommentList ul li .profile .author { color:#666; overflow:hidden; width:100%; white-space:nowrap; text-overflow: ellipsis; text-align:center; font-size:0.9em; margin-top:2px; }
+.smbCommentList ul li .content { box-sizing:border-box; padding:10px; color:#444; position: relative; background: #ffffff; border: 1px solid #ececec; margin-left:80px; min-height:30px; border-radius:3px; }
+.smbCommentList ul li .content:after, .smbCommentList ul li .content:before { right: 100%; top: 19px; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
+.smbCommentList ul li .content:after { border-color: rgba(255, 255, 255, 0); border-right-color: #ffffff; border-width: 7px; margin-top: -7px; }
+.smbCommentList ul li .content:before { border-color: rgba(236, 236, 236, 0); border-right-color: #ececec; border-width: 8px; margin-top: -8px; }
+.smbCommentList ul li .content .smbSecret { overflow:hidden; padding:0 0 10px 0; }
+.smbCommentList ul li .content .smbSecret .smbCommentSecretTitle { margin:0 0 10px 0;  }
+.smbCommentList ul li .content .smbSecret .smbCommentSecretSubmit { float:right; width:40px; }
+.smbCommentList ul li .content .smbSecret .smbCommentSecretSubmit button { width:40px; background:#999; height:25px; border:0; border-radius:3px; color:#fff; }
+.smbCommentList ul li .content .smbSecret .smbCommentSecretText { padding:0 45px 0 0; }
+.smbCommentList ul li .content .smbSecret .smbCommentSecretText input { width:100%; box-sizing:border-box; line-height:25px; border:1px solid #a9a9a9; border-radius:3px; height:25px; padding:3px 5px; }
+.smbCommentList ul li.indent { padding-left:20px; }
+.smbCommentList ul li.indent:before { display:inline-block; width:9px; height:9px; border-bottom:1px solid #999; border-left:1px solid #999; content:""; position:absolute; left:20px; margin-top:15px; }
+.smbCommentList ul li .action { margin-top:5px; overflow:hidden; }
+.smbCommentList ul li .action a.reply { float:left; color:#666; }
+.smbCommentList ul li .action a.reply i { margin-right:5px; }
+.smbCommentList ul li .action a.reply span { font-size:0.9em; }
+.smbCommentList ul li .action a.delete { float:right; }
+.smbCommentList ul li .action a.delete i { color:#ff6f6f; }
+.smbCommentList ul li .action a.delete span { display:none; }
+
+.smbCommentPagination { overflow:hidden; position:relative; height:30px; padding:10px 0 0 0; border-top:1px solid #cfd1d4; }
+.smbCommentPagination > a { background:#f4f4f4; border:1px solid #cfd1d4; border-radius:3px; display:block; top:10px; position:absolute; height:28px; width:28px; line-height:28px; text-align:center; }
+.smbCommentPagination a.first { left:0; }
+.smbCommentPagination a.last { right:0; }
+.smbCommentPagination a span { display:none; }
+.smbCommentPagination a i { font-size:1.3em; color:#888; position:relative; top:2px; }
+.smbCommentPagination ul { list-style:none; text-align:center; margin:0; padding:0; }
+.smbCommentPagination ul li { display:inline-block; line-height:30px; }
+.smbCommentPagination ul li a,
+.smbCommentPagination ul li b { display:inline-block; width:20px; margin:0 3px; color:#777; text-align:center; border:1px solid #cfd1d4; border-radius:2px; line-height:20px; }

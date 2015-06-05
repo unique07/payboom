@@ -1,0 +1,13 @@
+<!--%import("./filter/logout.xml")-->
+<div class="utility utility-login">
+	<div class="login-id"><span>{$logged_info->nick_name}</span></div>
+	<div class="myinfo">
+		<ul class="list-unstyled clearfix">
+			<li class="pull-left"><a href="/boom/index.php?mid=login&act=dispMemberInfo">나의 정보보기</a>
+			<!--@if(count($newMessage) > 0 )--><a href="/boom/index.php?act=dispCommunicationMessages&mid=login" style="color:#337ab7"><i class="glyphicon glyphicon-envelope"></i></a><!--@end--> 
+			</li>
+			<li class="pull-left"><a href="/boom/index.php?mid=login&act=dispMemberInfo">나의 정보수정</a></li>
+			<li class="pull-left"><a href="{getUrl('act','dispMemberLogout')}">로그 아웃</a></li>
+		</ul>
+	</div>
+</div>

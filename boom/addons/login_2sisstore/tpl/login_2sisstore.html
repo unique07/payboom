@@ -1,0 +1,32 @@
+<block cond="!$is_logged && !$act" >
+<load target="../css/default.css" />
+<div class="isis_login_bg" style="<!--@if($addon_info->is_z_index)-->z-index:{$addon_info->is_z_index};<!--@end-->	<!--@if($addon_info->is_bg)-->background-color:{$addon_info->is_bg};<!--@end--> <!--@if($addon_info->is_bg_t)-->filter: alpha(opacity={$addon_info->is_bg_t}0);opacity: 0.{$addon_info->is_bg_t};<!--@end-->"></div>
+<div class="isis_login_box" style="z-index:{$addon_info->is_z_index};"|cond="$addon_info->is_z_index">
+	<div class="isis_login">
+	    <load target="../filter/login.xml" />
+	    <!--// login -->
+	    <div class="s_login">
+	    	<h1>{$lang->cmd_login}</h1>
+	    	<p class="info">{$addon_info->is_info}</p>
+			<div cond="$XE_VALIDATOR_MESSAGE" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+		        <p>{$XE_VALIDATOR_MESSAGE}</p>
+		    </div>
+	    	<form id="account-signup" action="./" method="post" ruleset="@login" >
+				<fieldset>
+	                <input type="hidden" name="act" value="procMemberLogin" />
+	                <input type="hidden" name="success_return_url" value="{getRequestUriByServerEnviroment()}" />
+					<input name="user_id" class="s_text" type="text" title="<!--@if($member_config->identifier != 'email_address')-->{$lang->user_id}<!--@else-->{$lang->email_address}<!--@end-->" placeholder="<!--@if($member_config->identifier != 'email_address')-->user id<!--@else-->email address<!--@end-->" />
+					<input name="password" class="s_text" type="password" title="{$lang->password}" placeholder="password"/>
+                    <input type="checkbox" name="keep_signed" id="keep_signed" value="Y" />
+					<label for="keep_signed">{$lang->keep_signed}</label>
+	                <input type="submit" class="s_btn" value="{$lang->cmd_login}" style="background-color: {$addon_info->is_btn};"|cond="$addon_info->is_btn"/>
+			        <div class="help">
+			           <a href="{getUrl('act','dispMemberSignUpForm')}">{$lang->cmd_signup}</a>
+			            <a href="{getUrl('act','dispMemberFindAccount')}">{$lang->cmd_find_member_account}</a>
+			        </div>
+	            </fieldset>
+	        </form>
+	    </div>
+	</div>
+</div>
+</block>

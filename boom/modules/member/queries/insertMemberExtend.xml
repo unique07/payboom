@@ -1,0 +1,21 @@
+<query id="insertMemberExtend" action="insert">
+    <tables>
+        <table name="member_extend" />
+    </tables>
+    <columns>
+        <column name="member_srl" var="member_srl" filter="number" notnull="notnull" />
+        <column name="user_id" var="user_id" filter="userid" notnull="notnull" />
+        <column name="authno" var="authno" />
+        <column name="biznm" var="biznm" />
+        <column name="bizno" var="bizno" />
+        <column name="masternm" var="masternm" />
+        <column name="phone" var="phone" />
+        <column name="cellphone" var="cellphone" />
+        <column name="post" var="post" />
+        <column name="address" var="address" />
+        <column name="address_sub" var="address_sub" />
+        <column name="bizproduct" var="bizproduct" />
+        <column name="biz_status" var="biz_status" />
+        <column name="biz_item" var="biz_item" />
+    </columns>
+</query>

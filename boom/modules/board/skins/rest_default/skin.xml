@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">rest default</title>
+    <description xml:lang="ko">
+		rest default
+    </description>
+    <version>1.2.0</version>
+    <date>2014-05-11</date>
+    <author email_address="" link="">
+        <name xml:lang="ko">ahrim</name>
+    </author>
+    <license>GPL v2 or later</license>
+    <extra_vars>
+	<group>
+		<title xml:lang="ko">게시판 기본 설정</title>
+        <var name="bootstrap_js" type="radio" default="N">
+            <title xml:lang="ko">부트스트랩 레이아웃 사용 여부 *도움말중요!</title>
+            <title xml:lang="zh-CN">显示管理设置组</title>
+            <title xml:lang="jp">設定表示</title>
+            <title xml:lang="en">Display Setup</title>
+			<title xml:lang="vi">Cài đặt</title>
+            <title xml:lang="es">Muestra la información de la Configuración</title>
+            <title xml:lang="zh-TW">顯示設置</title>
+            <title xml:lang="tr">Görüntü Ayarları</title>
+            <options value="Y">
+                <title xml:lang="ko">사용 중 (bootstrap 버전 3.x)</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">다른 레이아웃 사용 중 (bootstrap 버전 2.x 포함 타 레이아웃)</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+			<description xml:lang="ko">bootstrap.css 버전이 다른 bootstrap 레이아웃은 다른 레이아웃입니다. 이 게시판 스킨은 3.1.1 사용 중입니다.</description>
+        </var>			
+        <var name="title" type="text">
+            <title xml:lang="ko">게시판 제목</title>
+            <title xml:lang="jp">掲示板タイトル</title>
+            <title xml:lang="zh-CN">版面标题</title>
+            <title xml:lang="en">Title of Board</title>
+			<title xml:lang="vi">Tiêu đề của Board</title>
+            <title xml:lang="es">Title of Board</title>
+            <title xml:lang="zh-TW">討論板標題</title>
+            <title xml:lang="tr">Pano Başlığı</title>
+            <description xml:lang="ko">게시판의 제목을 적어주세요.</description>
+            <description xml:lang="jp">掲示板タイトルを入力して下さい。</description>
+            <description xml:lang="zh-CN">请输入版面标题(留空为不显示)。</description>
+            <description xml:lang="en">Plase input the title of board.</description>
+            <description xml:lang="es">Plase input the title of board.</description>
+            <description xml:lang="zh-TW">請輸入討論板標題(留白為隱藏)。</description>
+            <description xml:lang="tr">Lütfen pano başlığını giriniz.</description>
+        </var>
+        <var name="sub_title" type="text">
+            <title xml:lang="ko">게시판 부제목</title>
+            <title xml:lang="jp">掲示板サブタイトル</title>
+            <title xml:lang="zh-CN">版面副标题</title>
+            <title xml:lang="en">Subtitle of Board</title>
+			<title xml:lang="vi">Tiêu đề phụ</title>
+            <title xml:lang="zh-TW">討論板副標題</title>
+            <title xml:lang="tr">Pano Altbaşlığı</title>
+            <description xml:lang="ko">게시판 제목 옆에 나타날 부제목을 적어주세요.</description>
+            <description xml:lang="jp">掲示板タイトルの隣りに表示されるサブタイトルを入力して下さい。</description>
+            <description xml:lang="zh-CN">请输入版面副标题(留空为不显示)。</description>
+            <description xml:lang="en">Please input the subtitle of board which will be displayed beside of board title.</description>
+			<description xml:lang="vi">Please input the subtitle of board which will be displayed beside of board title.</description>
+            <description xml:lang="es">Please input the subtitle of board which will be displayed beside of board title.</description>
+            <description xml:lang="zh-TW">請輸入討論板副標題(留白為隱藏)。</description>
+        	<description xml:lang="tr">Lütfen, pano başlığının yanında gösterilecek olan, pano altbaşlığını giriniz.</description>
+        </var>
+        <var name="comment" type="textarea">
+            <title xml:lang="ko">게시판 상세 설명</title>
+            <title xml:lang="jp">掲示板の詳細</title>
+            <title xml:lang="zh-CN">版面详细说明</title>
+            <title xml:lang="en">Description of Board</title>
+			<title xml:lang="vi">Mô tả</title>
+            <title xml:lang="es">Description of Board</title>
+            <title xml:lang="zh-TW">討論板說明</title>
+            <title xml:lang="en">Pano Tanımı</title>
+            <description xml:lang="ko">게시판 제목 아래 표시될 설명을 입력할 수 있습니다.</description>
+            <description xml:lang="jp">掲示板タイトルの下に表示される説明文を入力して下さい。</description>
+            <description xml:lang="zh-CN">请输入版面说明(留空为不显示)。</description>
+            <description xml:lang="en">You may input description which will be displayed under the board title.</description>
+			<description xml:lang="vi">You may input description which will be displayed under the board title.</description>
+            <description xml:lang="es">You may input description which will be displayed under the board title.</description>
+            <description xml:lang="zh-TW">請輸入討論板說明(留白為隱藏)。</description>
+            <description xml:lang="tr">Pano başlığının altında gösterilecek olan bir açıklama girebilirsiniz.</description>
+        </var>
+        <var name="subject_cut_size" type="text">
+            <title xml:lang="ko">제목 글자수</title>
+            <title xml:lang="jp">タイトルの文字数</title>
+            <title xml:lang="zh-CN">标题字数</title>
+            <title xml:lang="en">Length of Subject</title>
+			<title xml:lang="vi">Độ dài tiêu đề</title>
+            <title xml:lang="es">Length of Subject</title>
+            <title xml:lang="zh-TW">標題字數</title>
+            <title xml:lang="tr">Konu Uzunluğu</title>
+            <description xml:lang="ko">제목 글자수를 지정할 수 있습니다. (0또는 비워주시면 자르지 않습니다)</description>
+            <description xml:lang="jp">タイトルの文字数を設定します（「0」または空欄の場合は、文字数を制限しません）。</description>
+            <description xml:lang="zh-CN">可以指定标题字数(0或留空为不限)。</description>
+            <description xml:lang="en">You may set length of title. (0 or blank value will not restrict the length)</description>
+			<description xml:lang="vi">You may set length of title. (0 or blank value will not restrict the length)</description>
+            <description xml:lang="es">You may set length of title. (0 or blank value will not restrict the length)</description>
+            <description xml:lang="zh-TW">可指定標題字數(0或留白為不限制)。</description>
+            <description xml:lang="tr">Başlık uzunluğunu seçebilirsiniz. (0 ya da boş bir değer uzunluğu kısıtlamayacaktır.)</description>
+        </var>
+		<var name="content_cut_size" type="text">
+			<title xml:lang="ko">내용 글자수</title>
+			<title xml:lang="jp">内容の文字数</title>
+			<title xml:lang="zh-CN">内容字数</title>
+			<title xml:lang="en">Length of Content</title>
+			<title xml:lang="vi">Độ dài nội dung</title>
+			<title xml:lang="es">Número de letras del Contenidos</title>
+			<title xml:lang="ru">Длина содержания</title>
+			<title xml:lang="zh-TW">內容字數</title>
+			<title xml:lang="tr">İçerik Uzunluğu</title>
+			<description xml:lang="ko">내용 글자수를 지정할 수 있습니다. (기본 240)</description>
+			<description xml:lang="jp">内容の文字数を指定します(デフォルト 240)。</description>
+			<description xml:lang="zh-CN">可以指定要显示的内容字数。(默认为240)</description>
+			<description xml:lang="en">Length of Content can be assigned. (default 240)</description>
+			<description xml:lang="vi">Length of Content can be assigned. (default 240)</description>
+			<description xml:lang="es">El largo del Contenidos puede ser asignado. (Predefinido 240)</description>
+			<description xml:lang="ru">Длина содержания может быть присвоена. (стандарт: 240)</description>
+			<description xml:lang="zh-TW">可以指定要顯示的內容字數。(預設是240)</description>
+			<description xml:lang="tr">İçerik uzunluğu belirlenebilir.(öntanımlı ayar : 240)</description>
+		</var>
+	</group>
+	<group>
+		<title xml:lang="ko">게시판 기본 스타일 설정</title>	
+        <var name="fontsize12" type="radio" default="Y">
+            <title xml:lang="ko">폰트 크기 12px</title>
+            <options value="Y">
+                <title xml:lang="ko">12px (기본)</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">지정안함</title>
+            </options>
+        </var>
+	
+        <var name="default_style" type="radio" default="list">
+            <title xml:lang="ko">기본 형태</title>
+            <title xml:lang="jp">デフォルトスタイル</title>
+            <title xml:lang="zh-CN">默认样式</title>
+            <title xml:lang="en">Default Form</title>
+			<title xml:lang="vi">From mặc định</title>
+            <title xml:lang="es">Formulario por defecto</title>
+            <title xml:lang="zh-TW">預設樣式</title>
+            <title xml:lang="tr">Geçerli Forum</title>
+            <description xml:lang="ko">
+                목록형, 웹진형, 갤러리형 기본 스타일을 지정할 수 있습니다.
+            </description>
+            <options value="list">
+                <title xml:lang="ko">목록 (기본)</title>
+                <title xml:lang="en">list</title>
+				<title xml:lang="vi">Danh sách</title>
+                <title xml:lang="jp">リスト型</title>
+                <title xml:lang="zh-CN">目录型</title>
+                <title xml:lang="es">list</title>
+                <title xml:lang="zh-TW">列表型</title>
+                <title xml:lang="tr">liste</title>
+            </options>
+            <options value="webzine">
+                <title xml:lang="ko">웹진</title>
+                <title xml:lang="en">webzine</title>
+				<title xml:lang="vi">Webzine</title>
+                <title xml:lang="jp">ウェブジン(webzine)型</title>
+                <title xml:lang="zh-CN">新闻型</title>
+                <title xml:lang="es">webzine</title>
+                <title xml:lang="zh-TW">雜誌型</title>
+                <title xml:lang="tr">liste</title>
+            </options>
+            <options value="gallery">
+                <title xml:lang="ko">갤러리</title>
+                <title xml:lang="en">gallery</title>
+            </options>
+            <options value="card">
+                <title xml:lang="ko">카드</title>
+                <title xml:lang="en">card</title>
+            </options>		
+            <options value="blog">
+                <title xml:lang="ko">블로그</title>
+                <title xml:lang="en">blog</title>
+            </options>				
+        </var>
+        <var name="display_setup_button" type="radio" default="Y">
+            <title xml:lang="ko">설정 표시</title>
+            <title xml:lang="zh-CN">显示管理设置组</title>
+            <title xml:lang="jp">設定表示</title>
+            <title xml:lang="en">Display Setup</title>
+			<title xml:lang="vi">Cài đặt</title>
+            <title xml:lang="es">Muestra la información de la Configuración</title>
+            <title xml:lang="zh-TW">顯示設置</title>
+            <title xml:lang="tr">Görüntü Ayarları</title>
+            <options value="Y">
+                <title xml:lang="ko">출력 (기본)</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+        </var>
+        <var name="display_listset_button" type="radio" default="Y">
+            <title xml:lang="ko">웹진형 등 게시판 형태변경 버튼 표시</title>
+            <title xml:lang="zh-CN">显示管理设置组</title>
+            <title xml:lang="jp">設定表示</title>
+            <title xml:lang="en">Display Setup</title>
+			<title xml:lang="vi">Cài đặt</title>
+            <title xml:lang="es">Muestra la información de la Configuración</title>
+            <title xml:lang="zh-TW">顯示設置</title>
+            <title xml:lang="tr">Görüntü Ayarları</title>
+            <options value="Y">
+                <title xml:lang="ko">출력 (기본)</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+        </var>		
+        <var name="display_categoryset_button" type="radio" default="pills">
+            <title xml:lang="ko">카테고리 표시 *도움말중요!!</title>
+            <title xml:lang="zh-CN">显示管理设置组</title>
+            <title xml:lang="jp">設定表示</title>
+            <title xml:lang="en">Display Setup</title>
+			<title xml:lang="vi">Cài đặt</title>
+            <title xml:lang="es">Muestra la información de la Configuración</title>
+            <title xml:lang="zh-TW">顯示設置</title>
+            <title xml:lang="tr">Görüntü Ayarları</title>
+            <options value="pills">
+                <title xml:lang="ko">카드형 (기본)</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>	
+            <options value="pillsa">
+                <title xml:lang="ko">카드형 (위치를 위로)</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>			
+            <options value="tabs">
+                <title xml:lang="ko">탭형</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="dropdown">
+                <title xml:lang="ko">드롭다운형</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>			
+
+            <options value="nonav">
+                <title xml:lang="ko">출력하지 않음</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+			<description xml:lang="ko">카드형(위치를 설정 옆으로)의 경우 게시판형태변경버튼 출력안함시 보이지 않습니다.</description>
+        </var>	
+        <var name="display_categoryset_badge" type="radio" default="N">
+            <title xml:lang="ko">카테고리에 글 수 표시</title>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음 (기본)</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">출력</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+        </var>			
+        <var name="display_listheadset_button" type="radio" default="Y">
+            <title xml:lang="ko">테이블 헤드 표시</title>
+            <title xml:lang="zh-CN">显示管理设置组</title>
+            <title xml:lang="jp">設定表示</title>
+            <title xml:lang="en">Display Setup</title>
+			<title xml:lang="vi">Cài đặt</title>
+            <title xml:lang="es">Muestra la información de la Configuración</title>
+            <title xml:lang="zh-TW">顯示設置</title>
+            <title xml:lang="tr">Görüntü Ayarları</title>
+            <options value="Y">
+                <title xml:lang="ko">출력 (기본)</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+        </var>
+		<var name="thumbnail_heightp" type="text">
+			<title xml:lang="ko">섬네일 가로세로 비율 *도움말중요!!</title>
+			<description xml:lang="ko">섬네일의 가로가 100일 때의 세로 비율을 숫자로 적어주세요. (기본 75 - 섬네일 가로세로가 4:3비율)</description>
+		</var>	
+		<var name="display_list_cthumbnail" type="radio" default="N">
+			<title xml:lang="ko">목록에서 유튜브, 비메오 섬네일 출력 *도움말중요!!</title>
+			<description xml:lang="ko">유튜브, 비메오 링크가 글 내용에 있으면 목록에서 섬네일을 출력합니다. 게시판 속도에 영향을 줄 수도 있으므로 꼭 쓰고 싶으신 분만 쓰세요. 게시판 정보에서 고급의 목록 설정에 요약을 꼭 추가해야합니다.</description>
+            <options value="N">
+                <title xml:lang="ko">적용 안함 (기본)</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">적용</title>
+            </options>		
+		</var>		
+        <var name="duration_new" type="text" default="24">
+            <title xml:lang="ko">new표시 시간 (hours)</title>
+            <title xml:lang="jp">Newの表示時間 (Hours)</title>
+            <title xml:lang="zh-CN">new图标显示时间(hours)</title>
+            <title xml:lang="en">Duration of indication for new item</title>
+			<title xml:lang="vi">Thời gian hiển thị của bài mới</title>
+            <title xml:lang="es">Duration of indication for new item</title>
+            <title xml:lang="zh-TW">new圖案顯示時間(hours)</title>
+            <title xml:lang="tr">Yeni öğenin gösterilme süresi</title>
+            <description xml:lang="ko">새로 등록된 게시물의 new 표시시간을 정할 수 있습니다. </description>
+            <description xml:lang="jp">新しく登録された書き込みに対して「New」の表示時間を設定します。 </description>
+            <description xml:lang="zh-CN">可以设置最新更新主题的new图标显示时间。</description>
+            <description xml:lang="en">You may set the duration of indication for fresh item. </description>
+			<description xml:lang="vi">You may set the duration of indication for fresh item. </description>
+            <description xml:lang="es">You may set the duration of indication for fresh item. </description>
+            <description xml:lang="zh-TW">可設置最新更新主題的new圖案顯示時間。</description>
+        	<description xml:lang="tr">Yeni öğenin ne kadar süre gösterileceğini ayarlayabilirsiniz</description>
+        </var>			
+	</group>
+	<group>
+			<title xml:lang="ko">게시판 리스트형 설정</title>		
+		<var name="display_listtable" type="radio" default="Y">
+            <title xml:lang="ko">리스트형 테이블 목록형태 변경</title>
+            <options value="Y">
+                <title xml:lang="ko">적용 안함(기본)</title>
+            </options>			
+            <options value="N">
+                <title xml:lang="ko">적용</title>
+            </options>
+        </var>
+	</group>	
+	<group>
+			<title xml:lang="ko">게시판 갤러리형 설정</title>				
+		<var name="display_thumbnailborder" type="radio" default="Y">
+            <title xml:lang="ko">갤러리 테두리 적용</title>
+            <options value="Y">
+                <title xml:lang="ko">테두리 적용 (기본)</title>
+            </options>			
+            <options value="N">
+                <title xml:lang="ko">테두리 적용 안함</title>
+            </options>
+        </var>			
+		<var name="display_thumbnailcover" type="radio" default="Y">
+            <title xml:lang="ko">갤러리 커버 선택</title>
+            <options value="button">
+                <title xml:lang="ko">마케팅형 (기본)</title>
+            </options>			
+            <options value="info">
+                <title xml:lang="ko">정보형</title>
+            </options>
+            <options value="flat">
+                <title xml:lang="ko">플랫형</title>
+            </options>			
+        </var>
+		<var name="display_thumbnaileffect" type="radio" default="Y">
+            <title xml:lang="ko">갤러리 커버 마우스오버</title>
+            <options value="Y">
+                <title xml:lang="ko">적용 (기본)</title>
+            </options>			
+            <options value="N">
+                <title xml:lang="ko">적용 안함</title>
+            </options>
+        </var>			
+		<var name="display_thumbnailnum" type="radio" default="four">
+            <title xml:lang="ko">갤러리, 카드형 한줄당 섬네일 개수  *도움말중요!!</title>
+            <options value="four">
+                <title xml:lang="ko">4개 (기본)</title>
+            </options>		
+            <options value="three">
+                <title xml:lang="ko">3개</title>
+            </options>			
+            <options value="two">
+                <title xml:lang="ko">2개</title>
+            </options>		
+			<description xml:lang="ko">갤러리, 카드형 한줄당 섬네일 개수로 크기는 자동으로 변경됩니다. 모바일에선 한개로 고정됩니다. * 가로세로 비율은 4:3으로 고정되어 있으며 수정을 원하시면 위쪽 섬네일 가로세로 비율을 적으세요. 50을 적으시면 가로 세로가 100:50의 비율이 됩니다.</description>			
+        </var>	
+		<var name="display_thumbnail_col" type="text">
+            <title xml:lang="ko">한줄당 섬네일 개수 (커스텀) *도움말중요!!</title>
+			<description xml:lang="ko">갤러리, 카드형 한줄당 섬네일 개수로  부트스트랩 그리드로 적으십시오. col-lg-12 와 같은 형식으로, lg, md, sm, xs 가 브라우저 크기이며 12가 전체 화면 크기입니다. col-lg-3 col-md-4 col-sm-6 col-xs-12 라고 적으시면 섬네일이 브라우저 크기에 따라 각각 4개, 3개, 2개, 1개가 나옵니다.</description>					
+        </var>
+	</group>	
+	<group>
+			<title xml:lang="ko">게시판 웹진형 설정</title>				
+		<var name="display_webzineborder" type="radio" default="Y">
+            <title xml:lang="ko">웹진 테두리 적용</title>
+            <options value="Y">
+                <title xml:lang="ko">테두리 적용 (기본)</title>
+            </options>			
+            <options value="N">
+                <title xml:lang="ko">테두리 적용 안함</title>
+            </options>
+        </var>		
+        <var name="thumbnail_width" type="text" default="280">
+            <title xml:lang="ko">웹진 섬네일 가로크기  *도움말중요!!</title>
+            <description xml:lang="ko">섬네일의 가로 크기를 지정할 수 있습니다. (기본 280px) * 가로세로 비율 변경시 위쪽의 섬네일 가로세로 비율도 적어주세요 (기본 4:3).</description>
+        </var>
+        <var name="thumbnail_height" type="text" default="210">
+            <title xml:lang="ko">웹진 섬네일 세로크기  *도움말중요!!</title>
+            <description xml:lang="ko">섬네일의 세로 크기를 지정할 수 있습니다. (기본 210px) * 가로세로 비율 변경시 위쪽의 섬네일 가로세로 비율도 적어주세요 (기본 4:3).</description>
+        </var>		
+        <var name="thumbnail_type" type="select">
+            <title xml:lang="ko">섬네일 생성 방법</title>
+            <title xml:lang="jp">サムネール生成方法</title>
+            <title xml:lang="zh-CN">缩略图生成方式</title>
+            <title xml:lang="en">Type of Thumbnail</title>
+			<title xml:lang="vi">Kiểu hình nhỏ</title>
+            <title xml:lang="zh-TW">縮圖建立方式</title>
+            <title xml:lang="tr">Küçük Resim Türü</title>
+            <description xml:lang="ko">섬네일 생성 방법을 선택할 수 있습니다.</description>
+            <description xml:lang="jp">サムネールの生成方法を選択します。</description>
+            <description xml:lang="zh-CN">可以选择缩略图生成方式。</description>
+            <description xml:lang="en">Choose the type to create the thumnail.</description>
+			<description xml:lang="vi">Choose the type to create the thumnail.</description>
+            <description xml:lang="zh-TW">可選擇縮圖建立方式。</description>
+            <description xml:lang="tr">Oluşturulacak küçük resmin türünü giriniz.</description>
+            <options value="crop">
+                <title xml:lang="ko">꽉 채우기</title>
+                <title xml:lang="jp">刈り込み</title>
+                <title xml:lang="zh-CN">裁减</title>
+                <title xml:lang="en">crop</title>
+				<title xml:lang="vi">Hình cắt</title>
+                <title xml:lang="zh-TW">裁減</title>
+                <title xml:lang="tr">kırpılmış</title>
+            </options>
+            <options value="ratio">
+                <title xml:lang="ko">비율 맞추기</title>
+                <title xml:lang="jp">比率</title>
+                <title xml:lang="zh-CN">比例</title>
+                <title xml:lang="en">ratio</title>
+				<title xml:lang="vi">Tỷ lệ</title>
+                <title xml:lang="zh-TW">比例</title>
+                <title xml:lang="tr">kırpılmış</title>
+            </options>
+        </var>
+	</group>	
+	<group>
+		<title xml:lang="ko">게시판 카드형 설정</title>				
+		<var name="display_marketing" type="radio" default="N">
+            <title xml:lang="ko">카드 마케팅형 적용</title>
+            <options value="N">
+                <title xml:lang="ko">적용 안함 (기본)</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">적용</title>
+            </options>			
+        </var>
+		<var name="display_cardthumb" type="radio" default="N">
+            <title xml:lang="ko">카드 테두리 적용</title>
+            <options value="Y">
+                <title xml:lang="ko">테두리 적용 (기본)</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">테두리 적용 안함</title>
+            </options>			
+        </var>		
+	</group>	
+	<group>
+		<title xml:lang="ko">미디어 게시판 기능 사용시 설정 (확장변수명 video 사용)</title>				
+		<var name="display_videoplay" type="radio" default="N">
+            <title xml:lang="ko">비디오 플레이 사용시 전체보기 사용</title>
+			<description xml:lang="ko">먼저 확장변수명을 video로 만드셔야합니다. 모바일에서는 유튜브 연속재생이 불가능합니다. 사용자동영상만 연속재생 가능합니다. * 카드,갤러리의 마케팅형에서는 목록에 영상보기 버튼이 뜨지 않습니다.</description>
+            <options value="N">
+                <title xml:lang="ko">적용 안함 (기본)</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">적용</title>
+            </options>					
+        </var>	
+		<var name="display_videoplaylistuse" type="radio" default="Y">
+            <title xml:lang="ko">전체보기 사용시  리스트 보이기</title>
+            <options value="Y">
+                <title xml:lang="ko">적용 (기본)</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">적용 안함</title>
+            </options>				
+        </var>	
+		<var name="display_videoplaylist" type="radio" default="Y">
+            <title xml:lang="ko">비디오 플레이 사용시 리스트에서도 보이기</title>
+            <options value="N">
+                <title xml:lang="ko">적용 안함 (기본)</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">적용</title>
+            </options>					
+        </var>			
+		<var name="display_videoplaydoc" type="radio" default="Y">
+            <title xml:lang="ko">비디오 플레이 사용시 본문에서도 보이기</title>
+            <options value="Y">
+                <title xml:lang="ko">적용 (기본)</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">적용 안함</title>
+            </options>					
+        </var>		
+		<var name="display_videoplaydocname" type="radio" default="Y">
+            <title xml:lang="ko">비디오 플레이 사용시 본문에서 주소 출력</title>
+            <options value="Y">
+                <title xml:lang="ko">적용 (기본)</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">적용 안함</title>
+            </options>					
+        </var>			
+		<var name="display_videoplaywidth" type="text">
+            <title xml:lang="ko">비디오 플레이 팝업창 가로크기</title>
+			<description xml:lang="ko">숫자만 입력하세요. 기본 800</description>
+        </var>		
+		<var name="display_videoplayheight" type="text">
+            <title xml:lang="ko">비디오 플레이 팝업창 세로크기</title>
+			<description xml:lang="ko">숫자만 입력하세요. 기본 500</description>
+        </var>	
+		<var name="display_youtubelink" type="text">
+            <title xml:lang="ko">비디오 플레이 옆 리스트 사용시 커버 영상 *도움말중요!!</title>
+			<description xml:lang="ko">리스트에서 유튜브와 사용자동영상(mov,flv등)을 동시에 사용하려면 제일 처음 유튜브 영상이 들어가야 합니다. 제일 처음에 보이고 싶은 유튜브 주소창 주소 혹은 공유주소를 넣어주세요.이 동영상의 제목 및 내용으로 나오는 것은 videolist.html 에서 수정하세요. 설정이 복잡하다면 제일 처음에 보이고 싶은 유튜브 영상을 공지로 만드세요.</description>
+            <options value="N">
+                <title xml:lang="ko">적용 안함 (기본)</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">적용</title>
+            </options>					
+        </var>	
+	</group>	
+	<group>
+		<title xml:lang="ko">글쓰기 설정</title>			
+		<var name="write_option" type="checkbox">
+			<title xml:lang="ko">쓰기 옵션 기본값 설정</title>
+			<options value="secret">
+				<title xml:lang="ko">비밀글 기본 체크</title>
+			</options>
+		</var>
+	</group>	
+	<group>
+		<title xml:lang="ko">본문 설정</title>	
+        <var name="display_viewdocumentlist" type="radio" default="Y">
+            <title xml:lang="ko">본문에 목록 보이기</title>
+            <options value="Y">
+                <title xml:lang="ko">출력 (기본)</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+        </var>	
+        <var name="display_commentwrite" type="radio" default="N">
+            <title xml:lang="ko">본문에 댓글 입력 창 보이기</title>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음 (기본)</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">출력</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+		</var>
+		<var name="cmt_wrt_position" type="radio" default="cmt_wrt_btm">
+			<title xml:lang="ko">댓글 에디터 위치</title>
+			<options value="cmt_wrt_btm">
+				<title xml:lang="ko">댓글 목록 아래(기본)</title>
+			</options>
+			<options value="cmt_wrt_top">
+				<title xml:lang="ko">댓글 목록 위</title>
+			</options>
+		</var>
+		<var name="display_profileimg_width" type="text">
+            <title xml:lang="ko">댓글 프로필 사진 넓이</title>
+			<description xml:lang="ko">기본 100px</description>
+        </var>	
+		<var name="display_profileimg_height" type="text">
+            <title xml:lang="ko">댓글 프로필 사진 높이</title>
+			<description xml:lang="ko">기본 75px</description>
+        </var>				
+		<var name="display_photogallery" type="radio" default="N">
+            <title xml:lang="ko">파일첨부시 이미지 파일 슬라이드갤러리 적용</title>
+            <options value="N">
+                <title xml:lang="ko">적용안함 (기본)</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">적용</title>
+            </options>					
+        </var>	
+		<var name="display_photogalleryheight" type="text">
+            <title xml:lang="ko">이미지 파일 갤러리 높이</title>
+			<description xml:lang="ko">비워두시면 이미지 크기에 따라 변합니다. 숫자만 넣으세요.</description>
+        </var>	
+        <var name="display_ip_address" type="select">
+            <title xml:lang="ko">ip 주소</title>
+            <title xml:lang="zh-CN">显示管理设置组</title>
+            <title xml:lang="jp">設定表示</title>
+            <title xml:lang="en">Display Setup</title>
+			<title xml:lang="vi">Cài đặt</title>
+            <title xml:lang="es">Muestra la información de la Configuración</title>
+            <title xml:lang="zh-TW">顯示設置</title>
+            <title xml:lang="tr">Görüntü Ayarları</title>
+            <options value="Y">
+                <title xml:lang="ko">출력</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+        </var>			
+        <var name="display_sign" type="select">
+            <title xml:lang="ko">서명 표시</title>
+			<title xml:lang="vi">Chữ kí</title>
+            <title xml:lang="jp">署名表示</title>
+            <title xml:lang="zh-CN">显示签名</title>
+            <title xml:lang="en">서명 표시</title>
+            <title xml:lang="es">서명 표시</title>
+            <title xml:lang="zh-TW">顯示簽名檔</title>
+            <title xml:lang="tr">His Simgelerinizi Gösterin</title>
+            <description xml:lang="ko">글내용 사용자의 서명과 프로필 이미지를 표시하거나 숨길 수 있습니다. 프로필 이미지의 가로, 세로 길이는 회원 설정에서 설정한 프로필 이미지의 가로 세로 제한 길이입니다.</description>
+			<description xml:lang="vi">글내용 사용자의 서명과 프로필 이미지를 표시하거나 숨길 수 있습니다.</description>
+            <description xml:lang="jp">本文内で会員の署名とプロフィルイメージの表示を設定します。</description>
+            <description xml:lang="zh-CN">可以设置主题发布者的个人签名及个性头像显示与否。</description>
+            <description xml:lang="en">글내용 사용자의 서명과 프로필 이미지를 표시하거나 숨길 수 있습니다.</description>
+            <description xml:lang="es">글내용 사용자의 서명과 프로필 이미지를 표시하거나 숨길 수 있습니다.</description>
+            <description xml:lang="zh-TW">可選擇是否在文章中顯示個人圖片和簽名檔</description>
+            <description xml:lang="tr">His simgelerinizi ve ya imzanızı gösterip-göstermeyeceğinizi düzenleyebilirsiniz</description>
+            <options value="Y">
+                <title xml:lang="ko">출력</title>
+                <title xml:lang="en">display</title>
+				<title xml:lang="vi">Hiển thị</title>
+                <title xml:lang="jp">表示</title>
+                <title xml:lang="zh-CN">显示</title>
+                <title xml:lang="es">display</title>
+                <title xml:lang="zh-TW">顯示</title>
+                <title xml:lang="tr">görüntüle</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+                <title xml:lang="en">not display</title>
+				<title xml:lang="vi">Không hiển thị</title>
+                <title xml:lang="jp">非表示</title>
+                <title xml:lang="zh-CN">不显示</title>
+                <title xml:lang="es">not display</title>
+                <title xml:lang="zh-TW">隱藏</title>
+                <title xml:lang="tr">görüntüleme</title>
+            </options>
+        </var>		
+	</group>	
+	</extra_vars>
+</skin>
+

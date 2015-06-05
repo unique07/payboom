@@ -1,0 +1,168 @@
+<div class="row">
+<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skins/default/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+<div class="col-lg-12">
+<div class="panel panel-default">
+	<div class="panel-heading" style="display:none">
+	회원정보
+	</div>
+	<!-- /.panel-heading -->
+	<div class="panel-body">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs">
+			<li class="active" onClick="self.location='/boom/index.php?act=dispMemberInfo&amp;mid=login'"><a href="#home" data-toggle="tab" aria-expanded="true">회원정보 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispMemberScrappedDocument&amp;mid=login'"><a href="#profile" data-toggle="tab" aria-expanded="false">스크랩 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispMemberSavedDocument&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">저장함 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispMemberOwnDocument&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">작성 글 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispCommunicationFriend&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">친구 보기</a>
+			</li>
+			<li onClick="self.location='/boom/index.php?act=dispCommunicationMessages&amp;mid=login'"><a href="#settings" data-toggle="tab" aria-expanded="false">쪽지함보기</a>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div class="tab-pane fade active in" id="home">
+				<h5><span class="glyphicon glyphicon-circle-arrow-right"></span>회원정보</h5>
+				<div class="form-horizontal">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="form-group">
+								<label for="user_id" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 아이디</label>
+								<div class="col-lg-4 col-md-4 col-sm-2">
+									<input type="text" class="input-user" id="user_name" name="user_name" value="{$memberInfo[user_id]}" readonly/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="user_name" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 이름</label>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input type="text" class="input-user" id="user_name" name="user_name" value="{$memberInfo[user_name]}" readonly/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="nick_name" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 닉네임</label>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input type="text" class="input-user" id="nick_name" name="nick_name" value="{$memberInfo[nick_name]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="email_address" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 이메일</label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<input type="email" class="input-user" id="email_address" name="email_address" value="{$memberInfo[email_address]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="profile_image" class="col-lg-4 col-md-4 col-sm-2 control-label"> 프로파일사진</label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<img src="{$memberInfo[profile_image]->src}" />
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<h5><span class="glyphicon glyphicon-circle-arrow-right"></span>사업자(법인)정보</h5>
+					<!--@if($logged_info->is_admin == "N")-->
+					<div class="panel panel-default">
+						<div class="panel-body text-center">사업자 회원 입니다.</div>
+					</div>
+					<!--@else-->
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="form-group">
+								<label for="biznm" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 상호(법인)명</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" name="biznm" class="input-user" id="biznm" value="{$memberInfo[biznm]}" readonly />
+									<span id="result"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="bizno" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 사업자번호</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="input-user" id="bizno" name="bizno" value="{$memberInfo[bizno]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="masternm" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em>  대표자명</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="input-user" id="masternm" name="masternm" value="{$memberInfo[masternm]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="phone" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 전화번호</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="input-user" id="phone" name="phone" value="{$memberInfo[phone]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="cellphone" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 핸드폰번호</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="input-user" id="cellphone" name="cellphone" value="{$memberInfo[cellphone]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="address_sub" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 주소</label>
+								<div class="col-xs-3">
+									<input type="text" class="input-user" id="post" name="post" value="{$memberInfo[post]}" readonly />
+									<span id="result"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputID" class="col-lg-4 col-md-4 col-sm-2 control-label"></label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<input type="text" class="input-user" id="address" name="address" value="{$memberInfo[address]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputID" class="col-lg-4 col-md-4 col-sm-2 control-label"></label>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<input type="text" class="input-user" id="address_sub" name="address_sub" value="{$memberInfo[address_sub]}" readonly />
+								</div>
+							</div>
+					
+							<div class="form-group">
+								<label for="bizproduct" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 사업자상품</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="input-user" id="bizproduct" name="bizproduct" value="{$memberInfo[bizproduct]}" readonly />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="biz_status" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 업태</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="input-user" id="biz_status" name="biz_status" value="{$memberInfo[biz_status]}" readonly />
+								</div>
+							</div>
+					
+							<div class="form-group">
+								<label for="biz_item" class="col-lg-4 col-md-4 col-sm-2 control-label"><em style="color:red">*</em> 종목</label>
+								<div class="col-lg-4 col-md-4 col-sm-5">
+									<input type="text" class="input-user" id="biz_item" name="biz_item" value="{$memberInfo[biz_item]}" readonly />
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--@end-->
+				</div><!-- form -->
+				
+			</div>
+			<div class="btnArea btn-group" cond="$memberInfo['member_srl'] == $logged_info->member_srl">
+				<a href="{getUrl('act', 'dispMemberModifyEmailAddress')}" class="btn" cond="$member_config->identifier == 'email_address'">{$lang->cmd_modify_member_email_address}</a>
+				<a href="{getUrl('act','dispMemberModifyInfo','member_srl','')}" class="btn">{$lang->cmd_modify_member_info}</a>
+				<a href="{getUrl('act','dispMemberModifyPassword','member_srl','')}" class="btn">{$lang->cmd_modify_member_password}</a>
+				<a href="{getUrl('act','dispMemberLeave','member_srl','')}" class="btn">{$lang->cmd_leave}</a>
+			</div>
+		</div>
+	</div>
+	<!-- /.panel-body -->
+</div>
+</div>
+</div>
+<script>
+jQuery(function(){
+	document.title = '회원정보';		
+});
+</script>

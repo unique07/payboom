@@ -1,0 +1,65 @@
+/* English */
+
+@font-face {
+    font-family: 'crn-rg';
+    src: url('/fonts/Chrono-Regular.eot');
+    src: url('/fonts/Chrono-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Chrono-Regular.woff') format('woff'),
+    url('/fonts/Chrono-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'crn-bd';
+    src: url('/fonts/Chrono-Bold.eot');
+    src: url('/fonts/Chrono-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Chrono-Bold.woff') format('woff'),
+    url('/fonts/Chrono-Bold.ttf')  format('truetype');
+}
+/* Additional Family (if you needs)
+@font-face {
+    font-family: 'crn-lt';
+    src: url('/fonts/Chrono-Light.eot');
+    src: url('/fonts/Chrono-Light.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Chrono-Light.woff') format('woff'),
+        url('/fonts/Chrono-Light.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'crn-md';
+    src: url('/fonts/Chrono-Medium.eot');
+    src: url('/fonts/Chrono-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Chrono-Medium.woff') format('woff'),
+    url('/fonts/Chrono-Medium.ttf')  format('truetype');
+}
+*/
+
+
+/* Korean */
+@font-face {
+    font-family: 'NanumBarunGothic';
+    src: url('/fonts/NanumBarunGothicWeb.eot');
+    src: url('/fonts/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/NanumBarunGothicWeb.woff') format('woff'),
+        url('/fonts/NanumBarunGothicWeb.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumBarunGothicBold';
+    src: url('/fonts/NanumBarunGothicWebBold.eot');
+    src: url('/fonts/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/NanumBarunGothicWebBold.woff') format('woff'),
+        url('/fonts/NanumBarunGothicWebBold.ttf') format('truetype');
+}
+/* Additional Family (if you needs)
+@font-face {
+    font-family: 'NanumBarunGothicLight';
+    src: url('/fonts/NanumBarunGothicWebBold.eot');
+    src: url('/fonts/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/NanumBarunGothicWebBold.woff') format('woff'),
+        url('/fonts/NanumBarunGothicWebBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumBareunGothicUltraLight';
+    src: url('/fonts/NanumBarunGothicWebUltraLight.eot');
+    src: url('/fonts/NanumBarunGothicWebUltraLight.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/NanumBarunGothicWebUltraLight.woff') format('woff'),
+        url('/fonts/NanumBarunGothicWebUltraLight.ttf') format('truetype');
+}
+*/

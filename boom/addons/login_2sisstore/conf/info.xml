@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">로그인 해!</title>
+	<description xml:lang="ko">
+		로그인이 안되면 전체창 가운데에 로그인 창을 뿌려줍니다.
+	</description>
+	<version>1.0.1</version>
+	<date>2015-01-27</date>
+	<author email_address="2sis@2sisdesign.com" link="http://2sisstore.com/">
+		<name xml:lang="ko">착한악마</name>
+	</author>
+	<extra_vars>
+		<group>
+			<title>설정</title>
+			<var name="is_z_index" type="text">
+				<title xml:lang="ko">z-index값</title>
+				<description xml:lang="ko">z-index값을 입력해주세요. 기본 9999</description>
+			</var>
+			<var name="is_bg" type="text">
+				<title xml:lang="ko">팝업 배경색</title>
+				<description xml:lang="ko">팝업 배경색을 입력해주세요. 기본 #222</description>
+			</var>
+			<var name="is_bg_t" type="text">
+				<title xml:lang="ko">팝업 배경 투명도</title>
+				<description xml:lang="ko">1~9을 입력해주세요. 기본은 불투명입니다.</description>
+			</var>
+			<var name="is_info" type="textarea">
+				<title xml:lang="ko">설명글</title>
+				<description xml:lang="ko">기본적으로 설명글을 넣으세요.</description>
+			</var>
+			<var name="is_btn" type="text">
+				<title xml:lang="ko">버튼색</title>
+				<description xml:lang="ko">버튼색을 입력해주세요. 기본 #5cb6e7</description>
+			</var>
+		</group>
+	</extra_vars>
+</addon>

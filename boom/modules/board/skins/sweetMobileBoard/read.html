@@ -1,0 +1,200 @@
+{@ Context::addJsFile("./common/js/jquery.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/js_app.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/common.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/xml_handler.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/xml_js_filter.js", true, '', -100000) }
+{@ Context::loadLang('./modules/board/m.skins/default/lang')}
+<!--%import("js/mboard.js")-->
+<!--%import("css/smbReadStyle.css")-->
+<!--#include("_setting.html")-->
+<div class="sweetMobileBoard">
+	<div class="smbWhite">
+		<!--//  게시글의 제목, 글쓴이, 날짜, 댓글수 등을 보여주는 박스입니다.  //-->
+		<div class="smbPadding smbArticleHeader {$module_info->article_title_align}">
+			<p class="smbArticleCategory" cond="$module_info->use_category == 'Y' && $oDocument->get('category_srl')">
+				[ {$category_list[$oDocument->get('category_srl')]->title} ]
+			</p>
+			<h3 class="smbArticleTitle">
+				{$oDocument->getTitle()}
+			</h3>
+			<ul class="smbArticleInfo">
+				<li><i class="xe-user"></i>{$oDocument->getNickName()}</li>
+				<li><i class="xe-time-o"></i>{$oDocument->getRegdate()}</li>
+				<li><i class="xe-comment-list"></i>{$oDocument->getCommentCount()}</li>
+			</ul>
+		</div>
+		<!--//  게시글의 본문을 보여주는 박스입니다.  //-->
+		<div class="smbPadding smbArticle">
+			<!--@if($oDocument->isSecret() && !$oDocument->isGranted())-->
+			<!--//  게시글이 비밀글일 경우 하단 Form 창을 표시합니다.  //-->
+			<form action="./" method="get" class="smbSecret" onsubmit="return procFilter(this, input_password)">
+				<input type="hidden" name="mid" value="{$mid}" />
+				<input type="hidden" name="page" value="{$page}" />
+				<input type="hidden" name="document_srl" value="{$oDocument->document_srl}" />
+				<h3>{$lang->msg_is_secret}</h3>
+				<div class="smbSecretSubmit">
+					<button type="submit">{$lang->cmd_input}</button>
+				</div>
+				<div class="smbSecretText">
+					<input type="password" name="password" id="cpw" />
+				</div>
+			</form>
+			<!--@else-->
+			<!--@if($oDocument->isExtraVarsExists())-->
+			<table class="smbExtravars">
+				<!--@foreach($oDocument->getExtraVars() as $key => $val)-->
+				<tr>
+					<th>{$val->name}</th>
+					<td>{$val->getValueHTML()}</td>
+				</tr>
+				<!--@end-->
+			</table>
+			<!--@end-->
+			<div class="ArticleWrap">
+				{$oDocument->getContent(false)}
+			</div>
+			<!--@end-->
+			<p class="smbDelete" cond="$oDocument->isEditable()"><a href="{getUrl('act','dispBoardDelete','document_srl',$oDocument->document_srl,'comment_srl','')}" class="bn"><i class="xe-wastebasket"></i><span>{$lang->cmd_delete}</span></a></p>
+		</div>
+		<!--//  추천수, 공유, 첨부파일 다운로드 버튼을 보여줍니다.  //-->
+		<ul class="smbBottomInfo">
+			<li class="favorite"><a href="#" onclick="doCallModuleAction('document','procDocumentVoteUp','{$document_srl}');return false;"><i class="xe-love-o"></i><span>{$lang->cmd_vote} {$oDocument->get('voted_count')}</span></a></li>
+			<li class="tag"><i class="xe-bookmark-left"></i></li>
+			<li class="files"><i class="xe-download-my"></i></li>
+		</ul>
+	</div>
+	<!--//  태그 목록을 보여줍니다.  //-->
+	<!--//  사실 이곳에 소셜서비스로 공유하기 버튼을 만들려고 하였으나... 귀찮아서 패스 다음기회에..  //-->
+	<div class="smbWhite smbTags">
+		<p class="smbTagsTitle"><i class="xe-bookmark-left"></i>{$lang->tag}{$lang->cmd_list}</p>
+		<ul>
+			<li cond="!count($tag_list)">{$lang->not_exists}</li>
+			<block cond="count($tag_list)">
+			<!--@for($i=0;$i<count($tag_list);$i++)-->
+				{@ $tag = $tag_list[$i]; }
+				<li>
+					<a href="{getUrl('search_target','tag','search_keyword',$tag,'document_srl','')}" class="tag" rel="tag">
+						{htmlspecialchars($tag)}
+					</a>
+				</li>
+			<!--@end-->
+			</block>
+		</ul>
+	</div>
+	<!--//  첨부파일 목록을 보여줍니다.  //-->
+	<div class="smbWhite smbFiles">
+		<p class="smbFilesTitle"><i class="xe-download-my"></i>{$lang->uploaded_file}{$lang->filebox_list}</p>
+		<ul class="files">
+			<li cond="!$oDocument->getUploadedFiles()">{$lang->not_exists}</li>
+			<li loop="$oDocument->getUploadedFiles()=>$key,$file">
+				<i class="xe-file"></i>
+				<a href="{getUrl('')}{$file->download_url}">{$file->source_filename}</a>
+			</li>
+		</ul>	
+	</div>
+	<!--//  작성자 정보를 보여줍니다. 네임카드  //-->
+	<block cond="$module_info->name_card == 'y'">
+		<div class="smbWhite smbProfile" cond="$module_info->display_sign!='N'&&($oDocument->getProfileImage()||$oDocument->getSignature())">
+			<div class="smbPadding">
+				<div class="profile_image" style="background-image:url({$oDocument->getProfileImage()});" cond="$module_info->display_sign!='N'&&$oDocument->getProfileImage()"></div>
+				<div class="profiles<!--@if($oDocument->getProfileImage())--> floatimg<!--@end-->">
+					<p class="author">{$oDocument->getNickName()}</p>
+					<p class="signature" cond="$oDocument->getSignature()">{$oDocument->getSignature()}</p>
+					<p class="signature" cond="!$oDocument->getSignature()">{$oDocument->get('email_address')}</p>
+				</div>
+			</div>
+			<div class="mailto">
+				<a href="mailto:{$oDocument->get('email_address')}"><i class="xe-mail-at"></i></a>
+			</div>
+		</div>
+	</block>
+	<!--//  지금부터 댓글입니다.  //-->
+	<!--//  댓글을 등록하는 Form을 보여줍니다.  //-->
+	<form action="./" method="post" class="smbCommentAdd" onsubmit="return procFilter(this, insert_comment);">
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="document_srl" value="{$oDocument->document_srl}" />
+		<input type="hidden" name="comment_srl" value="" />
+		<div class="smbPadding smbCommentAddTitle">
+			<i class="xe-message-bubble"></i>{$lang->write_comment}
+		</div>
+		<div class="smbCommentAddComment">
+			<textarea name="content" rows="4" cols="42" id="rText" placeholder="{$lang->comment}"></textarea>
+		</div>
+		<div class="smbElse">
+			<input name="" type="submit" value="{$lang->cmd_comment_registration}" class="big"|cond="!$is_logged" />
+			<ul class="elseInfo" cond="!$is_logged">
+				<li>
+					<input name="nick_name" type="text" id="uName" placeholder="{$lang->writer}" />
+				</li>
+				<li>
+					<input name="email_address" type="email" id="uMail" placeholder="{$lang->email_address}" />
+				</li>
+				<li>
+					<input name="password" type="password" id="uPw" placeholder="{$lang->password}" />
+				</li>
+				<li>
+					<input name="homepage" type="url" id="uSite" value="http://" placeholder="{$lang->homepage}" />
+				</li>
+			</ul>
+		</div>
+	</form>
+	<!--//  댓글 목록임을 알려주는 제목박스를 보여줍니다.  //-->
+	<div class="smbWhite smbComment" id="comment" cond="$oDocument->getComments()">
+		<div class="smbPadding smbCommentTitle">
+			<span><i class="xe-comment-list"></i> {$lang->comment} {$lang->cmd_list} <em>[{$oDocument->getCommentCount()}]</em></span>
+		</div>
+	</div>
+	<!--//  댓글 목록을 보여줍니다.  //-->
+	<div class="smbCommentList" cond="$oDocument->getComments()">
+		<ul cond="$oDocument->getCommentcount()" class="fbList">
+			<li loop="$oDocument->getComments()=>$key,$comment" class="fbItem"|cond="!$comment->get('depth')" class="fbItem indent indent{($comment->get('depth'))}"|cond="$comment->get('depth')" id="comment_{$comment->comment_srl}">
+				<div class="profile">
+					<div class="image" style="background-image:url({$comment->getProfileImage()});" cond="$comment->getProfileImage()"></div>
+					<div class="image none" cond="!$comment->getProfileImage()"></div>
+					<p class="author">{$comment->getNickName()}</p>
+				</div>
+				<div class="content">
+					<!--@if(!$comment->isAccessible())-->
+					<!--//  비밀 댓글일 경우 비밀번호 입력창을 표시합니다.  //-->
+					<form action="./" method="get" class="smbSecret" onsubmit="return procFilter(this, input_password)">
+						<input type="hidden" name="mid" value="{$mid}" />
+						<input type="hidden" name="page" value="{$page}" />
+						<input type="hidden" name="document_srl" value="{$comment->get('document_srl')}" />
+						<input type="hidden" name="comment_srl" value="{$comment->get('comment_srl')}" />
+						<p class="smbCommentSecretTitle"><label for="cpw_{$comment->comment_srl}">{$lang->msg_is_secret} {$lang->msg_input_password}</label></p>
+						<div class="smbCommentSecretSubmit">
+							<button type="submit">{$lang->cmd_input}</button>
+						</div>
+						<div class="smbCommentSecretText">
+							<input type="password" name="password" id="cpw_{$comment->comment_srl}" class="iText" />
+						</div>
+					</form>
+					<!--@else-->
+					{$comment->getContent(false)}
+					<!--@end-->
+					<p class="action">
+						<a cond="$oDocument->allowComment()" href="{getUrl('act','dispBoardReplyComment','comment_srl',$comment->comment_srl)}" class="reply"><i class="xe-share-l"></i><span>{$lang->cmd_reply}</span></a>
+						<a cond="$comment->isGranted()||!$comment->get('member_srl')" href="{getUrl('act','dispBoardDeleteComment','comment_srl',$comment->comment_srl)}" class="delete"><i class="xe-wastebasket"></i><span>{$lang->cmd_delete}</span></a>
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--//  댓글 수가 지나치게 많을경우 이전,다음 버튼을 노출하여 구분합니다.  //-->
+	<div cond="$oDocument->comment_page_navigation" class="smbCommentPagination">
+		<a class="first" href="{getUrl('cpage',1)}#comment" class="direction prev">
+			<i class="xe-angle-double-left"></i>
+			<span>{$lang->first_page}</span>
+		</a> 
+		<ul class="paginations">
+			<li loop="$page_no=$oDocument->comment_page_navigation->getNextPage()">
+				<b cond="$cpage==$page_no">{$page_no}</b> 
+				<a cond="$cpage!=$page_no" href="{getUrl('cpage',$page_no)}#comment">{$page_no}</a>
+			</li>
+		</ul>
+		<a class="last" href="{getUrl('cpage',$oDocument->comment_page_navigation->last_page)}#comment" class="direction next">
+			<i class="xe-angle-double-right"></i>
+			<span>{$lang->last_page}</span>
+		</a>
+	</div>
+</div>

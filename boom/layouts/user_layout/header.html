@@ -1,0 +1,213 @@
+<div class="tamper">
+  <!--배너 -->
+	<img class="zbxe_widget_output" widget="padoLittleBanner" skin="default" image="http://www.payboom.co.kr/images/banner/tob_banner.jpg" />
+	<span class="remove"><img src="/img/icon-close-blk.png" class="img-responsive"></span>
+</div>
+<header>
+	<div class="logo text-center">
+		<a href="/"><img src="/images/img/payboom_logo.png" title="payboom"></a>
+	</div>
+	<div class="search-form hidden-xs">
+		<form action="/boom/search" method="get" class="form-inline" role="form">
+			<input type="hidden" name="vid" value="{$vid}" />
+			<input type="hidden" name="mid" value="search" />
+			<input type="hidden" name="act" value="IS" />
+			<div class="form-group">
+				<input type="text" class="form-control input-sm" id="txt_search" name="is_keyword" value="{$is_keyword}" />
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default btn-sm">검색</button>
+			</div>
+			<!--
+			<div class="form-group">
+				<button type="submit" class="btn btn-default btn-sm"><div class="glyphicon glyphicon-search top_search"></div></button>
+			</div>
+			-->
+		</form>
+	</div>
+	<div class="wrapper visible-md visible-lg visible-sm hidden-xs">
+		<div class="globalNavi clearfix">
+			<ul class="navi list-unstyled clearfix pull-left">
+				<li class="pull-left<?if($_GET[mid] == "tboom" || $_GET[mid] == "fashion" || $_GET[mid] == "wantboom") echo " selected"?>"><a href="/boom/tboom"><b>페이붐</b></a></li>
+			</ul>
+			<ul class="navi list-unstyled clearfix pull-left">
+				<li class="pull-left<?if($_GET[mid] == "review" || $_GET[mid] == "news" || $_GET["mid"] == 'useful') echo " selected"?>""><a href="/boom/review"><b>정보</b></a></li>
+			</ul>
+			<ul class="navi list-unstyled clearfix pull-left">
+				<li class="pull-left<?if($_GET[mid] == "brand" || $_GET[mid] == "free" || $_GET[mid] == "market") echo " selected"?>""><a href="/boom/brand"><b>커뮤니티</b></a></li>
+			</ul>
+			<ul class="navi list-unstyled clearfix pull-left">
+				<li class="pull-left<?if($_GET[mid] == "event") echo " selected"?>""><a href="/boom/event"><b>이벤트</b></a></li>
+			</ul>
+			<ul class="navi list-unstyled clearfix pull-left">
+				<li class="pull-left<?if($_GET[mid] =="notice" || $_GET[mid] == "faq") echo " selected"?>""><a href="/boom/notice"><b>이용안내</b></a></li>
+			</ul>
+			<!-- 
+			<ul class="navi list-unstyled clearfix pull-left">
+				<li class="pull-left<?if($_GET[mid] == "agent") echo " selected"?>"><a href="/boom/agent"><b>방판신청</b></a></li>
+			</ul>
+			 -->
+			<?if(Context::get('is_logged')) { //로그인 사용자?>			
+			<ul class="navi list-unstyled clearfix pull-left">
+				<li class="pull-left<?if($_GET[mid] == "charged") echo " selected"?>"><a href="/boom/charged"><b>유료서비스신청</b></a></li>
+			</ul>
+			<?}?>			  
+		</div>
+		<img class="zbxe_widget_output" widget="login_sunoo" skin="payboom" line_type="ro" search_use="Y" keep_signed="Y" level_use="Y" point_use="Y" latest_login="Y" />
+					<div class="gnb-depth clearfix">
+			<?if($_GET[mid] == "tboom" || $_GET[mid] == "fashion" || $_GET[mid] == "wantboom") {?>
+			<ul class="list-unstyled clearfix pull-left">
+				<li class="pull-left m1"><a href="/boom/tboom"<?if($_GET[mid] == "tboom") echo " class=\"selected\""?>><B>티붐</B></a></li>
+				<li class="pull-left m1"><a href="/boom/fashion"<?if($_GET[mid] == "fashion") echo " class=\"selected\""?>><B>패션붐</B></a></li>
+				<li class="pull-left m1"><a href="/boom/wantboom"<?if($_GET[mid] == "wantboom") echo " class=\"selected\""?>><B>워너붐</B></a></li>
+				<!-- <li class="pull-left m2"><a href="/boom/fashion"<?if($_GET[category] == "") echo " class=\"selected\""?>><B>패션붐</B></a></li>
+				<li class="pull-left m2"><a href="/boom/payboom?category=160"<?if($_GET[category] == "160") echo " class=\"selected\""?>>SKT</a></li>
+				<li class="pull-left m3"><a href="/boom/payboom?category=161"<?if($_GET[category] == "161") echo " class=\"selected\""?>>KT</a></li>
+				<li class="pull-left m4"><a href="/boom/payboom?category=256"<?if($_GET[category] == "256") echo " class=\"selected\""?>>LGU+</a></li>
+				<li class="pull-left m6"><a href="/boom/payboom?category=177"<?if($_GET[category] == "177") echo " class=\"selected\""?>>MVNO</a></li>
+				<li class="pull-left m5"><a href="/boom/payboom?category=253"<?if($_GET[category] == "253") echo " class=\"selected\""?>><B>지역</B?</a></li> -->
+			</ul>
+			<?}?>
+			
+			<?if($_GET[mid] == "review" || $_GET[mid] == "news" || $_GET["mid"] == 'useful') {?>
+			<ul class="list-unstyled clearfix pull-left">
+				<li class="pull-left m1"><a href="/boom/review"<?if($_GET[mid] == "review") echo " class=\"selected\""?>><B>구매후기</B></a></li>
+				<li class="pull-left m2"><a href="/boom/news"<?if($_GET[mid] == "news") echo " class=\"selected\""?>><B>뉴스</B></a></li>
+				<li class="pull-left m2"><a href="/boom/useful"<?if($_GET[mid] == "useful") echo " class=\"selected\""?>><B>유용정보</B></a></li>
+			</ul>
+			<?}?>
+
+			<?if($_GET[mid] == "brand" || $_GET[mid] == "free" || $_GET[mid] == "market") {?>
+			<ul class="list-unstyled clearfix pull-left">
+				<li class="pull-left m1"><a href="/boom/brand"<?if($_GET[mid] == "brand") echo " class=\"selected\""?>><B>브랜드-업체정보</B></a></li>
+				<li class="pull-left m2"><a href="/boom/free"<?if($_GET[mid] == "free") echo " class=\"selected\""?>><B>자유게시판</B></a></li>
+				<li class="pull-left m3"><a href="/boom/market"<?if($_GET[mid] == "market") echo " class=\"selected\""?>><B>장터</B></a></li>
+			</ul>
+			<?}?>
+			<?if($_GET[mid] == "notice" || $_GET["mid"] == "faq") {?>
+			<ul class="list-unstyled clearfix pull-left">
+				<li class="pull-left m1"><a href="/boom/notice"<?if($_GET[mid] == "notice") echo " class=\"selected\""?>>공지사항</a></li>
+				<li class="pull-left m2"><a href="/boom/faq"<?if($_GET[mid] == "faq") echo " class=\"selected\""?>>FAQ</a></li>
+			</ul>
+			<?}?>
+		</div>
+	</div>
+</header>
+<div class="modal-fade"></div>
+<nav class="mobile hidden-lg hidden-md hidden-sm visible-xs">
+	<!-- <div class="modal-fade"></div> -->
+	<span class="toggleButton" id="toggleButton1">
+		<span class="inner"></span>
+	</span>
+	<img class="zbxe_widget_output" widget="login_sunoo" skin="payboom_mobile" line_type="ro" search_use="Y" keep_signed="Y" level_use="Y" point_use="Y" latest_login="Y" />
+	<div class="globalNavi">
+		<ul class="list-unstyled">
+
+			<li class="c01">
+				<a href="/boom/tboom">티붐</a>
+				<ul class="list-unstyled clearfix gnb-depth">
+					<li class="pull-left">
+						<a href="index.php?mid=tboom&category=160">SK텔레콤</a>
+					</li>
+					<li class="pull-left">
+						<a href="index.php?mid=tboom&category=161">KT</a>
+					</li>
+					<li class="pull-left">
+						<a href="index.php?mid=tboom&category=162">LGU+</a>
+					</li>
+					<li class="pull-left">
+						<a href="index.php?mid=tboom&category=177">MVNO</a>
+					</li>
+					<li class="pull-left">
+						<a href="index.php?mid=tboom&category=253">지역</a>
+					</li>
+		</ul>
+
+					<li>
+			  <a href="/boom/fashion">패션붐</a>
+			 <ul class="list-unstyled gnb-depth">
+			  <li>
+						<a href="/boom/index.php?mid=fashion&category=266">IT악세사리</a>
+					  </li>
+					   <li>
+						<a href="/boom/index.php?mid=fashion&category=267">의류잡화</a>
+					   </li>
+					  </ul>
+					  </li>
+
+			  <li>
+			  <a href="/boom/wantboom">워너붐</a>
+					  </li>
+			<!-- 
+			  <li>
+			  <a href="/boom/agent">방판신청</a>
+			 </li>
+			 -->
+			 <?if(Context::get('is_logged')) { //로그인 사용자?>
+			  <li>
+			  <a href="/boom/charged">유료서비스 신청</a>
+					  </li>
+			<?}?>
+		  <li>
+			<a href="/boom/review">정보</a>
+			 <ul class="list-unstyled gnb-depth">
+		  <li>
+						  <a href="/boom/review">구매후기</a>
+					  </li>
+					  <li>
+						<a href="/boom/news">뉴스</a>
+					  </li>
+					  <li>
+						<a href="/boom/useful">유용정보</a>
+					  </li>
+						</ul>
+		 </li>
+
+			 <li>
+			<a href="/boom/brand">커뮤니티</a>
+			 <ul class="list-unstyled gnb-depth">
+		  <li>
+						  <a href="/boom/brand">브랜드.업체정보</a>
+					  </li>
+					  <li>
+						<a href="/boom/free">자유게시판</a>
+					  </li>
+					  <li>
+						<a href="/boom/market">장터</a>
+					  </li>
+						</ul>
+		 </li>
+
+		 <li>
+					<a href="/boom/event">이벤트</a>
+				 </li>
+				  <li>
+			<a href="/boom/notice">이용안내</a>
+			 <ul class="list-unstyled gnb-depth">
+		   <li>
+					   <a href="/boom/notice">공지사항</a>
+				  </li>
+				  <li>
+					  <a href="/boom/free">FAQ</a>
+				  </li>
+					   </ul>
+		  </li>
+
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="search-form">
+		<form action="/boom/search" method="get" class="form-inline" role="form">
+			<input type="hidden" name="vid" value="{$vid}" />
+			<input type="hidden" name="mid" value="search" />
+			<input type="hidden" name="act" value="IS" />
+			<div class="form-group col-xs-8">
+				<input type="text" class="form-control input-sm" name="is_keyword" id="txt_search" value="{$is_keyword}">
+			</div>
+			<div class="form-group col-xs-3">
+				<button type="submit" class="btn btn-default btn-sm search-form-btn" style="height: 30px!important;">검색</button>
+			</div>
+		</form>
+	</div>
+</nav>

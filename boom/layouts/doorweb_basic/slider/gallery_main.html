@@ -1,0 +1,154 @@
+<style>
+.gallery_section{position:relative;z-index:1;margin:0 auto;-webkit-box-sizing:content-box; -o-box-sizing:content-box; -moz-box-sizing:content-box; box-sizing:content-box;}
+.ce .in_content{padding:0;padding-right:10px;}
+.ec .in_content{padding:0;padding-left:10px;}
+@media screen and (max-width:1160px){
+.gallery_section{width:760px}
+}
+@media screen and (max-width:759px){
+.gallery_section{width:630px}
+.gallery_section .box{width:50%}
+.box_max{height:290px;}
+.box_max .middle_box{height:270px}
+}
+@media only screen and (min-width: 533px) and (max-width: 639px) { 
+.gallery_section{width:520px}
+.box_max{height:260px;}
+.box_max .middle_box{height:240px}
+}
+@media screen and (max-width:532px){
+.gallery_section{width:100%;height:auto;}
+}
+@media screen and (max-width:532px){
+.wrap_box,
+.gallery_section .box{width:100%;height:auto;}
+.middle_box,
+.box_max,
+.box_max .middle_box{height:auto}
+}
+</style>
+							
+							
+							
+							<div class="gallery_section">
+								<div class="widgetDW_gallery" cond="$layout_info->gallery_style1&&(!Mobile::isMobileCheckByAgent()||!$layout_info->gallery_mobile1)">
+									<h2 cond="$layout_info->gallery_title1&&$layout_info->gallery_title_bg1!=='title_bgD'" class="h2_widget_gallery {$layout_info->gallery_title_bg1}">
+										<a class="h2_widget_a" href="{$layout_info->gallery_url1}">{$layout_info->gallery_title1}</a>
+									</h2>
+									<h2 cond="$layout_info->gallery_title1&&$layout_info->gallery_title_bg1=='title_bgD'" class="title_bgD">
+										<span>{$layout_info->gallery_title1}</span>
+										<a class="h2_widget_a" href="{$layout_info->ec_url1}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+									</h2>
+									<block cond="$layout_info->gallery_style1=='A'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid1}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+51}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list1}" cols_list_count="2" page_count="1" subject_cut_size="40" content_cut_size="120" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+									</div>
+									</block>
+									<block cond="$layout_info->gallery_style1=='B'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid1}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+51}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list1}" cols_list_count="2" page_count="1" subject_cut_size="30" content_cut_size="90" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="90" thumbnail_height="90" />
+									</div>
+									</block>
+								</div>
+
+								<div class="widgetDW_gallery" cond="$layout_info->gallery_style2&&(!Mobile::isMobileCheckByAgent()||!$layout_info->gallery_mobile2)">
+									<h2 cond="$layout_info->gallery_title2&&$layout_info->gallery_title_bg2!=='title_bgD'" class="h2_widget_gallery {$layout_info->gallery_title_bg2}">
+										<a class="h2_widget_a" href="{$layout_info->gallery_url2}">{$layout_info->gallery_title2}</a>
+									</h2>
+									<h2 cond="$layout_info->gallery_title2&&$layout_info->gallery_title_bg2=='title_bgD'" class="title_bgD">
+										<span>{$layout_info->gallery_title2}</span>
+										<a class="h2_widget_a" href="{$layout_info->ec_url2}"><span>more</span><i class="fa fa28 fa-plus"></i></a>
+									</h2>
+									<block cond="$layout_info->gallery_style2=='A'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid2}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+52}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list2}" cols_list_count="2" page_count="1" subject_cut_size="40" content_cut_size="120" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+									</div>
+									</block>
+									<block cond="$layout_info->gallery_style2=='B'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid2}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+52}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list2}" cols_list_count="2" page_count="1" subject_cut_size="30" content_cut_size="90" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="90" thumbnail_height="90" />
+									</div>
+									</block>
+								</div>
+
+								<div class="widgetDW_gallery" cond="$layout_info->gallery_style3&&(!Mobile::isMobileCheckByAgent()||!$layout_info->gallery_mobile3)">
+									<h2 cond="$layout_info->gallery_title3&&$layout_info->gallery_title_bg3!=='title_bgD'" class="h2_widget_gallery {$layout_info->gallery_title_bg3}">
+										<a class="h2_widget_a" href="{$layout_info->gallery_url3}">{$layout_info->gallery_title3}</a>
+									</h2>
+									<h2 cond="$layout_info->gallery_title3&&$layout_info->gallery_title_bg3=='title_bgD'" class="title_bgD">
+										<span>{$layout_info->gallery_title3}</span>
+										<a class="h2_widget_a" href="{$layout_info->ec_url3}"><span>more</span><i class="fa fa38 fa-plus"></i></a>
+									</h2>
+									<block cond="$layout_info->gallery_style3=='A'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid3}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+53}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list3}" cols_list_count="2" page_count="1" subject_cut_size="40" content_cut_size="120" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+									</div>
+									</block>
+									<block cond="$layout_info->gallery_style3=='B'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid3}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+53}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list3}" cols_list_count="2" page_count="1" subject_cut_size="30" content_cut_size="90" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="90" thumbnail_height="90" />
+									</div>
+									</block>
+								</div>
+
+								<div class="widgetDW_gallery" cond="$layout_info->gallery_style4&&(!Mobile::isMobileCheckByAgent()||!$layout_info->gallery_mobile4)">
+									<h2 cond="$layout_info->gallery_title4&&$layout_info->gallery_title_bg4!=='title_bgD'" class="h2_widget_gallery {$layout_info->gallery_title_bg4}">
+										<a class="h2_widget_a" href="{$layout_info->gallery_url4}">{$layout_info->gallery_title4}</a>
+									</h2>
+									<h2 cond="$layout_info->gallery_title4&&$layout_info->gallery_title_bg4=='title_bgD'" class="title_bgD">
+										<span>{$layout_info->gallery_title4}</span>
+										<a class="h2_widget_a" href="{$layout_info->ec_url4}"><span>more</span><i class="fa fa48 fa-plus"></i></a>
+									</h2>
+									<block cond="$layout_info->gallery_style4=='A'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid4}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+54}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list4}" cols_list_count="2" page_count="1" subject_cut_size="40" content_cut_size="120" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+									</div>
+									</block>
+									<block cond="$layout_info->gallery_style4=='B'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid4}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+54}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list4}" cols_list_count="2" page_count="1" subject_cut_size="30" content_cut_size="90" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="90" thumbnail_height="90" />
+									</div>
+									</block>
+								</div>
+
+								<div class="widgetDW_gallery" cond="$layout_info->gallery_style5&&(!Mobile::isMobileCheckByAgent()||!$layout_info->gallery_mobile5)">
+									<h2 cond="$layout_info->gallery_title5&&$layout_info->gallery_title_bg5!=='title_bgD'" class="h2_widget_gallery {$layout_info->gallery_title_bg5}">
+										<a class="h2_widget_a" href="{$layout_info->gallery_url5}">{$layout_info->gallery_title5}</a>
+									</h2>
+									<h2 cond="$layout_info->gallery_title5&&$layout_info->gallery_title_bg5=='title_bgD'" class="title_bgD">
+										<span>{$layout_info->gallery_title5}</span>
+										<a class="h2_widget_a" href="{$layout_info->ec_url5}"><span>more</span><i class="fa fa58 fa-plus"></i></a>
+									</h2>
+									<block cond="$layout_info->gallery_style5=='A'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid5}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+55}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list5}" cols_list_count="2" page_count="1" subject_cut_size="40" content_cut_size="120" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+									</div>
+									</block>
+									<block cond="$layout_info->gallery_style5=='B'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid5}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+55}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list5}" cols_list_count="2" page_count="1" subject_cut_size="30" content_cut_size="90" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="90" thumbnail_height="90" />
+									</div>
+									</block>
+								</div>
+
+								<div class="widgetDW_gallery" cond="$layout_info->gallery_style6&&(!Mobile::isMobileCheckByAgent()||!$layout_info->gallery_mobile6)">
+									<h2 cond="$layout_info->gallery_title6&&$layout_info->gallery_title_bg6!=='title_bgD'" class="h2_widget_gallery {$layout_info->gallery_title_bg6}">
+										<a class="h2_widget_a" href="{$layout_info->gallery_url6}">{$layout_info->gallery_title6}</a>
+									</h2>
+									<h2 cond="$layout_info->gallery_title6&&$layout_info->gallery_title_bg6=='title_bgD'" class="title_bgD">
+										<span>{$layout_info->gallery_title6}</span>
+										<a class="h2_widget_a" href="{$layout_info->ec_url6}"><span>more</span><i class="fa fa68 fa-plus"></i></a>
+									</h2>
+									<block cond="$layout_info->gallery_style6=='A'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid6}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+56}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list6}" cols_list_count="2" page_count="1" subject_cut_size="40" content_cut_size="120" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+									</div>
+									</block>
+									<block cond="$layout_info->gallery_style6=='B'">
+									<div class="in_widget">
+										<img class="zbxe_widget_output" widget="doorweb_content" skin="defaultB" content_type="document" module_srls="{$layout_info->gallery_mid6}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+56}" widget_cache="1" markup_type="table" list_count="{$layout_info->gallery_list6}" cols_list_count="2" page_count="1" subject_cut_size="30" content_cut_size="90" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="90" thumbnail_height="90" />
+									</div>
+									</block>
+								</div>
+								
+							</div>

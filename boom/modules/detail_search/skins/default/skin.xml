@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">상세 검색 기본 스킨</title>
+	<title xml:lang="en">DetailSearch Default Skin </title>
+    <description xml:lang="ko">상세검색 모듈의 기본 스킨</description>
+    <description xml:lang="en">The Default Skin of the Detail Search Module</description>
+    <version>0.1</version>
+    <date>2012-06-30</date>
+
+    <author email_address="jeokcho@naver.com" link="http://www.xiso.co.kr/">
+        <name xml:lang="ko">Xiso</name>
+        <name xml:lang="en">Xiso</name>
+    </author>
+	
+	<license>GPL v2</license>
+	
+    <colorset>
+        <color name="normal" src="screenshot/normal.gif">
+            <title xml:lang="ko">기본</title>
+            <title xml:lang="en">Default</title>
+        </color>
+    </colorset>
+</skin>

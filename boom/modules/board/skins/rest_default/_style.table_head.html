@@ -1,0 +1,23 @@
+<thead>
+	<!--// 테이블 헤더 -->
+	<tr>
+		<block loop="$list_config=>$key,$val">
+		<th scope="col" cond="$val->type=='no' && $val->idx==-1" class="hidden-xs width70 text-center"><a href="{getUrl('order_type',$order_type)}" title="<!--@if($order_type=="desc")-->{$lang->order_desc}<!--@else-->{$lang->order_asc}<!--@end-->">{$lang->no} <i cond="$sort_index=='no'" class="fa <!--@if($order_type=="desc")-->fa-caret-down<!--@else-->fa-caret-up<!--@end--> fa-fw"></i></a></th>
+		<block cond="$val->type=='title' && $val->idx==-1">
+		<th scope="col" cond="$mi->use_category=='Y'" class="hidden-xs tablecate">{$lang->category}</th>
+		<th scope="col" class="text-center"><a href="{getUrl('sort_index','title','order_type',$order_type)}">{$lang->title} <i cond="$sort_index=='title'" class="fa <!--@if($order_type=="desc")-->fa-caret-down<!--@else-->fa-caret-up<!--@end--> fa-fw"></i></a></th>
+		</block>
+		<th scope="col" cond="$val->type=='nick_name' && $val->idx==-1" class="hidden-xs tableuser">{$lang->writer}</th>
+		<th scope="col" cond="$val->type=='user_id' && $val->idx==-1" class="hidden-xs tableuser">{$lang->user_id}</th>
+		<th scope="col" cond="$val->type=='user_name' && $val->idx==-1" class="hidden-xs tableuser">{$lang->user_name}</th>
+		<th scope="col" cond="$val->type=='regdate' && $val->idx==-1" class="tabledate"><a href="{getUrl('sort_index','regdate','order_type',$order_type)}">{$lang->date}<i cond="$sort_index=='regdate'" class="fa <!--@if($order_type=="desc")-->fa-caret-down<!--@else-->fa-caret-up<!--@end--> fa-fw"></i></a></th>
+		<th scope="col" cond="$val->type=='last_update' && $val->idx==-1" class="hidden-xs tabledate"><a href="{getUrl('sort_index','last_update','order_type',$order_type)}">최근수정<i cond="$sort_index=='last_update'" class="fa <!--@if($order_type=="desc")-->fa-caret-down<!--@else-->fa-caret-up<!--@end--> fa-fw"></i></a></th>
+		<th scope="col" cond="$val->type=='last_post' && $val->idx==-1" class="hidden-xs tabledate">{$lang->last_post}</th>
+		<th scope="col" cond="$val->type=='readed_count' && $val->idx==-1" class="hidden-xs width70"><a href="{getUrl('sort_index','readed_count','order_type',$order_type)}">조회<i cond="$sort_index=='readed_count'" class="fa <!--@if($order_type=="desc")-->fa-caret-down<!--@else-->fa-caret-up<!--@end--> fa-fw"></i></a></th>
+		<th scope="col" cond="$val->type=='voted_count' && $val->idx==-1" class="hidden-xs width70"><a href="{getUrl('sort_index','voted_count','order_type',$order_type)}">추천<i cond="$sort_index=='voted_count'" class="fa <!--@if($order_type=="desc")-->fa-caret-down<!--@else-->fa-caret-up<!--@end--> fa-fw"></i></a></th>
+		<th scope="col" cond="$val->type=='blamed_count' && $val->idx==-1" class="hidden-xs width70"><a href="{getUrl('sort_index','blamed_count','order_type',$order_type)}">비추천<i cond="$sort_index=='blamed_count'" class="fa <!--@if($order_type=="desc")-->fa-caret-down<!--@else-->fa-caret-up<!--@end--> fa-fw"></i></a></th>
+		<th scope="col" cond="$val->idx!=-1" class="hidden-xs <!--@if($val->eid=='video')-->width50<!--@else-->width70<!--@end-->"><!--@if($val->eid=='video')-->{$val->name}<!--@else--><a href="{getUrl('sort_index',$val->eid,'order_type',$order_type)}">{$val->name}</a><!--@end--></th>
+		</block>
+		<th scope="col" cond="$grant->manager" class="width30"><input class="checkbox" type="checkbox" onclick="XE.checkboxToggleAll({ doClick:true });" title="Check All" /></th>
+	</tr>
+</thead>

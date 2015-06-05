@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+body {
+	font-family: "NanumBarunGothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+* {
+	font-size: 12px;
+}
+a {
+	color: #333;
+	/*display: block;*/
+}
+
+a,
+a:visited,
+a:focus,
+a:hover {
+	text-decoration: none;
+}
+.text-danger {
+	color: #f00;
+}
+.img-responsive {
+	width: 100%;
+}
+.media:first-child {
+	margin-top: 15px;
+}
+.media > .pull-left {
+	margin: 0;
+}
+.glyphicon {
+	font-size: 14px;
+ }
+.pagination > li > a, .pagination > li > span {
+	color: #333;
+	border: none;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background-color: #337ab7;
+}
+.btn-group.open .dropdown-toggle {
+	box-shadow: none;
+}
+.breadcrumb li a {
+	display: inline-block;
+	color: #999;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+	vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+	.pagination > li > a,
+	.pagination > li > span {
+		padding: 5px 8px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

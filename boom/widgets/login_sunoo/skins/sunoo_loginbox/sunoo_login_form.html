@@ -1,0 +1,101 @@
+<!--// sunoo's box type login skin for Xpress Engine. Layout Design by Sunoo (http://www.goodpr.me/) -->
+
+<!--%import("css/sunoo_loginbox.css")-->
+<!--%import("./filter/login.xml")-->
+<!--%import("./filter/openid_login.xml")-->
+<!--%import("./js/login.js")-->
+
+<!--// login_widget set width -->
+  <!--@if(!$widget_info->box_width)--> {@ $widget_info->box_width = 170 } <!--@end-->
+    {@ $fieldset_width = ($widget_info->box_width) + 12 }
+    {@ $idpwWrap_width = ($widget_info->box_width) - 10 }
+    {@ $idpw_width = ($idpwWrap_width) - 60 }
+    {@ $input_width = ($idpw_width) - 5 }
+    
+  <!--@if($widget_info->line_type=='an')-->
+     <style type="text/css"> .sunooLogbox form { padding:10px 10px 8px 10px; border:1px solid #d9d9d9; } 
+            .openid_sunooLogbox form { padding:10px 10px 8px 10px; border:1px solid #d9d9d9; } 
+     </style><!--@end-->
+  <!--@if($widget_info->line_type=='no')-->
+     <style type="text/css"> .sunooLogbox form { padding:10px 10px 8px 10px; background:none; border:0px solid #d9d9d9; } 
+            .openid_sunooLogbox form { padding:10px 10px 8px 10px; background:none; border:0px solid #d9d9d9; } 
+     </style><!--@end-->
+  <!--@if($widget_info->bg_color)-->
+     <style type="text/css"> .sunooLogbox form { background:{$widget_info->bg_color}; } 
+            .openid_sunooLogbox form { background:{$widget_info->bg_color}; } 
+     </style><!--@else--><!--@end-->
+     
+<script type="text/javascript">
+    var keep_signed_msg = "{$lang->about_keep_signed}";
+    xAddEventListener(window, "load", function(){ doFocusUserId("fo_login_widget"); });
+</script>
+
+<div id="login" class="sunooLogbox" style="width:{$fieldset_width}px;">
+<!--@if($widget_info->line_type=='ro')-->
+<table border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody class="wtbox">
+<tr><td class="tda" valign="top"></td><td class="tdb" valign="top"></td><td class="tdc" valign="top"></td></tr>
+<tr><td class="tdd" valign="top"></td><td class="tde" valign="top"><!--@else--><!--@end-->
+<form action="./" method="post" onsubmit="return procFilter(this, widget_login)" id="fo_login_widget" style="width:{$idpwWrap_width}px;">
+  <div class="swidpwWrap" style="width:{$idpwWrap_width}px;">
+    <div class="swidpw" style="width:{$idpw_width}px;">
+      <input name="user_id" type="text" title="user id" onfocus="this.className='swidIn';" onblur="if(!this.value) this.className='swidOut'" class="swidOut" style="width:{$input_width}px;" />
+      <input name="password" type="password" title="password" onfocus="this.className='swpwIn';" onblur="if(!this.value) this.className='swpwOut'" class="swpwOut" style="width:{$input_width}px;" />
+    </div>
+      <input type="image" src="./images/buttonLogin.gif" alt="login" class="swbuttonLogin" />
+  </div>
+<!--@if($member_config->enable_ssl=='Y')-->
+    <p class="securitySignIn <!--@if($ssl_mode)-->SSL<!--@else-->noneSSL<!--@end-->">
+      <a href="#" onclick="toggleSecuritySignIn(); return false;">{$lang->security_sign_in}</a>
+    </p><!--@end-->
+    <ul class="swsave">
+       <!--@if($widget_info->keep_signed=='Y')-->
+        <li class="keepcheck">
+        <input type="checkbox" name="keep_signed" id="keepid" value="Y" onclick="if(this.checked) return confirm(keep_signed_msg);" />
+        <label for="keepid">{$lang->keep_signed}</label></li><!--@else--><!--@end-->
+        <!--@if($member_config->enable_openid=='Y')-->
+        <li class="openidcheck">
+        <input name="use_open_id" id="use_open_id" type="checkbox" value="Y" onclick="toggleLoginForm(this); return false;" />
+        <label for="use_open_id">Open ID</label></li><!--@end-->
+    </ul>
+    <ul class="swhelp">
+        <li><a href="{getUrl('act','dispMemberSignUpForm')}"><strong>{$lang->cmd_signup}</strong></a></li>
+        <li><a href="{getUrl('act','dispMemberFindAccount')}">{$lang->cmd_find_member_account}</a></li>
+        <li><a href="{getUrl('act','dispMemberResendAuthMail')}">{$lang->cmd_resend_auth_mail}</a></li>
+    </ul>
+</form> <!--@if($widget_info->line_type=='ro')-->
+</td><td class="tdf" valign="top"></td></tr>
+<tr><td class="tdg" valign="top"></td><td class="tdh" valign="top"></td><td class="tdi" valign="top"></td></tr>
+</tbody></table><!--@else--><!--@end-->
+</div>
+
+<!--// OpenID -->
+<!--@if($member_config->enable_openid=='Y')-->
+<div id="openid_login" class="openid_sunooLogbox" style="display:none; width:{$fieldset_width}px;">
+<!--@if($widget_info->line_type=='ro')-->
+<table border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody class="wtbox">
+<tr><td class="tda" valign="top"></td><td class="tdb" valign="top"></td><td class="tdc" valign="top"></td></tr>
+<tr><td class="tdd" valign="top"></td><td class="tde" valign="top"><!--@else--><!--@end-->
+  <form action="{getUrl('module','member','act','procMemberOpenIDLogin')}" method="post" onsubmit="return procFilter(this, openid_login)" style="width:{$idpwWrap_width}px;">
+      <div class="swidpwWrap" style="width:{$idpwWrap_width}px;">
+        <div class="swidpw" style="width:{$idpw_width}px;">
+          <p>{$lang->openid}</p>
+          <input type="text" name="openid" onfocus="this.className='swopidIn';" onblur="if(!this.value) this.className='swopidOut'" class="swopidOut" style="width:{$input_width}px;" />
+        </div>
+        <input type="image" src="./images/buttonLogin.gif" alt="login" class="swlogin" />
+      </div>
+      <p class="swsave">
+          <input name="use_open_id" id="use_open_id_2" type="checkbox" value="Y" onclick="toggleLoginForm(this); return false;"/>
+          <label for="use_open_id_2">Open ID</label>
+      </p>
+  </form><!--@if($widget_info->line_type=='ro')-->
+</td><td class="tdf" valign="top"></td></tr>
+<tr><td class="tdg" valign="top"></td><td class="tdh" valign="top"></td><td class="tdi" valign="top"></td></tr>
+</tbody></table><!--@else--><!--@end-->
+</div>
+<!--@end-->
+
+<script type="text/javascript">
+  xAddEventListener(window, "load", function(){ doFocusUserId("fo_login_widget"); });
+</script>

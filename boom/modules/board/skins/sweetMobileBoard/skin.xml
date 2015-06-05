@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">HandyXE Sweet Mobile 게시판스킨</title>
+    <title xml:lang="en">HandyXE Sweet Mobile board skin</title>
+    <description xml:lang="ko">
+		XE Contest 2014 디자인 출품작과 잘 어울리는 게시판스킨입니다.
+    </description>
+    <description xml:lang="en">
+		HandyXE mobile board skin
+    </description>
+    <version>1.2</version>
+    <date>2015-01-23</date>
+    <author email_address="dlehdanakf@xdt.kr" link="http://www.handyxe.com/">
+        <name xml:lang="ko">이동현</name>
+        <name xml:lang="en">Dong Hyun LEE</name>
+    </author>
+    <extra_vars>
+        <var name="list_style" type="select" default="list">
+            <title xml:lang="ko">게시물 목록 정렬</title>
+            <title xml:lang="en">Align of articles list</title>
+            <description xml:lang="ko">
+                게시글 목록의 정렬스타일을 설정합니다.
+            </description>
+            <description xml:lang="en">
+                Setting the alignment of articles list.
+            </description>
+            <options value="list">
+                <title xml:lang="ko">리스트형</title>
+                <title xml:lang="en">list</title>
+            </options>
+            <options value="card">
+                <title xml:lang="ko">카드형</title>
+                <title xml:lang="en">card</title>
+            </options>
+        </var>
+		<var name="view_category" type="select" default="Y">
+			<title xml:lang="ko">카데고리 표시</title>
+			<title xml:lang="en">View category</title>
+			<options value="Y">
+				<title xml:lang="ko">예, 표시합니다</title>
+				<title xml:lang="en">Yes</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">아니오, 표시하지 않습니다.</title>
+				<title xml:lang="en">No</title>
+			</options>
+		</var>
+		<var name="view_regdate" type="select" default="Y">
+			<title xml:lang="ko">작성일 표시</title>
+			<title xml:lang="en">View RegDate</title>
+			<options value="Y">
+				<title xml:lang="ko">예, 표시합니다</title>
+				<title xml:lang="en">Yes</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">아니오, 표시하지 않습니다.</title>
+				<title xml:lang="en">No</title>
+			</options>
+		</var>
+		<var name="view_author" type="select" default="Y">
+			<title xml:lang="ko">작성자 표시</title>
+			<title xml:lang="en">View author</title>
+			<options value="Y">
+				<title xml:lang="ko">예, 표시합니다</title>
+				<title xml:lang="en">Yes</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">아니오, 표시하지 않습니다.</title>
+				<title xml:lang="en">No</title>
+			</options>
+		</var>
+		<var name="view_vote" type="select" default="Y">
+			<title xml:lang="ko">추천수 표시</title>
+			<title xml:lang="en">View voted count</title>
+			<options value="Y">
+				<title xml:lang="ko">예, 표시합니다</title>
+				<title xml:lang="en">Yes</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">아니오, 표시하지 않습니다.</title>
+				<title xml:lang="en">No</title>
+			</options>
+		</var>
+		<var name="view_comment" type="select" default="Y">
+			<title xml:lang="ko">댓글수 표시</title>
+			<title xml:lang="en">View comment</title>
+			<options value="Y">
+				<title xml:lang="ko">예, 표시합니다</title>
+				<title xml:lang="en">Yes</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">아니오, 표시하지 않습니다.</title>
+				<title xml:lang="en">No</title>
+			</options>
+		</var>
+		<var name="view_read" type="select" default="Y">
+			<title xml:lang="ko">조회수 표시</title>
+			<title xml:lang="en">View readed number</title>
+			<options value="Y">
+				<title xml:lang="ko">예, 표시합니다</title>
+				<title xml:lang="en">Yes</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">아니오, 표시하지 않습니다.</title>
+				<title xml:lang="en">No</title>
+			</options>
+		</var>
+        <var name="article_title_align" type="select" default="left">
+            <title xml:lang="ko">게시물 제목 정렬</title>
+            <title xml:lang="en">Align of article title</title>
+            <description xml:lang="ko">
+                게시글 제목의 정렬을 설정합니다.
+            </description>
+            <description xml:lang="en">
+                Setting the alignment of article's title.
+            </description>
+            <options value="left">
+                <title xml:lang="ko">왼쪽</title>
+                <title xml:lang="en">Left</title>
+            </options>
+            <options value="center">
+                <title xml:lang="ko">중앙</title>
+                <title xml:lang="en">center</title>
+            </options>
+            <options value="right">
+                <title xml:lang="ko">오른쪽</title>
+                <title xml:lang="en">right</title>
+            </options>
+        </var>
+        <var name="name_card" type="select" default="y">
+            <title xml:lang="ko">네임카드 출력</title>
+            <title xml:lang="en">Display name card</title>
+            <description xml:lang="ko">
+                게시글 본문 아래에 네임카드를 출력합니다.
+            </description>
+            <description xml:lang="en">
+                Display name card at the bottom of the article
+            </description>
+            <options value="y">
+                <title xml:lang="ko">네, 출력합니다.</title>
+                <title xml:lang="en">Yes</title>
+            </options>
+            <options value="n">
+                <title xml:lang="ko">아니요, 출력하지 않습니다.</title>
+                <title xml:lang="en">No</title>
+            </options>
+        </var>
+        <var name="thumb" type="select" default="y">
+            <title xml:lang="ko">섬네일 출력</title>
+            <title xml:lang="en">Display thumbnail</title>
+            <description xml:lang="ko">
+                섬네일을 출력합니다. (리스트, 블로그형)
+            </description>
+            <description xml:lang="en">
+                Display thumbnail at the list of article. (Only in list, blog mode)
+            </description>
+            <options value="y">
+                <title xml:lang="ko">네, 출력합니다.</title>
+                <title xml:lang="en">Yes</title>
+            </options>
+            <options value="n">
+                <title xml:lang="ko">아니요, 출력하지 않습니다.</title>
+                <title xml:lang="en">No</title>
+            </options>
+        </var>
+        <var name="thumb_x" type="text" default="80">
+            <title xml:lang="ko">섬네일 가로길이(px)</title>
+            <title xml:lang="en">width of thumbnail</title>
+            <description xml:lang="ko">섬네일의 가로길이를 입력하세요. (기본 100px)</description>
+            <description xml:lang="en">Plase input width of thumbnail. (default : 100px)</description>
+        </var>
+        <var name="thumb_y" type="text" default="60">
+            <title xml:lang="ko">섬네일 세로길이(px)</title>
+            <title xml:lang="en">height of thumbnail</title>
+            <description xml:lang="ko">섬네일의 세로길이를 입력하세요. (기본 80px)</description>
+            <description xml:lang="en">Plase input height of thumbnail. (default : 80px)</description>
+        </var>
+    </extra_vars>
+</skin>

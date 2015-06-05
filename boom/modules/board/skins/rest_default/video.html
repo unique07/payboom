@@ -1,0 +1,90 @@
+{Context::set('layout','none')}
+{Context::set('admin_bar','false')}
+<style type="text/css">
+body {
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	background-color:#000 !important;
+}
+</style>
+<load target="js/jwplayer.js" />
+<body>
+<!--@if($oDocument->isExtraVarsExists() && (!$oDocument->isSecret() || $oDocument->isGranted()) )-->
+<!--@foreach($oDocument->getExtraVars() as $key => $val)-->
+<!--@if($val->eid=='video')-->
+{@	$extras	= $val->getValueHTML();}
+	<!--@if(preg_match('/youtu/', $extras))-->
+	<load target="js/windowresize.js" />
+		<!--@if(preg_match('/list/', $extras))-->
+		{@
+			$video_id = explode('v=',$extras);
+			$youtu_id = explode('&',$video_id[1]);
+			$youtube_id = explode('?',$youtu_id[0]);
+			$list_id = explode('list=',$extras);
+			$youtuli_id = explode('&',$list_id[1]);
+			$youtubeli_id = explode('?',$youtuli_id[0]);									
+		}
+		<div id="videoresize"><div class="video-container"><iframe src="//www.youtube.com/embed/{$youtube_id[0]}?list={$youtubeli_id[0]}" frameborder="0" allowfullscreen="true"></iframe></div></div>
+		<!--@elseif(preg_match('/youtu.be/', $extras))-->
+		{@
+			$video_id = str_replace('http://youtu.be/','',$extras);
+		}
+		<div id="videoresize"><div class="video-container"><iframe src="//youtube.com/embed/{$video_id}?version=3&vq=highres&rel=0" frameborder="0" allowfullscreen="true"></iframe></div></div>						
+		<!--@else-->
+		{@
+			$video_id = explode('v=',$extras);
+			$youtu_id = explode('&',$video_id[1]);
+			$youtube_id = explode('?',$youtu_id[0]);
+		}
+		<div id="videoresize"><div class="video-container"><iframe src="//youtube.com/embed/{$youtube_id[0]}?version=3&vq=highres&rel=0" frameborder="0" allowfullscreen="true"></iframe></div></div>
+		<!--@end-->
+	<!--@elseif(preg_match('/ted/', $extras))-->
+	<load target="js/windowresize.js" />
+		{@
+			$video_id = str_replace('http://www.ted.com','http://embed.ted.com',$extras);
+		}
+		<div id="videoresize"><div class="video-container"><iframe src="{$video_id}" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>
+	<!--@elseif(preg_match('/vimeo/', $extras))-->
+	<load target="js/windowresize.js" />
+		{@
+			$video_id = str_replace('http://vimeo.com','//player.vimeo.com/video',$extras);
+		}
+		<div id="videoresize"><div class="video-container"><iframe src="{$video_id}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>	
+	<!--@elseif(preg_match('/drive.google/', $extras))-->
+	<load target="js/windowresize.js" />
+		{@
+			$video_id = str_replace('drive.google.com/file/d','www.googledrive.com/host',$extras);
+			$video_id = str_replace('/edit?usp=sharing','',$video_id);
+		}
+		<div id="videoresize"><div class="video-container" cond="!Mobile::isMobileCheckByAgent()"><embed src="/modules/board/skins/rest_default/js/player.swf" flashvars="file={$video_id}&type=video" wmode="opaque"></div>
+		<div class="video-container" cond="Mobile::isMobileCheckByAgent()"><iframe src="https://doc.google.com/uc?id={$video_id}&export=download"></iframe></div></div>
+	<!--@elseif(preg_match('/mp3/', $extras) || preg_match('/m4a/', $extras)  || preg_match('/f4a/', $extras) || preg_match('/acc/', $extras))-->
+	<load target="js/jwplayer.js" />
+	<div id="myElement"></div>
+		<script>
+			jwplayer("myElement").setup({
+				file: "{$extras}",
+				height: 33
+			});
+		</script>	
+	<!--@elseif(preg_match('.mov', $extras))-->
+	<load target="js/windowresize.js" />
+	<div id="videoresize"><div class="video-container"><embed src="/modules/board/skins/rest_default/js/player.swf" flashvars="file={$extras}" wmode="opaque"/></div>		</div>						
+	<!--@else-->
+	<load target="js/jwplayer.js" />
+	<div id="myElement"></div>
+		<script>
+			jwplayer("myElement").setup({
+				file: "{$extras}",
+				width: "100%",
+				aspectratio: "16:10"
+			});
+		</script>		
+	<!--@end-->
+<!--@end-->		
+<!--@end-->
+<!--@end-->	
+</body>

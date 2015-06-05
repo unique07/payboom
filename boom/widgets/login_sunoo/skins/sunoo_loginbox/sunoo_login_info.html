@@ -1,0 +1,78 @@
+<!--// sunoo's box type login skin for Xpress Engine. Layout Design by Sunoo (http://www.goodpr.me/) -->
+
+<!--%import("css/sunoo_loginbox.css")-->
+<!--%import("./filter/logout.xml")-->
+
+<!--// login_widget set width -->
+  <!--@if(!$widget_info->box_width)--> {@ $widget_info->box_width = 170 } <!--@end-->
+    {@ $fieldset_width = ($widget_info->box_width) + 12 }
+    {@ $idpwWrap_width = ($widget_info->box_width) - 10 }
+    {@ $idpw_width = ($idpwWrap_width) - 60 }
+    {@ $input_width = ($idpw_width) - 5 }
+    {@ $userMenu_width = ($widget_info->box_width) + 30 }
+    {@ $padding_spase = ($widget_info->box_width) - 160 }
+    
+    <style type="text/css"> .sunooLogbox form ul.swuserAcquire li.swlevel { padding-right:{$padding_spase}px; }
+       .sunooLogbox form ul.swuserMenu li.swleft { padding-right:{$padding_spase}px; } 
+       .sunooLogbox form ul.swuserMenu li.swisadmin { padding-right:{$padding_spase}px; } </style>
+       
+  <!--@if($widget_info->line_type=="ro")-->
+     <style type="text/css"> .sunooLogbox form { padding:10px 5px 4px 5px; border:0px solid #d9d9d9; } 
+            .openid_sunooLogbox form { padding:6px 5px 4px 5px; border:0px solid #d9d9d9; } 
+     </style><!--@end-->
+  <!--@if($widget_info->line_type=="an")-->
+     <style type="text/css"> .sunooLogbox form { padding:12px 10px 8px 10px; border:1px solid #d9d9d9; } 
+            .openid_sunooLogbox form { padding:10px 10px 8px 10px; border:1px solid #d9d9d9; } 
+     </style><!--@end-->
+  <!--@if($widget_info->line_type=="no")-->
+     <style type="text/css"> .sunooLogbox form { padding:10px 10px 8px 10px; background:none; border:0px solid #d9d9d9; } 
+            .openid_sunooLogbox form { padding:10px 10px 8px 10px; background:none; border:0px solid #d9d9d9; } 
+            .sunooLogbox form .swuserName .fl{ padding:2px 0px 0px 2px; }
+     </style><!--@end-->
+  <!--@if($widget_info->box_width <= 159)--><style type="text/css">
+       .sunooLogbox form ul.swuserMenu li{float:none; margin-left:5px;}  .sunooLogbox form ul.swuserAcquire li{float:none; margin-left:5px;}
+       .sunooLogbox form ul.swuserAcquire li.swlevel{width:100px;}   .sunooLogbox form ul.swuserMenu li.swleft{width:100px;}</style>
+       <!--@else--><style type="text/css"> .sunooLogbox form ul.swuserMenu li a {letter-spacing:-1px;}
+       .sunooLogbox form ul.swuserMenu li{ float:left; }  .sunooLogbox form ul.swuserAcquire li{ float:left; }
+       .sunooLogbox form ul.swuserAcquire li.swlevel{width:60px;}   .sunooLogbox form ul.swuserMenu li.swleft{width:60px; }</style><!--@end-->
+  <!--@if($widget_info->bg_color)-->
+     <style type="text/css"> .sunooLogbox form { background:{$widget_info->bg_color}; } 
+            .openid_sunooLogbox form { background:{$widget_info->bg_color}; } </style><!--@else--><!--@end-->
+     
+  {@ $oPointModel = &getModel('point'); $point = $oPointModel->getPoint($logged_info->member_srl); $oModuleModel = &getModel('module');  $config = $oModuleModel->getModuleConfig('point'); $level = $oPointModel->getLevel($point, $config->level_step); }
+
+<div id="login" class="sunooLogbox" style="width:{$fieldset_width}px;">
+<!--@if($widget_info->line_type=="ro")-->
+<table border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody class="wtbox">
+<tr><td class="tda" valign="top"></td><td class="tdb" valign="top"></td><td class="tdc" valign="top"></td></tr>
+<tr><td class="tdd" valign="top"></td><td class="tde" valign="top"><!--@else--><!--@end-->
+<form action="" method="post" style="width:{$idpwWrap_width}px;">
+  <div class="swuserName" style="width:{$idpwWrap_width}px;">
+    <div class="fl"><div class="member_{$logged_info->member_srl}"><strong>{$logged_info->nick_name}</strong></div></div>
+    <div class="fr"><a href="{getUrl('act','dispMemberLogout')}"><img src="./images/buttonLogout.gif" alt="{$lang->cmd_logout}" width="47" height="18" /></a></div>
+  </div>
+  <!--@if($widget_info->level_use=="Y" or $widget_info->point_use=="Y")-->
+    <ul class="swuserAcquire" style="width:{$userMenu_width}px;">
+     <!--@if($widget_info->level_use=="Y")--><li class="swlevel">{$lang->login->sw_level} : <font color="#060cfb">{$level}</font></li><!--@else--><!--@end-->
+     <!--@if($widget_info->point_use=="Y")--><li class="swpoint">{$lang->login->sw_point} : <font color="#060cfb">{$point}</font></li><!--@else--><!--@end-->
+    </ul><!--@else--><!--@end-->
+    <ul class="swuserMenu" style="width:{$userMenu_width}px;">
+        <li class="swleft"><a href="{getUrl('act','dispMemberInfo')}">{$lang->login->sw_member}</a></li>
+        <li class="swright"><a href="{getUrl('act','dispMemberScrappedDocument')}">{$lang->login->sw_scrapped}</a></li>
+        <li class="swleft"><a href="{getUrl('act','dispMemberSavedDocument')}">{$lang->login->sw_saved}</a></li>
+        <li class="swright"><a href="{getUrl('act','dispMemberOwnDocument')}">{$lang->login->sw_write}</a></li>
+        <li class="swleft"><a href="{getUrl('act','dispMemberFriend')}">{$lang->login->sw_friend}</a></li>
+        <li class="swright"><a href="{getUrl('act','dispMemberMessages')}">{$lang->login->sw_message}</a></li>
+        <!--@if($logged_info->is_admin=="Y" && !$site_module_info->site_srl)-->
+        <li class="swisadmin"><a href="{getUrl('','module','admin')}" onclick="window.open(this.href);return false;">{$lang->login->sw_management}</a></li>
+        <!--@end-->
+    </ul>
+  <!--@if($widget_info->latest_login=='Y')-->
+    <p class="swlatestLogin" style="width:{$idpwWrap_width}px;"><span>{$lang->login->sw_last_login}</span> : {zDate($logged_info->last_login, "m. d. H:i")}</p>
+    <!--@else--><!--@end-->
+</form><!--@if($widget_info->line_type=='ro')--></td><td class="tdf" valign="top"></td></tr>
+<tr><td class="tdg" valign="top"></td><td class="tdh" valign="top"></td><td class="tdi" valign="top"></td></tr>
+</tbody></table><!--@else--><!--@end-->
+</div>
+

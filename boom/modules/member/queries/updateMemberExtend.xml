@@ -1,0 +1,19 @@
+<query id="updateMemberExtend" action="update">
+    <tables>
+        <table name="member_extend" />
+    </tables>
+    <columns>
+        <column name="masternm" var="masternm" />
+        <column name="phone" var="phone" />
+        <column name="cellphone" var="cellphone" />
+        <column name="post" var="post" />
+        <column name="address" var="address" />
+        <column name="address_sub" var="address_sub" />
+        <column name="bizproduct" var="bizproduct" />
+        <column name="biz_status" var="biz_status" />
+        <column name="biz_item" var="biz_item" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="member_srl" var="member_srl" notnull="notnull" filter="number" />
+    </conditions>
+</query>

@@ -1,0 +1,66 @@
+{@ Context::addJsFile("./common/js/jquery.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/js_app.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/common.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/xml_handler.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/xml_js_filter.js", true, '', -100000) }
+<!--%import("js/mboard.js")-->
+<!--%import("css/smbReadStyle.css")-->
+<!--%import("css/smbStyle.css")-->
+<!--%import("css/xeicon/xeicon.min.css")-->
+<!--%import("js/script.js")-->
+<!--#include("_setting.html")-->
+<!--#include("_header.html")-->
+<div class="sweetMobileBoard">
+	<div class="smbWriteHeader">
+		<a href="javascript:history.back()" class="smbListBtn">{$lang->cmd_prev}</a>
+		<h3>{$lang->write_comment}</h3>
+	</div>
+	<div class="smbCommentList" style="padding:10px; background:#f4f4f4; border-bottom:1px solid #cfd1d4;" cond="$oSourceComment->isExists()">
+		<ul class="fbList">
+			<li class="fbItem" id="comment_{$oSourceComment->get('comment_srl')}">
+				<div class="profile">
+					<div class="image" style="background-image:url({$oSourceComment->getProfileImage()});" cond="$oSourceComment->getProfileImage()"></div>
+					<div class="image none" cond="!$oSourceComment->getProfileImage()"></div>
+					<p class="author">{$oSourceComment->get('nick_name')}</p>
+				</div>
+				<div class="content">
+					{$oSourceComment->getContent(false)}
+					<p class="action">
+						<span style="font-size:0.8em; color:#ccc;">{$oSourceComment->getRegdate('Y.m.d H:i')}</span>
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div style="padding:10px; background:#f4f4f4;">
+		<form action="./" method="post" class="smbCommentAdd" onsubmit="return procFilter(this, insert_comment);">
+			<input type="hidden" name="mid" value="{$mid}" />
+			<input type="hidden" name="document_srl" value="{$oComment->get('document_srl')}" />
+			<input type="hidden" name="comment_srl" value="{$oComment->get('comment_srl')}" />
+			<input type="hidden" name="parent_srl" value="{$oComment->get('parent_srl')}" />
+			<div class="smbPadding smbCommentAddTitle">
+				<i class="xe-message-bubble"></i>{$lang->write_comment}
+			</div>
+			<div class="smbCommentAddComment">
+				<textarea name="content" rows="4" cols="42" id="rText" placeholder="{$lang->comment}"></textarea>
+			</div>
+			<div class="smbElse">
+				<input name="" type="submit" value="{$lang->cmd_comment_registration}" class="big"|cond="!$is_logged" />
+				<ul class="elseInfo" cond="!$is_logged">
+					<li>
+						<input name="nick_name" type="text" id="uName" placeholder="{$lang->writer}" />
+					</li>
+					<li>
+						<input name="email_address" type="email" id="uMail" placeholder="{$lang->email_address}" />
+					</li>
+					<li>
+						<input name="password" type="password" id="uPw" placeholder="{$lang->password}" />
+					</li>
+					<li>
+						<input name="homepage" type="url" id="uSite" value="http://" placeholder="{$lang->homepage}" />
+					</li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div>

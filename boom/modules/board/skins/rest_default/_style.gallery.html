@@ -1,0 +1,69 @@
+<form action="./" method="get" class="boardListForm">
+<fieldset>
+<table cond="$document_list || $notice_list" class="table table-hover restlist">
+	<include cond="$mi->display_listheadset_button== 'Y'" target="_style.table_head.html" />
+	<tbody>
+	<include target="_style.table_notice.html" />
+	</tbody>	
+</table>
+	
+<!--// Normal -->
+<div class="restgallery row">
+	<div class="<!--@if($mi->display_thumbnail_col)-->{$mi->display_thumbnail_col}<!--@else--><!--@if($mi->display_thumbnailnum=='two')-->col-lg-6 col-md-6 col-sm-6 col-xs-12<!--@elseif($mi->display_thumbnailnum=='three')-->col-lg-4 col-md-4 col-sm-4 col-xs-12<!--@else-->col-lg-3 col-md-3 col-sm-3 col-xs-12<!--@end--><!--@end-->" loop="$document_list=>$no,$document">
+		<div class="relative<!--@if($mi->display_thumbnailborder=='Y')--> thumbnail<!--@else--> marginb30<!--@end--><!--@if($mi->display_thumbnailcover=='button')--> marketing<!--@elseif($mi->display_thumbnailcover=='info')--> viewinfo<!--@elseif($mi->display_thumbnailcover=='flat')--> flatinfo<!--@end--><!--@if($mi->display_thumbnaileffect=='Y')--> effect<!--@else--> noeffect<!--@end-->">
+			<a href="{getUrl('document_srl',$document->document_srl,'listStyle',$listStyle, 'cpage','')}" class="pull-left rthumb" title="{$document->getTitle()}" style="width:100%;">
+				<include target="_rest.thumbnaillink.html" />
+				<!--@if($thumbnaillink!='0' && ($document->variables[status]!='SECRET' || $logged_info->is_admin=='Y' || $logged_info->member_srl==$document->variables[member_srl]))-->
+					<div class="imgwh">
+						<div id="rthumbnail" class="wrap">						
+							<img <!--@if(preg_match('/vimeo/', $thumbnaillink))-->id="{$vimeothumbnail}"<!--@else-->src="{$thumbnaillink}"<!--@end--> class="rthumbnailimg thumbnailgrow" alt=""/> 
+						</div>
+					</div>
+				<!--@else-->
+					<div class="imgwh"><div class="wrap thumbnailfocus"></div></div>
+				<!--@end-->				
+				<div class="caption <!--@if($thumbnaillink!='0' && ($document->variables[status]!='SECRET' || $logged_info->is_admin=='Y' || $logged_info->member_srl==$document->variables[member_srl]))--><!--@else-->nothumbnail<!--@end-->">
+					<!--@if($mi->display_thumbnailcover=='button')-->
+						<div class="top">	
+							<h4 cond="$list_config['title']" class="title">{$document->getTitle($mi->subject_cut_size)}</h4>
+							<p cond="$list_config['summary']" class="content">{$document->getSummary($mi->content_cut_size)}</p>
+						</div>	
+						<div class="viewbtn"><span class="btn btn-default" role="button">View details &raquo;</span></div>
+					<!--@else-->
+						<h5 cond="$list_config['title']" class="title"><b>{$document->getTitle($mi->subject_cut_size)}</b></h5>
+						<p cond="$mi->use_category=='Y'||$list_config['nick_name']||$list_config['user_id']||$list_config['user_name']">
+							<block cond="$mi->use_category=='Y'">{$category_list[$document->get('category_srl')]->title}</block>
+							<block cond="$list_config['nick_name']">by {$document->getNickName()}</block>
+							<block cond="$list_config['user_id']">ID {$document->getUserID()}</block>
+							<block cond="$list_config['user_name']">Name {$document->getUserName()}</block>
+						</p>
+						<p cond="$list_config['regdate']||$list_config['last_update']||$list_config['comment_status']" class="date">
+							<block cond="$list_config['regdate']">{$document->getRegdate("M d, Y")}</block>	
+							<block cond="$list_config['last_update']">최종수정 {zdate($document->get('last_update'),'M d, Y')} <block cond="$document->getLastUpdater()">({$document->getLastUpdater()})</block></block>
+							<block cond="$list_config['comment_status']">댓글 {$document->getCommentCount()}</block>
+							<block cond="$document->getTrackbackCount()">트랙백 {$document->getTrackbackCount()}</block>
+						</p>	
+						<p cond="$list_config['readed_count']||$list_config['voted_count']||$list_config['blamed_count']">								
+							<block cond="$list_config['readed_count']">조회  {$document->get('readed_count')>0?$document->get('readed_count'):'0'}</block>
+							<block cond="$list_config['voted_count']">추천 {$document->get('voted_count')!=0?$document->get('voted_count'):'0'}</block>
+							<block cond="$list_config['blamed_count']">비추천 {$document->get('blamed_count')!=0?$document->get('blamed_count'):'0'}</block>	
+						</p>
+						<p cond="$mi->display_thumbnailcover=='flat'"><i class="fa fa-search"></i></p>
+					<!--@end-->	
+				</div>	
+				<!--@if((int)($document->getRegdate('YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+				<span class="ribonicon label label-primary">new</span>
+				<!--@elseif((int)(zdate($document->get('last_update'),'YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+				<span class="ribonicon label label-success">update</span>					
+				<!--@elseif($document->variables[status]=='SECRET')-->
+				<span class="ribonicon label label-success">secret</span>				
+				<!--@end-->				
+				<input cond="$grant->manager" class="checkbox pull-right" type="checkbox" name="cart" value="{$document->document_srl}" title="Check this" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" />
+			</a>	
+			<a cond="$document->getExtraValueHTML($val->idx)"  loop="$list_config=>$key,$val" cond="$val->idx!=-1 && $val->eid=='video'" href="#" onclick="window.open('{getUrl('document_srl',$document->document_srl,'listStyle','video','page','')}','video','width={$mi->display_videoplaywidth},height={$mi->display_videoplayheight},resizable=yes');return false" class="videobtn btn btn-primary btn-xs"><i class="fa fa-video-camera fa-fw"></i> 보기</a>	
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>	
+</fieldset>
+</form>

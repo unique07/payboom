@@ -1,0 +1,49 @@
+<load target="./css/detailsearch_widget.css" />
+<load target="./js/detail_widget.js"/>
+<div class="detailWrapWidget">
+	<div class="detailBoxWidget">
+		<h4 style="float:left; font-size:10pt; margin:0; padding:0;">
+			{$lang->search_target} {$lang->menu}
+		</h4>
+		<span style="float:right; cursor:pointer;" class="showDetailWidget"> X </span>
+		<div class="clear"></div>
+	{@$idx=1}
+	<ul class="first">
+	<!--@foreach($widget_info->menu_list as $key => $val)-->
+		<li class="firstMenu">
+			<!--@if($val->list)-->
+			{$val->name}
+			<!--@else-->
+			<input type="checkbox" parent="true" id="chk_{$val->menu_item_srl}" class="menu_item_srls_widget" value="{$val->menu_item_srl}" checked="checked"|cond="!$menu_item_srls || ($menu_item_srls && in_array($val->menu_item_srl,$menu_srls))" />
+			<label for="chk_{$val->menu_item_srl}">{$val->name}</label>
+			<!--@end-->
+		</li>
+		
+		<li loop="$val->list =>$k,$v" cond="$val->list"> <input parent="false" type="checkbox" id="chk_{$v->menu_item_srl}" class="menu_item_srls_widget" value="{$v->menu_item_srl}" checked="checked"|cond="!$menu_item_srls || ($menu_item_srls && in_array($v->menu_item_srl,$menu_srls))" />
+		<label for="chk_{$v->menu_item_srl}">{$v->name}</label> </li>
+		
+	{@$idx++}
+	<!--@end-->
+	</ul>
+	<div style="clear:both;"></div>
+	</div>
+</div>
+
+<div class="DSWidget <!--@if($colorset=="black")-->black<!--@end-->">
+	<form action="{getUrl()}" method="get">
+	<input type="hidden" name="vid" value="{$vid}" />
+	<input type="hidden" name="mid" value="{$mid}" />
+	<input type="hidden" name="act" value="DS" />
+	<input type="text" name="is_keyword"  value="{$is_keyword}" />
+	<span class="btn"><input type="submit" value="{$lang->cmd_search}" /></span></form>
+	<form action="{getUrl()}" method="get" class="search" onsubmit="checkMenuItemSrlsWidget();">
+		<input type="hidden" name="vid" value="{$vid}" />
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="act" value="DS" />
+		<input type="hidden" name="menu_item_srls" value="{$widget_info->menu_item_srls}" />
+		
+		<input type="text" class="is_keywordBox" name="is_keyword" value="{$is_keyword}" title="{$lang->cmd_search}" />		
+		<input type="image" src="./img/btn_search.gif"		title="{$lang->cmd_search}" value="{$lang->cmd_search}" />
+		<a href="#" class="showDetailWidget" title="{$lang->search_target}"><img src="./img/btn_check.gif" /></a>
+	</form>
+</div>

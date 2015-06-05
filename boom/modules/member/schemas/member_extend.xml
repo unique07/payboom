@@ -1,0 +1,16 @@
+<table name="member_extend">
+    <column name="member_srl" type="number" size="11" notnull="notnull" primary_key="primary_key" />
+    <column name="user_id" type="varchar" size="80" notnull="notnull" unique="user_id_unique" />
+    <column name="authno" type="varchar" size="100"  index="idx_authno" />
+    <column name="biznm" type="varchar" size="100" />
+    <column name="bizno" type="varchar" size="15"  index="idx_bizno" />
+    <column name="masternm" type="varchar" size="50" />
+    <column name="phone" type="varchar" size="50" />
+    <column name="cellphone" type="varchar" size="50" />
+    <column name="post" type="varchar" size="7" />
+    <column name="address" type="varchar" size="100" />
+    <column name="address_sub" type="varchar" size="100" />
+    <column name="bizproduct" type="varchar" size="50" />
+    <column name="biz_status" type="varchar" size="50" />
+    <column name="biz_item" type="varchar" size="50" />
+</table>

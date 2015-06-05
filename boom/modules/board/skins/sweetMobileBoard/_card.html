@@ -1,0 +1,121 @@
+<!--%import("css/smbCardStyle.css")-->
+
+<div class="smbCardWrap">
+	<ul class="smbCard">
+		<li loop="$notice_list => $no, $document">
+			<a href="{getUrl('document_srl', $document->document_srl)}">
+				<div class="smbInfo"|cond="$document->getThumbnail()" class="smbInfo noThumb"|cond="!$document->getThumbnail()">
+					<p class="title"><span class="notice">{$lang->notice}</span>{$document->getTitle(0)}</p>
+					<ul class="category">
+						<li class="category" cond="$module_info->view_category == 'Y'">{$category_list[$document->get('category_srl')]->title}</li>
+						<li class="nickname" cond="$module_info->view_author == 'Y'">{$document->getNickName()}</li>
+						<li class="regdate" cond="$module_info->view_regdate == 'Y'">{$document->getRegDate("Y.m.d")}</li>
+					</ul>
+					<p class="summary">{$document->getSummary(1000)}</p>
+					<ul class="smbIcon">
+						<li class="voted" cond="$module_info->view_vote == 'Y'">
+							<i class="xe-heart"></i>
+							<span class="text">{$lang->voted_count}</span>
+							<span class="num">{$document->get('voted_count')!=0?$document->get('voted_count'):'0'}<span>
+						</li>
+						<li class="comment" cond="$module_info->view_comment == 'Y'">
+							<i class="xe-comment-list"></i>
+							<span class="text">{$lang->comment}</span>
+							<span class="num">{$document->getCommentCount()}<span>
+						</li>
+						<li class="view" cond="$module_info->view_read == 'Y'">
+							<i class="xe-eye"></i>
+							<span class="text">{$lang->readed_count}</span>
+							<span class="num">{$document->get('readed_count')}<span>
+						</li>
+					</ul>
+				</div>
+				<div class="smbCardContent"|cond="$document->getThumbnail()" class="smbCardContent noThumb"|cond="!$document->getThumbnail()">
+					<!--//  썸네일이 존재하지 않으면 서머리를 보여준다. 근데 작동이 잘 안됌...왜일까  //-->
+					<!--@if($document->getThumbnail() && $module_info->thumb == 'y')-->
+					<div class="smbThumbnail"  style="background-image:url({$document->getThumbnail(360,360,'ratio')});"></div>
+					<!--@else-->
+					<div class="smbSummary">
+						<p>{$document->getSummary(1000)}</p>
+					</div>
+					<!--@end-->
+					<ul class="smbIcon">
+						<li class="voted" cond="$module_info->view_vote == 'Y'">
+							<i class="xe-heart"></i>
+							<span class="text">{$lang->voted_count}</span>
+							<span class="num">{$document->get('voted_count')!=0?$document->get('voted_count'):'0'}<span>
+						</li>
+						<li class="comment" cond="$module_info->view_comment == 'Y'">
+							<i class="xe-comment-list"></i>
+							<span class="text">{$lang->comment}</span>
+							<span class="num">{$document->getCommentCount()}<span>
+						</li>
+						<li class="view" cond="$module_info->view_read == 'Y'">
+							<i class="xe-eye"></i>
+							<span class="text">{$lang->readed_count}</span>
+							<span class="num">{$document->get('readed_count')}<span>
+						</li>
+					</ul>
+					<span class="border"></span>
+				</div>
+			</a>
+		</li>
+		<li loop="$document_list => $no, $document">
+			<a href="{getUrl('document_srl', $document->document_srl)}">
+				<div class="smbInfo"|cond="$document->getThumbnail()" class="smbInfo noThumb"|cond="!$document->getThumbnail()">
+					<p class="title">{$document->getTitle(0)}</p>
+					<ul class="category">
+						<li class="category" cond="$module_info->view_category == 'Y'">{$category_list[$document->get('category_srl')]->title}</li>
+						<li class="nickname" cond="$module_info->view_author == 'Y'">{$document->getNickName()}</li>
+						<li class="regdate" cond="$module_info->view_regdate == 'Y'">{$document->getRegDate("Y.m.d")}</li>
+					</ul>
+					<p class="summary">{$document->getSummary(1000)}</p>
+					<ul class="smbIcon">
+						<li class="voted" cond="$module_info->view_vote == 'Y'">
+							<i class="xe-heart"></i>
+							<span class="text">{$lang->voted_count}</span>
+							<span class="num">{$document->get('voted_count')!=0?$document->get('voted_count'):'0'}<span>
+						</li>
+						<li class="comment" cond="$module_info->view_comment == 'Y'">
+							<i class="xe-comment-list"></i>
+							<span class="text">{$lang->comment}</span>
+							<span class="num">{$document->getCommentCount()}<span>
+						</li>
+						<li class="view" cond="$module_info->view_read == 'Y'">
+							<i class="xe-eye"></i>
+							<span class="text">{$lang->readed_count}</span>
+							<span class="num">{$document->get('readed_count')}<span>
+						</li>
+					</ul>
+				</div>
+				<div class="smbCardContent"|cond="$document->getThumbnail()" class="smbCardContent noThumb"|cond="!$document->getThumbnail()">
+					<!--@if($document->getThumbnail() && $module_info->thumb == 'y')-->
+					<div class="smbThumbnail" style="background-image:url({$document->getThumbnail(360,360,'ratio')});"></div>
+					<!--@else-->
+					<div class="smbSummary">
+						<p>{$document->getSummary(1000)}</p>
+					</div>
+					<!--@end-->
+					<ul class="smbIcon">
+						<li class="voted" cond="$module_info->view_vote == 'Y'">
+							<i class="xe-heart"></i>
+							<span class="text">{$lang->voted_count}</span>
+							<span class="num">{$document->get('voted_count')!=0?$document->get('voted_count'):'0'}<span>
+						</li>
+						<li class="comment" cond="$module_info->view_comment == 'Y'">
+							<i class="xe-comment-list"></i>
+							<span class="text">{$lang->comment}</span>
+							<span class="num">{$document->getCommentCount()}<span>
+						</li>
+						<li class="view" cond="$module_info->view_read == 'Y'">
+							<i class="xe-eye"></i>
+							<span class="text">{$lang->readed_count}</span>
+							<span class="num">{$document->get('readed_count')}<span>
+						</li>
+					</ul>
+					<span class="border"></span>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>

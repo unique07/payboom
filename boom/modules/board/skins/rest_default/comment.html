@@ -1,0 +1,90 @@
+<div id="reply" cond="$oDocument->getCommentCount()">
+	<div class="nocolor paddingtb10 pageheader">
+		<a data-toggle="collapse" data-parent="#reply" href="#comments">
+			<i class="fa fa-comment fa-fw"></i> {$lang->comment} {$oDocument->getCommentcount()}개가 있습니다.
+		</a>	
+	</div>	
+	<div id="comments" class="collapse in">
+		{@ $_comment_list = $oDocument->getComments() }
+		<!--@foreach($_comment_list as $key => $comment)-->
+		<ul class="media-list">
+			<li class="media"  id="comment_{$comment->comment_srl}" style="margin-left:{($comment->get('depth'))*20}px"|cond="$comment->get('depth')">
+				<div class="media-body">
+					<ul class="viewinfo list-inline text-mute nocolor">
+						<li>
+							<i class="fa fa-pencil fa-fw"></i>
+								<!--@if(!$comment->member_srl)-->
+									<!--@if($comment->homepage)-->
+										<a href="{$comment->getHomepageUrl()}" onclick="window.open(this.href);return false;">{$comment->getNickName()}</a>
+									<!--@else-->
+										{$comment->getNickName()}
+									<!--@end-->
+								<!--@else-->
+										<a href="#popup_menu_area" class="member_{$comment->member_srl}" onclick="return false">{$comment->getNickName()}</a>
+								<!--@end-->
+						</li>		
+						<li><i class="fa fa-calendar fa-fw"></i> {$comment->getRegdate('M d, Y')} ({$comment->getRegdate('H:i:s')})</li>
+						<li cond="$grant->manager || $mi->display_ip_address!='N'">{$comment->getIpaddress()}</li>
+						<li cond="$comment->get('voted_count')!=0">{$lang->cmd_vote} {$comment->get('voted_count')?$comment->get('voted_count'):0}</li>
+						<li cond="$comment->get('blamed_count') != 0">{$lang->cmd_vote_down} {$comment->get('blamed_count')?$comment->get('blamed_count'):0}</li>
+						<li cond="$is_logged"><a href="#popup_menu_area" class="comment_{$comment->comment_srl}">{$lang->cmd_comment_do}</a></li>
+						<!--@if($grant->write_comment && $oDocument->isEnableComment() )-->
+						<li cond="$mi->cmt_wrt!='editor'"><a class="re_comment" href="{getUrl('act','dispBoardReplyComment','comment_srl',$comment->comment_srl)}" onclick="reComment({$comment->get('document_srl')},{$comment->get('comment_srl')},'{getUrl('act','dispBoardReplyComment','comment_srl',$comment->comment_srl)}');jQuery('#mod_cmt').fadeOut().parent().find('.mod_comment').focus('#re_cmt');return false">{$lang->cmd_reply}</a></li>
+						<li cond="$mi->cmt_wrt=='editor'"><a href="{getUrl('act','dispBoardReplyComment','comment_srl',$comment->comment_srl)}">{$lang->cmd_reply}</a></li>						
+						<!--@end-->
+						<!--@if($comment->isGranted() || !$comment->get('member_srl'))-->
+						<li cond="$mi->cmt_wrt!='editor'"><a href="{getUrl('act','dispBoardModifyComment','comment_srl',$comment->comment_srl)}" onclick="modComment({$comment->get('comment_srl')},{$comment->get('member_srl')},'{getUrl('act','dispBoardModifyComment','comment_srl',$comment->comment_srl)}');jQuery('#re_cmt').fadeOut().parent().find('.re_comment').focus('#mod_cmt');return false">{$lang->cmd_modify}</a></li>
+						<li cond="$mi->cmt_wrt=='editor'"><a href="{getUrl('act','dispBoardModifyComment','comment_srl',$comment->comment_srl)}">{$lang->cmd_modify}</a></li>						
+						<li><a href="{getUrl('act','dispBoardDeleteComment','comment_srl',$comment->comment_srl)}" onclick="delComment({$comment->get('comment_srl')});return false">{$lang->cmd_delete}</a></li>
+						<!--@end-->
+						<li cond="$comment->hasUploadedFIles()"><a data-toggle="collapse" data-target="#commentfile_{$comment->get('comment_srl')}" href="javascript:;"><i class="fa fa-download"></i> {$lang->uploaded_file}파일 {$comment->get('uploaded_count')}개</a></li>
+					</ul>
+					<ul id="commentfile_{$comment->get('comment_srl')}" class="viewinfo commentfile collapse nocolor" cond="$comment->hasUploadedFiles()">
+						{@ $_uploaded_files = $comment->getUploadedFiles() }
+						<!--@foreach($_uploaded_files as $key => $file)-->
+						<li><i class="fa fa-check"></i> <a href="{getUrl('')}{$file->download_url}">{$file->source_filename} [File Size:{FileHandler::filesize($file->file_size)}/Download {number_format($file->download_count)}]</a></li>
+						<!--@end-->
+					</ul>
+					<div class="commentcont">
+						<!--@if(!$comment->isAccessible())-->
+							<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4">
+								<form action="./" method="get" onsubmit="return procFilter(this, input_password)">
+									<input type="hidden" name="mid" value="{$mid}" />
+									<input type="hidden" name="page" value="{$page}" />
+									<input type="hidden" name="document_srl" value="{$comment->get('document_srl')}" />
+									<input type="hidden" name="comment_srl" value="{$comment->get('comment_srl')}" />
+									<label class="control-label">{$lang->msg_is_secret}</label>
+									<div class="input-group">
+										<span class="input-group-addon">비밀번호</span>
+										<input type="password" name="password" class="form-control">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit">{$lang->cmd_input}</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						<!--@else-->				
+							<img cond="$comment->getProfileImage()" class="commentprofileimg pull-right" style="width:{$mi->display_profileimg_width}px;height:{$mi->display_profileimg_height}px;" src="{$comment->getProfileImage()}" alt="profile" />
+							<div id="cmt-content-{$comment->comment_srl}" class="comment_{$comment->comment_srl}_{$comment->member_srl}">
+								{$comment->getContent(false)}
+							</div>
+						<!--@end-->
+						<div class="clearfix"></div>
+					</div>
+				</div>	
+		     </li>
+		</ul>
+		<!--@end-->
+	</div>
+	<div class="clearfix"></div>	
+	
+	<ul cond="$oDocument->comment_page_navigation" class="pagination pagination-sm">
+		<li><a href="{getUrl('cpage',1)}#comment"|cond="$cpage&&$cpage>1">&laquo;</a></li>
+		<li loop="$page_no = $oDocument->comment_page_navigation->getNextPage()" class="active"|cond="$cpage==$page_no">
+			<a cond="$cpage==$page_no" >{$page_no}</a>
+			<a cond="$cpage!=$page_no" href="{getUrl('cpage',$page_no)}#comment">{$page_no}</a>
+		</li>
+		<li><a href="{getUrl('cpage',$oDocument->comment_page_navigation->last_page)}#comment"|cond="$cpage!=$oDocument->comment_page_navigation->last_page">&raquo;</a></li>
+	</ul>	
+	<div class="clearfix"></div>
+</div>

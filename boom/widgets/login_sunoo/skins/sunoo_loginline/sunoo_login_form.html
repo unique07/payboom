@@ -1,0 +1,147 @@
+<!--// sunoo's line type login skin for Xpress Engine. Layout Design by Sunoo (http://www.goodpr.me/) -->
+
+<!--%import("css/sunoo_loginline.css")-->
+<!--%import("./filter/login.xml")-->
+<!--%import("./filter/openid_login.xml")-->
+<!--%import("./js/login.js")-->
+
+<!--// login_widget set width -->
+  <!--@if(!$widget_info->line_width)--> {@ $widget_info->line_width = 970 } <!--@end-->
+    {@ $fieldline_width = ($widget_info->line_width) + 12 }
+    {@ $formline_width = ($widget_info->line_width) - 10 }
+    {@ $inputline_width = 90 }
+    {@ $idpwline_width = ($inputline_width * 2) + 30 }
+    
+  <!--@if($widget_info->line_type=='ro')-->
+     <style type="text/css"> .sunooLogline form { height:20px; padding:1px 3px; border:0px solid #d9d9d9; } 
+            .sunooLogline .searchsw{ top:5px; }  .sunooLogline .searchsw .searchAreas{ left:8px; top:2px; *top:1px; }  
+            .sunooLogline .searchsw .searchAreas input.txout{ background-position:8px 2px; }  
+            .sunooLogline .searchsw .searchAreas input.searchButtonsw{ top:1px; *top:2px; right:24px; _right:34px;}  
+            .openid_sunooLogline form { height:20px; padding:1px 3px; border:0px solid #d9d9d9; } 
+            .openid_sunooLogline .searchsw{ top:5px;}  .openid_sunooLogline .searchsw .searchAreas{ left:8px; top:2px; *top:1px; }  
+            .openid_sunooLogline .searchsw .searchAreas input.txout{ background-position:8px 2px; }  
+            .openid_sunooLogline .searchsw .searchAreas input.searchButtonsw{ top:1px; *top:2px; right:24px; _right:34px; }  
+     </style><!--@end-->
+  <!--@if($widget_info->line_type=='an')-->
+     <style type="text/css"> .sunooLogline form { height:22px; padding:4px 7px; border:1px solid #d9d9d9; } 
+            .sunooLogline form .sidpwWrap { padding:1px 0px 0px 0px;  }
+            .sunooLogline .searchsw{ right:2px; top:5px;}  .sunooLogline .searchsw .searchAreas{ top:-1px; *top:-2px; }  
+            .sunooLogline .searchsw .searchAreas input.txout{ background-position:8px 2px; }  
+            .sunooLogline .searchsw .searchAreas input.searchButtonsw{ top:1px; *top:2px; _right:34px;}  
+            .openid_sunooLogline form { height:22px; padding:4px 7px; border:1px solid #d9d9d9; } 
+            .openid_sunooLogline form .sidpwWrap { padding:1px 0px 0px 0px;  }
+            .openid_sunooLogline .searchsw{ right:2px; top:5px; _top:7px; }  .openid_sunooLogline .searchsw .searchAreas{ top:-1px; *top:-2px; }  
+            .openid_sunooLogline .searchsw .searchAreas input.txout{ background-position:8px 2px; }  
+            .openid_sunooLogline .searchsw .searchAreas input.searchButtonsw{ top:1px; *top:2px; }  
+     </style><!--@end-->
+  <!--@if($widget_info->line_type=='no')-->
+     <style type="text/css"> .sunooLogline form { height:22px; padding:4px 8px; background:none; border:0px solid #d9d9d9; } 
+            .sunooLogline form .sidpwWrap { padding:1px 0px 0px 0px;  }
+            .sunooLogline .searchsw{ right:2px; top:4px;}  .sunooLogline .searchsw .searchAreas{ top:-2px; *top:-3px; }  
+            .openid_sunooLogline form { padding:4px 8px; background:none; border:0px solid #d9d9d9; } 
+            .openid_sunooLogline form .sidpwWrap { padding:1px 0px 0px 0px;  }
+            .openid_sunooLogline .searchsw{ right:2px; top:4px; _top:6px;}  .openid_sunooLogline .searchsw .searchAreas{ top:-2px; *top:-3px; }  
+     </style><!--@end-->
+    
+  <!--@if($widget_info->bg_color)-->
+     <style type="text/css"> .sunooLogline form { background:{$widget_info->bg_color}; } 
+            .openid_sunooLogline form { background:{$widget_info->bg_color}; } 
+     </style><!--@else--><!--@end-->
+     
+<script type="text/javascript">
+    var keep_signed_msg = "{$lang->about_keep_signed}";
+    xAddEventListener(window, "load", function(){ doFocusUserId("fo_login_widget"); });
+</script>
+
+<div id="login" class="sunooLogline" style="width:{$fieldline_width}px;">
+<!--@if($widget_info->line_type=='ro')-->
+<table border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody class="wtline">
+<tr><td class="tdwa" valign="top"></td><td class="tdwb" valign="top"></td><td class="tdwc" valign="top"></td></tr>
+<tr><td class="tdwd" valign="top"></td><td class="tdwe" valign="top"><!--@else--><!--@end-->
+<form action="./" method="post" onsubmit="return procFilter(this, widget_login)" id="fo_login_widget" style="width:{$formline_width}px;">
+  <div class="sidpwWrap">
+    <span class="swaccess"><ul>
+       <li class="mail"><a href="{getUrl('act','dispMemberResendAuthMail')}">{$lang->login->sw_resend_auth_mail}</a></li>
+			 <li class="find"><a href="{getUrl('act','dispMemberFindAccount')}">{$lang->login->sw_find_member_account}</a></li>
+       <li class="sign"><a href="{getUrl('act','dispMemberSignUpForm')}"><strong>{$lang->login->sw_signup}</strong></a></li>
+      </ul></span>
+      <div class="sidpw" style="width:{$idpwline_width}px;">
+       <input name="user_id" type="text" title="user id" onfocus="this.className='swidIn';" onblur="if(!this.value) this.className='swidOut'" class="swidOut" style="width:{$inputline_width}px;" />
+       <input name="password" type="password" title="password" onfocus="this.className='swpwIn';" onblur="if(!this.value) this.className='swpwOut'" class="swpwOut" style="width:{$inputline_width}px;" />
+      </div>
+      <input type="image" src="./images/buttonLogin.gif" alt="login" class="buttonLoginsw" />
+      <span class="ssave">
+        <!--@if($widget_info->keep_signed=='Y')-->
+        <input type="checkbox" name="keep_signed" id="keepid" value="Y" class="swkeepsigned" onclick="if(this.checked) return confirm(keep_signed_msg);" />
+        <label for="keepid">{$lang->keep_signed}</label><!--@else--><!--@end-->
+        <!--@if($member_config->enable_openid=='Y')-->
+        <input name="use_open_id" id="use_open_id" type="checkbox" value="Y" class="swopenid" onclick="toggleLoginForm(this); return false;" />
+        <label for="use_open_id">Open ID</label><!--@end-->
+      </span>
+  </div>
+</form> 
+
+<!--@if($widget_info->search_use=='Y')-->
+<form action="{getUrl()}" method="post" id="widgetsearch" class="searchsw">
+  <input type="hidden" name="vid" value="{$vid}" />
+  <input type="hidden" name="mid" value="{$mid}" />
+  <input type="hidden" name="act" value="IS" />
+  <input type="hidden" name="search_target" value="title_content" />
+	<div class="searchAreas">
+	<input name="is_keyword" type="text" title="{$lang->sl_show_search}" onfocus="this.className='txin';" onblur="if(!this.value) this.className='txout'" class="txout" accesskey="S" />
+	<input name="" type="image" src="images/buttonSearch.gif" alt="Search" class="searchButtonsw" />
+	</div>
+</form><!--@else--><!--@end-->
+
+<!--@if($widget_info->line_type=='ro')-->
+</td><td class="tdwf" valign="top"></td></tr>
+<tr><td class="tdwg" valign="top"></td><td class="tdwh" valign="top"></td><td class="tdwi" valign="top"></td></tr>
+</tbody></table><!--@else--><!--@end-->
+</div>
+
+<!--// OpenID -->
+<!--@if($member_config->enable_openid=='Y')-->
+<div id="openid_login" class="openid_sunooLogline" style="display:none; width:{$fieldline_width}px;">
+<!--@if($widget_info->line_type=='ro')-->
+<table border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody class="wtline">
+<tr><td class="tdwa" valign="top"></td><td class="tdwb" valign="top"></td><td class="tdwc" valign="top"></td></tr>
+<tr><td class="tdwd" valign="top"></td><td class="tdwe" valign="top"><!--@else--><!--@end-->
+<form action="{getUrl('module','member','act','procMemberOpenIDLogin')}" method="post" onsubmit="return procFilter(this, openid_login)" style="width:{$formline_width}px;">
+   <div class="sidpwWrap">
+      <div class="sidpw">
+        <span class="swopid">{$lang->openid}</span>
+        <input type="text" name="openid" onfocus="this.className='swopidIn';" onblur="if(!this.value) this.className='swopidOut'" class="swopidOut" style="width:{$inputline_width}px;" />
+      </div>
+      <input type="image" src="./images/buttonLogin.gif" alt="login" class="buttonLoginsw" />
+      <span class="ssave">
+        <input name="use_open_id" id="use_open_id_2" type="checkbox" value="Y" onclick="toggleLoginForm(this); return false;"/>
+        <label for="use_open_id_2">Open ID</label>
+      </span>
+  </div>
+</form>
+
+<!--@if($widget_info->search_use=='Y')-->
+<form action="{getUrl()}" method="post" id="widgetsearch" class="searchsw">
+  <input type="hidden" name="vid" value="{$vid}" />
+  <input type="hidden" name="mid" value="{$mid}" />
+  <input type="hidden" name="act" value="IS" />
+  <input type="hidden" name="search_target" value="title_content" />
+	<div class="searchAreas">
+	<input name="is_keyword" type="text" title="{$lang->sl_show_search}" onfocus="this.className='txin';" onblur="if(!this.value) this.className='txout'" class="txout" accesskey="S" />
+	<input name="" type="image" src="images/buttonSearch.gif" alt="Search" class="searchButtonsw" />
+	</div>
+</form><!--@else--><!--@end-->
+
+<!--@if($widget_info->line_type=='ro')-->
+</td><td class="tdwf" valign="top"></td></tr>
+<tr><td class="tdwg" valign="top"></td><td class="tdwh" valign="top"></td><td class="tdwi" valign="top"></td></tr>
+</tbody></table><!--@else--><!--@end-->
+</div>
+<!--@end-->
+
+
+<script type="text/javascript">
+  xAddEventListener(window, "load", function(){ doFocusUserId("fo_login_widget"); });
+</script>

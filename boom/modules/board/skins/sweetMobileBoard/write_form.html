@@ -1,0 +1,102 @@
+{@ Context::addJsFile("./common/js/jquery.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/js_app.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/x.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/common.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/xml_handler.js", true, '', -100000) }
+{@ Context::addJsFile("./common/js/xml_js_filter.js", true, '', -100000) }
+<!--%import("js/mboard.js")-->
+<!--%import("css/smbStyle.css")-->
+<!--%import("css/xeicon/xeicon.min.css")-->
+<!--%import("js/script.js")-->
+<!--#include("_setting.html")-->
+
+<!--#include("_header.html")-->
+<div class="sweetMobileBoard">
+	<div class="smbWrap">
+		<div class="smbWriteHeader">
+			<a href="{getUrl('','vid',$vid,'mid',$mid)}" class="smbListBtn">{$lang->cmd_list}</a>
+			<h3>{$lang->board} {$lang->cmd_write}</h3>
+		</div>
+		<form action="./" method="post" class="smbForm" onsubmit="return procFilter(this, insert)">
+			<input type="hidden" name="mid" value="{$mid}" />
+			<input type="hidden" name="document_srl" value="{$document_srl}" />
+			<ul>
+				<!--@if($module_info->use_category == "Y")-->
+				<li>
+					<select name="category_srl" id="nCategory">
+						<option disabled="disabled" selected value="">{$lang->board} {$lang->category}</option>
+						<!--@foreach($category_list as $val)-->	
+						<option <!--@if(!$val->grant)-->disabled="disabled"<!--@endif--> value="{$val->category_srl}" <!--@if($val->grant&&$val->selected||$val->category_srl==$oDocument->get('category_srl'))-->selected="selected"<!--@endif-->>
+						{str_repeat("&nbsp;&nbsp;",$val->depth)} {$val->title} ({$val->document_count})
+						</option>
+						<!--@end-->
+					</select>
+				</li>
+				<!--@end-->
+				<li>
+					<input name="title" type="text" id="nTitle" placeholder="{$lang->title}" />
+				</li>
+				<!--@if(count($extra_keys))-->
+				<!--@foreach($extra_keys as $key=> $val)-->
+				<li class="exvar">
+					<label for="ex_{$val->name}">{$val->name} <span cond="$val->is_required=='Y'">*</span></label>
+					<div>{$val->getFormHTML()}</div>
+				</li>
+				<!--@endforeach-->
+				<!--@end-->
+				<li>
+					<textarea name="content" rows="14" cols="42" id="nText" placeholder="{$lang->content}"></textarea>
+				</li>
+				<!--@if(!$is_logged)-->
+				<li>{$lang->writer} {$lang->member_default_info}</li>
+				<li>
+					<input name="nick_name" type="text" id="uName" placeholder="{$lang->writer}" />
+				</li>
+				<li>
+					<input name="email_address" type="email" id="uMail" placeholder="{$lang->email_address}" />
+				</li>
+				<li>
+					<input name="password" type="password" id="uPw" placeholder="{$lang->password}" />
+				</li>
+				<li>
+					<input name="homepage" type="url" id="uSite" value="" placeholder="{$lang->homepage}" />
+				</li>
+				<!--@endif-->
+				<li class="smbAllow">
+					<span>{$lang->allow_comment}</span>
+					<input type="checkbox" name="comment_status" value="ALLOW" checked="checked"|cond="$oDocument->allowComment()" id="reAllow" />
+					<label for="reAllow">
+						<ul class="smbCheck">
+							<li>{$lang->approval}</li>
+							<li>{$lang->denied}</li>
+						</ul>
+					</label>
+				</li>
+				<li class="smbAllow">
+					<span>{$lang->allow_trackback}</span>
+					<input type="checkbox" name="allow_trackback" value="Y" checked="checked"|cond="$oDocument->allowTrackback()" id="trAllow" />
+					<label for="trAllow">
+						<ul class="smbCheck">
+							<li>{$lang->approval}</li>
+							<li>{$lang->denied}</li>
+						</ul>
+					</label>
+				</li>
+				<li class="smbAllow" cond="is_array($status_list)">
+					<span>{$lang->status}</span>
+					<ul class="smbRadio">
+						<!--@foreach($status_list AS $key=>$value)-->
+						<input type="radio" name="status" value="{$key}" id="id{$key}" checked|cond="$oDocument->get('status') == $key" />
+						<li>
+							<label for="id{$key}">{$value}</label>
+						</li>
+						<!--@end-->
+					</ul>
+				</li>
+			</ul>
+			<div class="submitBox">
+				<button type="submit" class="smbSubmit"><i class="xe-send"></i> {$lang->cmd_registration}</button>
+			</div>
+		</form>
+	</div>
+</div>

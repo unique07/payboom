@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+    <title xml:lang="ko">선우 로그인폼 출력</title>
+    <title xml:lang="en">Sunoo's Login Info</title>
+    <title xml:lang="jp">スヌ?のログイン情報表示</title>
+    <title xml:lang="zh-CN">Sunoo的登?表?</title>
+    <title xml:lang="zh-TW">Sunoo的登入資料</title>
+    <description xml:lang="ko">로그인 폼이나 로그인 정보를 출력합니다.</description>
+    <description xml:lang="en">This widget displays login form or login info.</description>
+    <description xml:lang="jp">ログインフォ?ムまたはログイン情報を表示します。</description>
+    <description xml:lang="zh-CN">?示登?表?或登?信息。</description>
+    <description xml:lang="zh-TW">可顯示登入表格或登入資料。</description>
+    <version>1.0</version>
+    <date>2010-04-10</date>
+    <author email_address="sunoo@hanmail.net" link="http://www.goodpr.me">
+        <name xml:lang="ko">선우</name>
+        <name xml:lang="en">sunoo</name>
+        <name xml:lang="jp">sunoo</name>
+        <name xml:lang="zh-CN">sunoo</name>
+        <name xml:lang="zh-TW">sunoo</name>
+    </author>
+  <extra_vars>
+    <var id="box_width">
+			<type>text</type>
+			<name xml:lang="ko">박스형 가로폭 설정</name>
+			<name xml:lang="en">Setting the width of the box type.</name>
+			<name xml:lang="jp">ボックス型の幅を設定します。</name>
+			<name xml:lang="zh-CN">?置的箱型的?度。</name>
+			<name xml:lang="zh-TW">設置寬度?的類型。</name>
+			<description xml:lang="ko">박스형태로 된 로그인폼의 가로폭 크기를 조정할 수 있습니다. 숫자로만 입력하세요.(예시:180) 입력하지 않으면 170px로 적용되며, 박스형에만 적용됨. 출력되는 위젯의 실제 가로크기는 설정한 값보다 10px 크게 나타남.</description>
+      <description xml:lang="en">Please enter numbers only. If not enter, apply to 170px.</description>
+			<description xml:lang="jp">してください?字のみを入力します。入力しない場合は、170pxに適用されます。</description>
+			<description xml:lang="zh-CN">?只?入?字。如果?有?入，适用于170px。</description>
+			<description xml:lang="zh-TW">請只輸入數字。如果沒有輸入，適用於 170px。</description>
+		</var>
+		<var id="line_width">
+			<type>text</type>
+			<name xml:lang="ko">라인형 가로폭 설정</name>
+			<name xml:lang="en">Setting the width of the line type.</name>
+			<name xml:lang="jp">回線の種類の幅を設定します。</name>
+			<name xml:lang="zh-CN">?置行?型的?度。</name>
+			<name xml:lang="zh-TW">設置寬度的行類型。</name>
+			<description xml:lang="ko">한 줄 형태로 된 로그인폼의 가로폭 크기를 조정할 수 있습니다. 숫자로만 입력하세요.(예시:680) 입력하지 않으면 970px로 적용되며, 라인형에만 적용됨.</description>
+      <description xml:lang="en">Please enter numbers only. If not enter, apply to 970px.</description>
+			<description xml:lang="jp">してください?字のみを入力します。</description>
+			<description xml:lang="zh-CN">?只?入?字。</description>
+			<description xml:lang="zh-TW">請只輸入數字。</description>
+		</var>
+		<var id="line_type">
+			<type>select</type>
+			<name xml:lang="ko">테두리 유형 선택</name>
+			<name xml:lang="en">Choose the type of border</name>
+			<name xml:lang="jp">選??の種類</name>
+			<name xml:lang="zh-CN">??的???型</name>
+			<name xml:lang="zh-TW">選擇類型的邊界</name>
+			<description xml:lang="ko">로그인 박스의 테두리 유형을 선택해 주세요.</description>
+      <description xml:lang="en">Login box, select the type of the border.</description>
+			<description xml:lang="jp">ログインボックスが、境界線の種類を選?します。</description>
+			<description xml:lang="zh-CN">登??，??的???型。</description>
+			<description xml:lang="zh-TW">登錄?，選擇類型的邊界。</description>
+			<options>
+				<value>ro</value>
+				<name xml:lang="ko">둥근모서리</name>
+				<name xml:lang="en">Rounded corners</name>
+				<name xml:lang="jp">角が丸い</name>
+				<name xml:lang="zh-CN">?角</name>
+				<name xml:lang="zh-TW">圓角</name>
+			</options>
+			<options>
+				<value>an</value>
+				<name xml:lang="ko">각진모서리</name>
+				<name xml:lang="en">Angular edges</name>
+				<name xml:lang="jp">角?</name>
+				<name xml:lang="zh-CN">角?</name>
+				<name xml:lang="zh-TW">角邊</name>
+			</options>
+			<options>
+				<value>no</value>
+				<name xml:lang="ko">테두리없음</name>
+				<name xml:lang="en">No Border</name>
+				<name xml:lang="jp">いいえボ?ダ?</name>
+				<name xml:lang="zh-CN">无??</name>
+				<name xml:lang="zh-TW">無邊?</name>
+			</options>
+		</var>
+		<var id="bg_color">
+			<type>text</type>
+			<name xml:lang="ko">배경색 설정</name>
+			<name xml:lang="en">Set the background color</name>
+			<name xml:lang="jp">設定の背景色</name>
+			<name xml:lang="zh-CN">?置背景?色</name>
+			<name xml:lang="zh-TW">設置背景?色</name>
+			<description xml:lang="ko">색상코드 입력으로 배경색을 설정할 수 있습니다.(예시: #f7fcde) 배경색 적용은 테두리 유형이 '각진 모서리형'과 '테두리 없음'에 적합함.</description>
+      <description xml:lang="en">Please enter the color code. (Examples : #f7fcde)</description>
+			<description xml:lang="jp">してくださいカラ?コ?ドを入力してください。(例 : #f7fcde)</description>
+			<description xml:lang="zh-CN">??入?色代?。(范例 : #f7fcde)</description>
+			<description xml:lang="zh-TW">請輸入?色代碼。(範例 : #f7fcde)</description>
+		</var>
+		<var id="search_use">
+			<type>select</type>
+			<name xml:lang="ko">검색창 표시 선택</name>
+			<name xml:lang="en">Choose whether to display the search box.</name>
+			<name xml:lang="jp">を選?しているかどうか?索ボックスを表示します。</name>
+			<name xml:lang="zh-CN">??是否?示搜索?。</name>
+			<name xml:lang="zh-TW">選擇是否顯示搜索?。</name>
+			<description xml:lang="ko">라인형 로그인폼에서 검색창을 함께 표시하려면 선택해 주세요. 라인형 로그인폼에서만 표시됨.</description>
+      <description xml:lang="en">Please select you want to display the search tools in login box of line type.</description>
+			<description xml:lang="jp">ご使用回線の種類のログインボックスに?索ツ?ルを表示するために選?します。</description>
+			<description xml:lang="zh-CN">????想要?示在登???型?中的搜索工具。</description>
+			<description xml:lang="zh-TW">請選擇?想要顯示在登錄?中的搜索工具生?線的類型。</description>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">표시함</name>
+				<name xml:lang="en">Show</name>
+				<name xml:lang="jp">表示</name>
+				<name xml:lang="zh-CN">顯示</name>
+				<name xml:lang="zh-TW">顯示</name>
+			</options>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">표시안함</name>
+				<name xml:lang="en">Hide</name>
+				<name xml:lang="jp">非表示</name>
+				<name xml:lang="zh-CN">不顯示</name>
+				<name xml:lang="zh-TW">不顯示</name>
+			</options>
+		</var>
+		<var id="keep_signed">
+			<type>select</type>
+			<name xml:lang="ko">로그인유지 표시선택</name>
+			<name xml:lang="en">Choose whether to display the keep login</name>
+			<name xml:lang="jp">どうかを選?ログインを維持する表示する</name>
+			<name xml:lang="zh-CN">??是否?示保持登?</name>
+			<name xml:lang="zh-TW">選擇是否顯示保持登錄</name>
+			<description xml:lang="ko">로그인 전에 보여지는 로그인 유지 체크박스를 표시하려면 선택해 주세요.</description>
+      <description xml:lang="en">Please select you want to display the keep login in login box before login.</description>
+			<description xml:lang="jp">してくださいあなたはログインボックスでログインする前にログインを維持する表示を選?します。</description>
+			<description xml:lang="zh-CN">????想要?示在登??中保持登?之前登?。</description>
+			<description xml:lang="zh-TW">請選擇?想要顯示在登錄?登錄保持登錄之前。</description>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">표시함</name>
+				<name xml:lang="en">Show</name>
+				<name xml:lang="jp">表示</name>
+				<name xml:lang="zh-CN">顯示</name>
+				<name xml:lang="zh-TW">顯示</name>
+			</options>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">표시안함</name>
+				<name xml:lang="en">Hide</name>
+				<name xml:lang="jp">非表示</name>
+				<name xml:lang="zh-CN">不顯示</name>
+				<name xml:lang="zh-TW">不顯示</name>
+			</options>
+		</var>
+		<var id="level_use">
+			<type>select</type>
+			<name xml:lang="ko">레벨 표시 선택</name>
+			<name xml:lang="en">select a show the level</name>
+			<name xml:lang="jp">レベル番組を選?</name>
+			<name xml:lang="zh-CN">???示的水平</name>
+			<name xml:lang="zh-TW">選擇顯示的水平</name>
+			<description xml:lang="ko">로그인 후에 보여지는 사용자 메뉴항목에 '레벨(등급)'을 표시하려면 선택해 주세요.</description>
+      <description xml:lang="en">Please select you want to display the level in login box after login.</description>
+			<description xml:lang="jp">してくださいあなたはログイン後、ログインボックスのレベルを表示するために選?します。</description>
+			<description xml:lang="zh-CN">????想要?示在登?后登??的水平。</description>
+			<description xml:lang="zh-TW">請選擇?想要顯示在登錄?中的水平後登錄。</description>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">표시함</name>
+				<name xml:lang="en">Show</name>
+				<name xml:lang="jp">表示</name>
+				<name xml:lang="zh-CN">顯示</name>
+				<name xml:lang="zh-TW">顯示</name>
+			</options>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">표시안함</name>
+				<name xml:lang="en">Hide</name>
+				<name xml:lang="jp">非表示</name>
+				<name xml:lang="zh-CN">不顯示</name>
+				<name xml:lang="zh-TW">不顯示</name>
+			</options>
+		</var>
+		<var id="point_use">
+			<type>select</type>
+			<name xml:lang="ko">포인트 표시 선택</name>
+			<name xml:lang="en">select a show the point</name>
+			<name xml:lang="jp">ポイントを見るを選?する</name>
+			<name xml:lang="zh-CN">??一??示点</name>
+			<name xml:lang="zh-TW">選擇一個顯示點</name>
+			<description xml:lang="ko">로그인 후에 보여지는 사용자 메뉴항목에 '포인트'를 표시하려면 선택해 주세요.</description>
+      <description xml:lang="en">Please select you want to display the score in login box after login.</description>
+			<description xml:lang="jp">してくださいあなたはログイン後、ログインボックスのスコアを表示するを選?します。</description>
+			<description xml:lang="zh-CN">????想要?示在登?后登??得分。</description>
+			<description xml:lang="zh-TW">請選擇?想要顯示的分數在登錄?後登錄。</description>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">표시함</name>
+				<name xml:lang="en">Show</name>
+				<name xml:lang="jp">表示</name>
+				<name xml:lang="zh-CN">顯示</name>
+				<name xml:lang="zh-TW">顯示</name>
+			</options>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">표시안함</name>
+				<name xml:lang="en">Hide</name>
+				<name xml:lang="jp">非表示</name>
+				<name xml:lang="zh-CN">不顯示</name>
+				<name xml:lang="zh-TW">不顯示</name>
+			</options>
+		</var>
+		<var id="latest_login">
+			<type>select</type>
+			<name xml:lang="ko">최근로그인 표시선택</name>
+			<name xml:lang="en">display the latest login</name>
+			<name xml:lang="jp">最新のログイン情報を表示する</name>
+			<name xml:lang="zh-CN">展示最新登?</name>
+			<name xml:lang="zh-TW">展示最新登陸</name>
+			<description xml:lang="ko">로그인 후에 보여지는 사용자의 최근 접속일 정보를 표시하려면 선택해 주세요.</description>
+      <description xml:lang="en">Please select you want to display the latest login in login box after login.</description>
+			<description xml:lang="jp">してくださいあなたはログイン後、ログインボックスに、最新のログイン情報を表示するために選?します。</description>
+			<description xml:lang="zh-CN">????想要?示在登?后登??最新登?。</description>
+			<description xml:lang="zh-TW">請選擇?想要顯示在登錄?中最新登錄後登錄。</description>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">표시함</name>
+				<name xml:lang="en">Show</name>
+				<name xml:lang="jp">表示</name>
+				<name xml:lang="zh-CN">顯示</name>
+				<name xml:lang="zh-TW">顯示</name>
+			</options>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">표시안함</name>
+				<name xml:lang="en">Hide</name>
+				<name xml:lang="jp">非表示</name>
+				<name xml:lang="zh-CN">不顯示</name>
+				<name xml:lang="zh-TW">不顯示</name>
+			</options>
+		</var>
+  </extra_vars>
+</widget>

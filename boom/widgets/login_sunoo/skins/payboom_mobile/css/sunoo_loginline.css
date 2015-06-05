@@ -1,0 +1,92 @@
+/* xe sunoo line type login widget (http://www.goodpr.me/) */
+
+.sunooLogline { display:block; position:relative; margin:0; padding:0; border:0; text-align:left; }
+.sunooLogline legend { display:none; width:0; height:0; font-size:0; overflow:hidden; }
+.sunooLogline .wtline{ position:relative; margin:0; padding:0; }
+.sunooLogline .wtline .tdwa{ width:5px; height:5px; background:url(../images/bgtd1.png) no-repeat 0px 0px; _background:url(../images/bgtd1.gif) no-repeat 0px 0px; }
+.sunooLogline .wtline .tdwb{ width:auto; height:5px; background:url(../images/bgtd2.gif) repeat-x 0px 0px; }
+.sunooLogline .wtline .tdwc{ width:5px; height:5px; background:url(../images/bgtd3.png) no-repeat 0px 0px; _background:url(../images/bgtd3.gif) no-repeat 0px 0px; }
+.sunooLogline .wtline .tdwd{ width:5px; height:auto; background:url(../images/bgtd4.gif) repeat-y 0px 0px; }
+.sunooLogline .wtline .tdwe{ width:auto; height:auto; }
+.sunooLogline .wtline .tdwf{ width:5px; height:auto; background:url(../images/bgtd6.gif) repeat-y 0px 0px; }
+.sunooLogline .wtline .tdwg{ width:5px; height:5px; background:url(../images/bgtd7.png) no-repeat 0px 0px; _background:url(../images/bgtd7.gif) no-repeat 0px 0px; }
+.sunooLogline .wtline .tdwh{ width:auto; height:5px; background:url(../images/bgtd8.gif) repeat-x 0px 0px; }
+.sunooLogline .wtline .tdwi{ width:5px; height:5px; background:url(../images/bgtd9.png) no-repeat 0px 0px; _background:url(../images/bgtd9.gif) no-repeat 0px 0px; }
+.sunooLogline form { position:relative; height:22px; margin:0px; padding:2px 3px; border:0px solid #d9d9d9; background:#f9fafc; overflow:hidden; }
+.sunooLogline form .sidpwWrap { clear:both; overflow:hidden; padding:0px; }
+.sunooLogline form .sidpw { float:left; height:18px; padding:1px 0px 0px 0px; }
+.sunooLogline form .sidpw input { border:1px solid #c9c9c9; color:#282828; background:#fbfbfb; padding:1px 5px; margin:0px; font:.9em Tahoma;}
+.sunooLogline form .sidpw input.swidIn { background:#fff;  }
+.sunooLogline form .sidpw input.swidOut { background:#fdfdfc url(../images/bgidOut.gif) no-repeat 10px 3px; }
+.sunooLogline form .sidpw input.swpwIn { background:#fff;  }
+.sunooLogline form .sidpw input.swpwOut { background:#fdfdfc url(../images/bgpwOut.gif) no-repeat 10px 3px;}
+.sunooLogline form .sidpwWrap .buttonLoginsw { float:left; padding:1px 0px 0px 2px; *padding:2px 0px 0px 1px;}
+
+.sunooLogline form .sidpwWrap .ssave { float:left; padding:3px 0px 0px 0px; *padding:0px; margin:0px; }
+.sunooLogline form .sidpwWrap .ssave .swkeepsigned { padding:0px; margin:0px 0px 0px 10px; }
+.sunooLogline form .sidpwWrap .ssave .swopenid { padding:0px; margin:0px 0px 0px 6px; }
+.sunooLogline form .sidpwWrap .ssave label { font:.9em; color:#999999; padding:0px; margin:0px; }
+.sunooLogline form .sidpwWrap .swaccess{ float:left; padding:4px 10px 0px 0px; margin:0px; }
+.sunooLogline form .sidpwWrap .swaccess ul { float:left; vertical-align:middle; padding:0px; margin:0px; }
+.sunooLogline form .sidpwWrap .swaccess ul li { list-style:none; float:left; padding:0px 3px 1px 7px; }
+.sunooLogline form .sidpwWrap .swaccess ul li.find { background:url(../images/bulletA.gif) no-repeat 1px 5px; *background-position:1px 6px; }
+.sunooLogline form .sidpwWrap .swaccess ul li.sign { background:url(../images/bulletA.gif) no-repeat 1px 5px; *background-position:1px 6px; }
+.sunooLogline form .sidpwWrap .swaccess ul li a { color:#54564b; font:.9em; white-space:nowrap; text-decoration:none; }
+.sunooLogline form .sidpwWrap .swaccess ul li a:hover { color:#e61005; text-decoration:underline; }
+
+.sunooLogline form ul.suserMenu { position:relative; height:14px; padding:4px; margin:0px; vertical-align:middle; }
+.sunooLogline form ul.suserMenu li { list-style:none; float:left; color:#54564b; margin:0px; vertical-align:middle; background:url(../images/bulletA.gif) no-repeat 15px 7px; }
+.sunooLogline form ul.suserMenu li.logoutbutton { padding:0px; margin-top:-3px; background:none; }
+.sunooLogline form ul.suserMenu li.username { padding:0px 1px 1px 10px; margin:0px; color:#999; background:none; }
+.sunooLogline form ul.suserMenu li.username strong { color:#282828; padding:6px 0 0 2px; font:bold 1em Tahoma;}
+.sunooLogline form ul.suserMenu li.level { padding:1px 1px 1px 21px; }
+.sunooLogline form ul.suserMenu li.point { padding:1px 1px 1px 21px; }
+.sunooLogline form ul.suserMenu li.member { padding:1px 1px 1px 21px; }
+.sunooLogline form ul.suserMenu li.member a { color:#5054fa; }
+.sunooLogline form ul.suserMenu li.isadmin { padding:1px 1px 1px 21px; }
+.sunooLogline form ul.suserMenu li.isadmin a { color:#5054fa; }
+.sunooLogline form ul.suserMenu li.latestlogin { padding:1px 1px 1px 21px; color:#777; }
+.sunooLogline form ul.suserMenu li a { color:#54564b; text-decoration:none; }
+.sunooLogline form ul.suserMenu li a:hover { color:#ee0f04; text-decoration:underline;}
+
+.sunooLogline .searchsw{ position:absolute; right:5px; top:6px; width:168px; height:24px; padding-right:10px; border:0; background:url(../images/bgSearch.png) no-repeat left top; _background:url(../images/bgSearch.gif) no-repeat left top;}
+.sunooLogline .searchsw .searchAreas{ position:relative; left:6px; top:1px; *top:0px; margin:0; padding:0; border:0; }
+.sunooLogline .searchsw .searchAreas input{ width:124px; padding:0x; margin:0px; font-size:12px; border:0;}
+.sunooLogline .searchsw .searchAreas input.txin{ background:#fff; }
+.sunooLogline .searchsw .searchAreas input.txout{ background:#fff url(../images/bgsearchOuten.gif) no-repeat 8px 3px; }
+.sunooLogline .searchsw .searchAreas input.searchButtonsw{ position:absolute; top:2px; *top:3px; right:26px; _right:36px; width:14px; height:14px; }
+
+
+.openid_sunooLogline { position:relative; margin:0; padding:0; _padding-top:2px; border:0; display:block; }
+.openid_sunooLogline legend { display:none; width:0; height:0; overflow:hidden; font-size:0;}
+.openid_sunooLogline .wtline{ position:relative; margin:0; padding:0; }
+.openid_sunooLogline .wtline .tdwa{ width:5px; height:5px; background:url(../images/bgtd1.png) no-repeat 0px 0px; _background:url(../images/bgtd1.gif) no-repeat 0px 0px; }
+.openid_sunooLogline .wtline .tdwb{ width:auto; height:5px; background:url(../images/bgtd2.gif) repeat-x 0px 0px; }
+.openid_sunooLogline .wtline .tdwc{ width:5px; height:5px; background:url(../images/bgtd3.png) no-repeat 0px 0px; _background:url(../images/bgtd3.gif) no-repeat 0px 0px; }
+.openid_sunooLogline .wtline .tdwd{ width:5px; height:auto; background:url(../images/bgtd4.gif) repeat-y 0px 0px; }
+.openid_sunooLogline .wtline .tdwe{ width:auto; height:auto; }
+.openid_sunooLogline .wtline .tdwf{ width:5px; height:auto; background:url(../images/bgtd6.gif) repeat-y 0px 0px; }
+.openid_sunooLogline .wtline .tdwg{ width:5px; height:5px; background:url(../images/bgtd7.png) no-repeat 0px 0px; _background:url(../images/bgtd7.gif) no-repeat 0px 0px; }
+.openid_sunooLogline .wtline .tdwh{ width:auto; height:5px; background:url(../images/bgtd8.gif) repeat-x 0px 0px; }
+.openid_sunooLogline .wtline .tdwi{ width:5px; height:5px; background:url(../images/bgtd9.png) no-repeat 0px 0px; _background:url(../images/bgtd9.gif) no-repeat 0px 0px; }
+
+.openid_sunooLogline form { position:relative; height:22px; border:0px solid #d9d9d9; padding:2px 3px; margin:0px; _margin-top:-2px; background:#f9fafc; overflow:hidden; }
+.openid_sunooLogline form .sidpwWrap { overflow:hidden; padding:0px; }
+.openid_sunooLogline form .sidpw { float:left; width:190px; height:20px; padding:1px 0px 0px 0px; }
+.openid_sunooLogline form .sidpw span.swopid { float:left; margin:0; padding:3px 10px 0px 28px; font-size:.9em; color:#999999; background: url(../images/openid_login_bg.gif) no-repeat 10px 1px; }
+.openid_sunooLogline form .sidpw input { border:1px solid #c9c9c9; color:#282828; background:#fbfbfb; padding:1px 5px; margin-bottom:2px; font:.9em Tahoma; }
+.openid_sunooLogline form .sidpw input.swopidIn { background:#fff;  }
+.openid_sunooLogline form .sidpw input.swopidOut { background:#fdfdfc url(../images/bgidOut.gif) no-repeat 10px 3px; }
+.openid_sunooLogline form .sidpwWrap .buttonLoginsw { float:left; padding:1px 0px 0px 0px; }
+.openid_sunooLogline form span.ssave { float:left; margin:0px; *margin:-1px 0px 0px 0px; padding:0px 0px 0px 10px; vertical-align:middle; }
+.openid_sunooLogline form span.ssave label { font:.9em; color:#999999; }
+
+.openid_sunooLogline .searchsw{ position:absolute; right:5px; top:6px; width:168px; height:24px; padding-right:10px; border:0; background:url(../images/bgSearch.png) no-repeat left top; _background:url(../images/bgSearch.gif) no-repeat left top;}
+.openid_sunooLogline .searchsw .searchAreas{ position:relative; left:8px; top:1px; *top:0px; margin:0; padding:0; border:0; }
+.openid_sunooLogline .searchsw .searchAreas input{ width:124px; padding:0x; margin:0px; font-size:12px; background:#fff; border:0;}
+.openid_sunooLogline .searchsw .searchAreas input.txin{ background:#fff; }
+.openid_sunooLogline .searchsw .searchAreas input.txout{ background:#fff url(../images/bgsearchOuten.gif) no-repeat 8px 3px; }
+.openid_sunooLogline .searchsw .searchAreas input.searchButtonsw{ position:absolute; top:2px; *top:3px; right:24px; _right:34px; width:14px; height:14px; }
+
+
+

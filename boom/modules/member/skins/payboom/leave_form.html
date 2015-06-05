@@ -1,0 +1,60 @@
+<div id="identify" class="contents join">
+<div class="text-center">
+<div class="panel-body">
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs">
+		<li class="active" onClick="self.location='/boom/index.php?act=dispMemberInfo&amp;mid=login'"><a href="#home" data-toggle="tab" aria-expanded="true">회원정보 보기</a>
+		</li>
+		<li onClick="self.location='/boom/index.php?act=dispMemberScrappedDocument&amp;mid=login'"><a href="#profile" data-toggle="tab" aria-expanded="false">스크랩 보기</a>
+		</li>
+		<li onClick="self.location='/boom/index.php?act=dispMemberSavedDocument&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">저장함 보기</a>
+		</li>
+		<li onClick="self.location='/boom/index.php?act=dispMemberOwnDocument&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">작성 글 보기</a>
+		</li>
+		<li onClick="self.location='/boom/index.php?act=dispCommunicationFriend&amp;mid=login'"><a href="#messages" data-toggle="tab" aria-expanded="false">친구 보기</a>
+		</li>
+		<li onClick="self.location='/boom/index.php?act=dispCommunicationMessages&amp;mid=login'"><a href="#settings" data-toggle="tab" aria-expanded="false">쪽지함보기</a>
+		</li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div class="tab-pane fade active in" id="home">
+			<h5 class="text-left"><span class="glyphicon glyphicon-circle-arrow-right text-left"></span>회원탈퇴</h5>
+			<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skin/default/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+				<p>{$XE_VALIDATOR_MESSAGE}</p>
+			</div>
+				<form ruleset="leaveMember" id="fo_insert_member" action="./" method="post" class="form-horizontal text-left" role="form">
+				<input type="hidden" name="module" value="member" />
+				<input type="hidden" name="act" value="procMemberLeave" />
+				<input type="hidden" name="mid" value="{$mid}" />
+				<input type="hidden" name="document_srl" value="{$document_srl}" />
+				<input type="hidden" name="page" value="{$page}" />
+				<input type="hidden" name="xe_validator_id" value="modules/member/skin/default/1" />
+				<div class="panel panel-default">
+					<div class="panel-body">
+			
+							<div class="form-group">
+								<label for="inputName1" class="col-lg-4 col-md-4 col-sm-5 control-label name">아이디</label>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<input type="email" class="form-control input-sm" value="{$formValue}" readonly title="{Context::getLang($identifier)}" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputName1" class="col-lg-4 col-md-4 col-sm-5 control-label name">현재 비밀번호</label>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<input type="password" class="form-control input-sm" name="password" id="cpw" required placeholder="{$lang->password}" title="{$lang->password}" />
+								</div>
+							</div>
+					</div>
+				</div>
+				<div class="text-center"><button type="submit" class="btn btn-default">회원탈퇴</button></div>
+				</form>
+		</div>
+	</div>
+</div>
+<script>
+jQuery(function(){
+	document.title = '회원탈퇴';		
+});
+</script>

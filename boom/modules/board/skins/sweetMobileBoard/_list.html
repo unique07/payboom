@@ -1,0 +1,70 @@
+<!--%import("css/smbListStyle.css")-->
+<div class="smbListWrap">
+	<div class="smbSection">
+		<ul class="smbList">
+			<!--//  반응형 레이아웃을 위해 리스트 개수를 계산하여 반으로 나눈다  //-->
+			{@ 
+				$_idx = 0;
+				$_count = count($notice_list) + count($document_list);
+			}
+			<!--@foreach($notice_list as $no => $document)-->
+			{@$_idx++}
+			<li>
+				<a href="{getUrl('document_srl', $document->document_srl)}">
+					<block cond="$document->getThumbnail() && $module_info->thumb == 'y'">
+						<div class="smbThumbnail" style="background-image:url({$document->getThumbnail($module_info->thumb_x * 2,$module_info->thumb_y * 2,corp)}); width:{$module_info->thumb_x}px; height:{$module_info->thumb_y}px;"></div>
+						<div class="smbContent" style="margin:0 10px 0 {$module_info->thumb_x + 10}px;">
+					</block>
+					<block cond="!$document->getThumbnail() || $module_info->thumb == 'n'">
+						<div class="smbContentNoThumb">
+					</block>
+						<p class="title"><span class="notice">{$lang->notice}</span><span class="category" cond="$module_info->view_category == 'Y' && $document->get('category_srl')">{$category_list[$document->get('category_srl')]->title}</span>{$document->getTitle($module_info->subject_cut_size)}</p>
+						<ul class="info">
+							<li cond="$module_info->view_author == 'Y'"><i class="xe-user"></i><span class="author">{$document->getNickName()}</span></li>
+							<li cond="$module_info->view_regdate == 'Y'"><i class="xe-time-o"></i><span>{$document->getRegDate("Y.m.d")}</span></li>
+							<li cond="$module_info->view_read == 'Y'"><i class="xe-eyes"></i><span>{$document->get('readed_count')>0?$document->get('readed_count'):'0'}</span></li>
+							<li cond="$module_info->view_comment == 'Y'"><i class="xe-comment-list"></i><span>{$document->getCommentCount()}</span></li>
+						</ul>
+					</div>
+				</a>
+			</li>
+			<!--@end-->
+			<!--//  리스트의 중간지점일 경우 ul을 닫았다가 다시 연다  //-->
+			<!--@if(( $_count / 2 == $_idx ) || ( $_count / 2 + 1.5 == $_idx ))-->
+		</ul>
+	</div>
+	<div class="smbSection">
+		<ul class="smbList">
+			<!--@end-->
+			<!--@foreach($document_list as $no => $document)-->
+			{@$_idx++}
+			<li>
+				<a href="{getUrl('document_srl', $document->document_srl)}">
+					<block cond="$document->getThumbnail() && $module_info->thumb == 'y'">
+						<div class="smbThumbnail" style="background-image:url({$document->getThumbnail($module_info->thumb_x * 2,$module_info->thumb_y * 2,corp)}); width:{$module_info->thumb_x}px; height:{$module_info->thumb_y}px;"></div>
+						<div class="smbContent" style="margin:0 10px 0 {$module_info->thumb_x + 10}px;">
+					</block>
+					<block cond="!$document->getThumbnail() || $module_info->thumb == 'n'">
+						<div class="smbContentNoThumb">
+					</block>
+						<p class="title"><span class="category" cond="$module_info->view_category == 'Y' && $document->get('category_srl')">{$category_list[$document->get('category_srl')]->title}</span>{$document->getTitle($module_info->subject_cut_size)}</p>
+						<ul class="info">
+							<li cond="$module_info->view_author == 'Y'"><i class="xe-user"></i><span class="author">{$document->getNickName()}</span></li>
+							<li cond="$module_info->view_regdate == 'Y'"><i class="xe-time-o"></i><span>{$document->getRegDate("Y.m.d")}</span></li>
+							<li cond="$module_info->view_read == 'Y'"><i class="xe-eyes"></i><span>{$document->get('readed_count')>0?$document->get('readed_count'):'0'}</span></li>
+							<li cond="$module_info->view_comment == 'Y'"><i class="xe-comment-list"></i><span>{$document->getCommentCount()}</span></li>
+						</ul>
+					</div>
+				</a>
+			</li>
+			<!--//  리스트의 중간지점일 경우 ul을 닫았다가 다시 연다  //-->
+			<!--@if(( $_count / 2 == $_idx ) || ( $_count / 2 + 1.5 == $_idx ))-->
+		</ul>
+	</div>
+	<div class="smbSection">
+		<ul class="smbList">
+			<!--@end-->
+			<!--@end-->
+		</ul>
+	</div>
+</div>

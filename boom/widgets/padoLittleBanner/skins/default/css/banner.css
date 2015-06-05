@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+.banner-container {
+    position: relative;
+    height: 164px;
+    background-color: #f4f7fc;
+    border: 1px solid #c7d9e9;
+    border-radius: 3px;
+}
+
+.banner-container .img, .banner-container .content {
+    position:relative;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.banner-container .img {
+    position: relative;
+    width: 350px;
+    max-width:350px;
+    height: inherit;
+    max-height: 164px;
+    text-align: center;
+    border-right: 1px solid #c7d9e9;
+    background-color: #ffffff;
+}
+
+.banner-container .content{
+    position: absolute;
+    display: inline;
+    height: 100%;
+    padding:23px 40px 23px 23px; /* close btn position left 31px.*/
+    overflow: hidden;
+}
+
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 21px;
+    height: 21px;
+    background: url("../img/btn_close.png");
+    background-size: 21px 21px;
+    cursor: pointer;
+}
+
+.banner-container .context {
+    position: relative;
+    width: inherit;
+    display: inline;
+    overflow: hidden;
+}
+
+.btn_blue {
+    position:absolute;
+
+    bottom:10px;
+    right:10px;
+    padding:12px;
+
+
+    height:43px;
+    min-height:43px;
+    max-height:43px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #0068ff;
+    white-space:nowrap;
+    text-align: center;
+    border: 1px solid #0068ff;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    cursor:pointer;
+}
+
+.btn_blue:hover {
+    color: #ffffff;
+    background-color: #0068ff;
+}
+
+.banner-container .context h1 {
+    display: inline;
+    float:left;
+    margin: 0;
+    font-size: 14pt;
+    color: #262a82;
+}
+.banner-container .context p {
+    display: inline;
+    float:left;
+    margin: 10px 0 0 0;
+    color: #001564;
+    clear:both;
+}

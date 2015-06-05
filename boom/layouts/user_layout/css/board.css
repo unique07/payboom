@@ -1,0 +1,207 @@
+@charset "utf-8"; 
+
+#maincontent dl.list { padding: 0px 0px; margin: 0px 0px; font-size:11px; }
+#maincontent dl.list dt { padding-top:2px ; margin: 0px 0px; float: left; width: 117px; height: 27px; background: url('http://img.syoff.com/images/icon/listarrow.gif') no-repeat; margin-top:3px; text-indent: 20px; }
+#maincontent dl.list dd { float:left; padding: 0px 0px; margin: 0px 0px; height: 32px; width:700px; }
+#maincontent dl.list dd.link { padding: 0px 0px; margin: 0px 0px; height:150px; line-height:220%; }
+#maincontent dl.list dd.radio { padding: 0px 0px 0px 0px; margin: 0px 0px; }
+
+#maincontent input { margin: 0px 0px; border: 1px solid #ccc; height:15px; font-family: 'Dotum'; font-size: 11px; color: #666; padding:4px 5px 0px 5px; }
+#maincontent input.title { margin: 0px 0px; border: 1px solid #ccc; height:15px; font-weight:bold; font-family: 'Dotum'; font-size: 12px; color: #666; padding:10px 5px 0px 5px; width:810px; height:23px; }
+#maincontent input.radio { margin: 0px 0px; border: none; font-family: 'Dotum'; font-size: 11px; color: #666; vertical-align:-4px; }
+#maincontent input.file { height:20px; }
+#maincontent input.link { width:600px; }
+
+.view .viewcontent { margin-top:17px; font-size:12px; line-height: 1.5em; word-wrap:break-word; padding:24px 0px; font-family:Arial;font-size:12px;color:#444; }
+.view .urllink { margin-top:20px; }
+.view .urllink h4 { font-family: 'Georgia'; font-size: 12px; color: #000; font-style:italic; letter-spacing: 1px; margin:0px 0px 0px 0px; padding:0px 0px; }
+.view .urllink ul { list-style: none; margin: 5px 0px 0px 0px; padding: 0px 0px; }
+.view .urllink li { margin:0px 0px;padding:0px 0px; font-family: 'Georgia'; font-size: 11px; color: #000; font-style:italic; }
+
+/*.view .tag { background: #f2f2f2 url('http://img.syoff.com/images/board/tag.gif') no-repeat top left; width:750px;padding:7px 0px 7px 70px; margin-top: 20px; line-height:130%; }*/
+.view .tag { background: #f2f2f2 url('http://img.syoff.com/images/board/tag.gif') no-repeat top left; padding:7px 0px 7px 70px; margin-top: 20px; line-height:130%; }
+
+.view .copybox { margin: 11px 0px 13px 0px; }
+.view .copybox .sns { float: left; } 
+.view .copybox .copy { margin-top:4px; margin-right:5px;float:right;overflow: hidden; display: block; width: 115px; height: 14px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/copy.gif') no-repeat; }
+
+.view .link { margin-top:15px;clear:both;border-top: 1px dotted #000000; }
+.view .link h4 { margin:15px 0px 11px 0px; padding:0px 0px; overflow: hidden; display: block; width: 41px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/link.gif') no-repeat; }
+.view .link ul { list-style: none; margin: 0px 0px; padding: 0px 0px; }
+.view .link li { margin:0px 0px;padding:0px 0px; background: url('http://img.syoff.com/images/board/linkdot.gif') no-repeat left center; text-indent:10px; font-family: 'Dotum'; font-size: 12px; color: #333; }
+
+.view .link li a:link { color : #333; }
+.view .link li a:visited { color : #333; }
+.view .link li a:hover { color : #333; }
+
+.view .new { width: 30px; height:11px; background: url('http://img.syoff.com/images/icon/new.gif') no-repeat; float:left; margin: 16px 0px 0px 4px;  }
+.view .best { width: 35px; height:11px; background: url('http://img.syoff.com/images/icon/best.gif') no-repeat; float:left; margin: 16px 0px 0px 4px;  }
+
+.view .commentbox { margin-top:15px;padding:0px 0px;border-top: 1px dotted #000000; } 
+.view .commentbox h4 { font-family: 'Georgia'; font-size: 14px; color: #555; letter-spacing:0px; font-style:italic; font-weight:normal; margin:0px 0px; padding:0px 0px; height:35px; padding-top:6px; }
+.view .commentbox .commentcount { font-size:24px; margin-right:5px; color: #0585ff; }
+.view .commentbox .prev { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/prev.gif') no-repeat; float:left; margin: 12px 15px 0px 4px; }
+.view .commentbox .next { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/next.gif') no-repeat; float:left; margin: 12px 0px 0px 0px; }
+.view .commentbox .modify { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/modify.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+.view .commentbox .delete { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/delete.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+.view .commentbox .list { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/list.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+
+#divComment { clear:both; }
+.view .commentbox .commententry { clear: both; border-top: 1px dotted #e5e5e5; padding:25px 0px 30px 3px; }
+.view .commentbox .commententry .icon { border:1px solid black; float:left; width:50px; height:50px; }
+.view .commentbox .commententry .databox { float:left;margin-left:13px;padding:0px 0px; width:750px; }
+.view .commentbox .commententry .databox .commentuserid { margin:0px 0px;padding:0px 0px;color: #0684fd; font-family: 'Gulim'; font-size: 12px; float:left; font-weight:bold; } 
+.view .commentbox .commententry .databox .commentuserid2 { margin:0px 0px;padding:0px 0px;color: #666; font-family: 'Georgia'; font-size: 12px; font-style:italic; font-weight:normal;} 
+.view .commentbox .commententry .databox .commentdate { margin:0px 0px;padding:0px 0px;margin: 3px 0px 0px 10px; color: #909090; font-family: 'Georgia'; font-size: 10px; font-style:italic; float:left; } 
+.view .commentbox .commententry .databox .commentmodify { margin:0px 0px;padding:0px 0px;float:right;font-family:Dotum; font-size:11px; color: #b8b8b8; }
+.view .commentbox .commententry .databox .commentcontent { clear:both;padding:15px 0px 0px 0px;margin:0px 0px;font-family:Gulim; color: #000;line-height:150%; }
+
+.view .commentbox .commententry .databox2 { float:left;margin-left:13px;padding:0px 0px 0px 32px; width:718px; background: url('http://img.syoff.com/images/icon/re.gif') no-repeat;}
+.view .commentbox .commententry .databox2 .commentuserid { margin:0px 0px;padding:0px 0px;color: #0684fd; font-family: 'Gulim'; font-size: 12px; float:left; font-weight:bold; } 
+.view .commentbox .commententry .databox2 .commentuserid2 { margin:0px 0px;padding:0px 0px;color: #666; font-family: 'Georgia'; font-size: 12px; font-style:italic; font-weight:normal;} 
+.view .commentbox .commententry .databox2 .commentdate { margin:0px 0px;padding:0px 0px;margin: 3px 0px 0px 10px; color: #909090; font-family: 'Georgia'; font-size: 10px; font-style:italic; float:left; } 
+.view .commentbox .commententry .databox2 .commentmodify { margin:0px 0px;padding:0px 0px;float:right;font-family:Dotum; font-size:11px; color: #b8b8b8; }
+.view .commentbox .commententry .databox2 .commentcontent { clear:both;padding:15px 0px 0px 0px;margin:0px 0px;font-family:Gulim; color: #000;line-height:150%; }
+.view .commentbox .commentwrite { border-top:1px dotted #e5e5e5; }
+
+.view .commentbox .commentwrite .commentwritetitle { margin: 17px 0px 11px 0px; }
+.view .commentbox .commentwrite .commentwritetitle h4 { float:left; font-family: 'Georgia'; font-size: 12px; color: #000; font-style:italic; font-weight:normal; margin:0px 0px; padding:0px 0px; color: #333; }
+.view .commentbox .commentwrite .commentwritetitle .login { float:right; padding:0px 0px; overflow: hidden; display: block; width: 26px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/login.gif') no-repeat; margin-right:28px; margin-top: 2px; }
+.view .commentbox .commentwrite .commentwritetitle .join { float:right; padding:0px 0px; overflow: hidden; display: block; width: 35px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/join.gif') no-repeat; margin-right:10px; margin-top: 2px; }
+
+.view .commentbox .commentwrite .icon { float:left; border:1px solid black; float:left; width:50px; height:50px; }
+.view .commentbox .commentwrite textarea { float:left; margin-left: 13px; width:740px; height:81px;border:1px solid #000; }
+.view .commentbox .commentwrite .write { overflow: hidden; display: block; width: 53px; height: 21px; text-indent: -10000em; background: url('http://img.syoff.com/images/btn/write.gif') no-repeat; margin: 7px 0px 0px 760px;}
+
+
+#maincontent .magazineentry { border-bottom:1px dotted #000; padding: 4px 3px; #color:333333;}
+#maincontent .magazineentry .image { display:block; border:1px solid #cccecd; width:77px; height:77px; float:left; background: #eee; }
+#maincontent .magazineentry .textbox { float: left; margin-left:15px; width: 715px; }
+
+#maincontent .magazineentry .textbox h3 { font-family:'Dotum'; font-size: 12px; color: #333; margin:8px 5px 3px 0px; padding:0px 0px; float:left; }
+#maincontent .magazineentry .textbox .new { width: 30px; height:11px; background: url('http://img.syoff.com/images/icon/new.gif') no-repeat; float:left; margin: 9px 10px 0px 0px; float: left; }
+#maincontent .magazineentry .textbox .category { font-family: 'Georgia'; font-size: 12px; color: #000; font-style:italic; letter-spacing: 0px; float:left; margin-right:10px; margin-top:6px; float: right; }
+#maincontent .magazineentry .textbox .category a { color: #000; }
+#maincontent .magazineentry .textbox .date { font-family: 'Georgia'; font-size: 11px; color: #999; font-style:italic; letter-spacing: 0px; float:left; margin-right:0px; margin-top:6px; float: right; }
+
+
+#maincontent .magazineentry .textbox .content { clear:both; display:block; font-family:'Dotum'; font-size: 12px; color: #333; }
+
+
+#maincontent .magazineentry .countbox { font-family: 'Dotum'; font-size: 11px; color: #353535; font-weight:normal; float:right; }
+#maincontent .magazineentry .countbox .count { color: #3366ff; }
+#maincontent .magazineentry .countbox .comment { margin-left:8px; color: #3366ff; }
+
+
+.snapentry { border-bottom: 1px dotted #e4e4e4; margin-bottom: 18px; padding-bottom: 12px; }
+.snapentry h3 { font-family: 'Franklin Gothic Demi'; font-weight: normal; font-size: 15px; font-weight:normal; font-style:italic; margin: 6px 2px 6px 0px; padding: 0px 0px; display:block; float:left; color: #434343; }
+.snapentry h3.adult { font-family: 'Franklin Gothic Demi'; font-weight: normal; font-size: 15px; mfont-weight:normal; font-style:italic; argin: 6px 2px 6px 0px; padding: 0px 0px; display:block; float:left; color: #434343; padding-left: 30px; background:url('http://img.syoff.com/images/icon/19.gif') no-repeat;}
+.snapentry .imgbox { border:1px solid #dadada;padding:5px 5px;float:left; margin-right:5px;margin-bottom:5px;}
+.snapentry .imgbox img { width:393px;height:562px; }
+.snapentry .new { width: 30px; height:11px; background: url('http://img.syoff.com/images/icon/new.gif') no-repeat; float:left; margin: 12px 0px 0px 4px; float:left; }
+.snapentry .best { width: 35px; height:11px; background: url('http://img.syoff.com/images/icon/best.gif') no-repeat; float:left; margin: 12px 0px 0px 4px; float:left; }
+
+.snapentry .sns { float:right; margin-top: 10px 0px 0px 0px; padding:0px 0px 0px 0px; }
+.snapentry .tweet { width: 100px; height: 20px; font-family: 'Dotum'; font-size: 11px; color: #666; text-align:center; padding-left:0px; float:left; text-align: left; }
+.snapentry .like { width: 95px; height: 20px; font-family: 'Dotum'; font-size: 11px; color: #666; text-align:center; padding-left:0px; float:left; text-align: left; }
+.snapentry .gplus { width: 80px; height: 20px; font-family: 'Dotum'; font-size: 11px; color: #666; text-align:center; padding-left:0px; float:left; text-align: left; }
+.snapentry .pinterest { width: 95px; height: 20px; font-family: 'Dotum'; font-size: 11px; color: #666; text-align:center; padding-left:0px; float:left; text-align: left; }
+.snapentry .category { font-family: 'Georgia'; font-size: 12px; color: #000; font-style:italic; letter-spacing: 0px; margin-bottom: 5px; margin-top:5px; }
+.snapentry .category a { color: #000; }
+.snapentry .date { font-family: 'Georgia'; font-size: 11px; color: #999; font-style:italic; letter-spacing: 0px; width:100px; margin: 0px 0px 12px 0px; }
+
+
+.snapentry .commentbox { }
+.snapentry .commentbox .commenttext { float:left; font-family: 'Georgia'; font-style:italic; letter-spacing: 0px; font-size:14px; color:#555; width:70px; margin-top:8px;}
+.snapentry .commentbox .comment { float:left; line-height:120%; margin-top: 5px; width: 22px; height: 22px; font-family: 'Trebuchet MS'; font-size: 14px; color: #fff; background: url('http://img.syoff.com/images/icon/comment2.gif') no-repeat; text-align:center; padding:0px 0px 0px 0px; } 
+
+.snapentry .snaptext { font-family: Dotum; font-size:11px; color: #656565; margin-bottom:10px; line-height:200%;}
+.snapentry .snaptext a:link { color: #656565; }
+.snapentry .snaptext a:visited { color: #656565; }
+.snapentry .snaptext a:hover { color: #656565; }
+.snapentry .tag { background: url('http://img.syoff.com/images/board/snaptag.gif') no-repeat top left; width:750px;height:13px;padding:1px 0px 0px 65px; margin: 10px 0px 20px 0px; color: #666; font-family:Gulim; font-size:12px; }
+
+#maincontent .snapupload {margin:15px 0px 20px 0px;}
+
+.view .imgbox { border:1px solid #dadada;padding:5px 5px;float:left; margin-right:5px;margin-bottom:5px;}
+.view .imgbox img { width:393px;height:562px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 20121228 community board style start */
+#boardTable .tableWrap { border: 1px solid #e0e1db; overflow: hidden; }
+#boardTable .tableTxt {}
+#boardTable .tableTxt .txt { display: block; font-weight: bold; color: #333; width: 159px; *width: 163px; background: url('../images/community/table_header_bg2.gif') no-repeat right bottom; padding: 10px 0 10px 15px; }
+#boardTable .tableList { width:858px;border: 0; border-collapse: collapse; table-layout: fixed; color: #222; text-align: center; }
+#boardTable .tableList caption { display: none; }
+#boardTable .tableList th, .tableList td { border: 0; border-collapse: collapse; overflow: hidden; white-space: nowrap; word-break: break-all; }
+#boardTable .tableList th { background: #fff url('../images/community/table_header_bg.gif') repeat-x left bottom; font-weight: normal; border-top: 1px solid #e0e1db; }
+#boardTable .tableList thead th span { display: block; padding: 2px; background: url('../images/community/table_header_bg2.gif') no-repeat left top; }
+#boardTable .tableList thead th:first-child span { background: none; }
+#boardTable .tableList td { padding: 5px; border-top: 1px solid #eff0ed; }
+#boardTable .tableList td img, .tableList td input { vertical-align: middle; }
+#boardTable .tableList td a, .tableList td a:hover { color: #222; }
+#boardTable .tableList td a:hover { text-decoration: underline; }
+#boardTable .tableList td.alignL { text-align: left; }
+#boardTable .tableList td.l_num, .tableList td.l_regdt, .tableList td.l_cnt { font-size: 10px; color: #666; }
+#boardTable .tableList td.l_tit { text-align: left; }
+#boardTable .tableList td.l_tit .tit { display: inline-block; max-width: 396px; _width: expression(this.clientWidth > '395' ? '396px' : 'auto');overflow: hidden; text-overflow: ellipsis; vertical-align: middle; }
+#boardTable .tableList td.l_tit .re_cnt { display: inline-block; height: 12px; background: url('../images/community/icons_01.png') no-repeat -135px -45px; overflow: hidden; vertical-align: middle; padding-left: 15px; color: #0684fd; font-weight: bold; font-size: 10px; }
+#boardTable .tableList td.l_tit .blank { display: inline-block; width: 12px; height: 10px; overflow: hidden; vertical-align: middle; background: url('../images/community/icons_01.png') no-repeat -90px -45px; }
+#boardTable .tableList td.l_tit .blank span { cursor: pointer; }
+#boardTable .tableList td .adm { width: 18px; height: 16px; display: inline-block; background: url('../images/community/icons_01.png') no-repeat 0 -45px; overflow: hidden; vertical-align: middle; margin-right: 4px; }
+#boardTable .tableList td .new { width: 11px; height: 11px; display: block; background: url('../images/community/icons_01.png') no-repeat -45px -45px; overflow: hidden; text-indent: -1000px; }
+#boardTable .tableList td .blind { display: inline-block; line-height: 4; z-index: -1; position: relative; visibility: hidden; }
+#boardTable .tableList .noticeTr td, .tableList .evenTr td { background: #fafafa; }
+#boardTable .tableList .noticeTr td.l_num { font-size: 12px; font-weight: bold; }
+#boardTable .tableList .noticeTr td a, .tableList .noticeTr td a:hover { font-weight: bold; color: #0684fd; }
+/* 20121228 community board style end */
+
+
+
+.community_h_area {background-color: white; height:28px; border: 1px solid #dddfda; width:858px}
+.community_h_title {width:100px;height:22px;background: url('/images/community/table_header_bg2.gif') no-repeat right bottom   ; text-align: center; padding-top:6px;}
+
+
+#boardTable .btnArea { clear:both; background: #ececec; width:638px; height:19px;padding:3px 3px 3px 0px; margin-top: 5px; font-family:Dotum; font-size:8pt; color:#000000; text-align:right;}
+
+#boardTable .commentbox h4 { font-family: 'Georgia'; font-size: 11px; color: #000; font-style:italic; font-weight:normal; }
+#boardTable .commentbox .commentcount { font-size:24px; margin-right:5px; color: #0585ff; }
+
+#boardTable .commentbox .commententry { clear:both; padding:25px 0px 30px 3px; }
+#boardTable .commentbox .commententry .icon { border:1px solid black; float:left; width:50px; height:50px; }
+#boardTable .commentbox .commententry .databox { float:left;margin-left:13px;padding:0px 0px; width:570px; }
+#boardTable .commentbox .commententry .databox .commentusername { margin:0px 0px;padding:0px 0px;color: #0684fd; font-family: 'Gulim'; font-size: 12px; font-weight:bold; float:left; }
+#boardTable .commentbox .commententry .databox .commentuserid { margin:0px 0px 0px 5px;padding:0px 0px;color: #000000; font-family: 'Gulim'; font-size: 12px; float:left; }
+#boardTable .commentbox .commententry .databox .commentdate { margin:0px 0px;padding:0px 0px;margin: 0px 0px 0px 10px; color: #909090; font-family: 'Georgia'; font-size: 11px; font-style:italic; float:left; }
+#boardTable .commentbox .commententry .databox .commentmodify { margin:0px 0px;padding:0px 0px;float:right;font-family:Dotum; font-size:11px; color: #b8b8b8; }
+#boardTable .commentbox .commententry .databox .commentcontent { clear:both;padding:15px 0px 0px 0px;margin:0px 0px;font-family:Gulim; color: #000;line-height:150%; }
+#boardTable .commentbox .commentwrite { border-top:1px dotted #e5e5e5; }
+
+#boardTable .commentbox .commentwrite .commentwritetitle { margin: 17px 0px 11px 0px; }
+#boardTable .commentbox .commentwrite .commentwritetitle h4 { float:left; font-family: 'Georgia'; font-size: 11px; color: #000; font-style:italic; font-weight:normal; margin:0px 0px; padding:0px 0px; color: #333; }
+#boardTable .commentbox .commentwrite .commentwritetitle .login { float:right; padding:0px 0px; overflow: hidden; display: block; width: 26px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/login.gif') no-repeat; margin-right:28px; margin-top: 2px; }
+#boardTable .commentbox .commentwrite .commentwritetitle .join { float:right; padding:0px 0px; overflow: hidden; display: block; width: 35px; height: 9px; text-indent: -10000em; background: url('http://img.syoff.com/images/menu/join.gif') no-repeat; margin-right:10px; margin-top: 2px; }
+
+#boardTable .commentbox .commentwrite .icon { float:left; border:1px solid black; float:left; width:50px; height:50px; }
+#boardTable .commentbox .commentwrite textarea { float:left; margin-left: 13px; width:628px; height:81px;border:1px solid #000; }
+#boardTable .commentbox .commentwrite .write { overflow: hidden; display: block; width: 53px; height: 21px; text-indent: -10000em; background: url('http://img.syoff.com/images/btn/write.gif') no-repeat; margin: 7px 0px 0px 760px;}
+#boardTable .commentbox .prev { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/prev.gif') no-repeat; float:left; margin: 12px 15px 0px 4px; }
+#boardTable .commentbox .next { overflow: hidden; display: block; width: 30px; height: 10px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/next.gif') no-repeat; float:left; margin: 12px 0px 0px 0px; }
+#boardTable .commentbox .modify { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/modify.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+#boardTable .commentbox .delete { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/delete.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+#boardTable .commentbox .list { overflow: hidden; display: block; width: 60px; height: 20px; text-indent: -10000em; background: url('http://img.syoff.com/images/board/list.gif') no-repeat; float:right; margin: 8px 2px 0px 3px; }
+
+#boardTable .commentbox { border:1px solid #cacaca}
+
+.community_comment_write {margin-top:5px;border:4px solid #cccccc;height:22px;color:#646464;padding:10px 10px;font-size:11px;font-family:Dotum;width:745px}

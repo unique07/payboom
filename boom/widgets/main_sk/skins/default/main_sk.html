@@ -1,0 +1,113 @@
+<!-- contents -->
+		<div class="clearfix">
+			<div class="mediaList-wrapper pull-left col-xs-9">
+				<!-- start-thumbnail-banner -->
+				<!--상단 롤링
+				<div class="start-thumbnail-banner clearfix">
+					<div class="start-billboard">
+						<div class="billboardNest">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="thumbnail">
+										<a href="/board/view.php?id={id}" target="{target}">
+											<img src="../webdata/maintool/{image}" class="img-responsive" alt="magazine">
+											<div class="caption">
+												<strong>{title}</strong>
+												<p>{content}</p>
+												<div class="overflow hidden-lg hidden-md visible-sm visible-xs"></div>
+											</div>
+										</a>
+										<em>comments<a href="#" class="badge comment"></a></em>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				-->
+				<!-- start-mediaList -->
+				<div class="mediaList">
+					<!--@if( $output_array['title_view'] == "view")-->
+						<h5>{$output_array['title']}</h5>
+					<!--@end-->
+					<div class="media clearfix">
+						<div class="box-body table-responsive no-padding">
+						  <table class="table table-hover">
+							<tbody>
+							<!-- LIST -->
+							<!--@for($i=0; $i < $output_array['count']; $i++)-->
+							<tr class="listview" style="text-align:middle">
+							  <td style="height:75px">
+								<a href="{getUrl()}?mid={$mid}&document_srl={$output_array[$i]['document_srl']}"><img src="{$output_array[$i]['image']}" style="max-width:100px" class="img-thumbnail"/></a>
+								<!--
+								<img src="/images/list_noimage.jpg" style="max-width:100px" class="img-thumbnail"/>
+								-->
+							  </td>
+							  <td><a href="{getUrl()}?mid={$mid}&document_srl={$output_array[$i]['document_srl']}">{$output_array[$i]['title']}</a></td>
+							  <td class="text-center">{$output_array[$i]['date']}</td>
+							</tr>
+							<!--@end-->
+							 </tbody>
+						  </table>
+						</div>
+					
+				</div>
+				<!-- start-mediaList//end -->
+			</div>
+			<!--<div class="catalog-banner pull-right col-xs-3">-->
+				<!-- 왼쪽 상단 -
+				<div class="monthly-issue clearfix">
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="" alt="" />
+							</a>
+							<div class="fb-like" data-href="" data-layout="button_count" data-send="false" data-width="200" data-show-faces="false">facebook</div>
+						</div>
+					</div>
+				</div>
+				-->
+				<!-- 왼쪽 중간 배너 
+				<div class="banner">
+					<img src="" alt="" />
+				</div>
+				<div class="daily-snap clearfix">
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="\" alt=""/>
+							</a>
+							<div class="caption">
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="magazine-post clearfix">
+					<div class="col-xs-12">
+						<div class="thumbnail">
+							<a href="">
+								<img src="" alt=""/>
+							</a>
+							<div class="caption">
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="banner">
+					<img src="" alt="" />
+				</div>
+				-->
+			<!--</div>-->
+		</div>
+		<!-- 하단 배너
+		<div class="promotion-banner clearfix">
+			<div class="">
+				<a href="">
+					<img src="" alt="" class="img-responsive" >
+				</a>
+			</div>
+		</div>
+		-->

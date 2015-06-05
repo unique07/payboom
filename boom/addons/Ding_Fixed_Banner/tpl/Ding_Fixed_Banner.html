@@ -1,0 +1,47 @@
+<!--@if($_COOKIE['ding_fixed_banner'] == null || $_COOKIE['ding_fixed_banner'] == "")-->
+<load target="../css/Ding_Fixed_Banner.css"/>
+<script>
+    var ding = ding || {}; // Ding namespace.
+    ding.fixedNotice = ding.fixedNotice || {};
+    ding.propertys = ding.propertys || {};
+    ding.fixedNotice.propertys = {
+        <!--@if($addon_info->direction == "up")-->
+        context : '{$addon_info->context}',
+        <!--@else-->
+        context : '',
+        <!--@end-->
+        animationSpped : {$addon_info->animation_speed},
+        cookieTime : {$addon_info->cookie_time},
+        deleteClassName : "{$addon_info->delete_class_name}",
+        direction : "{$addon_info->direction}",
+        default : "{$addon_info->default}",
+        defaultColor : "{$addon_info->default_color}",
+        z_index : {$addon_info->z_index},
+        height : "{$addon_info->h}",
+        colors: "{$addon_info->colors}",
+        bottom_position: "{$addon_info->bottom_position}",
+        button_multi_position : "{$addon_info->button_multi_position}",
+        target_css: "{$addon_info->target_css}",
+        target_css_top: "{$addon_info->target_css_top}",
+        inner_html: "{$addon_info->inner_html}",
+        animation_decision: "{$addon_info->animation_decision}"
+
+    };
+</script>
+<style> {$addon_info->css} </style>
+<!--@if($addon_info->direction == "down")-->
+<div class="ding-fixed-container"
+     style="z-index:{$addon_info->z_index}; height:{$addon_info->h}; min-height:{$addon_info->h}; max-height:{$addon_info->h}; background-color:{$addon_info->colors}"|cond="$addon_info->h && $addon_info->z_index && $addon_info->colors">
+{$addon_info->context}
+<!--@if($addon_info->default=="enable")-->
+    <svg class="close" style="{$addon_info->button_multi_position};">
+        <line style="fill:none;stroke:{$addon_info->default_color};stroke-miterlimit:10;" x1="0.048" y1="0.048" x2="34.064"
+              y2="34.064"/>
+        <line style="fill:none;stroke:{$addon_info->default_color};stroke-miterlimit:10;" x1="34.064" y1="0.048" x2="0.048"
+              y2="34.064"/>
+    </svg>
+<!--@end-->
+</div>
+<!--@end-->
+<script src="../js/Ding_Fixed_Banner.js"></script>
+<!--@end-->

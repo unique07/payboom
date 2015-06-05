@@ -1,0 +1,67 @@
+
+
+.smbCardWrap { padding:5px; background:#f4f4f4; }
+
+@media screen and (max-width:380px) {
+	.smbCard { overflow:hidden; padding:0; margin:0; list-style:none; }
+	.smbCard > li { padding:5px; }
+	.smbCard > li a { display:block; }
+	.smbCard > li a .smbInfo { background:#fff; border:1px solid #ddd; border-radius:3px 3px 0 0; padding:10px; border-bottom:0; }
+	.smbCard > li a .smbInfo p.title { display: -webkit-box; overflow: hidden; white-space: normal; word-wrap: break-word; -o-ellipsis-lastline:2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; font-size:1.4em; font-weight:bold; }
+	.smbCard > li a .smbInfo p.title .notice { font-weight:normal; box-sizing:border-box; margin-right:5px; color:#fff; background:#f22937; display:inline-block; height:16px; line-height:16px; position:relative; top:-1px; padding:0px 5px; font-size:0.7em; }	
+	.smbCard > li a .smbInfo p.summary { display:none; }
+	.smbCard > li a .smbInfo ul.category { overflow:hidden; list-style:none; margin:7px 0 2px 0; padding:0; }
+	.smbCard > li a .smbInfo ul.category li { float:left; margin:0; padding:0 9px; border-left:1px solid #eee; color:#aaa; }
+	.smbCard > li a .smbInfo ul.category li:first-child { padding-left:0; border-left:0; }
+	.smbCard > li a .smbInfo ul.category li.browsertitle,
+	.smbCard > li a .smbInfo ul.category li.category { color:#4e88cf; }
+	.smbCard > li a .smbInfo ul.smbIcon { display:none; }
+	.smbCard > li a .smbCardContent { position:relative; border-radius:0 0 4px 4px; overflow:hidden; background-color:#fff; }
+	.smbCard > li a .smbCardContent .smbThumbnail { padding:0 0 54% 0; background-size:cover; background-position:center center; }
+	.smbCard > li a .smbCardContent .smbSummary { padding:10px 15px 15px 15px; }
+	.smbCard > li a .smbCardContent .smbSummary p { color:#777; display: -webkit-box; overflow: hidden; white-space: normal; line-height:1.7em; font-size:1.1em; word-wrap: break-word; -o-ellipsis-lastline:5; -webkit-line-clamp: 5; -webkit-box-orient: vertical; text-overflow: ellipsis;  }
+	.smbCard > li a .smbCardContent span.border { border-radius:0 0 3px 3px; display:block; position:absolute; top:0; bottom:0; left:0; right:0; box-sizing:border-box; border:1px solid #000; opacity:0.1; }
+	.smbCard > li a .smbCardContent ul.smbIcon { position:absolute; bottom:10px; left:10px; list-style:none; padding:0; margin:0; }
+	.smbCard > li a .smbCardContent ul.smbIcon li { float:left; padding:5px 10px; background:rgba(0,0,0,0.55); border-radius:2px; margin-right:6px; color:#fff; }
+	.smbCard > li a .smbCardContent ul.smbIcon li span.text { float:left; display:none; }
+	.smbCard > li a .smbCardContent ul.smbIcon li span.num { font-size:1.1em; position:relative; top:2px; }
+	.smbCard > li a .smbCardContent ul.smbIcon li i { float:left; margin-right:5px; font-size:1.5em; }
+	.smbCard > li a .smbCardContent ul.smbIcon li.voted i { color:red; }
+}
+@media screen and (min-width:381px) {
+	.smbCard { overflow:hidden; padding:0; margin:0; list-style:none; }
+	.smbCard > li { padding:5px; }
+	.smbCard > li a { display:block; background:#fff; overflow:hidden; position:relative; height:145px; }
+	.smbCard > li a .smbCardContent { float:left; width:200px; height:145px; background:url(../img/noimg.png) no-repeat center center #ebebeb; background-size:64px; position:absolute; top:0; left:0; }
+	.smbCard > li a .smbCardContent ul.smbIcon { white-space:nowrap; position:absolute; bottom:10px; left:10px; list-style:none; padding:0; margin:0; }
+	.smbCard > li a .smbCardContent ul.smbIcon li { float:left; padding:5px 10px; background:rgba(0,0,0,0.55); border-radius:2px; margin-right:6px; color:#fff; }
+	.smbCard > li a .smbCardContent ul.smbIcon li span.text { float:left; display:none; }
+	.smbCard > li a .smbCardContent ul.smbIcon li span.num { font-size:1.1em; position:relative; top:2px; }
+	.smbCard > li a .smbCardContent ul.smbIcon li i { float:left; margin-right:5px; font-size:1.5em; }
+	.smbCard > li a .smbCardContent ul.smbIcon li.voted i { color:red; }
+	.smbCard > li a .smbCardContent .smbThumbnail { height:145px; background-size:cover; background-position:center center; }
+	.smbCard > li a .smbCardContent .smbSummary { display:none; }
+	.smbCard > li a .smbCardContent span.border { display:block; position:absolute; top:0; bottom:0; left:0; right:0; box-sizing:border-box; border:1px solid #000; opacity:0.1; }
+	.smbCard > li a .smbCardContent.noThumb { display:none; }
+	.smbCard > li a .smbInfo { padding:10px; margin-left:200px; border:1px solid #ddd; border-left-width:0; height:123px; position:relative; }
+	.smbCard > li a .smbInfo.noThumb { margin-left:0; border-left-width:1px; }
+	.smbCard > li a .smbInfo p.title { display: -webkit-box; overflow: hidden; white-space: normal; word-wrap: break-word; -o-ellipsis-lastline:2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; font-size:1.4em; font-weight:bold; }
+	.smbCard > li a .smbInfo p.title .notice { font-weight:normal; box-sizing:border-box; margin-right:5px; color:#fff; background:#f22937; display:inline-block; height:16px; line-height:16px; position:relative; top:-1px; padding:0px 5px; font-size:0.7em; }		
+	.smbCard > li a .smbInfo p.summary { color:#999; margin-top:8px; display: -webkit-box; overflow: hidden; white-space: normal; line-height:1.7em; font-size:1em; word-wrap: break-word; -o-ellipsis-lastline:2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; }
+	.smbCard > li a .smbInfo ul.category { overflow:hidden; list-style:none; margin:7px 0 2px 0; padding:0; font-size:1.1em; }
+	.smbCard > li a .smbInfo ul.category li { float:left; margin:0; padding:0 9px; border-left:1px solid #eee; color:#aaa; }
+	.smbCard > li a .smbInfo ul.category li:first-child { padding-left:0; border-left:0; }
+	.smbCard > li a .smbInfo ul.category li.browsertitle,
+	.smbCard > li a .smbInfo ul.category li.category { color:#4e88cf; }
+	.smbCard > li a .smbInfo ul.smbIcon { display:none; white-space:nowrap; position:absolute; bottom:9px; left:9px; list-style:none; padding:0; margin:0; }
+	.smbCard > li a .smbInfo.noThumb ul.smbIcon { display:block; }
+	.smbCard > li a .smbInfo ul.smbIcon li { float:left; padding:5px 10px; background:rgba(0,0,0,0.1); border-radius:2px; margin-right:6px; color:#888; }
+	.smbCard > li a .smbInfo ul.smbIcon li span.text { float:left; display:none; }
+	.smbCard > li a .smbInfo ul.smbIcon li span.num { font-size:1.1em; position:relative; top:2px; }
+	.smbCard > li a .smbInfo ul.smbIcon li i { float:left; margin-right:5px; font-size:1.5em; }
+	.smbCard > li a .smbInfo ul.smbIcon li.voted i { color:red; }
+}
+@media screen and (min-width: 720px){
+	.smbCard > li { padding:5px; width:50%; box-sizing:border-box; float:left; }
+	.smbCard > li a .smbInfo ul.category li { float:left; margin:0; padding:0 5px; border-left:1px solid #eee; color:#aaa; }
+}

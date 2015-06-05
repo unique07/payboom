@@ -1,0 +1,83 @@
+<!--// sunoo's line type login skin for Xpress Engine. Layout Design by Sunoo (http://www.goodpr.me/) -->
+
+<!--%import("css/sunoo_loginline.css")-->
+<!--%import("./filter/logout.xml")-->
+
+<!--// login_widget set width -->
+  <!--@if(!$widget_info->line_width)--> {@ $widget_info->line_width = 970 } <!--@end-->
+    {@ $fieldline_width = ($widget_info->line_width) + 12 }
+    {@ $formline_width = ($widget_info->line_width) - 10 }
+    
+    <!--@if($widget_info->line_type=='ro')-->
+     <style type="text/css"> .sunooLogline form { height:20px; padding:1px 3px; border:0px solid #d9d9d9; } 
+            .sunooLogline form ul.suserMenu li.level{ *padding-top:0px; }  .sunooLogline form ul.suserMenu li.point{ *padding-top:0px; }  
+            .sunooLogline form ul.suserMenu li.member{ *padding-top:0px; }  .sunooLogline form ul.suserMenu li.isadmin{ *padding-top:0px; }  
+            .sunooLogline form ul.suserMenu li.latestlogin{ *padding-top:0px; }  
+            .sunooLogline .searchsw{ top:5px; }  .sunooLogline .searchsw .searchAreas{ left:8px; top:2px; *top:1px; }  
+            .sunooLogline .searchsw .searchAreas input.txout{ background-position:8px 2px; }  
+            .sunooLogline .searchsw .searchAreas input.searchButtonsw{ top:1px; *top:2px; right:24px; _right:34px; }  
+     </style><!--@end-->
+    <!--@if($widget_info->line_type=='an')-->
+     <style type="text/css"> .sunooLogline form { height:22px; padding:4px 7px; border:1px solid #d9d9d9; } 
+            .sunooLogline form ul.suserMenu li{ margin-top:1px; *margin:0px; }  
+            .sunooLogline form ul.suserMenu li.logoutbutton { margin-top:-2px; }  
+            .sunooLogline form ul.suserMenu li.username { padding:1px 1px 1px 10px; } 
+            .sunooLogline .searchsw{ right:2px; top:5px;}  .sunooLogline .searchsw .searchAreas{ top:-1px; *top:-2px; }  
+            .sunooLogline .searchsw .searchAreas input.txout{ background-position:8px 2px; }  
+            .sunooLogline .searchsw .searchAreas input.searchButtonsw{ top:1px; *top:2px; }  
+     </style><!--@end-->
+  <!--@if($widget_info->line_type=='no')-->
+     <style type="text/css"> .sunooLogline form { height:22px; padding:3px 8px; background:none; border:0px solid #d9d9d9; } 
+            .sunooLogline form ul.suserMenu li{ margin-top:1px; *margin:0px; }  
+            .sunooLogline form ul.suserMenu li.logoutbutton { margin-top:-2px; }  
+            .sunooLogline form ul.suserMenu li.username { padding:1px 1px 1px 10px; } 
+            .sunooLogline form ul.suserMenu li{ padding-top:2px; *padding-top:1px; }  
+            .sunooLogline .searchsw{ right:2px; top:3px;}  .sunooLogline .searchsw .searchAreas{ top:-1px; *top:-2px; }  
+     </style><!--@end-->
+  <!--@if($widget_info->bg_color)-->
+     <style type="text/css"> .sunooLogline form { background:{$widget_info->bg_color}; } 
+            .openid_sunooLogline form { background:{$widget_info->bg_color}; } 
+     </style><!--@else--><!--@end-->
+
+  {@ $oPointModel = &getModel('point'); $point = $oPointModel->getPoint($logged_info->member_srl); $oModuleModel = &getModel('module');  $config = $oModuleModel->getModuleConfig('point'); $level = $oPointModel->getLevel($point, $config->level_step); }
+
+<div id="login" class="sunooLogline" style="width:{$fieldline_width}px;">
+<!--@if($widget_info->line_type=='ro')-->
+<table class="tablelo" border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody class="wtline">
+<tr><td class="tdwa" valign="top"></td><td class="tdwb" valign="top"></td><td class="tdwc" valign="top"></td></tr>
+<tr><td class="tdwd" valign="top"></td><td class="tdwe" valign="top"><!--@else--><!--@end-->
+<form action="" method="post" style="width:{$formline_width}px;">
+  <ul class="suserMenu">
+     <li class="logoutbutton"><a href="{getUrl('act','dispMemberLogout')}"><img src="./images/buttonLogout.gif" alt="{$lang->cmd_logout}" width="47" height="18" /></a></li>
+     <li class="username"><div class="member_{$logged_info->member_srl}">"<strong>{$logged_info->nick_name}</strong>"{$lang->login->sw_welcome}</div></li>
+     <!--@if($widget_info->level_use=="Y")--><li class="level">{$lang->login->sw_level} : <font color="#060cfb">{$level}</font></li><!--@else--><!--@end-->
+     <!--@if($widget_info->point_use=="Y")--><li class="point">{$lang->login->sw_point} : <font color="#060cfb">{$point}</font></li><!--@else--><!--@end-->
+        <li class="member"><a href="{getUrl('act','dispMemberInfo')}">{$lang->login->sw_mypage}</a></li>
+     <!--@if($logged_info->is_admin=="Y" && !$site_module_info->site_srl)-->
+        <li class="isadmin"><a href="{getUrl('','module','admin')}" onclick="window.open(this.href);return false;">{$lang->login->sw_management}</a></li>
+        <!--@end-->
+     <!--@if($widget_info->latest_login=='Y')-->
+     <li class="latestlogin"><span>{$lang->login->sw_last_login}</span> : {zDate($logged_info->last_login, "m. d. H:i")}</li>
+     <!--@else--><!--@end-->
+    </ul>
+</form>
+
+<!--@if($widget_info->search_use=='Y')-->
+<form action="{getUrl()}" method="post" id="widgetsearch" class="searchsw">
+  <input type="hidden" name="vid" value="{$vid}" />
+  <input type="hidden" name="mid" value="{$mid}" />
+  <input type="hidden" name="act" value="IS" />
+  <input type="hidden" name="search_target" value="title_content" />
+	<div class="searchAreas">
+	<input name="is_keyword" type="text" title="{$lang->sl_show_search}" onfocus="this.className='txin';" onblur="if(!this.value) this.className='txout'" class="txout" accesskey="S" />
+	<input name="" type="image" src="images/buttonSearch.gif" alt="Search" class="searchButtonsw" />
+	</div>
+</form><!--@else--><!--@end-->
+
+<!--@if($widget_info->line_type=='ro')-->
+</td><td class="tdwf" valign="top"></td></tr>
+<tr><td class="tdwg" valign="top"></td><td class="tdwh" valign="top"></td><td class="tdwi" valign="top"></td></tr>
+</tbody></table><!--@else--><!--@end-->
+</div>
+

@@ -1,0 +1,804 @@
+<style>
+.wrap_box{position:relative;z-index:1;margin:0 auto;-webkit-box-sizing:content-box; -o-box-sizing:content-box; -moz-box-sizing:content-box; box-sizing:content-box;}
+.box{width:380px;height:330px;position:relative;overflow:hidden;}
+.in_box{position:relative;padding:0 10px 18px 10px;}
+.middle_box{height:310px;overflow:hidden; position:relative;}
+.in_middle_box{padding:10px;}
+.normal-wrapper .middle_box{background:#fff;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;border: 1px solid; border-color: #e5e6e9 #dfe0e4 #d0d1d5;}
+.line-wrapper{background:none !important;}
+.ce .normal-wrapper .in_content{padding:0;padding-right:10px;}
+.ec .normal-wrapper .in_content{padding:0;padding-left:10px;}
+.mobile_xe .normal-wrapper .in_content{padding:0;}
+.line-wrapper .in_content{padding:0;padding-left:9px;}
+
+.ec .line-wrapper .in_content{padding:0;padding-right:9px;}
+.c .line-wrapper .in_content,
+.mobile_xe .line-wrapper .in_content{padding:0;}
+.line-wrapper .wrap_box{border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;background:#fff;margin-bottom:20px;}
+.line-wrapper .middle_box{padding:0 10px 0 9px;}
+.line-wrapper .in_box{border-left:1px solid #e9e9e9;border-top:1px solid #e9e9e9;padding:10px 0 9px 0;}
+.box_x2_y2{width:760px;height:660px;}
+.box_x2_y2 .middle_box{height:640px}
+.box_x2{width:760px;}
+.box_y2{height:660px;}
+.box_y2 .middle_box{height:640px}
+@media screen and (max-width:1160px){
+.wrap_box{width:760px}
+
+}
+@media screen and (max-width:759px){
+.wrap_box{width:630px}
+.line-wrapper .in_content{padding-left:0;}
+.box{width:50%}
+.box_x2_y2,
+.box_x2{width:100%;}
+.box_x2_y2{height:580px;}
+.box_x2_y2 .middle_box{height:560px}
+}
+@media only screen and (min-width: 533px) and (max-width: 639px) { 
+.wrap_box{width:520px}
+.box_x2_y2{height:510px;}
+.box_x2_y2 .middle_box{height:490px}
+}
+@media screen and (max-width:532px){
+.line-wrapper .wrap_box,
+.wrap_box,
+.box{width:100%;height:auto;}
+.middle_box{height:auto}
+.box_x2_y2{height:500px;}
+.box_x2_y2 .middle_box{height:480px}
+.line-wrapper .wrap_box{border-right:0;}
+.line-wrapper .in_box{border-right:1px solid #e1e1e1;border-left:1px solid #e1e1e1;}
+
+}
+@media screen and (max-width:480px){
+.box_x2_y2{height:470px;}
+.box_x2_y2 .middle_box{height:450px}
+}
+@media screen and (max-width:360px){
+.box_x2_y2{height:390px;}
+.box_x2_y2 .middle_box{height:370px}
+}
+
+</style>
+
+<div class="wrap_box">
+	
+	<div class="box {$layout_info->c_box1}" cond="$layout_info->c_mid1&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile1)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title1&&$layout_info->c_style1!='E'" class="h2_widget">
+						{$layout_info->c_title1}
+						<a class="h2_widget_a" href="{$layout_info->c_url1}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style1=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style1=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style1=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style1=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style1=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style1=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style1=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style1=='E'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}" list_type="image_slide" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="90" content_cut_size="300" option_view="thumbnail,title,regdate,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="720" thumbnail_height="450" />
+						</block>
+						<block cond="$layout_info->c_style1=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid1}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+1}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="box {$layout_info->c_box2}" cond="$layout_info->c_mid2&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile2)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title2" class="h2_widget">
+						{$layout_info->c_title2}
+						<a class="h2_widget_a" href="{$layout_info->c_url2}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style2=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style2=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style2=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style2=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style2=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style2=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style2=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style2=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid2}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+2}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box {$layout_info->c_box3}" cond="$layout_info->c_mid3&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile3)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title3" class="h2_widget">
+						{$layout_info->c_title3}
+						<a class="h2_widget_a" href="{$layout_info->c_url3}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style3=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style3=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style3=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style3=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style3=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style3=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style3=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style3=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid3}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+3}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box {$layout_info->c_box4}" cond="$layout_info->c_mid4&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile4)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title4" class="h2_widget">
+						{$layout_info->c_title4}
+						<a class="h2_widget_a" href="{$layout_info->c_url4}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style4=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style4=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style4=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style4=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style4=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style4=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style4=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style4=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid4}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+4}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box {$layout_info->c_box5}" cond="$layout_info->c_mid5&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile5)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title5" class="h2_widget">
+						{$layout_info->c_title5}
+						<a class="h2_widget_a" href="{$layout_info->c_url5}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style5=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style5=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style5=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style5=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style5=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style5=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style5=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style5=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid5}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+5}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box {$layout_info->c_box6}" cond="$layout_info->c_mid6&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile6)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title6" class="h2_widget">
+						{$layout_info->c_title6}
+						<a class="h2_widget_a" href="{$layout_info->c_url6}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style6=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style6=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style6=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style6=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style6=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style6=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style6=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style6=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid6}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+6}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box {$layout_info->c_box7}" cond="$layout_info->c_mid7&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile7)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title7" class="h2_widget">
+						{$layout_info->c_title7}
+						<a class="h2_widget_a" href="{$layout_info->c_url7}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style7=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style7=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style7=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style7=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style7=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style7=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style7=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style7=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid7}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+7}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box {$layout_info->c_box8}" cond="$layout_info->c_mid8&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile8)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title8" class="h2_widget">
+						{$layout_info->c_title8}
+						<a class="h2_widget_a" href="{$layout_info->c_url8}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style8=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style8=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style8=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style8=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style8=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style8=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style8=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style8=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid8}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+8}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box {$layout_info->c_box9}" cond="$layout_info->c_mid9&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile9)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title9" class="h2_widget">
+						{$layout_info->c_title9}
+						<a class="h2_widget_a" href="{$layout_info->c_url9}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style9=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style9=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style9=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style9=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style9=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style9=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style9=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style9=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid9}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+9}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box10}" cond="$layout_info->c_mid10&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile10)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title10" class="h2_widget">
+						{$layout_info->c_title10}
+						<a class="h2_widget_a" href="{$layout_info->c_url10}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style10=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style10=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style10=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style10=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style10=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style10=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style10=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style10=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid10}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+10}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box11}" cond="$layout_info->c_mid11&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile11)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title11" class="h2_widget">
+						{$layout_info->c_title11}
+						<a class="h2_widget_a" href="{$layout_info->c_url11}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style11=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style11=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style11=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style11=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style11=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style11=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style11=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style11=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid11}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+11}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box12}" cond="$layout_info->c_mid12&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile12)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title12" class="h2_widget">
+						{$layout_info->c_title12}
+						<a class="h2_widget_a" href="{$layout_info->c_url12}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style12=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style12=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style12=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style12=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style12=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style12=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style12=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style12=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid12}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+12}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box13}" cond="$layout_info->c_mid13&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile13)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title13" class="h2_widget">
+						{$layout_info->c_title13}
+						<a class="h2_widget_a" href="{$layout_info->c_url13}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style13=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style13=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style13=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style13=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style13=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style13=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style13=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style13=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid13}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+13}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box14}" cond="$layout_info->c_mid14&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile14)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title14" class="h2_widget">
+						{$layout_info->c_title14}
+						<a class="h2_widget_a" href="{$layout_info->c_url14}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style14=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style14=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style14=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style14=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style14=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style14=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style14=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style14=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid14}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+14}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box15}" cond="$layout_info->c_mid15&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile15)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title15" class="h2_widget">
+						{$layout_info->c_title15}
+						<a class="h2_widget_a" href="{$layout_info->c_url15}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style15=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style15=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style15=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style15=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style15=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style15=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style15=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style15=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid15}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+15}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box16}" cond="$layout_info->c_mid16&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile16)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title16" class="h2_widget">
+						{$layout_info->c_title16}
+						<a class="h2_widget_a" href="{$layout_info->c_url16}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style16=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style16=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style16=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style16=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style16=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style16=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style16=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style16=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid16}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+16}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box17}" cond="$layout_info->c_mid17&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile17)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title17" class="h2_widget">
+						{$layout_info->c_title17}
+						<a class="h2_widget_a" href="{$layout_info->c_url17}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style17=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style17=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style17=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style17=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style17=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style17=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style17=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style17=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid17}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+17}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="box {$layout_info->c_box18}" cond="$layout_info->c_mid18&&(!Mobile::isMobileCheckByAgent()||!$layout_info->c_mobile18)">
+		<div class="in_box">
+			
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 cond="$layout_info->c_title18" class="h2_widget">
+						{$layout_info->c_title18}
+						<a class="h2_widget_a" href="{$layout_info->c_url18}"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<block cond="$layout_info->c_style18=='A'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}"  list_count="6" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style18=='AA'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}"  list_count="14" list_type="normal" subject_cut_size="50" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" page_count="1" content_cut_size="30" option_view="title,regdate" show_browser_title="N" show_comment_count="N" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" />
+						</block>
+						<block cond="$layout_info->c_style18=='B'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" list_count="4" cols_list_count="2" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style18=='BB'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}" list_type="gallery" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" list_count="8" cols_list_count="4" page_count="1" subject_cut_size="25" content_cut_size="50" option_view="title,thumbnail" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="270" thumbnail_height="150" />
+						</block>
+						<block cond="$layout_info->c_style18=='C'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}" list_type="image_title" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" list_count="9" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="480" thumbnail_height="276" />
+						</block>
+						<block cond="$layout_info->c_style18=='D'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" list_count="3" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style18=='DD'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}" list_type="image_title_content" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" list_count="7" page_count="1" subject_cut_size="35" content_cut_size="70" option_view="thumbnail,title,content" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="80" thumbnail_height="61" />
+						</block>
+						<block cond="$layout_info->c_style18=='EE'">
+						<img class="zbxe_widget_output" widget="doorweb_content" skin="default" content_type="document" module_srls="{$layout_info->c_mid18}" list_type="image_slideA" tab_type="none" widget_sequence="{$layout_info->so_widget+18}" widget_cache="1" markup_type="table" page_count="1" subject_cut_size="50" content_cut_size="200" option_view="thumbnail,title,regdate,nickname" show_browser_title="N" show_comment_count="Y" show_trackback_count="N" show_category="N" show_icon="N" order_target="regdate" order_type="desc" thumbnail_type="crop" thumbnail_width="500" thumbnail_height="300" />
+						</block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	
+
+</div>
+
